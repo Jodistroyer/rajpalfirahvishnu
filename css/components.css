@@ -264,8 +264,17 @@
 
 /* Mobile navigation overlay */
 @media (max-width: 767px) {
+  .navbar__inner {
+    gap: 0;
+  }
+
+  .navbar__nav {
+    flex: none;
+  }
+
   .hamburger {
     display: flex;
+    margin-left: auto;
   }
 
   .navbar__cta {
