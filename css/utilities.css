@@ -1,0 +1,62 @@
+/* ============================================================
+   UTILITIES.CSS — Helper classes & states
+   Load order: 4 of 4
+   ============================================================ */
+
+/* ── Screen reader only ──────────────────────────────────── */
+
+.sr-only,
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ── Body scroll lock (applied by modal.js) ──────────────── */
+
+body.scroll-locked {
+  overflow: hidden;
+  /* Prevent layout shift when scrollbar disappears */
+  padding-right: var(--scrollbar-width, 0px);
+}
+
+/* ── Lazy load — entrance animation states ───────────────── */
+
+.lazy {
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity   0.5s ease,
+    transform 0.5s ease;
+}
+
+.lazy.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lazy,
+  .lazy.loaded {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ── Nav open state (body) ───────────────────────────────── */
+
+body.nav-open {
+  overflow: hidden;
+}
+
+/* ── Text helpers ────────────────────────────────────────── */
+
+.text-center { text-align: center; }
+.text-muted  { color: var(--color-ink-400); }

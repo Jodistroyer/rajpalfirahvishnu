@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found — Rajpal Firah &amp; Vishnu</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/png" href="assets/favicon-gray.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <style>
+    .error-page {
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      flex-direction: column;
+      gap: 0;
+    }
+    .error-page__code {
+      font-family: var(--font-heading);
+      font-size: clamp(6rem, 20vw, 12rem);
+      font-weight: 700;
+      line-height: 1;
+      color: var(--color-ink-050);
+      user-select: none;
+    }
+    .error-page__heading {
+      font-family: var(--font-heading);
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      color: var(--color-ink-900);
+      margin-bottom: 1rem;
+    }
+    .error-page__text {
+      font-size: 1.0625rem;
+      color: var(--color-ink-400);
+      max-width: 380px;
+      margin-bottom: 2rem;
+      line-height: 1.65;
+    }
+  </style>
+</head>
+<body>
+  <main class="error-page" aria-label="Page not found">
+    <p class="error-page__code" aria-hidden="true">404</p>
+    <h1 class="error-page__heading">Page Not Found</h1>
+    <p class="error-page__text">
+      The page you are looking for may have been moved, renamed, or does not exist.
+    </p>
+    <a href="/" class="btn btn--primary">Return to Home</a>
+  </main>
+</body>
+</html>
