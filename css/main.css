@@ -79,9 +79,9 @@ fieldset {
   --color-dark:          #111111;
   --color-dark-alt:      #1c1c1c;
 
-  --color-accent:        #c9a96e;   /* gold CTA */
-  --color-accent-hover:  #b8905a;   /* gold darken ~10% */
-  --color-accent-light:  rgba(201, 169, 110, 0.10);
+  --color-accent:       #C9963A;
+  --color-accent-hover: #B07E28;
+  --color-accent-light: rgba(201, 150, 58, 0.10);
 
   /* Typography */
   --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;

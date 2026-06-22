@@ -9,6 +9,8 @@ import { initNav }       from './nav.js';
 import { initModals }    from './modal.js';
 import { initForm }      from './form.js';
 import { initLazyMedia } from './lazymedia.js';
+import { initClippingsSeo } from './clippings-seo.js';
+import { prefetchClippingsData, prefetchClippingsGallery, loadClippingsGallery } from './clippings-data-loader.js';
 
 (function bootstrap() {
 
@@ -38,6 +40,9 @@ import { initLazyMedia } from './lazymedia.js';
   initForm('#contact-form', '');
 
   initLazyMedia();
+  initClippingsSeo();
+  setupClippingsLazyLoad();
+  scheduleClippingsPrefetch();
 
   // ── Service card CTA → pre-fill contact form subject ──
   // Handles anchor links like <a href="#contact" data-subject="Corporate Law">
@@ -69,3 +74,53 @@ import { initLazyMedia } from './lazymedia.js';
   }
 
 })();
+
+/** Prefetch clippings code during idle time so scroll-init feels instant. */
+function scheduleClippingsPrefetch() {
+  const container = document.getElementById('clippings-gallery') || document.getElementById('clippings');
+  if (!container) return;
+
+  const prefetch = () => {
+    prefetchClippingsData();
+    prefetchClippingsGallery();
+  };
+
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(prefetch, { timeout: 2500 });
+  } else {
+    setTimeout(prefetch, 1200);
+  }
+}
+
+/** Load clippings gallery when user scrolls near the Media section. */
+function setupClippingsLazyLoad() {
+  const container = document.getElementById('clippings-gallery') || document.getElementById('clippings');
+  if (!container) return;
+
+  let started = false;
+  const start = () => {
+    if (started) return;
+    started = true;
+    container.classList.add('clippings-gallery--loading');
+    loadClippingsGallery()
+      .then(m => m.initClippings(container))
+      .catch(() => container.classList.remove('clippings-gallery--loading'));
+  };
+
+  if (!('IntersectionObserver' in window)) {
+    start();
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    if (!entries[0]?.isIntersecting) return;
+    obs.disconnect();
+    if ('requestAnimationFrame' in window) {
+      requestAnimationFrame(start);
+    } else {
+      start();
+    }
+  }, { rootMargin: '80px 0px', threshold: 0 });
+
+  observer.observe(container);
+}

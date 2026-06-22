@@ -86,6 +86,7 @@ export function closeModal() {
   mainContent?.setAttribute('aria-hidden', 'false');
   unlockBodyScroll();
   dialog.removeEventListener('keydown', trapFocus);
+  dialog.classList.remove('modal__dialog--wide');
 
   // Restore focus after transition
   const trigger = triggerElement;

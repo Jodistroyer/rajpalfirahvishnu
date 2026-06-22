@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+Allow: /assets/media/newspaper-clippings/
+
+User-agent: Googlebot-Image
+Allow: /assets/media/newspaper-clippings/
+
+Sitemap: https://[yourdomain]/sitemap.xml
+Sitemap: https://[yourdomain]/sitemap-images.xml

@@ -824,24 +824,6 @@
   gap: 0.625rem;
 }
 
-/* Newsletter / stay-updated strip */
-.media-room__newsletter {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1.25rem 2rem;
-  padding: 1.375rem 1.75rem;
-  border: 1px solid var(--color-ink-050);
-  border-radius: var(--radius-sm);
-  background: var(--color-surface-1);
-}
-
-.media-room__newsletter-text {
-  font-size: 0.9375rem;
-  color: var(--color-ink-500);
-}
-
 /* Dark-section variant (Media Room) */
 .media-room .media-card {
   background: var(--color-dark-alt);
@@ -873,15 +855,6 @@
 }
 
 .media-room .media-card__author {
-  color: var(--color-ink-300);
-}
-
-.media-room .media-room__newsletter {
-  background: var(--color-dark-alt);
-  border-color: rgba(255, 255, 255, 0.1);
-}
-
-.media-room .media-room__newsletter-text {
   color: var(--color-ink-300);
 }
 
@@ -1517,4 +1490,167 @@
   margin-top: 2rem;
   padding-top: 1.25rem;
   border-top: 1px solid var(--color-ink-050);
+}
+
+/* ── Wide modal (clippings lightbox) ── */
+
+.modal__dialog--wide {
+  max-width: min(920px, 100%);
+}
+
+.modal__body--clipping {
+  padding: 0;
+}
+
+.modal__body--clipping .modal__close {
+  background: rgba(17, 17, 17, 0.55);
+  color: #fff;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.modal__body--clipping .modal__close:hover {
+  background: rgba(17, 17, 17, 0.8);
+}
+
+/* ── Clipping collage cards ── */
+
+.clipping-card {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 120px;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  cursor: zoom-in;
+  background: rgba(255, 255, 255, 0.06);
+  transition:
+    transform var(--transition-ui),
+    box-shadow var(--transition-ui);
+}
+
+.clipping-card:hover,
+.clipping-card:focus-visible {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  outline: none;
+}
+
+.clipping-card:focus-visible {
+  box-shadow: 0 0 0 3px var(--color-accent), 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+.clipping-card--tall {
+  grid-row: span 2;
+}
+
+.clipping-card--wide {
+  grid-column: span 2;
+}
+
+.clipping-card__figure {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.clipping-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: opacity 320ms ease, transform 400ms ease;
+}
+
+.clipping-card__img--pending {
+  opacity: 0;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.clipping-card__img.loaded,
+.clipping-card__img:not(.clipping-card__img--pending) {
+  opacity: 1;
+}
+
+.clipping-card:hover .clipping-card__img.loaded {
+  transform: scale(1.04);
+}
+
+.clipping-card__overlay {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 1.75rem 0.625rem 0.5rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.72));
+  pointer-events: none;
+}
+
+.clipping-card__date {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.92);
+  text-transform: uppercase;
+}
+
+/* ── Clipping lightbox content ── */
+
+.clipping-modal {
+  margin: 0;
+}
+
+.clipping-modal__image-wrap {
+  background: var(--color-ink-050);
+  max-height: min(68dvh, 640px);
+  overflow: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.clipping-modal__img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.clipping-modal__caption {
+  padding: 1.25rem 1.5rem 1.5rem;
+}
+
+.clipping-modal__date {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-ink-400);
+  margin-bottom: 0.5rem;
+}
+
+.clipping-modal__desc {
+  font-size: 0.9375rem;
+  color: var(--color-ink-700);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.clipping-modal__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-accent-hover);
+  text-decoration: none;
+}
+
+.clipping-modal__link:hover {
+  text-decoration: underline;
 }
