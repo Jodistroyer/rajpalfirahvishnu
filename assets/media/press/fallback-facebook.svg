@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="270" viewBox="0 0 480 270" role="img" aria-label="Facebook">
+  <rect width="480" height="270" fill="#1877f2"/>
+  <circle cx="240" cy="120" r="52" fill="#fff"/>
+  <path d="M260 95h-18c-14 0-25 11-25 25v18h-16v22h16v56h26v-56h18l4-22h-22v-12c0-4 3-7 7-7h15V95z" fill="#1877f2"/>
+  <text x="240" y="210" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="18" font-weight="600">Facebook</text>
+</svg>

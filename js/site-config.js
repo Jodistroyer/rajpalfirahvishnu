@@ -49,6 +49,15 @@ export function clippingsPageUrl() {
 /**
  * @returns {string}
  */
+export function pressPageUrl() {
+  return isMediaSubpage()
+    ? `${getSiteOrigin()}/media/#press`
+    : `${getSiteOrigin()}/#media`;
+}
+
+/**
+ * @returns {string}
+ */
 export function clippingsAssetBase() {
   return isMediaSubpage()
     ? '../assets/media/newspaper-clippings/'

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="270" viewBox="0 0 480 270" role="img" aria-label="Malaysian Bar">
+  <rect width="480" height="270" fill="#1a2744"/>
+  <rect x="24" y="24" width="432" height="222" rx="8" fill="#243656" stroke="#c9a227" stroke-width="2"/>
+  <text x="240" y="118" text-anchor="middle" fill="#f5f0e6" font-family="Georgia, serif" font-size="28" font-weight="700">Malaysian Bar</text>
+  <text x="240" y="158" text-anchor="middle" fill="#c9a227" font-family="Arial, sans-serif" font-size="16">Legal &amp; General News</text>
+</svg>

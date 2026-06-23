@@ -10,7 +10,9 @@ import { initModals }    from './modal.js';
 import { initForm }      from './form.js';
 import { initLazyMedia } from './lazymedia.js';
 import { initClippingsSeo } from './clippings-seo.js';
+import { initPressSeo } from './press-seo.js';
 import { prefetchClippingsData, prefetchClippingsGallery, loadClippingsGallery } from './clippings-data-loader.js';
+import { initPress } from './press.js';
 
 (function bootstrap() {
 
@@ -40,6 +42,8 @@ import { prefetchClippingsData, prefetchClippingsGallery, loadClippingsGallery }
   initForm('#contact-form', '');
 
   initLazyMedia();
+  initPress(document.getElementById('press-grid'));
+  initPressSeo();
   initClippingsSeo();
   setupClippingsLazyLoad();
   scheduleClippingsPrefetch();

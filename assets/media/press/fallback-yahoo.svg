@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="270" viewBox="0 0 480 270" role="img" aria-label="Yahoo News">
+  <rect width="480" height="270" fill="#5f01d1"/>
+  <text x="240" y="125" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="42" font-weight="700">yahoo!</text>
+  <text x="240" y="165" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="18" opacity="0.9">News Malaysia</text>
+</svg>

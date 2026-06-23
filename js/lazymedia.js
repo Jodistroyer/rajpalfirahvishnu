@@ -93,3 +93,26 @@ export function initLazyMedia() {
     });
   });
 }
+
+/** Observe dynamically injected .media-card.lazy elements (e.g. press grid). */
+export function observeLazyCards(root) {
+  if (!('IntersectionObserver' in window)) {
+    root.querySelectorAll('.lazy').forEach(el => el.classList.add('loaded'));
+    return;
+  }
+
+  const cards = root.querySelectorAll('.media-card.lazy:not(.loaded)');
+  if (!cards.length) return;
+
+  const cardObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = /** @type {HTMLElement} */ (entry.target);
+      const delayMs = parseInt(el.dataset.delay ?? '0', 10);
+      setTimeout(() => el.classList.add('loaded'), delayMs);
+      obs.unobserve(el);
+    });
+  }, { rootMargin: '0px 0px -60px 0px', threshold: 0.08 });
+
+  cards.forEach(card => cardObserver.observe(card));
+}

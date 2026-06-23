@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Rights Log — Rajpal Firah &amp; Vishnu</title>
+  <meta name="description" content="Image rights log for press thumbnails and newspaper clippings on the Rajpal Firah &amp; Vishnu website.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" type="image/png" href="../assets/favicon-gray.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/utilities.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header id="navbar" class="navbar scrolled" role="banner">
+    <div class="container">
+      <div class="navbar__inner">
+        <a href="../" class="navbar__logo" aria-label="Rajpal Firah &amp; Vishnu — Home">
+          <img src="../assets/logo.png" alt="" width="36" height="36" class="navbar__logo-mark" aria-hidden="true">
+          <span class="navbar__logo-text" style="color: var(--color-ink-900);">Rajpal Firah <span class="amp">&amp;</span> Vishnu</span>
+        </a>
+        <nav aria-label="Main navigation" class="navbar__nav">
+          <ul class="navbar__links" role="list">
+            <li><a href="../#services" class="navbar__link">How We Help</a></li>
+            <li><a href="../#people" class="navbar__link">Our People</a></li>
+            <li><a href="./" class="navbar__link">Media Room</a></li>
+            <li><a href="../#contact" class="navbar__link">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="media-room rights-log-page section-pad" style="padding-top: var(--nav-height);">
+    <div class="container">
+
+      <div class="section-header">
+        <p class="rights-log-page__eyebrow"><a href="./">← Media Room</a></p>
+        <h1 class="section-title">Image Rights Log</h1>
+        <p class="section-subtitle" id="rights-log-meta">Loading…</p>
+      </div>
+
+      <aside class="media-room__disclaimer media-room__disclaimer--page" aria-label="Image use disclaimer">
+        <p><strong>Press coverage.</strong> Press thumbnails are shown for reference only. Images and articles remain the property of their respective publishers and platforms. Each card links to the original source where available.</p>
+        <p><strong>Newspaper clippings.</strong> Clippings are archived scans shown for reference only. Layout, photographs, and text remain the property of the respective publishers. Captions identify the source publication and date where known.</p>
+        <p>If you believe any image is used incorrectly, please <a href="../#contact">contact us</a> and we will review promptly.</p>
+      </aside>
+
+      <section class="rights-log-section" aria-labelledby="rights-log-press-heading">
+        <h2 id="rights-log-press-heading" class="rights-log-section__title">In the Press — thumbnails</h2>
+        <div class="rights-log-table-wrap">
+          <table class="rights-log-table">
+            <thead>
+              <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Publisher</th>
+                <th scope="col">Image source</th>
+                <th scope="col">Rights holder</th>
+                <th scope="col">Link</th>
+              </tr>
+            </thead>
+            <tbody id="rights-log-press"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="rights-log-section" aria-labelledby="rights-log-clippings-heading">
+        <h2 id="rights-log-clippings-heading" class="rights-log-section__title">Newspaper clippings</h2>
+        <div class="rights-log-table-wrap">
+          <table class="rights-log-table">
+            <thead>
+              <tr>
+                <th scope="col">File</th>
+                <th scope="col">Publisher</th>
+                <th scope="col">Date</th>
+                <th scope="col">Image source</th>
+                <th scope="col">Rights holder</th>
+              </tr>
+            </thead>
+            <tbody id="rights-log-clippings"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <p class="rights-log-page__note">To regenerate this log after adding press items or clippings, run <code>node scripts/generate-rights-log.mjs</code>.</p>
+
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo" style="padding-top: 0;">
+    <div class="container">
+      <div class="footer__bottom" style="padding-top: 2rem;">
+        <p class="footer__legal">© 2026 Rajpal Firah &amp; Vishnu. All rights reserved.</p>
+        <a href="./" class="footer__legal-link">← Back to Media Room</a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="../js/media-rights-log-page.js"></script>
+</body>
+</html>
