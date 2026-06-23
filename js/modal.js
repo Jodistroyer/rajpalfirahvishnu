@@ -10,6 +10,8 @@
  *   - ESC key and backdrop-click to dismiss
  */
 
+import { enhanceCopyable } from './copy.js';
+
 const overlay    = /** @type {HTMLElement|null} */ (document.getElementById('modal-overlay'));
 const dialog     = /** @type {HTMLElement|null} */ (document.getElementById('modal-dialog'));
 const mainContent = document.getElementById('main-content');
@@ -19,8 +21,9 @@ let triggerElement = /** @type {HTMLElement|null} */ (null);
 export function initModals() {
   if (!overlay || !dialog) return;
 
-  // Attorney card clicks
+  // Attorney card clicks (skip cards that link to a full profile page)
   document.querySelectorAll('.attorney-card').forEach(card => {
+    if (card.matches('a[href]')) return;
     card.addEventListener('click', () => openAttorneyModal(/** @type {HTMLElement} */ (card)));
   });
 
@@ -48,6 +51,7 @@ export function openModal(htmlContent) {
   triggerElement = /** @type {HTMLElement} */ (document.activeElement);
 
   dialog.innerHTML = htmlContent;
+  enhanceCopyable(dialog);
 
   // Wire close button (injected into the modal body)
   dialog.querySelector('.modal__close')?.addEventListener('click', closeModal);
@@ -118,7 +122,7 @@ function openAttorneyModal(card) {
   const firstName = parts.find(p => /^[A-Z]/.test(p) && !['Datuk','Dato','Tan','Sri'].includes(p)) || name;
 
   const emailLink = email
-    ? `<a href="mailto:${email}" class="attorney-modal__contact-link">
+    ? `<a href="mailto:${email}" class="attorney-modal__contact-link" data-copyable data-copy-type="email">
         <svg width="14" height="14" viewBox="0 0 18 18" fill="none" aria-hidden="true">
           <rect x="2" y="4" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5" fill="none"/>
           <path d="M2 6l7 5 7-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -126,7 +130,7 @@ function openAttorneyModal(card) {
     : '';
 
   const phoneLink = phone
-    ? `<a href="tel:${phone.replace(/\s/g, '')}" class="attorney-modal__contact-link">
+    ? `<a href="tel:${phone.replace(/\s/g, '')}" class="attorney-modal__contact-link" data-copyable data-copy-type="phone">
         <svg width="14" height="14" viewBox="0 0 18 18" fill="none" aria-hidden="true">
           <path d="M3.6 2H6.9L8.4 5.75L6.525 6.9C7.35 8.575 8.925 10.15 10.6 10.975L11.75 9.1L15.5 10.6V13.9C15.5 14.825 14.75 15.5 13.825 15.5C7.475 15.275 2.225 10.025 2 3.675C2 2.75 2.675 2 3.6 2Z" fill="currentColor"/>
         </svg>${escHtml(phone)}</a>`

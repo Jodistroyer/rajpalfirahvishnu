@@ -12,6 +12,7 @@ import { initLazyMedia } from './lazymedia.js';
 import { initClippingsSeo } from './clippings-seo.js';
 import { initPressSeo } from './press-seo.js';
 import { prefetchClippingsData, prefetchClippingsGallery, loadClippingsGallery } from './clippings-data-loader.js';
+import { initCopy } from './copy.js';
 import { initPress } from './press.js';
 
 (function bootstrap() {
@@ -36,6 +37,7 @@ import { initPress } from './press.js';
   // ── Initialise modules ──
   initNav();
   initModals();
+  initCopy();
 
   // Pass your Formspree endpoint here, e.g. 'https://formspree.io/f/xxxxxabc'
   // Leave empty string for a simulated-success development fallback.
