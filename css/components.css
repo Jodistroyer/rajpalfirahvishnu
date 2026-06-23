@@ -952,6 +952,20 @@ a.attorney-card {
   text-decoration: underline;
 }
 
+.profile-sidebar__resource {
+  display: block;
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-align: center;
+  text-decoration: none;
+}
+
+.profile-sidebar__resource:hover {
+  color: var(--color-accent-hover);
+}
+
 .profile-sidebar__map {
   margin-top: 1.25rem;
   text-align: left;
@@ -1201,6 +1215,48 @@ a.attorney-card {
 }
 
 .faq-page__lead-partner a:hover {
+  color: var(--color-accent-hover);
+}
+
+.faq-page__breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  font-size: 0.875rem;
+  color: var(--color-ink-500);
+}
+
+.faq-page__breadcrumb a {
+  color: var(--color-ink-500);
+  text-decoration: none;
+}
+
+.faq-page__breadcrumb a:hover {
+  color: var(--color-accent);
+}
+
+.faq-page__breadcrumb li:not(:last-child)::after {
+  content: "/";
+  margin-left: 0.5rem;
+  color: var(--color-ink-300);
+}
+
+.faq-page__related {
+  margin-top: 2rem;
+  font-size: 0.9375rem;
+  color: var(--color-ink-600);
+}
+
+.faq-page__related a {
+  color: var(--color-accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.faq-page__related a:hover {
   color: var(--color-accent-hover);
 }
 
