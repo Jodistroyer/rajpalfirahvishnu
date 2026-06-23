@@ -137,11 +137,22 @@ export function initPress(container) {
   container.dataset.pressReady = 'true';
   const mode = container.dataset.pressMode === 'preview' ? 'preview' : 'full';
   const showFilters = mode === 'full';
-  const batchSize = Math.max(1, parseInt(container.dataset.pressBatch || '6', 10) || 6);
+  const batchSizeDefault = Math.max(1, parseInt(container.dataset.pressBatch || '6', 10) || 6);
+  const batchSizeMobile = container.dataset.pressBatchMobile
+    ? Math.max(1, parseInt(container.dataset.pressBatchMobile, 10) || batchSizeDefault)
+    : batchSizeDefault;
+  const mobileQuery = window.matchMedia('(max-width: 679px)');
+
+  function getBatchSize() {
+    if (container.dataset.pressBatchMobile && mobileQuery.matches) {
+      return batchSizeMobile;
+    }
+    return batchSizeDefault;
+  }
 
   const sorted = [...PRESS_ITEMS].sort((a, b) => b.sort.localeCompare(a.sort));
   let activeCategory = 'all';
-  let visibleCount = batchSize;
+  let visibleCount = getBatchSize();
 
   let inner = container.querySelector('.press-grid__inner');
   if (!inner) {
@@ -164,7 +175,7 @@ export function initPress(container) {
   function renderShowMore(filteredLength) {
     const remaining = filteredLength - visibleCount;
     if (remaining <= 0) return '';
-    const nextBatch = Math.min(batchSize, remaining);
+    const nextBatch = Math.min(getBatchSize(), remaining);
     return `
       <div class="press-grid__more">
         <button type="button" class="btn btn--secondary press-grid__more-btn" data-press-show-more>
@@ -174,7 +185,7 @@ export function initPress(container) {
   }
 
   function render({ resetCount = false } = {}) {
-    if (resetCount) visibleCount = batchSize;
+    if (resetCount) visibleCount = getBatchSize();
 
     const filtered = getFiltered();
     const visible = filtered.slice(0, visibleCount);
@@ -207,8 +218,14 @@ export function initPress(container) {
 
     const moreBtn = e.target.closest('[data-press-show-more]');
     if (moreBtn instanceof HTMLButtonElement) {
-      visibleCount += batchSize;
+      visibleCount += getBatchSize();
       requestAnimationFrame(render);
     }
   });
+
+  if (container.dataset.pressBatchMobile) {
+    mobileQuery.addEventListener('change', () => {
+      requestAnimationFrame(() => render({ resetCount: true }));
+    });
+  }
 }
