@@ -166,7 +166,9 @@ export function initPress(container) {
     if (mode === 'preview') {
       items = sorted.filter(i => i.featured);
     }
-    if (activeCategory !== 'all') {
+    if (activeCategory === 'video-social') {
+      items = items.filter(i => i.type === 'video' || i.type === 'social');
+    } else if (activeCategory !== 'all') {
       items = items.filter(i => i.category === activeCategory);
     }
     return items;
