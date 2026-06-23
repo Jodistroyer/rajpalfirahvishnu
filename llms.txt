@@ -1,0 +1,92 @@
+# Rajpal Firah & Vishnu | Lawyer Profiles & Practice FAQs
+# Rajpal Firah & Vishnu
+# Contact: enquiry@rfv-law.my
+
+## About this file
+Machine-readable index of advocate profiles and practice-area FAQs for search engines and AI assistants.
+Replace [yourdomain] in data/people.json and re-run: node scripts/generate-people-seo.mjs
+
+## Firm
+- Name: Rajpal Firah & Vishnu
+- Website: https://[yourdomain]/
+- Email: enquiry@rfv-law.my
+- Offices: Petaling Jaya and Batu Caves, Selangor, Malaysia
+
+## Practice area FAQs
+
+### Criminal law
+- URL: https://[yourdomain]/faq/criminal-law/
+- Topics: arrest, police investigation, remand, bail, Criminal Procedure Code, Penal Code, court process, appeals, drug offences, fraud, white-collar crime, SOSMA
+- Led by: Rajpal Singh
+
+### Civil litigation
+- URL: https://[yourdomain]/faq/civil-litigation/
+- Topics: contract disputes, debt recovery, writ of summons, limitation periods, Magistrates Court, Sessions Court, High Court, appeals, shareholder disputes, injunctions, summary judgment
+- Led by: Vishnu Kumar
+
+### Property & conveyancing
+- URL: https://[yourdomain]/faq/property-conveyancing/
+- Topics: buying property Malaysia, stamp duty, LHDN, sale and purchase agreement, title transfer, National Land Code, land search, caveat, strata title, foreign buyers, conveyancing fees
+
+### Probate & estate administration
+- URL: https://[yourdomain]/faq/probate-estate/
+- Topics: wills, grant of probate, letters of administration, intestacy, Distribution Act 1958, Wills Act 1959, estate distribution, inheritance, High Court probate
+
+### Corporate & commercial
+- URL: https://[yourdomain]/faq/corporate-commercial/
+- Topics: company incorporation SSM, MyCoID, shareholders agreement, Companies Act 2016, director duties, due diligence, M&A, commercial contracts, NDA, SME compliance
+
+## Lawyers
+
+### Dato' Rajpal Singh A/L Mukhtiar Singh
+- English: https://[yourdomain]/people/rajpal-singh/
+- Bahasa Malaysia: https://[yourdomain]/ms/people/rajpal-singh/
+- Role: Partner / Rakan Kongsi Kanan
+- Practice: Criminal Litigation
+- Experience: 30+ years (criminal litigation)
+- Called to the Bar: 1993
+- Email: rajpal.associates@gmail.com
+- Photo: https://[yourdomain]/assets/people/rajpal-singh.jpg
+- FAQ: https://[yourdomain]/faq/criminal-law/
+
+### Vishnu Kumar A/L S. Athi Kumar
+- English: https://[yourdomain]/people/vishnu-kumar/
+- Bahasa Malaysia: https://[yourdomain]/ms/people/vishnu-kumar/
+- Role: Partner / Rakan Kongsi
+- Practice: Civil Litigation
+- Experience: 29+ years (civil litigation)
+- Called to the Bar: 1997
+- Email: avishnukumar@yahoo.com
+- Photo: https://[yourdomain]/assets/people/vishnu-kumar.jpg
+- FAQ: https://[yourdomain]/faq/civil-litigation/
+
+### Siti Anis Binti Che Ab Wahab
+- English: https://[yourdomain]/people/siti-anis/
+- Bahasa Malaysia: https://[yourdomain]/ms/people/siti-anis/
+- Role: Associate / Peguam Kesat
+- Practice: Criminal Law · Accident · Syariah
+- Experience: 10+ years (criminal litigation)
+- Called to the Bar: 2016
+- Email: enquiry@rfv-law.my
+- Photo: https://[yourdomain]/assets/people/siti-anis.jpg
+- FAQ: https://[yourdomain]/faq/criminal-law/
+
+### Tiew Poh Nee
+- English: https://[yourdomain]/people/tiew-poh-nee/
+- Bahasa Malaysia: https://[yourdomain]/ms/people/tiew-poh-nee/
+- Role: Associate / Peguam Kesat
+- Practice: Criminal Law · Commercial Crime
+- Experience: 10+ years (criminal litigation)
+- Called to the Bar: 2016
+- Email: enquiry@rfv-law.my
+- Photo: https://[yourdomain]/assets/people/tiew-poh-nee.jpg
+- FAQ: https://[yourdomain]/faq/criminal-law/
+
+## Related resources
+- Criminal law FAQ: https://[yourdomain]/faq/criminal-law/
+- Civil litigation FAQ: https://[yourdomain]/faq/civil-litigation/
+- Property & conveyancing FAQ: https://[yourdomain]/faq/property-conveyancing/
+- Probate & estate administration FAQ: https://[yourdomain]/faq/probate-estate/
+- Corporate & commercial FAQ: https://[yourdomain]/faq/corporate-commercial/
+- Media room: https://[yourdomain]/media/
+- Homepage: https://[yourdomain]/

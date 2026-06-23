@@ -14,6 +14,7 @@ import { initPressSeo } from './press-seo.js';
 import { prefetchClippingsData, prefetchClippingsGallery, loadClippingsGallery } from './clippings-data-loader.js';
 import { initCopy } from './copy.js';
 import { initPress } from './press.js';
+import { initProfilePhotos } from './profile-photo.js';
 
 (function bootstrap() {
 
@@ -38,6 +39,7 @@ import { initPress } from './press.js';
   initNav();
   initModals();
   initCopy();
+  initProfilePhotos();
 
   // Pass your Formspree endpoint here, e.g. 'https://formspree.io/f/xxxxxabc'
   // Leave empty string for a simulated-success development fallback.
@@ -97,22 +99,39 @@ import { initPress } from './press.js';
 
 })();
 
-/** Profile pages opened from How We Help → back link returns to #services. */
+/** Profile pages opened from How We Help or FAQ → back link returns to the referring section. */
 function initProfileBack(params) {
-  if (params.get('from') !== 'services') return;
+  const from = params.get('from');
+  if (!from) return;
 
   const isMs = /\/ms\//.test(window.location.pathname);
-  const href  = isMs ? '../../../ms/#perkhidmatan' : '../../#services';
-  const label = isMs ? '← Kembali ke Perkhidmatan Guaman Kami' : '← Back to How We Help';
+
+  const destinations = {
+    services: {
+      href: isMs ? '../../../ms/#perkhidmatan' : '../../#services',
+      label: isMs ? '← Kembali ke Perkhidmatan Guaman Kami' : '← Back to How We Help',
+    },
+    'criminal-law': {
+      href: isMs ? '../../../faq/criminal-law/' : '../../faq/criminal-law/',
+      label: isMs ? '← Kembali ke Soalan Lazim Undang-Undang Jenayah' : '← Back to Criminal Law FAQ',
+    },
+    'civil-litigation': {
+      href: isMs ? '../../../faq/civil-litigation/' : '../../faq/civil-litigation/',
+      label: isMs ? '← Kembali ke Soalan Lazim Litigasi Sivil' : '← Back to Civil Litigation FAQ',
+    },
+  };
+
+  const dest = destinations[from];
+  if (!dest) return;
 
   document.querySelectorAll('.profile-page__back').forEach(link => {
-    link.href = href;
-    link.textContent = label;
+    link.href = dest.href;
+    link.textContent = dest.label;
   });
 
   document.querySelectorAll('.footer__legal-link[href*="#people"], .footer__legal-link[href*="#pasukan"]').forEach(link => {
-    link.href = href;
-    link.textContent = label;
+    link.href = dest.href;
+    link.textContent = dest.label;
   });
 }
 

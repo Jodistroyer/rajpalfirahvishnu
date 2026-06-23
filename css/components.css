@@ -874,6 +874,31 @@ a.attorney-card {
   font-size: 1.625rem;
   font-weight: 600;
   letter-spacing: 0.06em;
+  overflow: hidden;
+  position: relative;
+}
+
+.profile-sidebar__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.profile-sidebar__initials {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.profile-sidebar__avatar--fallback .profile-sidebar__photo {
+  display: none;
+}
+
+.profile-sidebar__avatar--fallback .profile-sidebar__initials {
+  display: flex;
 }
 
 .profile-sidebar__name {

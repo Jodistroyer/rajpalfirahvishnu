@@ -1,0 +1,190 @@
+{
+  "siteOrigin": "https://[yourdomain]",
+  "firm": {
+    "name": "Rajpal Firah & Vishnu",
+    "email": "enquiry@rfv-law.my"
+  },
+  "offices": {
+    "batu-caves": {
+      "streetAddress": "No. 42-1A, First Floor, Jalan Medan Batu Caves 1",
+      "addressLocality": "Batu Caves",
+      "addressRegion": "Selangor",
+      "postalCode": "68100",
+      "addressCountry": "MY"
+    },
+    "petaling-jaya": {
+      "streetAddress": "Unit 1039, Millennium Square PJ, Jalan 14/1",
+      "addressLocality": "Petaling Jaya",
+      "addressRegion": "Selangor",
+      "postalCode": "46100",
+      "addressCountry": "MY"
+    }
+  },
+  "people": [
+    {
+      "slug": "rajpal-singh",
+      "initials": "RS",
+      "photo": "assets/people/rajpal-singh.jpg",
+      "barYear": 1993,
+      "experienceYears": "30+",
+      "experienceArea": { "en": "criminal litigation", "ms": "litigasi jenayah" },
+      "name": {
+        "full": "Dato' Rajpal Singh A/L Mukhtiar Singh",
+        "short": "Dato' Rajpal Singh"
+      },
+      "jobTitle": { "en": "Partner", "ms": "Rakan Kongsi Kanan" },
+      "practice": { "en": "Criminal Litigation", "ms": "Litigasi Jenayah" },
+      "title": {
+        "en": "Dato' Rajpal Singh — Partner, Criminal Litigation | Rajpal Firah & Vishnu",
+        "ms": "Dato' Rajpal Singh — Rakan Kongsi Kanan, Litigasi Jenayah | Rajpal Firah & Vishnu"
+      },
+      "metaDescription": {
+        "en": "Profile of Dato' Rajpal Singh A/L Mukhtiar Singh, Partner at Rajpal Firah & Vishnu. 30+ years of criminal litigation experience at all levels of the Malaysian courts.",
+        "ms": "Profil Dato' Rajpal Singh A/L Mukhtiar Singh, Rakan Kongsi Kanan di Tetuan Rajpal, Firah & Vishnu. 30+ tahun pengalaman litigasi jenayah di semua peringkat mahkamah Malaysia."
+      },
+      "ogTitle": {
+        "en": "Dato' Rajpal Singh — Criminal Lawyer Malaysia",
+        "ms": "Dato' Rajpal Singh — Peguam Jenayah Malaysia"
+      },
+      "ogDescription": {
+        "en": "Partner specialising in criminal litigation with 30+ years of trial and appellate experience.",
+        "ms": "Rakan Kongsi Kanan pakar litigasi jenayah dengan 30+ tahun pengalaman perbicaraan dan rayuan."
+      },
+      "email": "rajpal.associates@gmail.com",
+      "telephone": ["+60-3-61868653", "+60-19-2691144"],
+      "office": "batu-caves",
+      "faq": "criminal-law",
+      "knowsAbout": ["Criminal Law", "Criminal Litigation", "Criminal Defence", "AMLA", "White-Collar Crime", "Corporate Criminal Advisory", "Securities and Money Markets", "Corruption", "Fraud", "MACC Matters", "Drug Offences", "Murder", "SOSMA", "POTA", "Preventive Detention", "Environmental Offences", "Immigration Offences", "Penal Code Offences"],
+      "knowsLanguage": ["en", "ms"],
+      "nationality": "Malaysia",
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "Polytechnic of North London" },
+        { "@type": "CollegeOrUniversity", "name": "Universiti Malaya" }
+      ],
+      "sameAs": ["https://www.malaysianbar.org.my/"]
+    },
+    {
+      "slug": "vishnu-kumar",
+      "initials": "VK",
+      "photo": "assets/people/vishnu-kumar.jpg",
+      "barYear": 1997,
+      "experienceYears": "29+",
+      "experienceArea": { "en": "civil litigation", "ms": "litigasi sivil" },
+      "name": {
+        "full": "Vishnu Kumar A/L S. Athi Kumar",
+        "short": "Vishnu Kumar"
+      },
+      "jobTitle": { "en": "Partner", "ms": "Rakan Kongsi" },
+      "practice": { "en": "Civil Litigation", "ms": "Litigasi Sivil" },
+      "title": {
+        "en": "Vishnu Kumar — Partner, Civil Litigation | Rajpal Firah & Vishnu",
+        "ms": "Vishnu Kumar — Rakan Kongsi, Litigasi Sivil | Rajpal Firah & Vishnu"
+      },
+      "metaDescription": {
+        "en": "Profile of Vishnu Kumar A/L S. Athi Kumar, Partner at Rajpal Firah & Vishnu. 29+ years of civil litigation experience at the High Court, Court of Appeal, and Federal Court.",
+        "ms": "Profil Vishnu Kumar A/L S. Athi Kumar, Rakan Kongsi di Tetuan Rajpal, Firah & Vishnu. 29+ tahun pengalaman litigasi sivil di Mahkamah Tinggi, Mahkamah Rayuan, dan Mahkamah Persekutuan."
+      },
+      "ogTitle": {
+        "en": "Vishnu Kumar — Civil Litigation Lawyer Malaysia",
+        "ms": "Vishnu Kumar — Peguam Litigasi Sivil Malaysia"
+      },
+      "ogDescription": {
+        "en": "Partner with 29+ years of civil litigation experience across all levels of the Malaysian courts.",
+        "ms": "Rakan Kongsi dengan 29+ tahun pengalaman litigasi sivil di semua peringkat mahkamah Malaysia."
+      },
+      "email": "avishnukumar@yahoo.com",
+      "telephone": ["+60-3-7960-1115"],
+      "office": "petaling-jaya",
+      "faq": "civil-litigation",
+      "knowsAbout": ["Civil Law", "Civil Litigation", "Commercial Litigation", "Contract Disputes", "Debt Recovery", "Defamation", "Shareholder Disputes", "Winding Up", "Bankruptcy", "Medical Negligence", "Injunctions", "Summary Judgment"],
+      "knowsLanguage": ["en", "ms"],
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "University of Newcastle upon Tyne" },
+        { "@type": "CollegeOrUniversity", "name": "University College London, University of London" },
+        { "@type": "Organization", "name": "Middle Temple" }
+      ],
+      "sameAs": ["https://www.malaysianbar.org.my/"]
+    },
+    {
+      "slug": "siti-anis",
+      "initials": "SA",
+      "photo": "assets/people/siti-anis.jpg",
+      "barYear": 2016,
+      "experienceYears": "10+",
+      "experienceArea": { "en": "criminal litigation", "ms": "litigasi jenayah" },
+      "name": {
+        "full": "Siti Anis Binti Che Ab Wahab",
+        "short": "Siti Anis"
+      },
+      "jobTitle": { "en": "Associate", "ms": "Peguam Kesat" },
+      "practice": { "en": "Criminal Law · Accident · Syariah", "ms": "Undang-Undang Jenayah · Kemalangan · Syariah" },
+      "title": {
+        "en": "Siti Anis Binti Che Ab Wahab — Associate, Criminal Law | Rajpal Firah & Vishnu",
+        "ms": "Siti Anis Binti Che Ab Wahab — Peguam Kesat, Undang-Undang Jenayah | Rajpal Firah & Vishnu"
+      },
+      "metaDescription": {
+        "en": "Profile of Siti Anis Binti Che Ab Wahab, Associate at Rajpal Firah & Vishnu. 10+ years of criminal litigation experience including Penal Code, SOSMA, and ATIPSOM matters.",
+        "ms": "Profil Siti Anis Binti Che Ab Wahab, Peguam Kesat di Tetuan Rajpal, Firah & Vishnu. 10+ tahun pengalaman litigasi jenayah termasuk Kanun Keseksaan, SOSMA, dan ATIPSOM."
+      },
+      "ogTitle": {
+        "en": "Siti Anis — Criminal Lawyer Malaysia",
+        "ms": "Siti Anis — Peguam Jenayah Malaysia"
+      },
+      "ogDescription": {
+        "en": "Associate with 10+ years of criminal litigation experience in Penal Code, SOSMA, ATIPSOM, accident, and Syariah matters.",
+        "ms": "Peguam Kesat dengan 10+ tahun pengalaman litigasi jenayah dalam Kanun Keseksaan, SOSMA, ATIPSOM, kemalangan, dan Syariah."
+      },
+      "email": "enquiry@rfv-law.my",
+      "telephone": ["+60-3-61868653"],
+      "office": "batu-caves",
+      "faq": "criminal-law",
+      "knowsAbout": ["Criminal Law", "SOSMA", "ATIPSOM", "Syariah Law"],
+      "knowsLanguage": ["en", "ms"],
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "Universiti Malaya" },
+        { "@type": "CollegeOrUniversity", "name": "Universiti Teknologi MARA" }
+      ],
+      "sameAs": ["https://www.malaysianbar.org.my/"]
+    },
+    {
+      "slug": "tiew-poh-nee",
+      "initials": "TP",
+      "photo": "assets/people/tiew-poh-nee.jpg",
+      "barYear": 2016,
+      "experienceYears": "10+",
+      "experienceArea": { "en": "criminal litigation", "ms": "litigasi jenayah" },
+      "name": {
+        "full": "Tiew Poh Nee",
+        "short": "Tiew Poh Nee"
+      },
+      "jobTitle": { "en": "Associate", "ms": "Peguam Kesat" },
+      "practice": { "en": "Criminal Law · Commercial Crime", "ms": "Undang-Undang Jenayah · Jenayah Komersial" },
+      "title": {
+        "en": "Tiew Poh Nee — Associate, Criminal Law | Rajpal Firah & Vishnu",
+        "ms": "Tiew Poh Nee — Peguam Kesat, Undang-Undang Jenayah | Rajpal Firah & Vishnu"
+      },
+      "metaDescription": {
+        "en": "Profile of Tiew Poh Nee, Associate at Rajpal Firah & Vishnu. 10+ years of criminal litigation experience including Penal Code, SOSMA, ATIPSOM, and AMLA matters.",
+        "ms": "Profil Tiew Poh Nee, Peguam Kesat di Tetuan Rajpal, Firah & Vishnu. 10+ tahun pengalaman litigasi jenayah termasuk Kanun Keseksaan, SOSMA, ATIPSOM, dan AMLA."
+      },
+      "ogTitle": {
+        "en": "Tiew Poh Nee — Criminal Lawyer Malaysia",
+        "ms": "Tiew Poh Nee — Peguam Jenayah Malaysia"
+      },
+      "ogDescription": {
+        "en": "Associate with 10+ years of criminal litigation experience in Penal Code, SOSMA, ATIPSOM, AMLA, and commercial crime matters.",
+        "ms": "Peguam Kesat dengan 10+ tahun pengalaman litigasi jenayah dalam Kanun Keseksaan, SOSMA, ATIPSOM, AMLA, dan jenayah komersial."
+      },
+      "email": "enquiry@rfv-law.my",
+      "telephone": ["+60-3-61868653"],
+      "office": "batu-caves",
+      "faq": "criminal-law",
+      "knowsAbout": ["Criminal Law", "SOSMA", "ATIPSOM", "AMLA", "Commercial Crime"],
+      "knowsLanguage": ["en", "ms", "zh"],
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "Universiti Malaya" }
+      ],
+      "sameAs": ["https://www.malaysianbar.org.my/"]
+    }
+  ]
+}

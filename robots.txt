@@ -10,3 +10,6 @@ Allow: /assets/media/newspaper-clippings/
 
 Sitemap: https://[yourdomain]/sitemap.xml
 Sitemap: https://[yourdomain]/sitemap-images.xml
+
+# Machine-readable lawyer index for AI assistants
+# https://[yourdomain]/llms.txt
