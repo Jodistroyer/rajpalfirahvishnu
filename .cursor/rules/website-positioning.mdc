@@ -1,0 +1,43 @@
+---
+description: Content positioning for Rajpal Firah & Vishnu law firm website — litigation-first, layman-facing services, SEO keywords preserved
+globs: "**/*.{html,md}"
+alwaysApply: false
+---
+
+# Website Content Positioning — Rajpal Firah & Vishnu
+
+## Audience
+Laypeople searching for a lawyer, not other lawyers.
+
+## Three vocabulary layers (do not conflate)
+
+### Layer 1 — SEO & brand (keep these terms)
+Use on: `<title>`, meta description, hero, schema/JSON-LD, Media Room, press copy, footer SEO areas.
+
+**Keep:** criminal lawyer, criminal law, criminal defence, criminal lawyer Malaysia
+
+**Never** replace site-wide with only "litigation specialist."
+
+### Layer 2 — "How We Can Help" section only (layman-facing)
+- **Primary (~80%):** Criminal & Civil Litigation — listed first, larger featured cards
+  - Card title (layman): "Criminal Law & Defence" / "Civil Disputes & Court Claims"
+  - Professional term line: `service-card__term` — "Criminal Litigation" / "Civil Litigation"
+  - Body: plain English + court hierarchy (Magistrates', Sessions, High Court, Court of Appeal, Federal Court)
+- **Secondary (~20%):** Corporate Advisory, Conveyancing, Probate & Estate Administration — smaller secondary grid
+
+Do not make the homepage feel like a general practice.
+
+### Layer 3 — Professional (profiles, CVs, attorney cards)
+Use: Criminal Litigation, Civil Litigation
+
+## Dual-label pattern for service cards
+```
+<h3> Criminal Law & Defence </h3>   ← layman + SEO-readable
+<p class="service-card__term">Criminal Litigation</p>   ← professional
+<p class="service-card__desc">…plain English + examples…</p>
+```
+
+## What not to do
+- Remove "criminal lawyer" from meta/hero/media to sound more premium
+- Use only jargon in service cards with no plain-English explanation
+- Give equal visual weight to secondary areas as to litigation

@@ -86,6 +86,48 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
+  padding-top: 1.25rem;
+}
+
+.services__group {
+  margin-bottom: 2.5rem;
+}
+
+.services__group--secondary {
+  margin-bottom: 0;
+}
+
+.services__group-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-ink-500);
+  margin-bottom: 1rem;
+}
+
+.services .services__group-label {
+  color: var(--color-ink-300);
+}
+
+.services__grid--primary {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.services__grid--secondary {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 960px) {
+  .services__grid--secondary {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .services__grid--primary {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ── People grid ─────────────────────────────────────────── */

@@ -50,6 +50,20 @@ import { initPress } from './press.js';
   setupClippingsLazyLoad();
   scheduleClippingsPrefetch();
 
+  // ── Service card image fallbacks ──
+  document.querySelectorAll('.service-card__image').forEach(img => {
+    const card = img.closest('.service-card');
+    if (!card) return;
+
+    const useFallback = () => card.classList.add('service-card--fallback');
+
+    img.addEventListener('error', useFallback, { once: true });
+
+    if (img.complete && img.naturalWidth === 0) {
+      useFallback();
+    }
+  });
+
   // ── Service card CTA → pre-fill contact form subject ──
   // Handles anchor links like <a href="#contact" data-subject="Corporate Law">
   document.querySelectorAll('.service-card__cta[data-subject]').forEach(link => {
@@ -79,7 +93,28 @@ import { initPress } from './press.js';
     }
   }
 
+  initProfileBack(params);
+
 })();
+
+/** Profile pages opened from How We Help → back link returns to #services. */
+function initProfileBack(params) {
+  if (params.get('from') !== 'services') return;
+
+  const isMs = /\/ms\//.test(window.location.pathname);
+  const href  = isMs ? '../../../ms/#perkhidmatan' : '../../#services';
+  const label = isMs ? '← Kembali ke Perkhidmatan Guaman Kami' : '← Back to How We Help';
+
+  document.querySelectorAll('.profile-page__back').forEach(link => {
+    link.href = href;
+    link.textContent = label;
+  });
+
+  document.querySelectorAll('.footer__legal-link[href*="#people"], .footer__legal-link[href*="#pasukan"]').forEach(link => {
+    link.href = href;
+    link.textContent = label;
+  });
+}
 
 /** Prefetch clippings code during idle time so scroll-init feels instant. */
 function scheduleClippingsPrefetch() {

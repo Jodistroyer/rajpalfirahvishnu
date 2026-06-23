@@ -13,12 +13,18 @@ export function initNav() {
   if (!navbar) return;
 
   // ── Scroll state: add .scrolled class when past threshold ──────────────
+  // Homepage (and MS homepage) have a dark hero: transparent nav at top.
+  // Inner pages have no hero: keep solid nav so links stay visible on load.
 
+  const hasHero = !!document.querySelector('.hero');
   const SCROLL_THRESHOLD = 50;
   let ticking = false;
 
   function updateScrollState() {
-    navbar.classList.toggle('scrolled', window.scrollY > SCROLL_THRESHOLD);
+    navbar.classList.toggle(
+      'scrolled',
+      hasHero ? window.scrollY > SCROLL_THRESHOLD : true
+    );
     ticking = false;
   }
 
