@@ -67,11 +67,51 @@ import { CONSULTATION_FORM_URL } from './site-config.js';
     }
   });
 
+  // ── Make whole service cards clickable to their FAQ ──
+  initServiceCardLinks();
+
   // ── Handle ?from= query param on profile pages ──
   const params = new URLSearchParams(window.location.search);
   initProfileBack(params);
 
 })();
+
+/**
+ * Make each service card clickable to its FAQ page.
+ *
+ * The card's primary FAQ link already lives inside it, so we reuse that href
+ * for the whole-card click target. Native clicks on inner links/buttons keep
+ * working (e.g. the "Led by …" profile link on featured cards).
+ */
+function initServiceCardLinks() {
+  document.querySelectorAll('.service-card').forEach(card => {
+    const faqLink = Array.from(card.querySelectorAll('a[href]')).find(a =>
+      /\/faq\//.test(a.href)
+    );
+    if (!faqLink) return;
+
+    const href = faqLink.href;
+    card.classList.add('service-card--clickable');
+
+    card.addEventListener('click', event => {
+      // Let genuine clicks on links/buttons behave normally
+      if (event.target.closest('a, button')) return;
+      // Respect modifier keys / middle-click for new-tab behaviour
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) return;
+      window.location.href = href;
+    });
+
+    card.addEventListener('keydown', event => {
+      if ((event.key === 'Enter' || event.key === ' ') && event.target === card) {
+        event.preventDefault();
+        window.location.href = href;
+      }
+    });
+
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('role', 'link');
+  });
+}
 
 /** Show static hero image when the background video cannot load. */
 function initHeroVideoFallback() {

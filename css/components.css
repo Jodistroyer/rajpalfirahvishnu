@@ -573,6 +573,15 @@
   transform: translateY(-2px);
 }
 
+.service-card--clickable {
+  cursor: pointer;
+}
+
+.service-card--clickable:focus-visible {
+  outline: 2px solid var(--color-ink-700);
+  outline-offset: 2px;
+}
+
 .service-card__title {
   font-family: var(--font-heading);
   font-size: 1.125rem;
