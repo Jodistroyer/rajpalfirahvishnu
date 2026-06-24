@@ -55,12 +55,13 @@
     "logo": "https://[yourdomain]/assets/logo.png",
     "image": "https://[yourdomain]/assets/og-image.jpg",
     "telephone": ["+60-3-7960-1115", "+60-3-61868653"],
-    "email": "enquiry@rfv-law.my",
+    "email": ["avishnukumar@yahoo.com", "rajpal.associates@gmail.com"],
     "location": [
       {
         "@type": "Place",
         "name": "Petaling Jaya Office",
         "telephone": "+60-3-7960-1115",
+        "email": "avishnukumar@yahoo.com",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Unit 1039, Millennium Square PJ, Jalan 14/1",
@@ -74,6 +75,7 @@
         "@type": "Place",
         "name": "Batu Caves Office",
         "telephone": "+60-3-61868653",
+        "email": "rajpal.associates@gmail.com",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "No. 42-1A, First Floor, Jalan Medan Batu Caves 1",
@@ -134,7 +136,7 @@
             <li><a href="#services" class="navbar__link">How We Help</a></li>
             <li><a href="#people"   class="navbar__link">Our People</a></li>
             <li><a href="#media"    class="navbar__link">Media Room</a></li>
-            <li><a href="#contact"  class="navbar__link">Contact</a></li>
+            <li><a href="#contact"  class="navbar__link">Contact Us</a></li>
           </ul>
           <!-- Mobile-only CTA inside nav overlay -->
           <a href="#contact" class="btn btn--primary navbar__cta-mobile" aria-hidden="true" tabindex="-1">Book a Consultation</a>
@@ -167,9 +169,17 @@
         class="hero__video"
         autoplay muted loop playsinline
         aria-hidden="true"
-        poster="assets/video-poster.jpg">
+        poster="assets/fallback.jpg">
         <source src="assets/video.mp4" type="video/mp4">
       </video>
+      <img
+        class="hero__fallback"
+        src="assets/fallback.jpg"
+        alt=""
+        aria-hidden="true"
+        width="1920"
+        height="1080"
+        decoding="async">
 
       <div class="hero__overlay" aria-hidden="true"></div>
 
@@ -671,125 +681,47 @@ Both parties benefit from early legal advice. Contact Firah Abdul Rahman to disc
 
     <!-- ── CONTACT US ─────────────────────────────────────── -->
     <section id="contact" class="contact section-pad" aria-label="Contact Us">
-      <div class="container">
-        <div class="contact__grid">
+      <div class="container contact__gateway">
 
-          <!-- Left: Form -->
-          <div class="contact__left">
-            <h2 class="section-title" style="text-align:left;">Contact Us</h2>
-            <p class="section-subtitle" style="text-align:left; margin-bottom: 2rem;">
-              Whether you have a specific legal matter or simply want to understand your options,
-              our team is here. Book a consultation — no obligation.
+        <div class="contact__cta-card">
+          <header class="contact__header">
+            <h2 class="section-title">Book a Consultation</h2>
+            <p class="section-subtitle">
+              Tell us what happened. Our team will respond promptly.<br>
+              If you prefer to speak with us directly, call or email either office below.
             </p>
+          </header>
+          <a
+            href="https://forms.gle/REPLACE_WITH_YOUR_FORM"
+            class="btn btn--primary btn--large contact__form-btn"
+            data-consultation-form
+            target="_blank"
+            rel="noopener noreferrer">
+            Open Form <span aria-hidden="true">↗</span>
+          </a>
+        </div>
 
-            <form class="contact__form" id="contact-form" novalidate>
+        <div class="contact__offices" aria-label="Office contact details">
+          <h3 class="contact__details-heading">Our Offices</h3>
+          <p class="contact__hours">
+            <span class="contact__detail-label">Office Hours</span>
+            Monday – Friday, 9:00 AM – 6:00 PM
+          </p>
+          <div class="contact__offices-grid">
 
-              <!-- Intent radio -->
-              <fieldset class="form__radio-group">
-                <legend class="form__group-label">How can we help?</legend>
-                <label class="form__radio-label">
-                  <input type="radio" name="intent" value="message" class="form__radio" checked>
-                  Send a Message
-                </label>
-                <label class="form__radio-label">
-                  <input type="radio" name="intent" value="callback" class="form__radio">
-                  Request a Callback
-                </label>
-              </fieldset>
-
-              <div class="form__row">
-                <div class="form__field">
-                  <label for="field-name" class="form__label">
-                    Full Name <span class="form__required" aria-hidden="true">*</span>
-                  </label>
-                  <input
-                    type="text" id="field-name" name="name"
-                    class="form__input" autocomplete="name"
-                    required aria-required="true" aria-describedby="error-name">
-                  <span id="error-name" class="form__error" role="alert"></span>
-                </div>
-                <div class="form__field">
-                  <label for="field-email" class="form__label">
-                    Email Address <span class="form__required" aria-hidden="true">*</span>
-                  </label>
-                  <input
-                    type="email" id="field-email" name="email"
-                    class="form__input" autocomplete="email"
-                    required aria-required="true" aria-describedby="error-email">
-                  <span id="error-email" class="form__error" role="alert"></span>
-                </div>
+            <address class="contact__office-card">
+              <div class="contact__office-peek">
+                <img
+                  class="contact__office-image"
+                  src="assets/images/petalingjaya.jpg"
+                  alt="Rajpal Firah &amp; Vishnu office, Petaling Jaya, Selangor"
+                  width="640"
+                  height="360"
+                  loading="lazy"
+                  decoding="async">
               </div>
-
-              <div class="form__field">
-                <label for="field-phone" class="form__label">
-                  Phone Number
-                  <span class="form__required" aria-hidden="true" id="phone-req" hidden>*</span>
-                  <span class="form__optional" id="phone-optional"> (required for callback)</span>
-                </label>
-                <input
-                  type="tel" id="field-phone" name="phone"
-                  class="form__input" autocomplete="tel"
-                  aria-describedby="error-phone">
-                <span id="error-phone" class="form__error" role="alert"></span>
-              </div>
-
-              <div class="form__field">
-                <label for="field-subject" class="form__label">Area of Law</label>
-                <select id="field-subject" name="subject" class="form__select">
-                  <option value="">Select a practice area…</option>
-                  <option value="Criminal Law">Criminal Law &amp; Defence</option>
-                  <option value="Civil Litigation">Civil Disputes &amp; Court Claims</option>
-                  <option value="Corporate Law">Corporate &amp; Commercial Advisory</option>
-                  <option value="Property Law">Property &amp; Conveyancing</option>
-                  <option value="Estate Planning">Probate &amp; Estate Administration</option>
-                  <option value="Family Law">Family Law &amp; Matrimonial Matters</option>
-                  <option value="Employment Law">Employment &amp; Labour Law</option>
-                  <option value="Other">Other / Not Sure</option>
-                </select>
-              </div>
-
-              <div class="form__field">
-                <label for="field-office" class="form__label">Preferred Office</label>
-                <select id="field-office" name="office" class="form__select">
-                  <option value="">No preference</option>
-                  <option value="Petaling Jaya">Petaling Jaya</option>
-                  <option value="Batu Caves">Batu Caves</option>
-                </select>
-              </div>
-
-              <div class="form__field" id="message-field">
-                <label for="field-message" class="form__label">
-                  Your Message <span class="form__required" aria-hidden="true">*</span>
-                </label>
-                <textarea
-                  id="field-message" name="message"
-                  class="form__textarea" rows="4"
-                  required aria-required="true" aria-describedby="error-message"
-                  placeholder="Briefly describe your legal matter…"></textarea>
-                <span id="error-message" class="form__error" role="alert"></span>
-              </div>
-
-              <!-- Honeypot: do not remove -->
-              <input
-                type="text" name="_gotcha"
-                class="visually-hidden" tabindex="-1"
-                aria-hidden="true" autocomplete="off">
-
-              <button type="submit" class="btn btn--primary btn--submit" id="form-submit">
-                <span class="btn__label">Send Message</span>
-              </button>
-
-            </form>
-
-            <div id="form-status" class="form__status" role="status" aria-live="polite" hidden></div>
-          </div>
-
-          <!-- Right: Details -->
-          <aside class="contact__right" aria-label="Office contact details">
-
-            <div class="contact__details">
-              <h3 class="contact__details-heading">Our Offices</h3>
-              <address class="contact__address">
+              <div class="contact__office-body">
+              <div class="contact__office-details">
 
                 <div class="contact__detail-item">
                   <span class="contact__detail-icon" aria-hidden="true">
@@ -802,9 +734,53 @@ Both parties benefit from early legal advice. Contact Firah Abdul Rahman to disc
                        class="contact__detail-link contact__directions"
                        target="_blank"
                        rel="noopener noreferrer">Get directions <span aria-hidden="true">↗</span></a>
+                  </div>
+                </div>
+
+                <div class="contact__detail-item">
+                  <span class="contact__detail-icon" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 18 18" fill="none"><path d="M3.6 2H6.9L8.4 5.75L6.525 6.9C7.35 8.575 8.925 10.15 10.6 10.975L11.75 9.1L15.5 10.6V13.9C15.5 14.825 14.75 15.5 13.825 15.5C7.475 15.275 2.225 10.025 2 3.675C2 2.75 2.675 2 3.6 2Z" fill="currentColor"/></svg>
+                  </span>
+                  <div>
                     <a href="tel:+60379601115" class="contact__detail-link" data-copyable data-copy-type="phone">03-7960 1115</a>
                   </div>
                 </div>
+
+                <div class="contact__detail-item">
+                  <span class="contact__detail-icon" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 18 18" fill="none"><rect x="2" y="4" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M2 6l7 5 7-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  </span>
+                  <div>
+                    <a href="mailto:avishnukumar@yahoo.com" class="contact__detail-link" data-copyable data-copy-type="email">avishnukumar@yahoo.com</a>
+                  </div>
+                </div>
+
+              </div>
+              <div class="contact__map">
+                <iframe
+                  title="Petaling Jaya office location"
+                  src="https://www.google.com/maps?q=Unit+1039,+Millennium+Square+PJ,+Jalan+14%2F1,+46100+Petaling+Jaya,+Selangor&amp;output=embed"
+                  width="100%" height="180"
+                  style="border:0;" allowfullscreen="" loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+              </div>
+              </div>
+            </address>
+
+            <address class="contact__office-card">
+              <div class="contact__office-peek">
+                <img
+                  class="contact__office-image"
+                  src="assets/images/batucaves.jpg"
+                  alt="Rajpal Firah &amp; Vishnu office, Batu Caves, Selangor"
+                  width="640"
+                  height="360"
+                  loading="lazy"
+                  decoding="async">
+              </div>
+              <div class="contact__office-body">
+              <div class="contact__office-details">
 
                 <div class="contact__detail-item">
                   <span class="contact__detail-icon" aria-hidden="true">
@@ -817,46 +793,29 @@ Both parties benefit from early legal advice. Contact Firah Abdul Rahman to disc
                        class="contact__detail-link contact__directions"
                        target="_blank"
                        rel="noopener noreferrer">Get directions <span aria-hidden="true">↗</span></a>
+                  </div>
+                </div>
+
+                <div class="contact__detail-item">
+                  <span class="contact__detail-icon" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 18 18" fill="none"><path d="M3.6 2H6.9L8.4 5.75L6.525 6.9C7.35 8.575 8.925 10.15 10.6 10.975L11.75 9.1L15.5 10.6V13.9C15.5 14.825 14.75 15.5 13.825 15.5C7.475 15.275 2.225 10.025 2 3.675C2 2.75 2.675 2 3.6 2Z" fill="currentColor"/></svg>
+                  </span>
+                  <div>
                     <a href="tel:+60361868653" class="contact__detail-link" data-copyable data-copy-type="phone">03-6186 8653</a>
                   </div>
                 </div>
 
                 <div class="contact__detail-item">
                   <span class="contact__detail-icon" aria-hidden="true">
-                    <svg width="16" height="16" viewBox="0 0 18 18" fill="none"><rect x="2" y="4" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M2 6L9 11L16 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    <svg width="16" height="16" viewBox="0 0 18 18" fill="none"><rect x="2" y="4" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M2 6l7 5 7-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
                   </span>
                   <div>
-                    <p class="contact__detail-label">Email</p>
-                    <a href="mailto:enquiry@rfv-law.my" class="contact__detail-link" data-copyable data-copy-type="email">enquiry@rfv-law.my</a>
+                    <a href="mailto:rajpal.associates@gmail.com" class="contact__detail-link" data-copyable data-copy-type="email">rajpal.associates@gmail.com</a>
                   </div>
                 </div>
 
-                <div class="contact__detail-item">
-                  <span class="contact__detail-icon" aria-hidden="true">
-                    <svg width="16" height="16" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M9 5V9.5L12 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-                  </span>
-                  <div>
-                    <p class="contact__detail-label">Office Hours</p>
-                    <p>Monday – Friday<br>9:00 AM – 6:00 PM</p>
-                  </div>
-                </div>
-
-              </address>
-            </div>
-
-            <div class="contact__maps">
-              <div class="contact__map">
-                <p class="contact__map-label">Petaling Jaya</p>
-                <iframe
-                  title="Petaling Jaya office location"
-                  src="https://www.google.com/maps?q=Unit+1039,+Millennium+Square+PJ,+Jalan+14%2F1,+46100+Petaling+Jaya,+Selangor&amp;output=embed"
-                  width="100%" height="180"
-                  style="border:0;" allowfullscreen="" loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
               </div>
               <div class="contact__map">
-                <p class="contact__map-label">Batu Caves</p>
                 <iframe
                   title="Batu Caves office location"
                   src="https://www.google.com/maps?q=42-1A,+Jalan+Medan+Batu+Caves+1,+68100+Batu+Caves,+Selangor&amp;output=embed"
@@ -865,11 +824,12 @@ Both parties benefit from early legal advice. Contact Firah Abdul Rahman to disc
                   referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
               </div>
-            </div>
+              </div>
+            </address>
 
-          </aside>
-
+          </div>
         </div>
+
       </div>
     </section>
 

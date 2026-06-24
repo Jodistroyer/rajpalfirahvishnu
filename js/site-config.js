@@ -2,6 +2,9 @@
  * site-config.js — Shared site URL helpers for SEO and structured data.
  */
 
+/** Update when your Google Form is ready (forms.gle/… or docs.google.com/forms/…/viewform). */
+export const CONSULTATION_FORM_URL = 'https://forms.gle/REPLACE_WITH_YOUR_FORM';
+
 /**
  * Production origin from canonical link, or current origin in local dev.
  * @returns {string}

@@ -7,7 +7,6 @@
 
 import { initNav }       from './nav.js';
 import { initModals }    from './modal.js';
-import { initForm }      from './form.js';
 import { initLazyMedia } from './lazymedia.js';
 import { initClippingsSeo } from './clippings-seo.js';
 import { initPressSeo } from './press-seo.js';
@@ -15,6 +14,7 @@ import { prefetchClippingsData, prefetchClippingsGallery, loadClippingsGallery }
 import { initCopy } from './copy.js';
 import { initPress } from './press.js';
 import { initProfilePhotos } from './profile-photo.js';
+import { CONSULTATION_FORM_URL } from './site-config.js';
 
 (function bootstrap() {
 
@@ -35,15 +35,16 @@ import { initProfilePhotos } from './profile-photo.js';
     }
   }
 
+  initHeroVideoFallback();
+
+  // Wire consultation CTAs before nav attaches smooth-scroll to # anchors
+  initConsultationLinks();
+
   // ── Initialise modules ──
   initNav();
   initModals();
   initCopy();
   initProfilePhotos();
-
-  // Pass your Formspree endpoint here, e.g. 'https://formspree.io/f/xxxxxabc'
-  // Leave empty string for a simulated-success development fallback.
-  initForm('#contact-form', '');
 
   initLazyMedia();
   initPress(document.getElementById('press-grid'));
@@ -66,38 +67,65 @@ import { initProfilePhotos } from './profile-photo.js';
     }
   });
 
-  // ── Service card CTA → pre-fill contact form subject ──
-  // Handles anchor links like <a href="#contact" data-subject="Corporate Law">
-  document.querySelectorAll('.service-card__cta[data-subject]').forEach(link => {
-    link.addEventListener('click', e => {
-      const subject = link.dataset.subject;
-      if (!subject) return;
-      // Small timeout to let smooth-scroll settle first
-      setTimeout(() => {
-        const select = document.getElementById('field-subject');
-        if (!select) return;
-        for (const opt of select.options) {
-          if (opt.value === subject) { opt.selected = true; break; }
-        }
-      }, 600);
-    });
-  });
-
-  // ── Handle ?subject= query param (deep-linked from external sources) ──
-  const params  = new URLSearchParams(window.location.search);
-  const subject = params.get('subject');
-  if (subject) {
-    const select = document.getElementById('field-subject');
-    if (select) {
-      for (const opt of select.options) {
-        if (opt.value === subject) { opt.selected = true; break; }
-      }
-    }
-  }
-
+  // ── Handle ?from= query param on profile pages ──
+  const params = new URLSearchParams(window.location.search);
   initProfileBack(params);
 
 })();
+
+/** Show static hero image when the background video cannot load. */
+function initHeroVideoFallback() {
+  const hero = document.querySelector('.hero');
+  const video = /** @type {HTMLVideoElement|null} */ (document.querySelector('.hero__video'));
+  if (!hero || !video) return;
+
+  const showFallback = () => {
+    hero.classList.add('hero--video-fallback');
+    video.pause();
+  };
+
+  video.addEventListener('error', showFallback, { once: true });
+  video.querySelectorAll('source').forEach(source => {
+    source.addEventListener('error', showFallback, { once: true });
+  });
+
+  if (video.error) {
+    showFallback();
+  }
+}
+
+/** Wire consultation form links from site-config (single place to update the Google Form URL). */
+function initConsultationLinks() {
+  const consultationLabels = new Set(['book a consultation', 'tempah perundingan']);
+
+  const wire = (link) => {
+    link.setAttribute('href', CONSULTATION_FORM_URL);
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+  };
+
+  document.querySelectorAll('a[href]').forEach(link => {
+    if (link.hasAttribute('data-consultation-form')) {
+      wire(link);
+      return;
+    }
+
+    if (!link.classList.contains('btn')) return;
+
+    const href = link.getAttribute('href') || '';
+    if (!/#(?:contact|hubungi)$/.test(href.split('?')[0])) return;
+
+    const label = (link.getAttribute('aria-label') || link.textContent)
+      .replace(/↗/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .toLowerCase();
+
+    if (consultationLabels.has(label)) {
+      wire(link);
+    }
+  });
+}
 
 /** Profile pages opened from How We Help or FAQ → back link returns to the referring section. */
 function initProfileBack(params) {

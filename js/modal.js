@@ -11,6 +11,7 @@
  */
 
 import { enhanceCopyable } from './copy.js';
+import { CONSULTATION_FORM_URL } from './site-config.js';
 
 const overlay    = /** @type {HTMLElement|null} */ (document.getElementById('modal-overlay'));
 const dialog     = /** @type {HTMLElement|null} */ (document.getElementById('modal-dialog'));
@@ -55,17 +56,6 @@ export function openModal(htmlContent) {
 
   // Wire close button (injected into the modal body)
   dialog.querySelector('.modal__close')?.addEventListener('click', closeModal);
-
-  // Wire in-modal CTA that scrolls to #contact
-  dialog.querySelectorAll('[data-action="scroll-to-contact"]').forEach(btn => {
-    btn.addEventListener('click', e => {
-      e.preventDefault();
-      closeModal();
-      setTimeout(() => {
-        document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-      }, 320);
-    });
-  });
 
   overlay.setAttribute('aria-hidden', 'false');
   overlay.classList.add('is-open');
@@ -150,7 +140,7 @@ function openAttorneyModal(card) {
       </div>
       <p class="attorney-modal__bio">${escHtml(bio)}</p>
       <div class="attorney-modal__cta-row">
-        <a href="#contact" class="btn btn--primary" data-action="scroll-to-contact">
+        <a href="${CONSULTATION_FORM_URL}" class="btn btn--primary" target="_blank" rel="noopener noreferrer">
           Contact ${escHtml(firstName)}
         </a>
         <div class="attorney-modal__contact-links">
@@ -183,7 +173,7 @@ function openArticleModal(card) {
       <p class="article-modal__author">By ${escHtml(author)}</p>
       <div class="article-modal__content">${escHtml(content)}</div>
       <div class="article-modal__cta-row">
-        <a href="#contact" class="btn btn--primary" data-action="scroll-to-contact">
+        <a href="${CONSULTATION_FORM_URL}" class="btn btn--primary" target="_blank" rel="noopener noreferrer">
           Book a Consultation
         </a>
       </div>

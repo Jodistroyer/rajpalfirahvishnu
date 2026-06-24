@@ -28,6 +28,12 @@ body.scroll-locked {
 
 /* ── Lazy load — entrance animation states ───────────────── */
 
+/* Show content when JS has not bootstrapped yet (failed module load, etc.) */
+html:not(.js) .lazy {
+  opacity: 1;
+  transform: none;
+}
+
 .lazy {
   opacity: 0;
   transform: translateY(10px);
