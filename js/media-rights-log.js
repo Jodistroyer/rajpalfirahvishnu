@@ -5,7 +5,7 @@
 
 export const MEDIA_RIGHTS_META = {
   lastUpdated: '2026-06-23',
-  maintainer: 'Rajpal Firah & Vishnu',
+  maintainer: 'Rajpal, Firah & Vishnu',
   pressDisclaimer:
     'Press thumbnails are shown for reference only. Images and articles remain the property of their respective publishers and platforms. Each card links to the original source where available.',
   clippingsDisclaimer:
@@ -201,7 +201,7 @@ export const PRESS_IMAGE_RIGHTS = [
     "sourceUrl": "https://malaysia.news.yahoo.com/ex-perak-exco-paul-yong-025421673.html",
     "imageAsset": "assets/media/press/fallback-yahoo.svg",
     "imageSource": "firm-created-fallback",
-    "rightsHolder": "Rajpal Firah & Vishnu",
+    "rightsHolder": "Rajpal, Firah & Vishnu",
     "use": "Press index thumbnail; link-out to original source",
     "added": "2026-06-23"
   },
@@ -212,7 +212,7 @@ export const PRESS_IMAGE_RIGHTS = [
     "sourceUrl": "https://malaysia.news.yahoo.com/rape-trial-postponed-paul-yong-031801403.html",
     "imageAsset": "assets/media/press/fallback-yahoo.svg",
     "imageSource": "firm-created-fallback",
-    "rightsHolder": "Rajpal Firah & Vishnu",
+    "rightsHolder": "Rajpal, Firah & Vishnu",
     "use": "Press index thumbnail; link-out to original source",
     "added": "2026-06-23"
   },
@@ -267,7 +267,7 @@ export const PRESS_IMAGE_RIGHTS = [
     "sourceUrl": "https://www.malaysianbar.org.my/bar_news/berita_badan_peguam/bar_council_to_set_up_special_committee_to_protect_lawyers.html",
     "imageAsset": "assets/media/press/fallback-malaysian-bar.svg",
     "imageSource": "firm-created-fallback",
-    "rightsHolder": "Rajpal Firah & Vishnu",
+    "rightsHolder": "Rajpal, Firah & Vishnu",
     "use": "Press index thumbnail; link-out to original source",
     "added": "2026-06-23"
   },
@@ -278,7 +278,7 @@ export const PRESS_IMAGE_RIGHTS = [
     "sourceUrl": "https://www.malaysianbar.org.my/article/news/legal-and-general-news/legal-news/case-for-sentencing-guidelines",
     "imageAsset": "assets/media/press/fallback-malaysian-bar.svg",
     "imageSource": "firm-created-fallback",
-    "rightsHolder": "Rajpal Firah & Vishnu",
+    "rightsHolder": "Rajpal, Firah & Vishnu",
     "use": "Press index thumbnail; link-out to original source",
     "added": "2026-06-23"
   },
@@ -289,7 +289,7 @@ export const PRESS_IMAGE_RIGHTS = [
     "sourceUrl": "https://www.selangorbar.org/content_dtl.php?id=93803",
     "imageAsset": "assets/media/press/fallback-selangor-bar.svg",
     "imageSource": "firm-created-fallback",
-    "rightsHolder": "Rajpal Firah & Vishnu",
+    "rightsHolder": "Rajpal, Firah & Vishnu",
     "use": "Press index thumbnail; link-out to original source",
     "added": "2026-06-23"
   },
@@ -300,7 +300,7 @@ export const PRESS_IMAGE_RIGHTS = [
     "sourceUrl": "https://selangorbar.org/photographs_photo.php?album=3&photo=1839",
     "imageAsset": "assets/media/press/fallback-selangor-bar.svg",
     "imageSource": "firm-created-fallback",
-    "rightsHolder": "Rajpal Firah & Vishnu",
+    "rightsHolder": "Rajpal, Firah & Vishnu",
     "use": "Press index thumbnail; link-out to original source",
     "added": "2026-06-23"
   },
@@ -311,7 +311,7 @@ export const PRESS_IMAGE_RIGHTS = [
     "sourceUrl": "https://gizwizstudio.sgp1.cdn.digitaloceanspaces.com/sgorbar-wp20181123/home2/sgorbarg/public_html/_beta/www/2012/02/20-bar-representative.pdf",
     "imageAsset": "assets/media/press/fallback-document.svg",
     "imageSource": "firm-created-fallback",
-    "rightsHolder": "Rajpal Firah & Vishnu",
+    "rightsHolder": "Rajpal, Firah & Vishnu",
     "use": "Press index thumbnail; link-out to original source",
     "added": "2026-06-23"
   },
@@ -355,7 +355,7 @@ export const PRESS_IMAGE_RIGHTS = [
     "sourceUrl": "https://www.facebook.com/manoharan.malayalam.1/posts/1062026at-the-high-court-criminal-division-at-jalan-dutakuala-lumpur-todaymy-son/36788038037461243/",
     "imageAsset": "assets/media/press/fallback-facebook.svg",
     "imageSource": "firm-created-fallback",
-    "rightsHolder": "Rajpal Firah & Vishnu",
+    "rightsHolder": "Rajpal, Firah & Vishnu",
     "use": "Press index thumbnail; link-out to original source",
     "added": "2026-06-23"
   },
@@ -388,7 +388,7 @@ export const PRESS_IMAGE_RIGHTS = [
     "sourceUrl": "https://www.instagram.com/reels/DLW1lq5pSmq/",
     "imageAsset": "assets/media/press/fallback-instagram.svg",
     "imageSource": "firm-created-fallback",
-    "rightsHolder": "Rajpal Firah & Vishnu",
+    "rightsHolder": "Rajpal, Firah & Vishnu",
     "use": "Press index thumbnail; link-out to original source",
     "added": "2026-06-23"
   },

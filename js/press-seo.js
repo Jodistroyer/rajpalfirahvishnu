@@ -8,7 +8,7 @@ import { absoluteUrl, getSiteOrigin, pressPageUrl } from './site-config.js';
 
 /** @typedef {import('./press-data.js').PressItem} PressItem */
 
-const FIRM_NAME = 'Rajpal Firah & Vishnu';
+const FIRM_NAME = 'Rajpal, Firah & Vishnu';
 const LAWYER_NAME = 'Datuk Rajpal Singh';
 const SEO_KEYWORDS = [
   'criminal lawyer Malaysia',

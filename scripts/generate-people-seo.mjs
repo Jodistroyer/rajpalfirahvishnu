@@ -148,7 +148,7 @@ function buildHead(person, lang) {
         '@type': 'WebPage',
         '@id': webpageId,
         url,
-        name: person.title[lang].replace(' | Rajpal Firah & Vishnu', '').replace(' | Rajpal Firah &amp; Vishnu', ''),
+        name: person.title[lang].replace(' | Rajpal, Firah & Vishnu', '').replace(' | Rajpal, Firah &amp; Vishnu', ''),
         description: person.metaDescription[lang],
         inLanguage,
         isPartOf: { '@type': 'WebSite', name: firm.name, url: `${siteOrigin}/` },
@@ -180,7 +180,7 @@ function buildHead(person, lang) {
   <link rel="alternate" hreflang="x-default" href="${escHtml(enUrl)}">
   <meta property="og:type" content="profile">
   <meta property="og:locale" content="${locale}">
-  <meta property="og:site_name" content="Rajpal Firah &amp; Vishnu">
+  <meta property="og:site_name" content="Rajpal, Firah &amp; Vishnu">
   <meta property="og:title" content="${escHtml(person.ogTitle[lang])}">
   <meta property="og:description" content="${escHtml(person.ogDescription[lang])}">
   <meta property="og:url" content="${escHtml(url)}">
@@ -298,7 +298,7 @@ function patchProfileHtml(relPath, person, lang) {
 
 function buildLlmsTxt() {
   const lines = [
-    '# Rajpal Firah & Vishnu | Lawyer Profiles & Practice FAQs',
+    '# Rajpal, Firah & Vishnu | Lawyer Profiles & Practice FAQs',
     `# ${firm.name}`,
     `# Contact: ${firm.email}`,
     '',

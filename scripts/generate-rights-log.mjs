@@ -33,7 +33,7 @@ function parsePressItems(src) {
       rightsHolder = 'YouTube / original uploader';
     } else if (thumb.includes('fallback-')) {
       imageSource = 'firm-created-fallback';
-      rightsHolder = 'Rajpal Firah & Vishnu';
+      rightsHolder = 'Rajpal, Firah & Vishnu';
     } else if (/tiktok-/.test(thumb) && !thumb.includes('fallback')) {
       imageSource = 'tiktok-oembed-preview';
       rightsHolder = 'TikTok / original uploader';
@@ -118,7 +118,7 @@ const out = `/**
 
 export const MEDIA_RIGHTS_META = {
   lastUpdated: '2026-06-23',
-  maintainer: 'Rajpal Firah & Vishnu',
+  maintainer: 'Rajpal, Firah & Vishnu',
   pressDisclaimer:
     'Press thumbnails are shown for reference only. Images and articles remain the property of their respective publishers and platforms. Each card links to the original source where available.',
   clippingsDisclaimer:

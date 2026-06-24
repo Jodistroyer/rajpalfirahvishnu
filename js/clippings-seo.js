@@ -7,7 +7,7 @@ import { absoluteUrl, clippingsAssetBase, clippingsPageUrl, getSiteOrigin } from
 
 /** @typedef {import('./clippings-data.js').Clipping} Clipping */
 
-const FIRM_NAME = 'Rajpal Firah & Vishnu';
+const FIRM_NAME = 'Rajpal, Firah & Vishnu';
 const LAWYER_NAME = 'Datuk Rajpal Singh';
 const SEO_KEYWORDS = [
   'criminal lawyer Malaysia',

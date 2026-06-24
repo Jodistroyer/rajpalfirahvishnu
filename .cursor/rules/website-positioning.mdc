@@ -1,10 +1,10 @@
 ---
-description: Content positioning for Rajpal Firah & Vishnu law firm website — litigation-first, layman-facing services, SEO keywords preserved
+description: Content positioning for Rajpal, Firah & Vishnu law firm website — litigation-first, layman-facing services, SEO keywords preserved
 globs: "**/*.{html,md}"
 alwaysApply: false
 ---
 
-# Website Content Positioning — Rajpal Firah & Vishnu
+# Website Content Positioning — Rajpal, Firah & Vishnu
 
 ## Audience
 Laypeople searching for a lawyer, not other lawyers.

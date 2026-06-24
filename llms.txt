@@ -1,5 +1,5 @@
-# Rajpal Firah & Vishnu | Lawyer Profiles & Practice FAQs
-# Rajpal Firah & Vishnu
+# Rajpal, Firah & Vishnu | Lawyer Profiles & Practice FAQs
+# Rajpal, Firah & Vishnu
 # Contact: enquiry@rfv-law.my
 
 ## About this file
@@ -7,7 +7,7 @@ Machine-readable index of advocate profiles and practice-area FAQs for search en
 Replace [yourdomain] in data/people.json and re-run: node scripts/generate-people-seo.mjs
 
 ## Firm
-- Name: Rajpal Firah & Vishnu
+- Name: Rajpal, Firah & Vishnu
 - Website: https://[yourdomain]/
 - Email: enquiry@rfv-law.my
 - Offices: Petaling Jaya and Batu Caves, Selangor, Malaysia
