@@ -8,6 +8,12 @@ import { getPressSeoMeta } from './press-seo.js';
 
 /** @typedef {import('./press-data.js').PressItem} PressItem */
 
+/** @param {number} total */
+function updatePressViewAllCta(total) {
+  const cta = document.getElementById('press-view-all-cta');
+  if (cta) cta.textContent = `View All (${total}) →`;
+}
+
 /** @returns {string} */
 function getAssetBase() {
   const path = window.location.pathname.replace(/\\/g, '/');
@@ -133,6 +139,8 @@ function renderCategoryNav(activeCategory, showFilters) {
  */
 export function initPress(container) {
   if (!container || container.dataset.pressReady === 'true') return;
+
+  updatePressViewAllCta(PRESS_ITEMS.length);
 
   container.dataset.pressReady = 'true';
   const mode = container.dataset.pressMode === 'preview' ? 'preview' : 'full';

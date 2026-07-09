@@ -140,8 +140,21 @@
   margin-inline: auto;
 }
 
-/* Desktop: Vishnu left, Rajpal centre, Mariappan right */
+/* Desktop: Vishnu left, Rajpal centre, Mariappan right + larger profile photos */
 @media (min-width: 1025px) {
+  #people .container {
+    max-width: 1360px;
+  }
+
+  .people__grid {
+    max-width: none;
+    gap: 2rem;
+  }
+
+  .people__grid .attorney-card__name {
+    font-size: 1.125rem;
+  }
+
   .people__grid .attorney-card--vishnu-kumar { order: 1; }
   .people__grid .attorney-card--siti-anis { order: 2; }
   .people__grid .attorney-card--rajpal-singh { order: 3; }
@@ -283,7 +296,126 @@
   contain-intrinsic-size: auto 120px;
 }
 
-/* Year filter nav */
+/* Full library — one mosaic block, years aligned in left rail */
+.clippings-stream {
+  min-width: 0;
+}
+
+.clippings-stream__footer {
+  margin-top: 1.5rem;
+}
+
+.clippings-sentinel {
+  height: 1px;
+  width: 100%;
+  pointer-events: none;
+}
+
+.clippings-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.clippings-more__btn {
+  min-width: 11rem;
+}
+
+.clippings-more__done {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--color-ink-400);
+  letter-spacing: 0.02em;
+}
+
+.clippings-mosaic {
+  display: grid;
+  grid-template-columns: 2.75rem minmax(0, 1fr);
+  gap: 0 0.65rem;
+  align-items: start;
+}
+
+.clippings-year-rail {
+  position: relative;
+  align-self: stretch;
+}
+
+.clippings-year-rail__mark {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding-top: 0.25rem;
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-accent);
+  line-height: 1.15;
+  pointer-events: none;
+}
+
+.clippings-collage--unified {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: 120px;
+  grid-auto-flow: dense;
+  gap: 0.5rem;
+  align-items: stretch;
+  min-width: 0;
+}
+
+.clippings-collage--unified .clipping-card {
+  min-height: 120px;
+}
+
+@media (min-width: 600px) {
+  .clippings-mosaic {
+    grid-template-columns: 3.25rem minmax(0, 1fr);
+    gap: 0 0.75rem;
+  }
+
+  .clippings-year-rail__mark {
+    font-size: 0.9375rem;
+  }
+
+  .clippings-collage--unified {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: 130px;
+  }
+
+  .clippings-collage--unified .clipping-card {
+    min-height: 130px;
+  }
+}
+
+@media (min-width: 900px) {
+  .clippings-mosaic {
+    grid-template-columns: 4rem minmax(0, 1fr);
+    gap: 0 1rem;
+  }
+
+  .clippings-year-rail__mark {
+    font-size: 1rem;
+  }
+
+  .clippings-collage--unified {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-auto-rows: 140px;
+  }
+
+  .clippings-collage--unified .clipping-card {
+    min-height: 140px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .clippings-collage--unified {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+/* Year filter nav (homepage preview only) */
 .clippings-years-nav {
   margin-bottom: 1.25rem;
   overflow-x: auto;
@@ -351,21 +483,6 @@
   color: var(--color-ink-300);
   text-align: center;
   padding: 2rem 1rem;
-}
-
-.clippings-year {
-  margin-bottom: clamp(2rem, 3vw, 2.75rem);
-}
-
-.clippings-year__title {
-  font-family: var(--font-heading);
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: var(--color-accent);
-  letter-spacing: 0.04em;
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .clippings-collage {

@@ -82,6 +82,10 @@
     <section class="media-room section-pad" aria-label="Media Room articles">
       <div class="container">
 
+        <nav class="profile-page__toolbar" aria-label="Media Room navigation">
+          <a href="../#media" class="profile-page__back" id="media-page-back">← Back to Media Room</a>
+        </nav>
+
         <div class="section-header">
           <h1 class="section-title">Media Room</h1>
           <p class="section-subtitle">
@@ -272,7 +276,6 @@
                 Full archive of Malaysian newspaper and press clippings featuring
                 <strong>Datuk Rajpal Singh</strong>, a leading <strong>criminal lawyer in Malaysia</strong>
                 known for murder trials, drug trafficking acquittals, and high-profile criminal defence.
-                Browse by year; each image includes a descriptive caption for search and accessibility.
               </p>
             </div>
           </div>
@@ -281,6 +284,7 @@
         <div id="clippings"
              class="clippings-gallery"
              data-clippings-mode="full"
+             data-clippings-batch="12"
              itemscope
              itemtype="https://schema.org/ImageGallery"
              aria-label="Criminal lawyer Malaysia newspaper clippings full archive by year">

@@ -10,7 +10,7 @@ import { initModals }    from './modal.js';
 import { initLazyMedia } from './lazymedia.js';
 import { initClippingsSeo } from './clippings-seo.js';
 import { initPressSeo } from './press-seo.js';
-import { prefetchClippingsData, prefetchClippingsGallery, loadClippingsGallery } from './clippings-data-loader.js';
+import { prefetchClippingsData, prefetchClippingsGallery, loadClippingsGallery, loadClippingsData } from './clippings-data-loader.js';
 import { initCopy } from './copy.js';
 import { initPress } from './press.js';
 import { initProfilePhotos } from './profile-photo.js';
@@ -73,6 +73,7 @@ import { CONSULTATION_FORM_URL } from './site-config.js';
   // ── Handle ?from= query param on profile pages ──
   const params = new URLSearchParams(window.location.search);
   initProfileBack(params);
+  initMediaPageBack();
 
 })();
 
@@ -203,6 +204,26 @@ function initProfileBack(params) {
   });
 }
 
+/** Full media page — back link returns to the matching homepage Media Room section. */
+function initMediaPageBack() {
+  const back = document.getElementById('media-page-back');
+  if (!back) return;
+
+  /** @type {Record<string, string>} */
+  const hashTargets = {
+    press: '../#press',
+    clippings: '../#clippings-library',
+  };
+
+  function syncBackHref() {
+    const hash = window.location.hash.slice(1);
+    back.href = hashTargets[hash] || '../#media';
+  }
+
+  syncBackHref();
+  window.addEventListener('hashchange', syncBackHref);
+}
+
 /** Prefetch clippings code during idle time so scroll-init feels instant. */
 function scheduleClippingsPrefetch() {
   const container = document.getElementById('clippings-gallery') || document.getElementById('clippings');
@@ -211,6 +232,13 @@ function scheduleClippingsPrefetch() {
   const prefetch = () => {
     prefetchClippingsData();
     prefetchClippingsGallery();
+    if (document.getElementById('clippings-view-all-cta')) {
+      loadClippingsData().then(data => {
+        const total = data.CLIPPINGS.length;
+        const cta = document.getElementById('clippings-view-all-cta');
+        if (cta) cta.textContent = `View All (${total}) →`;
+      });
+    }
   };
 
   if ('requestIdleCallback' in window) {

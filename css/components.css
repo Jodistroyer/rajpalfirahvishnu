@@ -882,7 +882,7 @@ a.attorney-card {
 
 .profile-page__layout {
   display: grid;
-  grid-template-columns: minmax(240px, 280px) 1fr;
+  grid-template-columns: minmax(230px, 270px) 1fr;
   gap: 3rem;
   align-items: start;
 }
@@ -897,7 +897,7 @@ a.attorney-card {
 
 .profile-sidebar__avatar {
   width: 100%;
-  max-width: 220px;
+  max-width: 196px;
   aspect-ratio: 4 / 5;
   border-radius: var(--radius-sm);
   display: flex;
@@ -907,7 +907,7 @@ a.attorney-card {
   background-color: var(--color-ink-900);
   color: #fff;
   font-family: var(--font-heading);
-  font-size: 1.625rem;
+  font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   overflow: hidden;
@@ -2485,7 +2485,31 @@ a.attorney-card {
   background: rgba(255, 255, 255, 0.06);
   transition:
     transform var(--transition-ui),
-    box-shadow var(--transition-ui);
+    box-shadow var(--transition-ui),
+    opacity 420ms ease,
+    filter 420ms ease;
+}
+
+.clipping-card--enter {
+  opacity: 0;
+  transform: translateY(10px);
+  filter: blur(2px);
+}
+
+.clipping-card--enter.is-visible {
+  opacity: 1;
+  transform: none;
+  filter: none;
+  transition-delay: var(--clipping-enter-delay, 0ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clipping-card--enter {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
 }
 
 .clipping-card:hover,
@@ -2511,6 +2535,24 @@ a.attorney-card {
   margin: 0;
   width: 100%;
   height: 100%;
+  background:
+    linear-gradient(110deg, rgba(255, 255, 255, 0.04) 25%, rgba(255, 255, 255, 0.1) 37%, rgba(255, 255, 255, 0.04) 63%);
+  background-size: 200% 100%;
+}
+
+.clipping-card__figure:has(.clipping-card__img--pending) {
+  animation: clipping-shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes clipping-shimmer {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clipping-card__figure:has(.clipping-card__img--pending) {
+    animation: none;
+  }
 }
 
 .clipping-card__img {
@@ -2519,16 +2561,15 @@ a.attorney-card {
   object-fit: cover;
   object-position: top center;
   display: block;
-  transition: opacity 320ms ease, transform 400ms ease;
+  opacity: 0;
+  transition: opacity 380ms ease, transform 400ms ease;
 }
 
 .clipping-card__img--pending {
   opacity: 0;
-  background: rgba(255, 255, 255, 0.08);
 }
 
-.clipping-card__img.loaded,
-.clipping-card__img:not(.clipping-card__img--pending) {
+.clipping-card__img.loaded {
   opacity: 1;
 }
 
@@ -2559,12 +2600,10 @@ a.attorney-card {
 }
 
 .clipping-modal__image-wrap {
+  position: relative;
   background: var(--color-ink-050);
   max-height: min(68dvh, 640px);
   overflow: auto;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
 }
 
 .clipping-modal__img {
@@ -2573,6 +2612,31 @@ a.attorney-card {
   max-width: 100%;
   display: block;
   object-fit: contain;
+}
+
+.clipping-modal__img--thumb {
+  filter: blur(6px);
+  transform: scale(1.01);
+}
+
+.clipping-modal__img--full {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 280ms ease;
+  pointer-events: none;
+}
+
+.clipping-modal__img--full.is-ready {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.clipping-modal__image-wrap--ready .clipping-modal__img--thumb {
+  /* Keep in flow for height; hide once sharp scan is ready */
+  visibility: hidden;
 }
 
 .clipping-modal__caption {
