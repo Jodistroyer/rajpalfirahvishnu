@@ -68,7 +68,7 @@ Replace [yourdomain] in data/people.json and re-run: node scripts/generate-peopl
 - Experience: 10+ years (criminal litigation)
 - Called to the Bar: 2016
 - Email: enquiry@rfv-law.my
-- Photo: https://[yourdomain]/assets/people/siti-anis.jpg
+- Photo: https://[yourdomain]/assets/people/siti-anis.png
 - FAQ: https://[yourdomain]/faq/criminal-law/
 
 ### Tiew Poh Nee
@@ -79,7 +79,18 @@ Replace [yourdomain] in data/people.json and re-run: node scripts/generate-peopl
 - Experience: 10+ years (criminal litigation)
 - Called to the Bar: 2016
 - Email: enquiry@rfv-law.my
-- Photo: https://[yourdomain]/assets/people/tiew-poh-nee.jpg
+- Photo: https://[yourdomain]/assets/people/tiew-poh-nee.png
+- FAQ: https://[yourdomain]/faq/criminal-law/
+
+### Mariappan a/l Manikam
+- English: https://[yourdomain]/people/mariappan-manikam/
+- Bahasa Malaysia: https://[yourdomain]/ms/people/mariappan-manikam/
+- Role: Associate / Peguam Kesat
+- Practice: Criminal Defence · Drug Offences
+- Experience: 13 years (criminal litigation)
+- Called to the Bar: 2013
+- Email: enquiry@rfv-law.my
+- Photo: https://[yourdomain]/assets/people/mariappan-manikam.jpg
 - FAQ: https://[yourdomain]/faq/criminal-law/
 
 ## Related resources

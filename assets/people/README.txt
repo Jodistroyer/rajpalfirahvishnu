@@ -2,8 +2,9 @@ Add one headshot per lawyer (square JPG, at least 400×400 px):
 
   rajpal-singh.jpg
   vishnu-kumar.jpg
-  siti-anis.jpg
-  tiew-poh-nee.jpg
+  siti-anis.png
+  tiew-poh-nee.png
+  mariappan-manikam.jpg
 
 Used on profile pages, Open Graph previews, Twitter cards, and JSON-LD.
 

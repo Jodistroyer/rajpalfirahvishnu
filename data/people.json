@@ -112,7 +112,7 @@
     {
       "slug": "siti-anis",
       "initials": "SA",
-      "photo": "assets/people/siti-anis.jpg",
+      "photo": "assets/people/siti-anis.png",
       "barYear": 2016,
       "experienceYears": "10+",
       "experienceArea": { "en": "criminal litigation", "ms": "litigasi jenayah" },
@@ -153,7 +153,7 @@
     {
       "slug": "tiew-poh-nee",
       "initials": "TP",
-      "photo": "assets/people/tiew-poh-nee.jpg",
+      "photo": "assets/people/tiew-poh-nee.png",
       "barYear": 2016,
       "experienceYears": "10+",
       "experienceArea": { "en": "criminal litigation", "ms": "litigasi jenayah" },
@@ -186,6 +186,47 @@
       "knowsAbout": ["Criminal Law", "SOSMA", "ATIPSOM", "AMLA", "Commercial Crime"],
       "knowsLanguage": ["en", "ms", "zh"],
       "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "Universiti Malaya" }
+      ],
+      "sameAs": ["https://www.malaysianbar.org.my/"]
+    },
+    {
+      "slug": "mariappan-manikam",
+      "initials": "MM",
+      "photo": "assets/people/mariappan-manikam.jpg",
+      "barYear": 2013,
+      "experienceYears": "13",
+      "experienceArea": { "en": "criminal litigation", "ms": "litigasi jenayah" },
+      "name": {
+        "full": "Mariappan a/l Manikam",
+        "short": "Mariappan"
+      },
+      "jobTitle": { "en": "Associate", "ms": "Peguam Kesat" },
+      "practice": { "en": "Criminal Defence · Drug Offences", "ms": "Pembelaan Jenayah · Kesalahan Dadah" },
+      "title": {
+        "en": "Mariappan a/l Manikam — Associate, Criminal Defence | Rajpal, Firah & Vishnu",
+        "ms": "Mariappan a/l Manikam — Peguam Kesat, Pembelaan Jenayah | Rajpal, Firah & Vishnu"
+      },
+      "metaDescription": {
+        "en": "Profile of Mariappan a/l Manikam, Associate at Rajpal, Firah & Vishnu. 13 years of criminal litigation experience including criminal defence, drug offences, and YBGK-assigned trials. Former Royal Malaysia Police officer.",
+        "ms": "Profil Mariappan a/l Manikam, Peguam Kesat di Tetuan Rajpal, Firah & Vishnu. 13 tahun pengalaman litigasi jenayah termasuk pembelaan jenayah, kesalahan dadah, dan perbicaraan YBGK. Bekas pegawai Polis Diraja Malaysia."
+      },
+      "ogTitle": {
+        "en": "Mariappan a/l Manikam — Criminal Lawyer Malaysia",
+        "ms": "Mariappan a/l Manikam — Peguam Jenayah Malaysia"
+      },
+      "ogDescription": {
+        "en": "Associate with 13 years of criminal litigation experience in criminal defence and drug offences. YBGK lawyer and former Royal Malaysia Police officer.",
+        "ms": "Peguam Kesat dengan 13 tahun pengalaman litigasi jenayah dalam pembelaan jenayah dan kesalahan dadah. Peguam YBGK dan bekas pegawai Polis Diraja Malaysia."
+      },
+      "email": "enquiry@rfv-law.my",
+      "telephone": ["+60-3-61868653"],
+      "office": "batu-caves",
+      "faq": "criminal-law",
+      "knowsAbout": ["Criminal Law", "Criminal Defence", "Drug Offences", "Penal Code Offences"],
+      "knowsLanguage": ["en", "ms", "ta"],
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "Universiti Sains Malaysia" },
         { "@type": "CollegeOrUniversity", "name": "Universiti Malaya" }
       ],
       "sameAs": ["https://www.malaysianbar.org.my/"]
