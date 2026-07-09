@@ -232,6 +232,14 @@ function scheduleClippingsPrefetch() {
   const prefetch = () => {
     prefetchClippingsData();
     prefetchClippingsGallery();
+
+    const previewGallery = document.getElementById('clippings-gallery');
+    if (previewGallery?.dataset.clippingsMode === 'preview') {
+      Promise.all([loadClippingsData(), loadClippingsGallery()]).then(([{ CLIPPINGS }, gallery]) => {
+        gallery.reservePreviewGalleryHeight(previewGallery, CLIPPINGS);
+      });
+    }
+
     if (document.getElementById('clippings-view-all-cta')) {
       loadClippingsData().then(data => {
         const total = data.CLIPPINGS.length;

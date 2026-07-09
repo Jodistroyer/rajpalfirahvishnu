@@ -293,6 +293,72 @@ function sortYear(sort) {
   return parseInt(sort.slice(0, 4), 10);
 }
 
+/** @returns {{ cols: number, rowH: number, gap: number }} */
+function getMosaicLayout() {
+  const w = window.innerWidth;
+  if (w >= 1200) return { cols: 5, rowH: 140, gap: 8 };
+  if (w >= 900) return { cols: 4, rowH: 140, gap: 8 };
+  if (w >= 600) return { cols: 3, rowH: 130, gap: 8 };
+  return { cols: 2, rowH: 120, gap: 8 };
+}
+
+/**
+ * Tall/wide collage spans add rows beyond a simple cols division.
+ * @param {number} cardCount
+ * @param {{ cols: number, rowH: number, gap: number }} layout
+ */
+function estimateMosaicHeight(cardCount, layout) {
+  if (cardCount <= 0) return 120;
+
+  const baseRows = Math.ceil(cardCount / layout.cols);
+  const rows = Math.ceil(baseRows * 1.25);
+  const mosaicH = rows * layout.rowH + Math.max(0, rows - 1) * layout.gap;
+  const footer = 80;
+  return mosaicH + footer;
+}
+
+/**
+ * @param {HTMLElement} container
+ * @param {import('./clippings-data.js').Clipping[]} CLIPPINGS
+ */
+function getPreviewInitialCount(container, CLIPPINGS) {
+  const isDesktop = window.matchMedia('(min-width: 900px)').matches;
+  const previewLimit = Math.max(1, parseInt(container.dataset.clippingsLimit || '8', 10) || 8);
+  const minYear = parseInt(container.dataset.clippingsDesktopYear || '2020', 10) || 2020;
+
+  const yearGroups = groupByYear(CLIPPINGS);
+  let allItems = yearGroups.flatMap(([, items]) => items);
+
+  if (isDesktop) {
+    allItems = allItems.filter(item => sortYear(item.sort) >= minYear);
+    return allItems.length;
+  }
+
+  return Math.min(previewLimit, allItems.length);
+}
+
+/**
+ * Reserve vertical space for the homepage preview gallery before cards mount.
+ * Keeps #contact anchor position stable during smooth scroll.
+ * @param {HTMLElement} container
+ * @param {import('./clippings-data.js').Clipping[]} CLIPPINGS
+ */
+export function reservePreviewGalleryHeight(container, CLIPPINGS) {
+  if (container.dataset.clippingsMode !== 'preview') return;
+  if (container.dataset.clippingsReady === 'true') return;
+
+  const count = getPreviewInitialCount(container, CLIPPINGS);
+  const height = estimateMosaicHeight(count, getMosaicLayout());
+
+  container.style.setProperty('--clippings-gallery-reserve', `${height}px`);
+  container.style.minHeight = `${height}px`;
+}
+
+/** @param {HTMLElement} container */
+function clearGallerySkeleton(container) {
+  container.querySelector('.clippings-gallery__skeleton')?.remove();
+}
+
 /**
  * @param {import('./clippings-data.js').Clipping[]} items
  * @param {number} minYear
@@ -320,6 +386,11 @@ function initMosaicGallery(container, CLIPPINGS, opts) {
   const autoScrollLoad = opts.autoScrollLoad ?? true;
   const viewAllHref = opts.viewAllHref ?? null;
   const totalArchive = opts.totalArchiveCount ?? CLIPPINGS.length;
+
+  if (container.dataset.clippingsMode === 'preview') {
+    reservePreviewGalleryHeight(container, CLIPPINGS);
+  }
+  clearGallerySkeleton(container);
 
   const yearGroups = groupByYear(CLIPPINGS);
   /** Newest-first flat list */
@@ -463,6 +534,7 @@ function initMosaicGallery(container, CLIPPINGS, opts) {
     requestAnimationFrame(() => {
       syncYearRail();
       loadingBatch = false;
+      container.style.minHeight = '';
     });
     return true;
   }
