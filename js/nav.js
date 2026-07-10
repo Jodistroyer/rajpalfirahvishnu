@@ -43,7 +43,7 @@ function resolveAlternateLanguageUrl(targetLang) {
   }
 }
 
-/** @returns {{ href: string, label: string, lang: string, ariaLabel: string }} */
+/** @returns {{ href: string, label: string, lang: string, ariaLabel: string, title: string }} */
 function getLanguageSwitchMeta() {
   const isMs = document.documentElement.lang === 'ms'
     || /\/ms(?:\/|$)/.test(window.location.pathname.replace(/\\/g, '/'));
@@ -54,20 +54,24 @@ function getLanguageSwitchMeta() {
   const href = resolveAlternateLanguageUrl(targetLang)
     ?? (isMs ? `${prefix || '../'}` : `${prefix}ms/`);
 
+  const label = isMs ? 'BM' : 'EN';
+
   if (targetLang === 'ms') {
     return {
       href,
-      label: 'BM',
+      label,
       lang: 'ms',
-      ariaLabel: isMs ? 'Bahasa Malaysia' : 'Switch to Bahasa Malaysia',
+      ariaLabel: 'Switch to Bahasa Malaysia',
+      title: isMs ? 'Bahasa semasa: Bahasa Malaysia' : 'Current language: English',
     };
   }
 
   return {
     href,
-    label: 'EN',
+    label,
     lang: 'en',
     ariaLabel: isMs ? 'Tukar ke Bahasa Inggeris' : 'Switch to English',
+    title: isMs ? 'Bahasa semasa: Bahasa Malaysia' : 'Current language: English',
   };
 }
 
@@ -79,14 +83,14 @@ function initNavbarLanguage(navbar) {
   const inner = navbar.querySelector('.navbar__inner');
   if (!inner || inner.querySelector('.navbar__lang')) return;
 
-  const { href, label, lang, ariaLabel } = getLanguageSwitchMeta();
+  const { href, label, lang, ariaLabel, title } = getLanguageSwitchMeta();
   const langLink = document.createElement('a');
   langLink.className = 'navbar__lang';
   langLink.href = href;
   langLink.setAttribute('hreflang', lang);
   langLink.setAttribute('lang', lang);
   langLink.setAttribute('aria-label', ariaLabel);
-  langLink.title = ariaLabel;
+  langLink.title = title;
   langLink.innerHTML = `${LANG_GLOBE_SVG}<span class="navbar__lang-label" aria-hidden="true">${label}</span>`;
 
   let actions = inner.querySelector('.navbar__actions');
