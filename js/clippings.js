@@ -6,7 +6,7 @@
 import { openModal } from './modal.js';
 import { getClippingSeoMeta } from './clippings-seo.js';
 import { loadClippingsData } from './clippings-data-loader.js';
-import { getRootRelativePrefix, isMsSubpage } from './site-config.js';
+import { siteAssetUrl, getSiteBasePath, isMsSubpage } from './site-config.js';
 
 function archiveYearLabel() {
   return isMsSubpage() ? 'Arkib' : 'Archive';
@@ -32,11 +32,6 @@ let drainingImageQueue = false;
 /** @type {[string, import('./clippings-data.js').Clipping[]][] | null} */
 let cachedYearGroups = null;
 
-/** Resolve image base path relative to the current page depth. */
-function getClippingsBase() {
-  return `${getRootRelativePrefix()}assets/media/newspaper-clippings/`;
-}
-
 /** Collage uses small JPEGs; full scans load only in the lightbox. */
 function getThumbPath(file) {
   const stem = file.replace(/\.[^.]+$/, '');
@@ -45,12 +40,12 @@ function getThumbPath(file) {
 
 /** @param {string} file */
 function getFullSrc(file) {
-  return `${getClippingsBase()}${file}`;
+  return siteAssetUrl(`assets/media/newspaper-clippings/${file}`);
 }
 
 /** @param {string} file */
 function getThumbSrc(file) {
-  return `${getClippingsBase()}${getThumbPath(file)}`;
+  return siteAssetUrl(`assets/media/newspaper-clippings/${getThumbPath(file)}`);
 }
 
 /** @param {string} str */
@@ -629,8 +624,8 @@ function initPreview(container, CLIPPINGS, initialCount, batchSize, maxCount) {
     minYear: isDesktop ? minYear : undefined,
     autoScrollLoad: false,
     viewAllHref: isMsSubpage()
-      ? `${getRootRelativePrefix()}ms/media/#clippings-library`
-      : `${getRootRelativePrefix()}media/#clippings`,
+      ? `${getSiteBasePath()}ms/media/#clippings-library`
+      : `${getSiteBasePath()}media/#clippings`,
     totalArchiveCount: CLIPPINGS.length,
   });
 }

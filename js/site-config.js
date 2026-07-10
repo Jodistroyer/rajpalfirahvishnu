@@ -17,20 +17,25 @@ let cachedSiteBasePath = null;
 export function getSiteBasePath() {
   if (cachedSiteBasePath !== null) return cachedSiteBasePath;
 
-  const script = document.querySelector('script[type="module"][src*="main.js"]');
-  if (script) {
-    try {
-      const scriptUrl = new URL(script.getAttribute('src') || '', window.location.href);
-      const base = scriptUrl.pathname.replace(/\/js\/main\.js$/, '/');
-      cachedSiteBasePath = base.startsWith('/') ? base : `/${base}`;
-      return cachedSiteBasePath;
-    } catch {
-      /* fall through */
-    }
+  try {
+    const moduleUrl = new URL(import.meta.url);
+    const base = moduleUrl.pathname.replace(/\/js\/site-config\.js$/, '/');
+    cachedSiteBasePath = base.startsWith('/') ? base : `/${base}`;
+    return cachedSiteBasePath;
+  } catch {
+    cachedSiteBasePath = '/';
+    return cachedSiteBasePath;
   }
+}
 
-  cachedSiteBasePath = '/';
-  return cachedSiteBasePath;
+/**
+ * Root-absolute asset URL from site root, e.g. "/rajpalfirahvishnu/assets/foo.jpg".
+ * @param {string} pathFromSiteRoot
+ * @returns {string}
+ */
+export function siteAssetUrl(pathFromSiteRoot) {
+  const clean = String(pathFromSiteRoot).replace(/^\//, '');
+  return `${getSiteBasePath()}${clean}`;
 }
 
 /**
@@ -144,5 +149,5 @@ export function pressPageUrl() {
  * @returns {string}
  */
 export function clippingsAssetBase() {
-  return `${getRootRelativePrefix()}assets/media/newspaper-clippings/`;
+  return siteAssetUrl('assets/media/newspaper-clippings/');
 }

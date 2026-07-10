@@ -96,6 +96,7 @@ function pressImageUrl(item) {
  * @param {PressItem} item
  */
 function pressSchemaPart(item) {
+  const ms = isMsSubpage();
   const meta = getPressSeoMeta(item);
   const image = pressImageUrl(item);
 

@@ -5,7 +5,7 @@
 import { getPressItems, getPressCategories } from './media-locale.js';
 import { observeLazyCards } from './lazymedia.js';
 import { getPressSeoMeta } from './press-seo.js';
-import { getRootRelativePrefix, isMsSubpage } from './site-config.js';
+import { siteAssetUrl, isMsSubpage } from './site-config.js';
 
 /** @typedef {import('./press-data.js').PressItem} PressItem */
 
@@ -19,11 +19,6 @@ function updatePressViewAllCta(total) {
   }
 }
 
-/** @returns {string} */
-function getAssetBase() {
-  return getRootRelativePrefix();
-}
-
 /** @param {string} str */
 function escHtml(str) {
   return String(str)
@@ -34,15 +29,12 @@ function escHtml(str) {
     .replace(/'/g, '&#39;');
 }
 
-/**
- * @param {PressItem} item
- */
 function resolveThumb(item) {
   if (item.youtubeId) {
     return `https://img.youtube.com/vi/${item.youtubeId}/hqdefault.jpg`;
   }
   if (item.thumb) {
-    return `${getAssetBase()}${item.thumb}`;
+    return siteAssetUrl(item.thumb);
   }
   return null;
 }
