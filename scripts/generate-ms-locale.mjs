@@ -8,6 +8,7 @@ import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import { PRESS_ITEMS, PRESS_CATEGORIES } from '../js/press-data.js';
 import { CLIPPINGS } from '../js/clippings-data.js';
+import { CLIPPINGS_MS_DESCRIPTIONS } from './clippings-descriptions-ms.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, '..');
@@ -21,6 +22,7 @@ const MONTHS = {
 /** @param {string} label */
 function translateDateLabel(label) {
   if (!label || label === 'Archive') return label === 'Archive' ? 'Arkib' : label;
+  if (label === 'Paul Yong trial') return 'Perbicaraan Paul Yong';
   let out = label;
   for (const [en, ms] of Object.entries(MONTHS)) {
     out = out.replace(new RegExp(`\\b${en}\\b`, 'g'), ms);
@@ -408,7 +410,7 @@ const PRESS_ITEMS_MS = PRESS_ITEMS.map(item => ({
 
 const CLIPPINGS_MS = CLIPPINGS.map(c => ({
   ...c,
-  description: translateClippingDesc(c.description),
+  description: CLIPPINGS_MS_DESCRIPTIONS[c.file] ?? translateClippingDesc(c.description),
   dateLabel: translateDateLabel(c.dateLabel),
   headline: c.headline ? translatePressTitle(c.headline) : undefined,
 }));
