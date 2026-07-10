@@ -3,7 +3,7 @@
  * Injects JSON-LD and enhances image alt/title text for criminal-lawyer Malaysia queries.
  */
 
-import { absoluteUrl, clippingsAssetBase, clippingsPageUrl, getSiteOrigin, isMsSubpage } from './site-config.js';
+import { absoluteUrl, clippingsPageUrl, getSiteOrigin, isMsSubpage } from './site-config.js';
 
 /** @typedef {import('./clippings-data.js').Clipping} Clipping */
 
@@ -126,10 +126,9 @@ export function buildClippingsJsonLd(clippings) {
     numberOfItems: clippings.length,
     image: sample.map(c => {
       const meta = getClippingSeoMeta(c);
-      const imagePath = `${clippingsAssetBase()}${c.file}`.replace(/^\.\.\//, '');
       return {
         '@type': 'ImageObject',
-        contentUrl: absoluteUrl(imagePath),
+        contentUrl: absoluteUrl(`assets/media/newspaper-clippings/${c.file}`),
         name: meta.name,
         caption: meta.caption,
       };
