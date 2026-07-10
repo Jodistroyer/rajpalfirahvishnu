@@ -26,17 +26,6 @@ import { CONSULTATION_FORM_URL } from './site-config.js';
   const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
   document.documentElement.style.setProperty('--scrollbar-width', `${scrollbarWidth}px`);
 
-  // Disable hero video autoplay if user prefers reduced motion
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const video = document.querySelector('.hero__video');
-    if (video) {
-      video.pause();
-      video.removeAttribute('autoplay');
-    }
-  }
-
-  initHeroVideoFallback();
-
   // Wire consultation CTAs before nav attaches smooth-scroll to # anchors
   initConsultationLinks();
 
@@ -114,31 +103,8 @@ function initServiceCardLinks() {
   });
 }
 
-/** Show static hero image when the background video cannot load. */
-function initHeroVideoFallback() {
-  const hero = document.querySelector('.hero');
-  const video = /** @type {HTMLVideoElement|null} */ (document.querySelector('.hero__video'));
-  if (!hero || !video) return;
-
-  const showFallback = () => {
-    hero.classList.add('hero--video-fallback');
-    video.pause();
-  };
-
-  video.addEventListener('error', showFallback, { once: true });
-  video.querySelectorAll('source').forEach(source => {
-    source.addEventListener('error', showFallback, { once: true });
-  });
-
-  if (video.error) {
-    showFallback();
-  }
-}
-
 /** Wire consultation form links from site-config (single place to update the Google Form URL). */
 function initConsultationLinks() {
-  const consultationLabels = new Set(['book a consultation', 'tempah perundingan']);
-
   const wire = (link) => {
     link.setAttribute('href', CONSULTATION_FORM_URL);
     link.setAttribute('target', '_blank');
@@ -156,15 +122,7 @@ function initConsultationLinks() {
     const href = link.getAttribute('href') || '';
     if (!/#(?:contact|hubungi)$/.test(href.split('?')[0])) return;
 
-    const label = (link.getAttribute('aria-label') || link.textContent)
-      .replace(/↗/g, ' ')
-      .replace(/\s+/g, ' ')
-      .trim()
-      .toLowerCase();
-
-    if (consultationLabels.has(label)) {
-      wire(link);
-    }
+    wire(link);
   });
 }
 

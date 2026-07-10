@@ -356,8 +356,7 @@
   overflow: hidden;
 }
 
-/* Background video */
-.hero__video,
+/* Background image */
 .hero__fallback {
   position: absolute;
   inset: 0;
@@ -365,18 +364,6 @@
   height: 100%;
   object-fit: cover;
   z-index: 0;
-}
-
-.hero__fallback {
-  display: none;
-}
-
-.hero--video-fallback .hero__video {
-  display: none;
-}
-
-.hero--video-fallback .hero__fallback {
-  display: block;
 }
 
 /* Dark overlay for legibility */
@@ -428,21 +415,6 @@
   gap: 1rem;
   align-items: center;
   margin-bottom: 1.25rem;
-}
-
-.hero__disclaimer {
-  position: absolute;
-  right: clamp(1rem, 3vw, 1.5rem);
-  bottom: clamp(1rem, 2.5vw, 1.25rem);
-  z-index: 2;
-  margin: 0;
-  font-size: 0.625rem;
-  line-height: 1;
-  letter-spacing: 0.04em;
-  text-align: right;
-  text-transform: uppercase;
-  white-space: nowrap;
-  color: rgba(255, 255, 255, 0.32);
 }
 
 /* Scroll cue — animated line */

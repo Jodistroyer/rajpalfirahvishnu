@@ -3,8 +3,7 @@
  *
  * Uses IntersectionObserver for:
  *   1. Lazy images   (<img data-src="…">)
- *   2. Hero video    (loads & plays when visible)
- *   3. Card entrance (staggered .lazy → .loaded per grid)
+ *   2. Card entrance (staggered .lazy → .loaded per grid)
  *
  * Falls back to eager-load everything when IntersectionObserver
  * is unsupported (rare, but handles old browsers gracefully).
@@ -41,22 +40,7 @@ export function initLazyMedia() {
 
   document.querySelectorAll('img[data-src]').forEach(img => imgObserver.observe(img));
 
-  // ── 2. Hero video lazy-load ───────────────────────────────────────────
-
-  const heroVideo = /** @type {HTMLVideoElement|null} */ (document.querySelector('.hero__video'));
-  if (heroVideo && heroVideo.dataset.src) {
-    const videoObserver = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        heroVideo.src = heroVideo.dataset.src;
-        heroVideo.load();
-        obs.unobserve(heroVideo);
-      });
-    }, { rootMargin: '200px 0px', threshold: 0.1 });
-    videoObserver.observe(heroVideo);
-  }
-
-  // ── 3. Staggered card entrance animations ────────────────────────────
+  // ── 2. Staggered card entrance animations ────────────────────────────
 
   // Pre-select cards that carry the .lazy class (set on them in HTML)
   const cardSelector = '.service-card.lazy, .attorney-card.lazy, .media-card.lazy';
