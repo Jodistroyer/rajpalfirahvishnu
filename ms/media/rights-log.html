@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log Hak Imej — Rajpal, Firah &amp; Vishnu</title>
+  <meta name="description" content="Log hak imej untuk lakaran kecil media dan keratan akhbar di laman web Rajpal, Firah &amp; Vishnu.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="alternate" hreflang="en" href="https://[yourdomain]/media/rights-log.html">
+  <link rel="alternate" hreflang="ms" href="https://[yourdomain]/ms/media/rights-log.html">
+  <link rel="alternate" hreflang="x-default" href="https://[yourdomain]/media/rights-log.html">
+  <link rel="icon" type="image/png" href="../../assets/favicon-gold.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/components.css">
+  <link rel="stylesheet" href="../../css/utilities.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Langkau ke kandungan utama</a>
+
+  <header id="navbar" class="navbar scrolled" role="banner">
+    <div class="container">
+      <div class="navbar__inner">
+        <a href="../../ms/" class="navbar__logo" aria-label="Rajpal, Firah &amp; Vishnu — Laman Utama">
+          <img src="../../assets/logo.png" alt="" width="36" height="36" class="navbar__logo-mark" aria-hidden="true">
+          <span class="navbar__logo-text" style="color: var(--color-ink-900);">Rajpal, Firah <span class="amp">&amp;</span> Vishnu</span>
+        </a>
+        <nav aria-label="Navigasi utama" class="navbar__nav">
+          <ul class="navbar__links" role="list">
+            <li><a href="../../ms/#perkhidmatan" class="navbar__link">Cara Kami Membantu</a></li>
+            <li><a href="../../ms/#pasukan" class="navbar__link">Pasukan Kami</a></li>
+            <li><a href="./" class="navbar__link">Bilik Media</a></li>
+            <li><a href="../../ms/#hubungi" class="navbar__link">Hubungi Kami</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="media-room rights-log-page section-pad" style="padding-top: var(--nav-height);">
+    <div class="container">
+
+      <div class="section-header">
+        <p class="rights-log-page__eyebrow"><a href="./">← Bilik Media</a></p>
+        <h1 class="section-title">Log Hak Imej</h1>
+        <p class="section-subtitle" id="rights-log-meta">Memuatkan…</p>
+      </div>
+
+      <aside class="media-room__disclaimer media-room__disclaimer--page" aria-label="Penafian penggunaan imej">
+        <p><strong>Liputan media.</strong> Lakaran kecil media dipaparkan untuk rujukan sahaja. Imej dan artikel kekal hak milik penerbit dan platform masing-masing. Setiap kad memaut ke sumber asal jika tersedia.</p>
+        <p><strong>Keratan akhbar.</strong> Keratan akhbar ialah imbasan arkib yang dipaparkan untuk rujukan sahaja. Susun atur, fotografi, dan teks kekal hak milik penerbit masing-masing. Kapsyen mengenal pasti penerbitan sumber dan tarikh jika diketahui.</p>
+        <p>Jika anda percaya sebarang imej digunakan dengan tidak betul, sila <a href="../../ms/#hubungi">hubungi kami</a> dan kami akan menyemak dengan segera.</p>
+      </aside>
+
+      <section class="rights-log-section" aria-labelledby="rights-log-press-heading">
+        <h2 id="rights-log-press-heading" class="rights-log-section__title">Dalam Media — lakaran kecil</h2>
+        <div class="rights-log-table-wrap">
+          <table class="rights-log-table">
+            <thead>
+              <tr>
+                <th scope="col">Tajuk</th>
+                <th scope="col">Penerbit</th>
+                <th scope="col">Sumber imej</th>
+                <th scope="col">Pemegang hak</th>
+                <th scope="col">Pautan</th>
+              </tr>
+            </thead>
+            <tbody id="rights-log-press"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="rights-log-section" aria-labelledby="rights-log-clippings-heading">
+        <h2 id="rights-log-clippings-heading" class="rights-log-section__title">Keratan akhbar</h2>
+        <div class="rights-log-table-wrap">
+          <table class="rights-log-table">
+            <thead>
+              <tr>
+                <th scope="col">Fail</th>
+                <th scope="col">Penerbit</th>
+                <th scope="col">Tarikh</th>
+                <th scope="col">Sumber imej</th>
+                <th scope="col">Pemegang hak</th>
+              </tr>
+            </thead>
+            <tbody id="rights-log-clippings"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <p class="rights-log-page__note">Untuk menjana semula log ini selepas menambah item media atau keratan akhbar, jalankan <code>node scripts/generate-rights-log.mjs</code>.</p>
+
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo" style="padding-top: 0;">
+    <div class="container">
+      <div class="footer__bottom" style="padding-top: 2rem;">
+        <p class="footer__legal">© 2026 Rajpal, Firah &amp; Vishnu. Hak cipta terpelihara.</p>
+        <a href="./" class="footer__legal-link">← Kembali ke Bilik Media</a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="../../js/media-rights-log-page.js"></script>
+</body>
+</html>

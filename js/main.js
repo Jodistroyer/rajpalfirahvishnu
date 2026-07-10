@@ -136,14 +136,14 @@ function initProfileBack(params) {
   const destinations = {
     services: {
       href: isMs ? '../../../ms/#perkhidmatan' : '../../#services',
-      label: isMs ? '← Kembali ke Perkhidmatan Guaman Kami' : '← Back to How We Help',
+      label: isMs ? '← Kembali ke Cara Kami Membantu' : '← Back to How We Help',
     },
     'criminal-law': {
-      href: isMs ? '../../../faq/criminal-law/' : '../../faq/criminal-law/',
+      href: isMs ? '../../../ms/faq/criminal-law/' : '../../faq/criminal-law/',
       label: isMs ? '← Kembali ke Soalan Lazim Undang-Undang Jenayah' : '← Back to Criminal Law FAQ',
     },
     'civil-litigation': {
-      href: isMs ? '../../../faq/civil-litigation/' : '../../faq/civil-litigation/',
+      href: isMs ? '../../../ms/faq/civil-litigation/' : '../../faq/civil-litigation/',
       label: isMs ? '← Kembali ke Soalan Lazim Litigasi Sivil' : '← Back to Civil Litigation FAQ',
     },
   };
@@ -167,15 +167,22 @@ function initMediaPageBack() {
   const back = document.getElementById('media-page-back');
   if (!back) return;
 
+  const isMsMedia = /\/ms\/media/.test(window.location.pathname);
+
   /** @type {Record<string, string>} */
-  const hashTargets = {
-    press: '../#press',
-    clippings: '../#clippings-library',
-  };
+  const hashTargets = isMsMedia
+    ? {
+      press: '../../ms/#press',
+      clippings: '../../ms/#clippings-library',
+    }
+    : {
+      press: '../#press',
+      clippings: '../#clippings-library',
+    };
 
   function syncBackHref() {
     const hash = window.location.hash.slice(1);
-    back.href = hashTargets[hash] || '../#media';
+    back.href = hashTargets[hash] || (isMsMedia ? '../../ms/#media' : '../#media');
   }
 
   syncBackHref();
@@ -202,7 +209,10 @@ function scheduleClippingsPrefetch() {
       loadClippingsData().then(data => {
         const total = data.CLIPPINGS.length;
         const cta = document.getElementById('clippings-view-all-cta');
-        if (cta) cta.textContent = `View All (${total}) →`;
+        if (cta) {
+          const isMs = /\/ms\//.test(window.location.pathname);
+          cta.textContent = isMs ? `Lihat Semua (${total}) →` : `View All (${total}) →`;
+        }
       });
     }
   };

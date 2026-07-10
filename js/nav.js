@@ -2,6 +2,111 @@
  * nav.js — Sticky navigation, hamburger menu, smooth scroll, active section.
  */
 
+const LANG_GLOBE_SVG = `<svg class="navbar__lang-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.8 4 6 4 9s-1.5 6.2-4 9M12 3c-2.5 2.8-4 6-4 9s1.5 6.2 4 9" stroke-linecap="round"/></svg>`;
+
+/** @returns {number} */
+function getPageDirDepth() {
+  let path = window.location.pathname.replace(/\\/g, '/');
+  if (path.endsWith('/index.html')) {
+    path = path.slice(0, -'/index.html'.length);
+  } else if (!path.endsWith('/') && /\.[a-z0-9]+$/i.test(path)) {
+    path = path.replace(/\/[^/]+$/, '');
+  }
+  if (!path.endsWith('/')) path += '/';
+  return path.split('/').filter(Boolean).length;
+}
+
+/**
+ * @param {string} targetLang
+ * @returns {string | null}
+ */
+function resolveAlternateLanguageUrl(targetLang) {
+  const link = document.querySelector(`link[rel="alternate"][hreflang="${targetLang}"]`);
+  if (!link) return null;
+
+  const href = link.getAttribute('href');
+  if (!href) return null;
+
+  try {
+    const url = new URL(href, window.location.origin);
+    const suffix = `${url.search}${url.hash}`;
+    const depth = getPageDirDepth();
+    const targetPath = url.pathname.replace(/^\//, '');
+
+    if (depth === 0) {
+      return `${targetPath}${suffix}`;
+    }
+
+    return `${'../'.repeat(depth)}${targetPath}${suffix}`;
+  } catch {
+    return null;
+  }
+}
+
+/** @returns {{ href: string, label: string, lang: string, ariaLabel: string }} */
+function getLanguageSwitchMeta() {
+  const isMs = document.documentElement.lang === 'ms'
+    || /\/ms(?:\/|$)/.test(window.location.pathname.replace(/\\/g, '/'));
+  const targetLang = isMs ? 'en' : 'ms';
+  const depth = getPageDirDepth();
+  const prefix = depth === 0 ? '' : '../'.repeat(depth);
+
+  const href = resolveAlternateLanguageUrl(targetLang)
+    ?? (isMs ? `${prefix || '../'}` : `${prefix}ms/`);
+
+  if (targetLang === 'ms') {
+    return {
+      href,
+      label: 'BM',
+      lang: 'ms',
+      ariaLabel: isMs ? 'Bahasa Malaysia' : 'Switch to Bahasa Malaysia',
+    };
+  }
+
+  return {
+    href,
+    label: 'EN',
+    lang: 'en',
+    ariaLabel: isMs ? 'Tukar ke Bahasa Inggeris' : 'Switch to English',
+  };
+}
+
+/**
+ * Inject language toggle on inner pages that share the global navbar.
+ * @param {HTMLElement} navbar
+ */
+function initNavbarLanguage(navbar) {
+  const inner = navbar.querySelector('.navbar__inner');
+  if (!inner || inner.querySelector('.navbar__lang')) return;
+
+  const { href, label, lang, ariaLabel } = getLanguageSwitchMeta();
+  const langLink = document.createElement('a');
+  langLink.className = 'navbar__lang';
+  langLink.href = href;
+  langLink.setAttribute('hreflang', lang);
+  langLink.setAttribute('lang', lang);
+  langLink.setAttribute('aria-label', ariaLabel);
+  langLink.title = ariaLabel;
+  langLink.innerHTML = `${LANG_GLOBE_SVG}<span class="navbar__lang-label" aria-hidden="true">${label}</span>`;
+
+  let actions = inner.querySelector('.navbar__actions');
+  if (!actions) {
+    actions = document.createElement('div');
+    actions.className = 'navbar__actions';
+
+    const cta = inner.querySelector('.navbar__cta');
+    const hamburger = inner.querySelector('.hamburger');
+
+    actions.appendChild(langLink);
+    if (cta) actions.appendChild(cta);
+    if (hamburger) actions.appendChild(hamburger);
+    inner.appendChild(actions);
+    return;
+  }
+
+  actions.insertBefore(langLink, actions.firstChild);
+}
+
 export function initNav() {
 
   const navbar     = document.getElementById('navbar');
@@ -11,6 +116,8 @@ export function initNav() {
   const body       = document.body;
 
   if (!navbar) return;
+
+  initNavbarLanguage(navbar);
 
   // ── Scroll state: add .scrolled class when past threshold ──────────────
   // Homepage (and MS homepage) have a dark hero: transparent nav at top.
@@ -76,6 +183,7 @@ export function initNav() {
 
   // Close on any nav link click (mobile UX)
   navLinks?.forEach(link => link.addEventListener('click', () => closeMenu()));
+  navbar.querySelector('.navbar__lang')?.addEventListener('click', () => closeMenu());
 
   // ── Smooth scroll with sticky-nav offset ───────────────────────────────
   // Polyfills browser's native smooth scroll for anchor links,

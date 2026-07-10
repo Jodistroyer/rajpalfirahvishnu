@@ -11,6 +11,51 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://[yourdomain]/ms/media/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://[yourdomain]/ms/media/#press</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://[yourdomain]/ms/media/#clippings-library</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://[yourdomain]/ms/faq/criminal-law/</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://[yourdomain]/ms/faq/civil-litigation/</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://[yourdomain]/ms/faq/property-conveyancing/</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://[yourdomain]/ms/faq/probate-estate/</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://[yourdomain]/ms/faq/corporate-commercial/</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://[yourdomain]/media/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -91,7 +136,12 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://[yourdomain]/ms/people/tiew-poh-nee/</loc>
+    <loc>https://[yourdomain]/ms/people/mariappan-manikam/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://[yourdomain]/people/mariappan-manikam/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

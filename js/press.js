@@ -2,22 +2,26 @@
  * press.js — Dynamic "In the Press" grid with category filtering.
  */
 
-import { PRESS_ITEMS, PRESS_CATEGORIES } from './press-data.js';
+import { getPressItems, getPressCategories } from './media-locale.js';
 import { observeLazyCards } from './lazymedia.js';
 import { getPressSeoMeta } from './press-seo.js';
+import { getRootRelativePrefix, isMsSubpage } from './site-config.js';
 
 /** @typedef {import('./press-data.js').PressItem} PressItem */
 
 /** @param {number} total */
 function updatePressViewAllCta(total) {
   const cta = document.getElementById('press-view-all-cta');
-  if (cta) cta.textContent = `View All (${total}) →`;
+  if (cta) {
+    cta.textContent = isMsSubpage()
+      ? `Lihat Semua (${total}) →`
+      : `View All (${total}) →`;
+  }
 }
 
 /** @returns {string} */
 function getAssetBase() {
-  const path = window.location.pathname.replace(/\\/g, '/');
-  return /\/media(?:\/|$)/.test(path) ? '../' : '';
+  return getRootRelativePrefix();
 }
 
 /** @param {string} str */
@@ -47,6 +51,12 @@ function resolveThumb(item) {
  * @param {PressItem} item
  */
 function categoryLabel(item) {
+  if (isMsSubpage()) {
+    if (item.type === 'video') return 'Video';
+    if (item.type === 'social') return 'Media sosial';
+    if (item.type === 'document') return 'Dokumen';
+    return 'Liputan media';
+  }
   if (item.type === 'video') return 'Video';
   if (item.type === 'social') return 'Social';
   if (item.type === 'document') return 'Document';
@@ -57,6 +67,12 @@ function categoryLabel(item) {
  * @param {PressItem} item
  */
 function ctaLabel(item) {
+  if (isMsSubpage()) {
+    if (item.type === 'video') return 'Tonton video';
+    if (item.type === 'document') return 'Lihat dokumen';
+    if (item.type === 'social') return 'Buka pautan';
+    return 'Baca artikel';
+  }
   if (item.type === 'video') return 'Watch video';
   if (item.type === 'document') return 'View document';
   if (item.type === 'social') return 'Open link';
@@ -115,7 +131,7 @@ function renderPressCard(item, index) {
 function renderCategoryNav(activeCategory, showFilters) {
   if (!showFilters) return '';
 
-  const items = PRESS_CATEGORIES.map(cat => {
+  const items = getPressCategories().map(cat => {
     const isActive = cat.id === activeCategory;
     return `
       <li class="clippings-years-nav__item" role="none">
@@ -140,7 +156,7 @@ function renderCategoryNav(activeCategory, showFilters) {
 export function initPress(container) {
   if (!container || container.dataset.pressReady === 'true') return;
 
-  updatePressViewAllCta(PRESS_ITEMS.length);
+  updatePressViewAllCta(getPressItems().length);
 
   container.dataset.pressReady = 'true';
   const mode = container.dataset.pressMode === 'preview' ? 'preview' : 'full';
@@ -158,7 +174,7 @@ export function initPress(container) {
     return batchSizeDefault;
   }
 
-  const sorted = [...PRESS_ITEMS].sort((a, b) => b.sort.localeCompare(a.sort));
+  const sorted = [...getPressItems()].sort((a, b) => b.sort.localeCompare(a.sort));
   let activeCategory = 'all';
   let visibleCount = getBatchSize();
 
@@ -186,10 +202,13 @@ export function initPress(container) {
     const remaining = filteredLength - visibleCount;
     if (remaining <= 0) return '';
     const nextBatch = Math.min(getBatchSize(), remaining);
+    const showMoreLabel = isMsSubpage()
+      ? `Tunjuk lagi (${nextBatch})`
+      : `Show more (${nextBatch})`;
     return `
       <div class="press-grid__more">
         <button type="button" class="btn btn--secondary press-grid__more-btn" data-press-show-more>
-          Show more (${nextBatch})
+          ${showMoreLabel}
         </button>
       </div>`;
   }
@@ -201,7 +220,7 @@ export function initPress(container) {
     const visible = filtered.slice(0, visibleCount);
     const cards = visible.length
       ? visible.map((item, i) => renderPressCard(item, i)).join('')
-      : '<p class="press-grid__empty">No press coverage in this category yet.</p>';
+      : `<p class="press-grid__empty">${isMsSubpage() ? 'Tiada liputan media dalam kategori ini lagi.' : 'No press coverage in this category yet.'}</p>`;
 
     inner.innerHTML = `
       ${renderCategoryNav(activeCategory, showFilters)}

@@ -142,7 +142,8 @@
 
 /* Desktop: Vishnu left, Rajpal centre, Mariappan right + larger profile photos */
 @media (min-width: 1025px) {
-  #people .container {
+  #people .container,
+  #pasukan .container {
     max-width: 1360px;
   }
 

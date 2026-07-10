@@ -41,28 +41,53 @@ export function isMediaSubpage() {
 }
 
 /**
+ * @returns {boolean}
+ */
+export function isMsMediaSubpage() {
+  return /\/ms\/media(?:\/|$)/.test(window.location.pathname.replace(/\\/g, '/'));
+}
+
+/**
+ * @returns {boolean}
+ */
+export function isMsSubpage() {
+  return /\/ms(?:\/|$)/.test(window.location.pathname.replace(/\\/g, '/'));
+}
+
+/**
+ * Relative prefix from the current page to the site root (e.g. '', '../', '../../').
+ * @returns {string}
+ */
+export function getRootRelativePrefix() {
+  const path = window.location.pathname.replace(/\\/g, '/');
+  const dir = path.endsWith('/') ? path : path.replace(/\/[^/]+$/, '/');
+  const depth = dir.split('/').filter(Boolean).length;
+  return depth === 0 ? '' : '../'.repeat(depth);
+}
+
+/**
  * @returns {string}
  */
 export function clippingsPageUrl() {
-  return isMediaSubpage()
-    ? `${getSiteOrigin()}/media/#clippings`
-    : `${getSiteOrigin()}/#media`;
+  if (isMsMediaSubpage()) return `${getSiteOrigin()}/ms/media/#clippings-library`;
+  if (isMediaSubpage()) return `${getSiteOrigin()}/media/#clippings`;
+  if (isMsSubpage()) return `${getSiteOrigin()}/ms/#clippings-library`;
+  return `${getSiteOrigin()}/#media`;
 }
 
 /**
  * @returns {string}
  */
 export function pressPageUrl() {
-  return isMediaSubpage()
-    ? `${getSiteOrigin()}/media/#press`
-    : `${getSiteOrigin()}/#media`;
+  if (isMsMediaSubpage()) return `${getSiteOrigin()}/ms/media/#press`;
+  if (isMediaSubpage()) return `${getSiteOrigin()}/media/#press`;
+  if (isMsSubpage()) return `${getSiteOrigin()}/ms/#press`;
+  return `${getSiteOrigin()}/#media`;
 }
 
 /**
  * @returns {string}
  */
 export function clippingsAssetBase() {
-  return isMediaSubpage()
-    ? '../assets/media/newspaper-clippings/'
-    : 'assets/media/newspaper-clippings/';
+  return `${getRootRelativePrefix()}assets/media/newspaper-clippings/`;
 }

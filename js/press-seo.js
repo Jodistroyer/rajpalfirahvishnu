@@ -3,14 +3,15 @@
  * Injects JSON-LD and provides enhanced alt/title text for press cards.
  */
 
-import { PRESS_ITEMS } from './press-data.js';
-import { absoluteUrl, getSiteOrigin, pressPageUrl } from './site-config.js';
+import { getPressItems } from './media-locale.js';
+import { absoluteUrl, getSiteOrigin, isMsSubpage, pressPageUrl } from './site-config.js';
 
 /** @typedef {import('./press-data.js').PressItem} PressItem */
 
 const FIRM_NAME = 'Rajpal, Firah & Vishnu';
 const LAWYER_NAME = 'Datuk Rajpal Singh';
-const SEO_KEYWORDS = [
+
+const SEO_KEYWORDS_EN = [
   'criminal lawyer Malaysia',
   'criminal defence lawyer Kuala Lumpur',
   'criminal defense lawyer Malaysia',
@@ -21,19 +22,38 @@ const SEO_KEYWORDS = [
   'KK Mart lawyer Malaysia',
 ].join(', ');
 
-/** @type {Map<string, ReturnType<typeof buildSeoMeta>>} */
-const seoMetaCache = new Map();
+const SEO_KEYWORDS_MS = [
+  'peguam jenayah Malaysia',
+  'peguam pembelaan jenayah Kuala Lumpur',
+  'peguam jenayah Malaysia',
+  'Rajpal Singh peguam',
+  'peguam jenayah Selangor',
+  'liputan media peguam jenayah Malaysia',
+  'peguam KK Mart Malaysia',
+].join(', ');
+
+function seoKeywords() {
+  return isMsSubpage() ? SEO_KEYWORDS_MS : SEO_KEYWORDS_EN;
+}
 
 /**
  * @param {PressItem} item
  */
 function buildSeoMeta(item) {
-  const alt = `${item.title} — ${LAWYER_NAME}, criminal lawyer Malaysia (${item.publisher})`;
-  const title = `${item.title} | ${LAWYER_NAME} — Criminal Lawyer Malaysia`;
+  const ms = isMsSubpage();
+  const alt = ms
+    ? `${item.title} — ${LAWYER_NAME}, peguam jenayah Malaysia (${item.publisher})`
+    : `${item.title} — ${LAWYER_NAME}, criminal lawyer Malaysia (${item.publisher})`;
+  const title = ms
+    ? `${item.title} | ${LAWYER_NAME} — Peguam Jenayah Malaysia`
+    : `${item.title} | ${LAWYER_NAME} — Criminal Lawyer Malaysia`;
   let description = item.excerpt;
 
-  if (!/\b(criminal lawyer|criminal defence|criminal defense|Malaysia|Kuala Lumpur|Selangor)\b/i.test(description)) {
+  if (!ms && !/\b(criminal lawyer|criminal defence|criminal defense|Malaysia|Kuala Lumpur|Selangor)\b/i.test(description)) {
     description = `Malaysian criminal lawyer press coverage: ${description}`;
+  }
+  if (ms && !/\b(peguam|jenayah|Malaysia|Kuala Lumpur|Selangor)\b/i.test(description)) {
+    description = `Liputan media peguam jenayah Malaysia: ${description}`;
   }
 
   return {
@@ -41,9 +61,12 @@ function buildSeoMeta(item) {
     title,
     description,
     datePublished: item.sort.slice(0, 10),
-    keywords: SEO_KEYWORDS,
+    keywords: seoKeywords(),
   };
 }
+
+/** @type {Map<string, ReturnType<typeof buildSeoMeta>>} */
+const seoMetaCache = new Map();
 
 /**
  * @param {PressItem} item
@@ -84,7 +107,7 @@ function pressSchemaPart(item) {
     description: meta.description,
     url: item.url,
     datePublished: meta.datePublished,
-    inLanguage: 'en-MY',
+    inLanguage: isMsSubpage() ? 'ms-MY' : 'en-MY',
     publisher: {
       '@type': 'Organization',
       name: item.publisher,
@@ -99,7 +122,7 @@ function pressSchemaPart(item) {
         url: getSiteOrigin(),
       },
     },
-    keywords: SEO_KEYWORDS,
+    keywords: seoKeywords(),
   };
 
   if (image) part.image = image;
@@ -118,16 +141,19 @@ export function buildPressJsonLd(items) {
   const pageUrl = pressPageUrl();
   const sorted = [...items].sort((a, b) => b.sort.localeCompare(a.sort));
 
+  const ms = isMsSubpage();
   return {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     '@id': `${pageUrl}#press-collection`,
-    name: 'In the Press — Datuk Rajpal Singh, Criminal Lawyer Malaysia',
-    description:
-      'Press, broadcast, and online coverage featuring Datuk Rajpal Singh, ' +
-      'a leading criminal defence lawyer in Kuala Lumpur and Selangor, Malaysia.',
+    name: ms
+      ? 'Dalam Media — Datuk Rajpal Singh, Peguam Jenayah Malaysia'
+      : 'In the Press — Datuk Rajpal Singh, Criminal Lawyer Malaysia',
+    description: ms
+      ? 'Liputan media, siaran, dan dalam talian memaparkan Datuk Rajpal Singh, peguam pembelaan jenayah terkemuka di Kuala Lumpur dan Selangor, Malaysia.'
+      : 'Press, broadcast, and online coverage featuring Datuk Rajpal Singh, a leading criminal defence lawyer in Kuala Lumpur and Selangor, Malaysia.',
     url: pageUrl,
-    inLanguage: 'en-MY',
+    inLanguage: isMsSubpage() ? 'ms-MY' : 'en-MY',
     isPartOf: {
       '@type': 'WebSite',
       name: FIRM_NAME,
@@ -143,7 +169,7 @@ export function buildPressJsonLd(items) {
       },
       { '@type': 'LegalService', name: FIRM_NAME },
     ],
-    keywords: SEO_KEYWORDS,
+    keywords: seoKeywords(),
     numberOfItems: sorted.length,
     hasPart: sorted.map(pressSchemaPart),
   };
@@ -160,7 +186,7 @@ export function initPressSeo() {
     const script = document.createElement('script');
     script.id = 'press-jsonld';
     script.type = 'application/ld+json';
-    script.textContent = JSON.stringify(buildPressJsonLd(PRESS_ITEMS));
+    script.textContent = JSON.stringify(buildPressJsonLd(getPressItems()));
     document.head.appendChild(script);
   };
 

@@ -36,24 +36,36 @@
   <header id="navbar" class="navbar" role="banner">
     <div class="container">
       <div class="navbar__inner">
-        <a href="../" class="navbar__logo" aria-label="Rajpal, Firah &amp; Vishnu | Laman Utama">
-          <img src="../assets/logo.png" alt="" width="36" height="36" class="navbar__logo-mark" aria-hidden="true">
+        <a href="#hero" class="navbar__logo" aria-label="Rajpal, Firah &amp; Vishnu | Laman Utama">
+          <img src="../assets/logo.png" alt="" width="38" height="38" class="navbar__logo-mark" aria-hidden="true">
           <span class="navbar__logo-text">Rajpal, Firah <span class="amp">&amp;</span> Vishnu</span>
         </a>
         <nav aria-label="Navigasi utama" class="navbar__nav">
           <ul class="navbar__links" id="nav-links" role="list">
-            <li><a href="#perkhidmatan" class="navbar__link">Perkhidmatan</a></li>
+            <li><a href="#perkhidmatan" class="navbar__link">Cara Kami Membantu</a></li>
             <li><a href="#pasukan"      class="navbar__link">Pasukan Kami</a></li>
+            <li><a href="#media"        class="navbar__link">Bilik Media</a></li>
             <li><a href="#hubungi"      class="navbar__link">Hubungi Kami</a></li>
           </ul>
           <a href="#hubungi" class="btn btn--primary navbar__cta-mobile" aria-hidden="true" tabindex="-1">Tempah Perundingan</a>
         </nav>
-        <a href="#hubungi" class="btn btn--primary navbar__cta">Tempah Perundingan</a>
-        <button class="hamburger" id="hamburger-btn" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="nav-links">
-          <span class="hamburger__line"></span>
-          <span class="hamburger__line"></span>
-          <span class="hamburger__line"></span>
-        </button>
+        <div class="navbar__actions">
+          <a href="../" class="navbar__lang" hreflang="en" lang="en" aria-label="Tukar ke Bahasa Inggeris" title="English">
+            <svg class="navbar__lang-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M3 12h18M12 3c2.5 2.8 4 6 4 9s-1.5 6.2-4 9M12 3c-2.5 2.8-4 6-4 9s1.5 6.2 4 9" stroke-linecap="round"/>
+            </svg>
+            <span class="navbar__lang-label" aria-hidden="true">EN</span>
+          </a>
+
+          <a href="#hubungi" class="btn btn--primary navbar__cta">Tempah Perundingan</a>
+
+          <button class="hamburger" id="hamburger-btn" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="nav-links">
+            <span class="hamburger__line"></span>
+            <span class="hamburger__line"></span>
+            <span class="hamburger__line"></span>
+          </button>
+        </div>
       </div>
     </div>
   </header>
@@ -61,26 +73,42 @@
   <main id="main-content">
 
     <!-- ── Hero ── -->
-    <section id="hero-ms" class="hero" aria-label="Selamat Datang ke Rajpal, Firah &amp; Vishnu">
-      <div class="hero__overlay" style="background: rgba(17,17,17,0.82);" aria-hidden="true"></div>
+    <section id="hero" class="hero" aria-label="Selamat Datang ke Rajpal, Firah &amp; Vishnu">
+
+      <img
+        class="hero__fallback"
+        src="../assets/fallback.jpg"
+        alt=""
+        aria-hidden="true"
+        width="1920"
+        height="1080"
+        decoding="async">
+
+      <div class="hero__overlay" aria-hidden="true"></div>
+
       <div class="hero__content container">
-        <h1 class="hero__headline">Keadilan.<br>Ketepatan.<br>Kepercayaan.</h1>
+        <h1 class="hero__headline">Rajpal<br>Firah<br>Vishnu</h1>
         <p class="hero__subheadline">
-          Khidmat guaman terkemuka untuk individu dan perniagaan di seluruh Malaysia.
+          Peguam jenayah terkemuka. Litigasi jenayah dan sivil di setiap peringkat mahkamah Malaysia.
           Kami berjuang untuk keputusan yang bermakna.
         </p>
         <div class="hero__cta-group">
-          <a href="#hubungi" class="btn btn--primary btn--large">Dapatkan Nasihat Guaman</a>
-          <a href="../" class="btn btn--ghost btn--large" hreflang="en">English Version</a>
+          <a href="#hubungi" class="btn btn--primary btn--large">Hubungi Kami Hari Ini</a>
+          <a href="#pasukan" class="btn btn--ghost btn--large">Kenali Pasukan Kami</a>
         </div>
       </div>
+
+      <a href="#perkhidmatan" class="hero__scroll-cue" aria-label="Tatal ke bawah ke perkhidmatan">
+        <span class="hero__scroll-line" aria-hidden="true"></span>
+      </a>
+
     </section>
 
     <!-- ── Perkhidmatan ── -->
     <section id="perkhidmatan" class="services section-pad" aria-label="Perkhidmatan Guaman Kami">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">Perkhidmatan Guaman</h2>
+          <h2 class="section-title">Cara Kami Membantu</h2>
           <p class="section-subtitle">
             Kami adalah peguam mahkamah. Litigasi jenayah dan sivil di setiap peringkat mahkamah Malaysia,
             dari Mahkamah Majistret dan Mahkamah Sesyen hingga Mahkamah Tinggi, Mahkamah Rayuan, dan Mahkamah Persekutuan.
@@ -110,7 +138,7 @@
               <p class="service-card__term">Litigasi Jenayah</p>
               <p class="service-card__desc">Dihadapkan dengan pertuduhan atau sedang disiasat? Kami mewakili anda dari siasatan polis dan reman hingga perbicaraan, penghukuman, dan rayuan: penipuan, serangan, kes dadah, jenayah kolar putih, dan lain-lain.</p>
               <footer class="service-card__footer">
-                <a href="../faq/criminal-law/" class="service-card__link">Soalan lazim undang-undang jenayah <span aria-hidden="true">→</span></a>
+                <a href="faq/criminal-law/" class="service-card__link">Soalan lazim undang-undang jenayah <span aria-hidden="true">→</span></a>
                 <a href="people/rajpal-singh/?from=services" class="service-card__link service-card__link--profile">Dipimpin Dato' Rajpal Singh <span aria-hidden="true">→</span></a>
               </footer>
               </div>
@@ -135,7 +163,7 @@
               <p class="service-card__term">Litigasi Sivil</p>
               <p class="service-card__desc">Apabila pertikaian antara individu atau syarikat dibawa ke mahkamah: pelanggaran kontrak, pemulihan hutang, pertikaian pemegang saham, tuntutan kecuaian. Kami memperjuangkan kes anda di setiap peringkat mahkamah Malaysia.</p>
               <footer class="service-card__footer">
-                <a href="../faq/civil-litigation/" class="service-card__link">Soalan lazim litigasi sivil <span aria-hidden="true">→</span></a>
+                <a href="faq/civil-litigation/" class="service-card__link">Soalan lazim litigasi sivil <span aria-hidden="true">→</span></a>
                 <a href="people/vishnu-kumar/?from=services" class="service-card__link service-card__link--profile">Dipimpin Vishnu Kumar <span aria-hidden="true">→</span></a>
               </footer>
               </div>
@@ -165,7 +193,7 @@
               <div class="service-card__body">
               <h3 class="service-card__title">Nasihat Korporat &amp; Komersial</h3>
               <p class="service-card__desc">Kerja guaman perniagaan di luar mahkamah: penubuhan syarikat, perjanjian pemegang saham, M&amp;A, pematuhan peraturan, dan kontrak komersial.</p>
-              <a href="../faq/corporate-commercial/" class="service-card__cta">Soalan lazim korporat &amp; komersial <span aria-hidden="true">→</span></a>
+              <a href="faq/corporate-commercial/" class="service-card__cta">Soalan lazim korporat &amp; komersial <span aria-hidden="true">→</span></a>
               </div>
             </article>
 
@@ -186,7 +214,7 @@
               <div class="service-card__body">
               <h3 class="service-card__title">Harta Tanah &amp; Konveyans</h3>
               <p class="service-card__desc">Membeli atau menjual hartanah: perjanjian jual beli, pemindahan hakmilik, dokumentasi pinjaman, dan usaha wajar untuk transaksi kediaman dan komersial.</p>
-              <a href="../faq/property-conveyancing/" class="service-card__cta">Soalan lazim hartanah &amp; konveyans <span aria-hidden="true">→</span></a>
+              <a href="faq/property-conveyancing/" class="service-card__cta">Soalan lazim hartanah &amp; konveyans <span aria-hidden="true">→</span></a>
               </div>
             </article>
 
@@ -207,7 +235,7 @@
               <div class="service-card__body">
               <h3 class="service-card__title">Probet &amp; Pentadbiran Harta Pusaka</h3>
               <p class="service-card__desc">Wasiat, pentadbiran harta pusaka, pengagihan warisan, dan permohonan surat kuasa probet atau pentadbiran.</p>
-              <a href="../faq/probate-estate/" class="service-card__cta">Soalan lazim probet &amp; harta pusaka <span aria-hidden="true">→</span></a>
+              <a href="faq/probate-estate/" class="service-card__cta">Soalan lazim probet &amp; harta pusaka <span aria-hidden="true">→</span></a>
               </div>
             </article>
 
@@ -224,9 +252,10 @@
     <section id="pasukan" class="people section-pad" aria-label="Pasukan Kami">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">Kenali Peguam Kami</h2>
+          <h2 class="section-title">Pasukan Kami</h2>
           <p class="section-subtitle">
-            Pasukan peguam berpengalaman dengan kepakaran mendalam dan komitmen bersama terhadap hasil yang terbaik untuk klien.
+            Peguam berpengalaman dengan kepakaran mendalam dan komitmen bersama terhadap hasil terbaik untuk klien.
+            Klik mana-mana profil untuk ketahui lebih lanjut.
           </p>
         </div>
         <div class="people__grid">
@@ -281,6 +310,210 @@
             </div>
           </a>
         </div>
+      </div>
+    </section>
+
+    <!-- ── Bilik Media ── -->
+    <section id="media" class="media-room section-pad" aria-label="Bilik Media">
+      <div class="container">
+
+        <div class="section-header">
+          <h2 class="section-title">Bilik Media</h2>
+          <p class="section-subtitle">
+            Wawasan firma daripada peguam kami dalam Bahasa Malaysia, serta liputan media terpilih.
+          </p>
+        </div>
+
+        <div class="media-room__subsection" id="press">
+          <div class="media-room__subsection-header">
+            <div class="media-room__subsection-copy">
+              <h3 class="media-room__subsection-title">Dalam Media</h3>
+              <p class="media-room__subsection-desc">
+                Liputan akhbar, siaran, dan dalam talian mengenai <strong>Datuk Rajpal Singh</strong>,
+                peguam pembelaan jenayah di <strong>Kuala Lumpur dan Selangor, Malaysia</strong>.
+                Pautan membuka sumber asal penerbit atau penyiar.
+              </p>
+            </div>
+            <a href="media/#press" class="btn btn--secondary media-room__subsection-cta" id="press-view-all-cta">Lihat Semua →</a>
+          </div>
+        </div>
+
+        <div id="press-grid"
+             class="press-grid"
+             data-press-mode="preview"
+             data-press-batch="6"
+             data-press-batch-mobile="3"
+             itemscope
+             itemtype="https://schema.org/CollectionPage"
+             aria-label="Liputan media terpilih">
+          <meta itemprop="name" content="Dalam Media | Datuk Rajpal Singh, peguam jenayah Malaysia">
+          <meta itemprop="description" content="Liputan akhbar dan siaran memaparkan peguam pembelaan jenayah Datuk Rajpal Singh di Kuala Lumpur dan Selangor, Malaysia.">
+        </div>
+
+        <div class="media-room__subsection media-room__subsection--clippings" id="clippings-library">
+          <div class="media-room__subsection-header">
+            <div class="media-room__subsection-copy">
+              <h3 class="media-room__subsection-title">Arkib Keratan Akhbar</h3>
+              <p class="media-room__subsection-desc">
+                Arkib keratan akhbar Malaysia mengenai <strong>Datuk Rajpal Singh</strong>,
+                peguam jenayah terkemuka di Malaysia.
+              </p>
+            </div>
+            <a href="media/#clippings-library" class="btn btn--secondary media-room__subsection-cta" id="clippings-view-all-cta">Lihat Semua →</a>
+          </div>
+        </div>
+
+        <div id="clippings-gallery"
+             class="clippings-gallery"
+             data-clippings-mode="preview"
+             data-clippings-limit="8"
+             data-clippings-batch="8"
+             data-clippings-max="24"
+             data-clippings-desktop-year="2020"
+             itemscope
+             itemtype="https://schema.org/ImageGallery"
+             aria-label="Arkib keratan akhbar peguam jenayah Malaysia mengikut tahun">
+          <meta itemprop="name" content="Keratan akhbar peguam jenayah Rajpal Singh Malaysia">
+          <meta itemprop="description" content="Imej akhbar dan media memaparkan peguam pembelaan jenayah Datuk Rajpal Singh di Malaysia.">
+          <div class="clippings-gallery__skeleton" aria-hidden="true">
+            <div class="clippings-mosaic">
+              <div class="clippings-year-rail" aria-hidden="true"></div>
+              <div class="clippings-collage clippings-collage--unified">
+                <span class="clippings-gallery__skeleton-card clipping-card--tall clipping-card--wide"></span>
+                <span class="clippings-gallery__skeleton-card"></span>
+                <span class="clippings-gallery__skeleton-card clipping-card--wide"></span>
+                <span class="clippings-gallery__skeleton-card"></span>
+                <span class="clippings-gallery__skeleton-card clipping-card--tall"></span>
+                <span class="clippings-gallery__skeleton-card"></span>
+                <span class="clippings-gallery__skeleton-card clipping-card--wide"></span>
+                <span class="clippings-gallery__skeleton-card"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="media-room__disclaimer" aria-label="Penafian penggunaan imej">
+          <p>
+            <strong>Penggunaan imej.</strong>
+            Lakaran kecil media dan keratan akhbar dipaparkan untuk rujukan sahaja. Imej dan artikel kekal hak milik penerbit dan platform masing-masing. Setiap item media memaut ke sumber asal jika tersedia.
+            <a href="media/rights-log.html">Lihat log hak imej</a>.
+          </p>
+        </aside>
+
+        <div class="media-room__subsection media-room__subsection--insights">
+          <h3 class="media-room__subsection-title">Wawasan Firma</h3>
+        </div>
+
+        <div class="media-room__grid">
+
+          <article class="media-card lazy"
+            data-category="Undang-undang Komersial"
+            data-date="12 Jun 2026"
+            data-title="Hak Anda dalam Pertikaian Komersial: Apa yang Setiap Pemilik Perniagaan Perlu Tahu"
+            data-author="Datuk Rajpal Singh"
+            data-content="Pertikaian komersial timbul daripada pelanggaran kontrak, kecuaian, atau perselisihan mengenai terma perjanjian perniagaan. Di Malaysia, kebanyakan pertikaian komersial didengar di Mahkamah Tinggi (Bahagian Komersial) atau diselesaikan melalui timbang tara di bawah Peraturan AIAC.
+
+Langkah utama apabila pertikaian timbul:
+
+1. Semak kontrak anda dengan teliti: kenal pasti klausa penyelesaian pertikaian dan tempoh had.
+
+2. Hantar surat tuntutan rasmi sebelum memulakan prosiding. Mahkamah mengharapkan percubaan penyelesaian pra-litigasi.
+
+3. Pertimbangkan pengantaraan di bawah Akta Pengantaraan 2012, pilihan yang lebih pantas dan kos efektif untuk banyak pertikaian.
+
+4. Libatkan peguam litigasi berpengalaman seawal mungkin. Pemeliharaan bukti sensitif masa.
+
+Akta Had Masa 1953 mengenakan tempoh had enam tahun secara amnya untuk tuntutan kontrak. Terlepas tarikh akhir ini adalah fatal kepada kes anda.
+
+Hubungi kami jika anda menghadapi atau menjangkakan pertikaian komersial. Nasihat guaman awal adalah aset paling berharga anda.">
+            <div class="media-card__meta">
+              <span class="media-card__category">Undang-undang Komersial</span>
+              <time class="media-card__date" datetime="2026-06-12">12 Jun 2026</time>
+            </div>
+            <h3 class="media-card__title">Hak Anda dalam Pertikaian Komersial: Apa yang Setiap Pemilik Perniagaan Perlu Tahu</h3>
+            <p class="media-card__excerpt">
+              Pertikaian komersial tidak dapat dielakkan dalam perniagaan, tetapi cara anda bertindak menentukan hasilnya.
+              Memahami kedudukan guaman anda sebelum mengambil tindakan boleh menjimatkan masa dan kos yang ketara.
+            </p>
+            <footer class="media-card__footer">
+              <span class="media-card__author">Oleh Datuk Rajpal Singh</span>
+              <button class="media-card__cta" aria-label="Baca artikel penuh: Hak Anda dalam Pertikaian Komersial">
+                Baca Lagi <span aria-hidden="true">→</span>
+              </button>
+            </footer>
+          </article>
+
+          <article class="media-card lazy"
+            data-category="Undang-undang Hartanah"
+            data-date="3 Mei 2026"
+            data-title="Perubahan Utama Undang-undang Hartanah Malaysia yang Perlu Anda Ketahui pada 2026"
+            data-author="Vishnu Kumar"
+            data-content="Belanjawan 2026 dan kemas kini perundangan terkini telah memperkenalkan beberapa perubahan yang mempengaruhi transaksi hartanah di Malaysia:
+
+1. Lanjutan Pengecualian Duti Setem: Kerajaan telah melanjutkan pengecualian duti setem untuk pembeli rumah kali pertama bagi hartanah sehingga RM500,000, berkuat kuasa sehingga 31 Disember 2027.
+
+2. Pindaan Akta Pemajuan Perumahan: Pemaju kini dikehendaki menyediakan tempoh liabiliti kecacatan selama 36 bulan (naik daripada 24 bulan) untuk pemajuan kediaman baharu.
+
+3. Portal MyHome: Pelancaran Portal MyHome berpusat memperkemas skim pemilikan rumah kerajaan, mengurangkan masa pemprosesan untuk permohonan PRIMA, MyDeposit, dan PR1MA.
+
+4. Kemas Kini Pengurusan Strata: Pindaan Akta Pengurusan Strata kini memerlukan semua Badan Pengurusan Bersama mengekalkan dana tenggelam sekurang-kurangnya 10% daripada jumlah caj penyelenggaraan bulanan.
+
+Pasukan hartanah kami bersedia memberi nasihat tentang bagaimana perubahan ini mempengaruhi pembelian, pemajuan, atau transaksi pembiayaan anda yang akan datang. Hubungi Vishnu Kumar secara langsung untuk perundingan.">
+            <div class="media-card__meta">
+              <span class="media-card__category">Undang-undang Hartanah</span>
+              <time class="media-card__date" datetime="2026-05-03">3 Mei 2026</time>
+            </div>
+            <h3 class="media-card__title">Perubahan Utama Undang-undang Hartanah Malaysia yang Perlu Anda Ketahui pada 2026</h3>
+            <p class="media-card__excerpt">
+              Pindaan kepada Akta Pemajuan Perumahan dan ambang duti setem yang dikemas kini dalam Belanjawan 2026 mempunyai
+              implikasi ketara bagi pembeli hartanah, pemaju, dan pembiaya di Malaysia.
+            </p>
+            <footer class="media-card__footer">
+              <span class="media-card__author">Oleh Vishnu Kumar</span>
+              <button class="media-card__cta" aria-label="Baca artikel penuh: Perubahan Undang-undang Hartanah Malaysia">
+                Baca Lagi <span aria-hidden="true">→</span>
+              </button>
+            </footer>
+          </article>
+
+          <article class="media-card lazy"
+            data-category="Undang-undang Pekerjaan"
+            data-date="18 April 2026"
+            data-title="Hak Pekerjaan Semasa Penstrukturan Semula Korporat: Panduan untuk Pekerja dan Majikan"
+            data-author="Firah Abdul Rahman"
+            data-content="Penstrukturan semula korporat, sama ada melalui penggabungan, pengambilalihan, atau latihan pemberhentian berdiri sendiri, membawa implikasi guaman yang ketara di bawah Akta Kerja 1955 dan Akta Perhubungan Perusahaan 1967.
+
+Untuk Pekerja:
+- Pemberhentian mesti bona fide. Majikan tidak boleh menggunakan penstrukturan semula sebagai alasan untuk pemecatan yang menyalahi undang-undang.
+- Pekerja yang ditamatkan berhak mendapat faedah pemberhentian statutori di bawah Peraturan Kerja (Faedah Penamatan dan Pemberhentian) 1980, berdasarkan tahun perkhidmatan.
+- Skim Pemisahan Sukarela (VSS) tidak boleh menjadi pemecatan konstruktif; pastikan terma adalah sukarela dan adil.
+- Sebarang pemecatan tanpa sebab atau alasan munasabah boleh dicabar di Mahkamah Perusahaan dalam tempoh 60 hari selepas pemecatan.
+
+Untuk Majikan:
+- Dokumentasikan justifikasi perniagaan untuk setiap pemberhentian dengan teliti. Mahkamah akan meneliti kesahihan penstrukturan semula.
+- Patuhi keperluan pemberitahuan KSM: majikan yang berniat memberhentikan 10 atau lebih pekerja mesti memaklumkan Ketua Pengarah Buruh.
+- Tawarkan pakej pemisahan yang adil dan mematuhi statut. Bayaran kurang adalah kesilapan biasa dan mahal.
+
+Kedua-dua pihak mendapat manfaat daripada nasihat guaman awal. Hubungi Firah Abdul Rahman untuk membincangkan situasi anda secara sulit.">
+            <div class="media-card__meta">
+              <span class="media-card__category">Undang-undang Pekerjaan</span>
+              <time class="media-card__date" datetime="2026-04-18">18 April 2026</time>
+            </div>
+            <h3 class="media-card__title">Hak Pekerjaan Semasa Penstrukturan Semula Korporat</h3>
+            <p class="media-card__excerpt">
+              Pemberhentian, VSS, dan penstrukturan semula korporat adalah antara peristiwa guaman paling sensitif di mana-mana tempat kerja.
+              Memahami rangka kerja undang-undang melindungi kedua-dua belah pihak dalam hubungan pekerjaan.
+            </p>
+            <footer class="media-card__footer">
+              <span class="media-card__author">Oleh Firah Abdul Rahman</span>
+              <button class="media-card__cta" aria-label="Baca artikel penuh: Hak Pekerjaan Semasa Penstrukturan Semula Korporat">
+                Baca Lagi <span aria-hidden="true">→</span>
+              </button>
+            </footer>
+          </article>
+
+        </div>
+
       </div>
     </section>
 
@@ -440,8 +673,9 @@
 
   </main>
 
-  <footer class="footer" role="contentinfo">
+  <footer id="footer" class="footer" role="contentinfo">
     <div class="container">
+
       <div class="footer__cta-band">
         <div class="footer__cta-content">
           <p class="footer__cta-headline">Sedia Berbincang Tentang Masalah Guaman Anda?</p>
@@ -449,17 +683,64 @@
         </div>
         <a href="#hubungi" class="btn btn--primary btn--large">Tempah Perundingan</a>
       </div>
-      <div class="footer__divider"></div>
+
+      <div class="footer__divider" aria-hidden="true"></div>
+
+      <div class="footer__grid">
+
+        <div class="footer__brand">
+          <a href="#hero" class="footer__logo-link" aria-label="Kembali ke atas">
+            <img src="../assets/logo.png" alt="Rajpal, Firah &amp; Vishnu" width="36" height="36" class="footer__logo">
+          </a>
+          <p class="footer__tagline">Keadilan. Ketepatan. Kepercayaan.</p>
+          <p class="footer__address-short">Petaling Jaya &amp; Batu Caves, Selangor</p>
+        </div>
+
+        <nav class="footer__nav" aria-label="Bidang amalan">
+          <h3 class="footer__nav-heading">Bidang Amalan</h3>
+          <ul class="footer__nav-list" role="list">
+            <li><a href="#perkhidmatan" class="footer__nav-link">Undang-undang Jenayah &amp; Pembelaan</a></li>
+            <li><a href="#perkhidmatan" class="footer__nav-link">Litigasi Sivil</a></li>
+            <li><a href="#perkhidmatan" class="footer__nav-link">Nasihat Korporat</a></li>
+            <li><a href="#perkhidmatan" class="footer__nav-link">Konveyans</a></li>
+            <li><a href="#perkhidmatan" class="footer__nav-link">Probet &amp; Pentadbiran Harta Pusaka</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer__nav" aria-label="Pautan pantas">
+          <h3 class="footer__nav-heading">Pautan Pantas</h3>
+          <ul class="footer__nav-list" role="list">
+            <li><a href="#pasukan"  class="footer__nav-link">Pasukan Kami</a></li>
+            <li><a href="#media"    class="footer__nav-link">Bilik Media</a></li>
+            <li><a href="#hubungi"  class="footer__nav-link">Hubungi Kami</a></li>
+            <li><a href="../" class="footer__nav-link" hreflang="en" lang="en">English</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer__social-col">
+          <h3 class="footer__nav-heading">Ikuti Kami</h3>
+          <div class="footer__social-links">
+            <a href="#" class="footer__social-link" aria-label="Ikuti kami di LinkedIn" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Ikuti kami di Facebook" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
       <div class="footer__bottom">
         <p class="footer__legal">
-          © 2026 Rajpal, Firah &amp; Vishnu. Hak cipta terpelihara.
-          Peguam Bela &amp; Peguam Cara, Malaysia.
+          © 2026 Rajpal, Firah &amp; Vishnu. Hak cipta terpelihara. Peguam Bela &amp; Peguam Cara, Malaysia.
           Maklumat di laman web ini adalah untuk tujuan maklumat umum sahaja dan tidak membentuk nasihat guaman.
         </p>
-        <p class="footer__legal">
-          <a href="../" class="footer__legal-link" hreflang="en">English →</a>
+        <p class="footer__legal footer__legal--links">
+          <a href="#" class="footer__legal-link">Dasar Privasi</a>&nbsp;·&nbsp;<a href="#" class="footer__legal-link">Terma Penggunaan</a>
         </p>
       </div>
+
     </div>
   </footer>
 

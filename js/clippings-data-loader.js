@@ -2,15 +2,22 @@
  * clippings-data-loader.js — Shared lazy loader for clippings metadata.
  */
 
-/** @type {Promise<typeof import('./clippings-data.js')> | null} */
+import { getClippings, isMsMediaLocale } from './media-locale.js';
+
+/** @type {Promise<{ CLIPPINGS: import('./clippings-data.js').Clipping[] }> | null} */
 let dataPromise = null;
 
-/** @returns {Promise<typeof import('./clippings-data.js')>} */
+/** @returns {Promise<{ CLIPPINGS: import('./clippings-data.js').Clipping[] }>} */
 export function loadClippingsData() {
   if (!dataPromise) {
-    dataPromise = import('./clippings-data.js');
+    dataPromise = Promise.resolve({ CLIPPINGS: getClippings() });
   }
   return dataPromise;
+}
+
+/** Reset cache when locale changes (e.g. SPA navigation — not used today). */
+export function resetClippingsDataCache() {
+  dataPromise = null;
 }
 
 /** Warm caches during browser idle time. */
@@ -32,3 +39,5 @@ export function loadClippingsGallery() {
 export function prefetchClippingsGallery() {
   loadClippingsGallery();
 }
+
+export { isMsMediaLocale };

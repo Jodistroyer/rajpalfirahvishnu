@@ -6,6 +6,7 @@
 import { openModal } from './modal.js';
 import { getClippingSeoMeta } from './clippings-seo.js';
 import { loadClippingsData } from './clippings-data-loader.js';
+import { getRootRelativePrefix, isMsSubpage } from './site-config.js';
 
 const ARCHIVE_YEAR = 'Archive';
 /** Concurrent thumb activations — thumbs are small, so a higher batch is fine. */
@@ -29,12 +30,9 @@ let drainingImageQueue = false;
 /** @type {[string, import('./clippings-data.js').Clipping[]][] | null} */
 let cachedYearGroups = null;
 
-/** Resolve image base path for root (index.html) vs /media/ subdirectory. */
+/** Resolve image base path relative to the current page depth. */
 function getClippingsBase() {
-  const path = window.location.pathname.replace(/\\/g, '/');
-  return /\/media(?:\/|$)/.test(path)
-    ? '../assets/media/newspaper-clippings/'
-    : 'assets/media/newspaper-clippings/';
+  return `${getRootRelativePrefix()}assets/media/newspaper-clippings/`;
 }
 
 /** Collage uses small JPEGs; full scans load only in the lightbox. */
@@ -212,12 +210,14 @@ function openClippingModal(clipping) {
   const thumbSrc = getThumbSrc(clipping.file);
   const seo = getClippingSeoMeta(clipping);
   const linkHtml = clipping.link
-    ? `<a href="${escHtml(clipping.link)}" class="clipping-modal__link" target="_blank" rel="noopener noreferrer">Related document <span aria-hidden="true">↗</span></a>`
+    ? `<a href="${escHtml(clipping.link)}" class="clipping-modal__link" target="_blank" rel="noopener noreferrer">${isMsSubpage() ? 'Dokumen berkaitan' : 'Related document'} <span aria-hidden="true">↗</span></a>`
     : '';
+
+  const closeLabel = isMsSubpage() ? 'Tutup pemapar keratan akhbar' : 'Close clipping viewer';
 
   const html = `
     <div class="modal__body modal__body--clipping">
-      <button class="modal__close" aria-label="Close clipping viewer">&times;</button>
+      <button class="modal__close" aria-label="${escHtml(closeLabel)}">&times;</button>
       <figure class="clipping-modal">
         <div class="clipping-modal__image-wrap clipping-modal__image-wrap--loading">
           <img class="clipping-modal__img clipping-modal__img--thumb"
@@ -285,7 +285,11 @@ function playEnterAnimation(cards) {
  */
 function updateViewAllCta(total) {
   const cta = document.getElementById('clippings-view-all-cta');
-  if (cta) cta.textContent = `View All (${total}) →`;
+  if (cta) {
+    cta.textContent = isMsSubpage()
+      ? `Lihat Semua (${total}) →`
+      : `View All (${total}) →`;
+  }
 }
 
 /** @param {string} sort */
@@ -461,25 +465,32 @@ function initMosaicGallery(container, CLIPPINGS, opts) {
 
     if (hasMore) {
       const next = Math.min(batchSize, remaining);
+      const showMoreLabel = isMsSubpage()
+        ? `Tunjuk lagi (${next})`
+        : `Show more (${next})`;
       moreWrap.hidden = false;
       moreWrap.innerHTML = `
         <button type="button" class="btn btn--secondary clippings-more__btn" data-clippings-show-more>
-          Show more (${next})
+          ${showMoreLabel}
         </button>`;
       return;
     }
 
     if (viewAllHref) {
       moreWrap.hidden = false;
+      const viewAllLabel = isMsSubpage()
+        ? `Lihat Semua (${totalArchive}) →`
+        : `View All (${totalArchive}) →`;
+      const enAttrs = '';
       moreWrap.innerHTML = `
-        <a href="${escHtml(viewAllHref)}" class="btn btn--secondary clippings-more__btn">
-          View All (${totalArchive}) →
+        <a href="${escHtml(viewAllHref)}" class="btn btn--secondary clippings-more__btn"${enAttrs}>
+          ${viewAllLabel}
         </a>`;
       return;
     }
 
     moreWrap.innerHTML = allItems.length
-      ? `<p class="clippings-more__done">All ${totalArchive} clippings loaded</p>`
+      ? `<p class="clippings-more__done">${isMsSubpage() ? `Semua ${totalArchive} keratan akhbar dimuatkan` : `All ${totalArchive} clippings loaded`}</p>`
       : '';
     moreWrap.hidden = !allItems.length;
   }
@@ -614,7 +625,9 @@ function initPreview(container, CLIPPINGS, initialCount, batchSize, maxCount) {
     maxCount: isDesktop ? undefined : maxCount,
     minYear: isDesktop ? minYear : undefined,
     autoScrollLoad: false,
-    viewAllHref: 'media/#clippings',
+    viewAllHref: isMsSubpage()
+      ? `${getRootRelativePrefix()}ms/media/#clippings-library`
+      : `${getRootRelativePrefix()}media/#clippings`,
     totalArchiveCount: CLIPPINGS.length,
   });
 }
