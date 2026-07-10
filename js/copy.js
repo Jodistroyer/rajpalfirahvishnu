@@ -30,6 +30,7 @@ const LABELS = {
 export function initCopy() {
   enhanceCopyable(document);
   document.addEventListener('click', onCopyClick);
+  document.addEventListener('click', onCopyableLinkClick);
 }
 
 /** Add copy buttons to [data-copyable] elements inside root. */
@@ -55,6 +56,12 @@ export function enhanceCopyable(root = document) {
 
     el.parentNode.insertBefore(row, el);
     row.append(el, btn);
+
+    const href = el.getAttribute('href') || '';
+    if (!isTouchPrimary() && (href.startsWith('tel:') || href.startsWith('mailto:'))) {
+      const lang = document.documentElement.lang?.startsWith('ms') ? 'ms' : 'en';
+      el.title = lang === 'ms' ? 'Klik untuk salin' : 'Click to copy';
+    }
   });
 }
 
@@ -99,6 +106,33 @@ async function onCopyClick(e) {
 
   const copied = await writeClipboard(text);
   if (copied) showCopied(btn);
+}
+
+/** Desktop: tel/mailto links copy instead of opening dialer or mail client. */
+async function onCopyableLinkClick(e) {
+  if (isTouchPrimary()) return;
+
+  const link = /** @type {HTMLAnchorElement|null} */ (e.target.closest('a[data-copyable]'));
+  if (!link) return;
+
+  const href = link.getAttribute('href') || '';
+  if (!href.startsWith('tel:') && !href.startsWith('mailto:')) return;
+
+  e.preventDefault();
+
+  const text = getCopyValue(link);
+  if (!text) return;
+
+  const copied = await writeClipboard(text);
+  if (!copied) return;
+
+  const btn = link.parentElement?.querySelector('.copy-btn');
+  if (btn) showCopied(btn);
+}
+
+/** Phones/tablets: keep native tel: / mailto: behaviour. */
+function isTouchPrimary() {
+  return window.matchMedia('(hover: none) and (pointer: coarse)').matches;
 }
 
 async function writeClipboard(text) {

@@ -117,10 +117,12 @@ function initConsultationLinks() {
       return;
     }
 
-    if (!link.classList.contains('btn')) return;
-
     const href = link.getAttribute('href') || '';
     if (!/#(?:contact|hubungi)$/.test(href.split('?')[0])) return;
+
+    // Keep nav/footer text links scrolling to the contact section on the homepage.
+    if (link.classList.contains('navbar__link')) return;
+    if (link.classList.contains('footer__nav-link')) return;
 
     wire(link);
   });

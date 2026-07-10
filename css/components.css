@@ -2081,6 +2081,13 @@ a.attorney-card {
   color: var(--color-accent-hover);
 }
 
+@media (hover: hover) and (pointer: fine) {
+  a[data-copyable][href^="tel:"],
+  a[data-copyable][href^="mailto:"] {
+    cursor: copy;
+  }
+}
+
 .contact__directions {
   display: block;
   margin-top: 0.375rem;
