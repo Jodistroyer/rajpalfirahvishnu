@@ -8,7 +8,9 @@ import { getClippingSeoMeta } from './clippings-seo.js';
 import { loadClippingsData } from './clippings-data-loader.js';
 import { getRootRelativePrefix, isMsSubpage } from './site-config.js';
 
-const ARCHIVE_YEAR = 'Archive';
+function archiveYearLabel() {
+  return isMsSubpage() ? 'Arkib' : 'Archive';
+}
 /** Concurrent thumb activations — thumbs are small, so a higher batch is fine. */
 const IMAGE_LOAD_BATCH = 6;
 /** Cards appended per scroll / Show more step. */
@@ -64,7 +66,7 @@ function escHtml(str) {
 /** @param {string} sort */
 function yearFromSort(sort) {
   const year = parseInt(sort.slice(0, 4), 10);
-  return year < 2004 ? ARCHIVE_YEAR : String(year);
+  return year < 2004 ? archiveYearLabel() : String(year);
 }
 
 /**
@@ -85,8 +87,9 @@ function groupByYear(items) {
   }
 
   cachedYearGroups = [...groups.entries()].sort(([a], [b]) => {
-    if (a === ARCHIVE_YEAR) return 1;
-    if (b === ARCHIVE_YEAR) return -1;
+    const archive = archiveYearLabel();
+    if (a === archive) return 1;
+    if (b === archive) return -1;
     return Number(b) - Number(a);
   });
 
@@ -167,7 +170,7 @@ function renderClippingCard(clipping, index, yearStart) {
  * @param {string} year
  */
 function yearSlug(year) {
-  return year === ARCHIVE_YEAR ? 'archive' : year;
+  return year === archiveYearLabel() ? 'archive' : year;
 }
 
 /**

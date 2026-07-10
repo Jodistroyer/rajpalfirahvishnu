@@ -3,12 +3,13 @@
  * Run: node scripts/generate-ms-locale.mjs
  */
 
-import { writeFileSync } from 'fs';
+import { readFileSync, writeFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import { PRESS_ITEMS, PRESS_CATEGORIES } from '../js/press-data.js';
 import { CLIPPINGS } from '../js/clippings-data.js';
 import { CLIPPINGS_MS_DESCRIPTIONS } from './clippings-descriptions-ms.js';
+import { PRESS_MS_CONTENT } from './press-content-ms.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, '..');
@@ -403,8 +404,8 @@ const PRESS_CATEGORIES_MS = PRESS_CATEGORIES.map(c => ({
 
 const PRESS_ITEMS_MS = PRESS_ITEMS.map(item => ({
   ...item,
-  title: translatePressTitle(item.title),
-  excerpt: translatePressExcerpt(item.excerpt),
+  title: PRESS_MS_CONTENT[item.id]?.title ?? translatePressTitle(item.title),
+  excerpt: PRESS_MS_CONTENT[item.id]?.excerpt ?? translatePressExcerpt(item.excerpt),
   dateLabel: translateDateLabel(item.dateLabel),
 }));
 
@@ -437,4 +438,64 @@ export const CLIPPINGS_MS = ${JSON.stringify(CLIPPINGS_MS, null, 2)};
 
 writeFileSync(join(root, 'js', 'press-data-ms.js'), pressOut);
 writeFileSync(join(root, 'js', 'clippings-data-ms.js'), clippingsOut);
+
+function escHtml(s) {
+  return s
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+function buildPressNoscript(items, heading) {
+  const sorted = [...items].sort((a, b) => b.sort.localeCompare(a.sort));
+  const links = sorted.map(item => `
+      <li>
+        <a href="${escHtml(item.url)}">${escHtml(item.title)}</a>
+        <span> — ${escHtml(item.publisher)}, ${escHtml(item.sort.slice(0, 10))}. ${escHtml(item.excerpt)}</span>
+      </li>`).join('');
+
+  return `<noscript class="press-grid__noscript">
+          <h4 class="press-grid__noscript-title">${escHtml(heading)}</h4>
+          <ul class="press-grid__noscript-list">${links}
+          </ul>
+        </noscript>`;
+}
+
+function replaceBetweenMarkers(html, startMarker, endMarker, replacement) {
+  const start = html.indexOf(startMarker);
+  const end = html.indexOf(endMarker);
+  if (start === -1 || end === -1 || end <= start) {
+    throw new Error(`Markers not found: ${startMarker}`);
+  }
+  return html.slice(0, start + startMarker.length) + replacement + html.slice(end);
+}
+
+const featuredPress = PRESS_ITEMS_MS.filter(item => item.featured);
+const msMediaPath = join(root, 'ms', 'media', 'index.html');
+const msMediaHtml = replaceBetweenMarkers(
+  readFileSync(msMediaPath, 'utf8'),
+  '<!-- press-noscript:start -->',
+  '<!-- press-noscript:end -->',
+  buildPressNoscript(PRESS_ITEMS_MS, 'Arkib liputan media — Datuk Rajpal Singh, peguam jenayah Malaysia'),
+);
+writeFileSync(msMediaPath, msMediaHtml);
+
+const msIndexPath = join(root, 'ms', 'index.html');
+let msIndexHtml = readFileSync(msIndexPath, 'utf8');
+if (!msIndexHtml.includes('<!-- press-noscript:start -->')) {
+  msIndexHtml = msIndexHtml.replace(
+    '<meta itemprop="description" content="Liputan akhbar dan siaran memaparkan peguam pembelaan jenayah Datuk Rajpal Singh di Kuala Lumpur dan Selangor, Malaysia.">',
+    '<meta itemprop="description" content="Liputan akhbar dan siaran memaparkan peguam pembelaan jenayah Datuk Rajpal Singh di Kuala Lumpur dan Selangor, Malaysia.">\n          <!-- press-noscript:start --><!-- press-noscript:end -->',
+  );
+}
+msIndexHtml = replaceBetweenMarkers(
+  msIndexHtml,
+  '<!-- press-noscript:start -->',
+  '<!-- press-noscript:end -->',
+  buildPressNoscript(featuredPress, 'Liputan media terpilih — Datuk Rajpal Singh, peguam jenayah Malaysia'),
+);
+writeFileSync(msIndexPath, msIndexHtml);
+
 console.log(`Generated ${PRESS_ITEMS_MS.length} press items, ${CLIPPINGS_MS.length} clippings (MS).`);
+console.log(`Updated BM press noscript: ${featuredPress.length} featured, ${PRESS_ITEMS_MS.length} full archive.`);

@@ -11,7 +11,7 @@
  */
 
 import { enhanceCopyable } from './copy.js';
-import { CONSULTATION_FORM_URL } from './site-config.js';
+import { CONSULTATION_FORM_URL, isMsSubpage } from './site-config.js';
 
 const overlay    = /** @type {HTMLElement|null} */ (document.getElementById('modal-overlay'));
 const dialog     = /** @type {HTMLElement|null} */ (document.getElementById('modal-dialog'));
@@ -128,7 +128,7 @@ function openAttorneyModal(card) {
 
   const html = `
     <div class="modal__body">
-      <button class="modal__close" aria-label="Close modal">&times;</button>
+      <button class="modal__close" aria-label="${isMsSubpage() ? 'Tutup tetingkap' : 'Close modal'}">&times;</button>
       <div class="attorney-modal__header">
         <div class="attorney-modal__avatar" aria-hidden="true">${escHtml(initials)}</div>
         <div>
@@ -164,7 +164,7 @@ function openArticleModal(card) {
 
   const html = `
     <div class="modal__body">
-      <button class="modal__close" aria-label="Close modal">&times;</button>
+      <button class="modal__close" aria-label="${isMsSubpage() ? 'Tutup tetingkap' : 'Close modal'}">&times;</button>
       <div class="article-modal__meta">
         <span class="media-card__category">${escHtml(category)}</span>
         <time class="media-card__date">${escHtml(date)}</time>

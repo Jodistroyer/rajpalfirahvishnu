@@ -115,7 +115,7 @@ function pressSchemaPart(item) {
     mentions: {
       '@type': 'Person',
       name: LAWYER_NAME,
-      jobTitle: 'Criminal Lawyer',
+      jobTitle: ms ? 'Peguam Jenayah' : 'Criminal Lawyer',
       worksFor: {
         '@type': 'LegalService',
         name: FIRM_NAME,
@@ -159,16 +159,27 @@ export function buildPressJsonLd(items) {
       name: FIRM_NAME,
       url: getSiteOrigin(),
     },
-    about: [
-      { '@type': 'Thing', name: 'Criminal lawyer Malaysia' },
-      {
-        '@type': 'Person',
-        name: LAWYER_NAME,
-        jobTitle: 'Criminal Lawyer',
-        knowsAbout: ['Criminal law', 'Criminal defence', 'Malaysia'],
-      },
-      { '@type': 'LegalService', name: FIRM_NAME },
-    ],
+    about: ms
+      ? [
+          { '@type': 'Thing', name: 'Peguam jenayah Malaysia' },
+          {
+            '@type': 'Person',
+            name: LAWYER_NAME,
+            jobTitle: 'Peguam Jenayah',
+            knowsAbout: ['Undang-undang jenayah', 'Pembelaan jenayah', 'Malaysia'],
+          },
+          { '@type': 'LegalService', name: FIRM_NAME },
+        ]
+      : [
+          { '@type': 'Thing', name: 'Criminal lawyer Malaysia' },
+          {
+            '@type': 'Person',
+            name: LAWYER_NAME,
+            jobTitle: 'Criminal Lawyer',
+            knowsAbout: ['Criminal law', 'Criminal defence', 'Malaysia'],
+          },
+          { '@type': 'LegalService', name: FIRM_NAME },
+        ],
     keywords: seoKeywords(),
     numberOfItems: sorted.length,
     hasPart: sorted.map(pressSchemaPart),

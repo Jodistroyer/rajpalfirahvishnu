@@ -111,11 +111,17 @@ export function buildClippingsJsonLd(clippings) {
       name: FIRM_NAME,
       url: getSiteOrigin(),
     },
-    about: [
-      { '@type': 'Thing', name: 'Criminal lawyer Malaysia' },
-      { '@type': 'Person', name: LAWYER_NAME, jobTitle: 'Criminal Lawyer' },
-      { '@type': 'LegalService', name: FIRM_NAME },
-    ],
+    about: ms
+      ? [
+          { '@type': 'Thing', name: 'Peguam jenayah Malaysia' },
+          { '@type': 'Person', name: LAWYER_NAME, jobTitle: 'Peguam Jenayah' },
+          { '@type': 'LegalService', name: FIRM_NAME },
+        ]
+      : [
+          { '@type': 'Thing', name: 'Criminal lawyer Malaysia' },
+          { '@type': 'Person', name: LAWYER_NAME, jobTitle: 'Criminal Lawyer' },
+          { '@type': 'LegalService', name: FIRM_NAME },
+        ],
     keywords: ms ? SEO_KEYWORDS_MS : SEO_KEYWORDS,
     numberOfItems: clippings.length,
     image: sample.map(c => {
