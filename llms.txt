@@ -1,6 +1,6 @@
 # Rajpal, Firah & Vishnu | Lawyer Profiles & Practice FAQs
 # Rajpal, Firah & Vishnu
-# Contact: enquiry@rfv-law.my
+# Contact: rajpal.associates@gmail.com
 
 ## About this file
 Machine-readable index of advocate profiles and practice-area FAQs for search engines and AI assistants.
@@ -9,7 +9,7 @@ Replace [yourdomain] in data/people.json and re-run: node scripts/generate-peopl
 ## Firm
 - Name: Rajpal, Firah & Vishnu
 - Website: https://[yourdomain]/
-- Email: enquiry@rfv-law.my
+- Email: rajpal.associates@gmail.com
 - Offices: Petaling Jaya and Batu Caves, Selangor, Malaysia
 
 ## Practice area FAQs
@@ -67,7 +67,7 @@ Replace [yourdomain] in data/people.json and re-run: node scripts/generate-peopl
 - Practice: Criminal Law · Accident · Syariah
 - Experience: 10+ years (criminal litigation)
 - Called to the Bar: 2016
-- Email: enquiry@rfv-law.my
+- Email: rajpal.associates@gmail.com
 - Photo: https://[yourdomain]/assets/people/siti-anis.png
 - FAQ: https://[yourdomain]/faq/criminal-law/
 
@@ -78,7 +78,7 @@ Replace [yourdomain] in data/people.json and re-run: node scripts/generate-peopl
 - Practice: Criminal Law · Commercial Crime
 - Experience: 10+ years (criminal litigation)
 - Called to the Bar: 2016
-- Email: enquiry@rfv-law.my
+- Email: rajpal.associates@gmail.com
 - Photo: https://[yourdomain]/assets/people/tiew-poh-nee.png
 - FAQ: https://[yourdomain]/faq/criminal-law/
 
@@ -89,7 +89,7 @@ Replace [yourdomain] in data/people.json and re-run: node scripts/generate-peopl
 - Practice: Criminal Defence · Drug Offences
 - Experience: 13 years (criminal litigation)
 - Called to the Bar: 2013
-- Email: enquiry@rfv-law.my
+- Email: rajpal.associates@gmail.com
 - Photo: https://[yourdomain]/assets/people/mariappan-manikam.jpg
 - FAQ: https://[yourdomain]/faq/criminal-law/
 

@@ -142,6 +142,10 @@ const pages = [
   { loc: `${SITE_ORIGIN}/media/`, priority: '0.9', changefreq: 'weekly' },
   { loc: `${SITE_ORIGIN}/media/#press`, priority: '0.9', changefreq: 'weekly' },
   { loc: `${SITE_ORIGIN}/media/#clippings`, priority: '0.9', changefreq: 'monthly' },
+  { loc: `${SITE_ORIGIN}/legal/privacy-policy/`, priority: '0.5', changefreq: 'yearly' },
+  { loc: `${SITE_ORIGIN}/legal/terms-of-use/`, priority: '0.5', changefreq: 'yearly' },
+  { loc: `${SITE_ORIGIN}/ms/legal/dasar-privasi/`, priority: '0.5', changefreq: 'yearly' },
+  { loc: `${SITE_ORIGIN}/ms/legal/terma-penggunaan/`, priority: '0.5', changefreq: 'yearly' },
 ];
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>

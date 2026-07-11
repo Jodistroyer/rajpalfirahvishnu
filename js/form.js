@@ -133,7 +133,7 @@ export function initForm(selector, endpoint) {
 
     } catch {
       showStatus('error',
-        'Something went wrong. Please try again or contact us directly at enquiry@rfv-law.my.');
+        'Something went wrong. Please try again or contact us directly at rajpal.associates@gmail.com.');
     } finally {
       setLoading(false);
     }
