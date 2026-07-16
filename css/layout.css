@@ -156,6 +156,20 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+@media (min-width: 641px) {
+  .people__associates .attorney-card--siti-anis {
+    order: 1;
+  }
+
+  .people__associates .attorney-card--mariappan-manikam {
+    order: 2;
+  }
+
+  .people__associates .attorney-card--tiew-poh-nee {
+    order: 3;
+  }
+}
+
 @media (min-width: 1025px) {
   .people__layout {
     max-width: 880px;
