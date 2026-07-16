@@ -14,6 +14,7 @@ import { prefetchClippingsData, prefetchClippingsGallery, loadClippingsGallery, 
 import { initCopy } from './copy.js';
 import { initPress } from './press.js';
 import { initProfilePhotos } from './profile-photo.js';
+import { initProfilePeopleNav } from './profile-people-nav.js';
 import { CONSULTATION_FORM_URL } from './site-config.js';
 
 (function bootstrap() {
@@ -34,6 +35,7 @@ import { CONSULTATION_FORM_URL } from './site-config.js';
   initModals();
   initCopy();
   initProfilePhotos();
+  initProfilePeopleNav();
 
   initLazyMedia();
   initPress(document.getElementById('press-grid'));
