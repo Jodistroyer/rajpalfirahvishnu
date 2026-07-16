@@ -18,7 +18,7 @@ const replacement = `<div class="media-room__subsection" id="press">
             <div class="media-room__subsection-copy">
               <h2 class="media-room__subsection-title">In the Press</h2>
               <p class="media-room__subsection-desc">
-                Press, broadcast, and online coverage featuring Datuk Rajpal Singh and our advocates across Malaysia.
+                Press, broadcast, and online coverage featuring Dato\' Rajpal Singh and our advocates across Malaysia.
                 Filter by topic below.
               </p>
             </div>

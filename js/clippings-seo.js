@@ -8,7 +8,7 @@ import { absoluteUrl, clippingsPageUrl, getSiteOrigin, isMsSubpage } from './sit
 /** @typedef {import('./clippings-data.js').Clipping} Clipping */
 
 const FIRM_NAME = 'Rajpal, Firah & Vishnu';
-const LAWYER_NAME = 'Datuk Rajpal Singh';
+const LAWYER_NAME = 'Dato\' Rajpal Singh';
 const SEO_KEYWORDS = [
   'criminal lawyer Malaysia',
   'criminal defence lawyer Kuala Lumpur',
@@ -102,8 +102,8 @@ export function buildClippingsJsonLd(clippings) {
       ? 'Arkib Keratan Akhbar — Peguam Jenayah Malaysia'
       : 'Newspaper Clippings Library — Criminal Lawyer Malaysia Press Archive',
     description: ms
-      ? 'Arkib keratan akhbar dan media Malaysia memaparkan Datuk Rajpal Singh, peguam pembelaan jenayah terkemuka di Kuala Lumpur dan Selangor.'
-      : 'Archived Malaysian newspaper and press clippings featuring Datuk Rajpal Singh, a leading criminal defence lawyer in Kuala Lumpur and Selangor.',
+      ? 'Arkib keratan akhbar dan media Malaysia memaparkan Dato\' Rajpal Singh, peguam pembelaan jenayah terkemuka di Kuala Lumpur dan Selangor.'
+      : 'Archived Malaysian newspaper and press clippings featuring Dato\' Rajpal Singh, a leading criminal defence lawyer in Kuala Lumpur and Selangor.',
     url: pageUrl,
     inLanguage: ms ? 'ms-MY' : 'en-MY',
     isPartOf: {

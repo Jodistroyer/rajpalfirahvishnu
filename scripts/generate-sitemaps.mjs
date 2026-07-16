@@ -14,7 +14,7 @@ const root = path.join(__dirname, '..');
 /** @type {string} */
 const SITE_ORIGIN = 'https://[yourdomain]';
 
-const LAWYER_NAME = 'Datuk Rajpal Singh';
+const LAWYER_NAME = 'Dato\' Rajpal Singh';
 
 function readFile(rel) {
   return fs.readFileSync(path.join(root, rel), 'utf8');
@@ -197,7 +197,7 @@ const indexHtml = replaceBetweenMarkers(
   readFile('index.html'),
   '<!-- press-noscript:start -->',
   '<!-- press-noscript:end -->',
-  buildPressNoscript(featuredPress, 'Featured press coverage — Datuk Rajpal Singh, criminal lawyer Malaysia'),
+  buildPressNoscript(featuredPress, 'Featured press coverage — Dato\' Rajpal Singh, criminal lawyer Malaysia'),
 );
 fs.writeFileSync(path.join(root, 'index.html'), indexHtml);
 
@@ -205,7 +205,7 @@ const mediaHtml = replaceBetweenMarkers(
   readFile('media/index.html'),
   '<!-- press-noscript:start -->',
   '<!-- press-noscript:end -->',
-  buildPressNoscript(pressItems, 'Press coverage archive — Datuk Rajpal Singh, criminal lawyer Malaysia'),
+  buildPressNoscript(pressItems, 'Press coverage archive — Dato\' Rajpal Singh, criminal lawyer Malaysia'),
 );
 fs.writeFileSync(path.join(root, 'media/index.html'), mediaHtml);
 

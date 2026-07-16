@@ -128,7 +128,7 @@ function initConsultationLinks() {
   });
 }
 
-/** Profile pages opened from How We Help or FAQ → back link returns to the referring section. */
+/** Profile pages opened from How We Can Help or FAQ → back link returns to the referring section. */
 function initProfileBack(params) {
   const from = params.get('from');
   if (!from) return;
@@ -138,7 +138,7 @@ function initProfileBack(params) {
   const destinations = {
     services: {
       href: isMs ? '../../../ms/#perkhidmatan' : '../../#services',
-      label: isMs ? '← Kembali ke Cara Kami Membantu' : '← Back to How We Help',
+      label: isMs ? '← Kembali ke Bagaimana Kami Boleh Membantu' : '← Back to How We Can Help',
     },
     'criminal-law': {
       href: isMs ? '../../../ms/faq/criminal-law/' : '../../faq/criminal-law/',

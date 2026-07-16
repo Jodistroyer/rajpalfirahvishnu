@@ -183,7 +183,7 @@ export const CLIPPINGS_MS = [
     "file": "ng-yuk-tim-murder-trial-2016-poon-wai-hong-rajpal-singh.JPG",
     "sort": "2016-01-01",
     "dateLabel": "2016",
-    "description": "Keratan akhbar Cina 2016 melaporkan perbicaraan bunuh Poon Wai Hong, dikenali sebagai pembunuh cosplay, atas kematian Ng Yuk Tim, memaparkan peguam pembelaan Datuk Rajpal Singh."
+    "description": "Keratan akhbar Cina 2016 melaporkan perbicaraan bunuh Poon Wai Hong, dikenali sebagai pembunuh cosplay, atas kematian Ng Yuk Tim, memaparkan peguam pembelaan Dato' Rajpal Singh."
   },
   {
     "file": "rajpal-singh-court-acquittal-the-star-2016.png",
@@ -195,79 +195,79 @@ export const CLIPPINGS_MS = [
     "file": "the-star-murder-acquittal-cheras-2016-rajpal-singh.JPG",
     "sort": "2016-01-20",
     "dateLabel": "20 Januari 2016",
-    "description": "Keratan akhbar The Star bertarikh 20 Januari 2016 melaporkan pembebasan seorang lelaki yang dituduh membunuh teman wanitanya, memaparkan peguam pembelaan Datuk Rajpal Singh."
+    "description": "Keratan akhbar The Star bertarikh 20 Januari 2016 melaporkan pembebasan seorang lelaki yang dituduh membunuh teman wanitanya, memaparkan peguam pembelaan Dato' Rajpal Singh."
   },
   {
     "file": "nicky-liow-court-case-charge-withdrawal-2018-rajpal-singh.JPG",
     "sort": "2018-09-08",
     "dateLabel": "8 September 2018",
-    "description": "Keratan akhbar Prime News (Cina) bertarikh 8 September 2018 melaporkan penarikan balik pertuduhan terhadap Datuk Nicky Liow Soon Hee, memaparkan peguam pembelaan Datuk Rajpal Singh."
+    "description": "Keratan akhbar Prime News (Cina) bertarikh 8 September 2018 melaporkan penarikan balik pertuduhan terhadap Datuk Nicky Liow Soon Hee, memaparkan peguam pembelaan Dato' Rajpal Singh."
   },
   {
     "file": "nicky-liow-court-charges-withdrawn-2018-rajpal-singh.JPG",
     "sort": "2018-09-08",
     "dateLabel": "8 September 2018",
-    "description": "Keratan akhbar China Press (中国报) bertarikh 8 September 2018 melaporkan penarikan balik pertuduhan terhadap Datuk Nicky Liow Soon Hee, memaparkan peguam pembelaan Datuk Rajpal Singh."
+    "description": "Keratan akhbar China Press (中国报) bertarikh 8 September 2018 melaporkan penarikan balik pertuduhan terhadap Datuk Nicky Liow Soon Hee, memaparkan peguam pembelaan Dato' Rajpal Singh."
   },
   {
     "file": "nicky-liow-rela-assault-charges-dropped-2018-rajpal-singh.JPG",
     "sort": "2018-09-08",
     "dateLabel": "8 September 2018",
-    "description": "Keratan akhbar New Straits Times bertarikh 8 September 2018 melaporkan penarikan balik dua pertuduhan terhadap Datuk Seri Nicky Liow Soon Hee dalam kes pukul RELA, bersama peguam pembelaan Datuk Rajpal Singh."
+    "description": "Keratan akhbar New Straits Times bertarikh 8 September 2018 melaporkan penarikan balik dua pertuduhan terhadap Datuk Seri Nicky Liow Soon Hee dalam kes pukul RELA, bersama peguam pembelaan Dato' Rajpal Singh."
   },
   {
     "file": "rela-assault-case-dnaa-2018-nicky-liow-rajpal-singh.JPG",
     "sort": "2018-09-08",
     "dateLabel": "8 September 2018",
-    "description": "Keratan akhbar The Star bertarikh 8 September 2018 melaporkan anggota RELA menarik balik laporan polis terhadap usahawan Datuk Seri Nicky Liow Soon Hee, dengan peguam pembelaan Datuk Rajpal Singh hadir."
+    "description": "Keratan akhbar The Star bertarikh 8 September 2018 melaporkan anggota RELA menarik balik laporan polis terhadap usahawan Datuk Seri Nicky Liow Soon Hee, dengan peguam pembelaan Dato' Rajpal Singh hadir."
   },
   {
     "file": "RELA-assault-case-compensation-rejection-2018-rajpal-singh.JPG",
     "sort": "2018-08-15",
     "dateLabel": "15 Ogos 2018",
-    "description": "Keratan akhbar bertarikh 15 Ogos 2018 melaporkan RELA enggan menerima pampasan daripada usahawan Nicky Liow dalam kes pukul, memaparkan peguam pembelaan Datuk Rajpal Singh."
+    "description": "Keratan akhbar bertarikh 15 Ogos 2018 melaporkan RELA enggan menerima pampasan daripada usahawan Nicky Liow dalam kes pukul, memaparkan peguam pembelaan Dato' Rajpal Singh."
   },
   {
     "file": "rela-members-reject-compensation-nicky-liow-case-2018-rajpal-singh.JPG",
     "sort": "2018-08-01",
     "dateLabel": "2018",
-    "description": "Keratan akhbar Harian Metro 2018 melaporkan anggota RELA menolak tawaran pampasan daripada Datuk Seri Nicky Liow Soon Hee, dengan pembelaan guaman oleh Datuk Rajpal Singh."
+    "description": "Keratan akhbar Harian Metro 2018 melaporkan anggota RELA menolak tawaran pampasan daripada Datuk Seri Nicky Liow Soon Hee, dengan pembelaan guaman oleh Dato' Rajpal Singh."
   },
   {
     "file": "nicky-liow-rela-assault-trial-2018-rajpal-singh.JPG",
     "sort": "2018-09-01",
     "dateLabel": "September 2018",
-    "description": "Keratan akhbar Cina September 2018 melaporkan prosiding mahkamah untuk kes pukul RELA melibatkan Datuk Seri Nicky Liow Soon Hee dan peguamnya Datuk Rajpal Singh."
+    "description": "Keratan akhbar Cina September 2018 melaporkan prosiding mahkamah untuk kes pukul RELA melibatkan Datuk Seri Nicky Liow Soon Hee dan peguamnya Dato' Rajpal Singh."
   },
   {
     "file": "chinese-press-nicky-liow-rela-trial-update-rajpal-singh-2018.JPG",
     "sort": "2018-09-01",
     "dateLabel": "2018",
-    "description": "Keratan akhbar Cina 2018 melaporkan prosiding perbicaraan mahkamah mengenai serangan terhadap anggota RELA oleh Datuk Seri Nicky Liow Soon Hee, bersama peguam pembelaan Datuk Rajpal Singh."
+    "description": "Keratan akhbar Cina 2018 melaporkan prosiding perbicaraan mahkamah mengenai serangan terhadap anggota RELA oleh Datuk Seri Nicky Liow Soon Hee, bersama peguam pembelaan Dato' Rajpal Singh."
   },
   {
     "file": "rela-assault-case-report-withdrawal-2018-rajpal-singh.JPG",
     "sort": "2018-11-01",
     "dateLabel": "November 2018",
-    "description": "Keratan akhbar November 2018 melaporkan penarikan balik laporan polis oleh anggota RELA dalam kes pukul melibatkan Datuk Seri Nicky Liow, memaparkan peguam pembelaan Datuk Rajpal Singh."
+    "description": "Keratan akhbar November 2018 melaporkan penarikan balik laporan polis oleh anggota RELA dalam kes pukul melibatkan Datuk Seri Nicky Liow, memaparkan peguam pembelaan Dato' Rajpal Singh."
   },
   {
     "file": "nicky-liow-rela-assault-settlement-2019-rajpal-singh.JPG",
     "sort": "2019-05-10",
     "dateLabel": "10 Mei 2019",
-    "description": "Keratan akhbar China Press (中国报) bertarikh 10 Mei 2019 melaporkan penyelesaian kes pukul RELA melibatkan Datuk Nicky Liow Soon Hee dan peguamnya Datuk Rajpal Singh."
+    "description": "Keratan akhbar China Press (中国报) bertarikh 10 Mei 2019 melaporkan penyelesaian kes pukul RELA melibatkan Datuk Nicky Liow Soon Hee dan peguamnya Dato' Rajpal Singh."
   },
   {
     "file": "nicky-liow-rela-assault-acquittal-2019-rajpal-singh.JPG",
     "sort": "2019-05-11",
     "dateLabel": "11 Mei 2019",
-    "description": "Keratan akhbar The Star bertarikh 11 Mei 2019 melaporkan pembebasan Datuk Seri Nicky Liow Soon Hee dalam kes pukul RELA, memaparkan peguam pembelaan Datuk Rajpal Singh."
+    "description": "Keratan akhbar The Star bertarikh 11 Mei 2019 melaporkan pembebasan Datuk Seri Nicky Liow Soon Hee dalam kes pukul RELA, memaparkan peguam pembelaan Dato' Rajpal Singh."
   },
   {
     "file": "tamil-press-nicky-liow-rela-case-settlement-2019-rajpal-singh.JPG",
     "sort": "2019-05-01",
     "dateLabel": "Mei 2019",
-    "description": "Artikel akhbar bahasa Tamil Mei 2019 meliputi pembebasan mahkamah Datuk Seri Nicky Liow Soon Hee dalam kes pukul RELA, memaparkan peguam pembelaan Datuk Rajpal Singh."
+    "description": "Artikel akhbar bahasa Tamil Mei 2019 meliputi pembebasan mahkamah Datuk Seri Nicky Liow Soon Hee dalam kes pukul RELA, memaparkan peguam pembelaan Dato' Rajpal Singh."
   },
   {
     "file": "paul-yong-choo-kiong-exco-duty-status-2019-rajpal-singh.JPG",
@@ -279,55 +279,55 @@ export const CLIPPINGS_MS = [
     "file": "poon-wai-hong-cosplay-killer-appeal-2019-rajpal-singh.JPG",
     "sort": "2019-09-12",
     "dateLabel": "12 September 2019",
-    "description": "Keratan akhbar Free Malaysia Today bertarikh 12 September 2019 melaporkan Mahkamah Rayuan mengurangkan hukuman mati Poon Wai Hong, pembunuh cosplay, kepada 22 tahun penjara, diwakili oleh peguam Datuk Rajpal Singh."
+    "description": "Keratan akhbar Free Malaysia Today bertarikh 12 September 2019 melaporkan Mahkamah Rayuan mengurangkan hukuman mati Poon Wai Hong, pembunuh cosplay, kepada 22 tahun penjara, diwakili oleh peguam Dato' Rajpal Singh."
   },
   {
     "file": "poon-wai-hong-culpable-homicide-appeal-ruling-2019-rajpal-singh.JPG",
     "sort": "2019-09-01",
     "dateLabel": "September 2019",
-    "description": "Laporan berita Cina September 2019 mendokumentasikan keputusan Mahkamah Rayuan menukar hukuman mati Poon Wai Hong kepada 22 tahun penjara, dengan peguam pembelaan Datuk Rajpal Singh memimpin rayuan."
+    "description": "Laporan berita Cina September 2019 mendokumentasikan keputusan Mahkamah Rayuan menukar hukuman mati Poon Wai Hong kepada 22 tahun penjara, dengan peguam pembelaan Dato' Rajpal Singh memimpin rayuan."
   },
   {
     "file": "poon-wai-hong-appeal-ruling-2019-rajpal-singh.JPG",
     "sort": "2019-09-01",
     "dateLabel": "2019",
-    "description": "Artikel akhbar Cina 2019 memperincikan keputusan Mahkamah Rayuan mengurangkan hukuman Poon Wai Hong, dikenali sebagai pembunuh cosplay, diwakili oleh peguam pembelaan Datuk Rajpal Singh."
+    "description": "Artikel akhbar Cina 2019 memperincikan keputusan Mahkamah Rayuan mengurangkan hukuman Poon Wai Hong, dikenali sebagai pembunuh cosplay, diwakili oleh peguam pembelaan Dato' Rajpal Singh."
   },
   {
     "file": "paul-yong-rape-trial-date-setting-rajpal-singh-2020.JPG",
     "sort": "2020-07-16",
     "dateLabel": "16 Julai 2020",
-    "description": "Laporan berita bertarikh 16 Julai 2020 memaparkan peguam pembelaan Datuk Rajpal Singh berbicara kepada media di luar Mahkamah Sesyen Ipoh mengenai tarikh perbicaraan ditetapkan untuk bekas ahli dewan undangan Perak Paul Yong."
+    "description": "Laporan berita bertarikh 16 Julai 2020 memaparkan peguam pembelaan Dato' Rajpal Singh berbicara kepada media di luar Mahkamah Sesyen Ipoh mengenai tarikh perbicaraan ditetapkan untuk bekas ahli dewan undangan Perak Paul Yong."
   },
   {
     "file": "paul-yong-rape-trial-transfer-appeal-rajpal-singh-2020.JPG",
     "sort": "2020-01-01",
     "dateLabel": "2020",
-    "description": "Laporan akhbar Cina memperincikan keputusan Mahkamah Rayuan menolak permohonan bekas ahli dewan undangan Perak Paul Yong Choo Kiong dan peguam pembelaannya Datuk Rajpal Singh untuk memindahkan perbicaraan rogol ke Mahkamah Tinggi."
+    "description": "Laporan akhbar Cina memperincikan keputusan Mahkamah Rayuan menolak permohonan bekas ahli dewan undangan Perak Paul Yong Choo Kiong dan peguam pembelaannya Dato' Rajpal Singh untuk memindahkan perbicaraan rogol ke Mahkamah Tinggi."
   },
   {
     "file": "nicky-gang-14-men-dnaa-shah-alam-2021-rajpal-singh.JPG",
     "sort": "2021-01-01",
     "dateLabel": "2021",
-    "description": "Keratan akhbar The Star melaporkan 14 individu dikaitkan dengan Geng Nicky Liow diberikan pelepasan tanpa bersalah pada 2021, dipertahankan oleh peguam Datuk Rajpal Singh."
+    "description": "Keratan akhbar The Star melaporkan 14 individu dikaitkan dengan Geng Nicky Liow diberikan pelepasan tanpa bersalah pada 2021, dipertahankan oleh peguam Dato' Rajpal Singh."
   },
   {
     "file": "paul-yong-rape-trial-defense-ruling-2021-rajpal-singh.JPG",
     "sort": "2021-12-07",
     "dateLabel": "7 Disember 2021",
-    "description": "Laporan Malay Mail bertarikh 7 Disember 2021 meliputi perintah Mahkamah Tinggi untuk bekas ahli dewan Tronoh Paul Yong membela diri dalam kes rogol, dengan peguam pembelaan Datuk Rajpal Singh hadir."
+    "description": "Laporan Malay Mail bertarikh 7 Disember 2021 meliputi perintah Mahkamah Tinggi untuk bekas ahli dewan Tronoh Paul Yong membela diri dalam kes rogol, dengan peguam pembelaan Dato' Rajpal Singh hadir."
   },
   {
     "file": "paul-yong-rape-trial-prima-facie-ruling-rajpal-singh-2021.JPG",
     "sort": "2021-12-08",
     "dateLabel": "8 Disember 2021",
-    "description": "Muka depan akhbar The Star bertarikh 8 Disember 2021 melaporkan keputusan Mahkamah Tinggi bahawa pendakwaan berjaya membuktikan kes pada peringkat awal terhadap Paul Yong Choo Kiong dalam perbicaraan rogolnya, dipertahankan oleh Datuk Rajpal Singh."
+    "description": "Muka depan akhbar The Star bertarikh 8 Disember 2021 melaporkan keputusan Mahkamah Tinggi bahawa pendakwaan berjaya membuktikan kes pada peringkat awal terhadap Paul Yong Choo Kiong dalam perbicaraan rogolnya, dipertahankan oleh Dato' Rajpal Singh."
   },
   {
     "file": "nicky-gang-acquittal-court-of-appeal-2022-rajpal-singh.JPG",
     "sort": "2022-07-07",
     "dateLabel": "7 Julai 2022",
-    "description": "Keratan akhbar Kosmo bertarikh 7 Julai 2022 melaporkan pembebasan 14 individu dikaitkan dengan kumpulan jenayah terancang Geng Nicky, memaparkan peguam pembelaan Datuk Rajpal Singh."
+    "description": "Keratan akhbar Kosmo bertarikh 7 Julai 2022 melaporkan pembebasan 14 individu dikaitkan dengan kumpulan jenayah terancang Geng Nicky, memaparkan peguam pembelaan Dato' Rajpal Singh."
   },
   {
     "file": "china-press-kk-mart-court-appearance-2024-march.JPG",
@@ -357,31 +357,31 @@ export const CLIPPINGS_MS = [
     "file": "china-press-kk-mart-founder-acquittal-2024-rajpal-singh.JPG",
     "sort": "2024-07-16",
     "dateLabel": "16 Julai 2024",
-    "description": "Muka depan China Press bertarikh 16 Julai 2024 melaporkan pembebasan pengasas KK Mart Datuk Seri Chai Kee Kan dan isterinya, bersama peguam pembelaan Datuk Rajpal Singh, selepas kontroversi stokin Allah."
+    "description": "Muka depan China Press bertarikh 16 Julai 2024 melaporkan pembebasan pengasas KK Mart Datuk Seri Chai Kee Kan dan isterinya, bersama peguam pembelaan Dato' Rajpal Singh, selepas kontroversi stokin Allah."
   },
   {
     "file": "new-straits-times-kk-mart-acquittal-2024-rajpal-singh-report.JPG",
     "sort": "2024-07-16",
     "dateLabel": "16 Julai 2024",
-    "description": "Laporan New Straits Times bertarikh 16 Julai 2024 memperincikan pembebasan kepimpinan KK Mart, diwakili oleh peguam pembelaan Datuk Rajpal Singh, dalam kes stokin Allah."
+    "description": "Laporan New Straits Times bertarikh 16 Julai 2024 memperincikan pembebasan kepimpinan KK Mart, diwakili oleh peguam pembelaan Dato' Rajpal Singh, dalam kes stokin Allah."
   },
   {
     "file": "kk-mart-founder-chai-kee-kan-acquittal-2024-rajpal-singh.JPG",
     "sort": "2024-07-16",
     "dateLabel": "Julai 2024",
-    "description": "Keratan akhbar bahasa Cina Julai 2024 melaporkan pembebasan pengasas KK Mart Datuk Seri Chai Kee Kan dan isterinya, bersama peguam pembelaan Datuk Rajpal Singh dan Datuk David Gurupatham, selepas kontroversi stokin Allah."
+    "description": "Keratan akhbar bahasa Cina Julai 2024 melaporkan pembebasan pengasas KK Mart Datuk Seri Chai Kee Kan dan isterinya, bersama peguam pembelaan Dato' Rajpal Singh dan Datuk David Gurupatham, selepas kontroversi stokin Allah."
   },
   {
     "file": "kk-mart-legal-victory-2024-analysis-rajpal-singh.JPG",
     "sort": "2024-07-16",
     "dateLabel": "Julai 2024",
-    "description": "Laporan media terperinci daripada China Press mengenai pembebasan mahkamah 2024 pengurusan KK Mart, menonjolkan strategi pembelaan dipimpin oleh Datuk Rajpal Singh dan pasukan guamannya."
+    "description": "Laporan media terperinci daripada China Press mengenai pembebasan mahkamah 2024 pengurusan KK Mart, menonjolkan strategi pembelaan dipimpin oleh Dato' Rajpal Singh dan pasukan guamannya."
   },
   {
     "file": "kk-mart-founder-chai-kee-kan-124-days-acquittal-rajpal-singh.JPG",
     "sort": "2024-07-16",
     "dateLabel": "Julai 2024",
-    "description": "Artikel akhbar Tamil memaparkan pengasas KK Mart Datuk Seri Chai Kee Kan dan peguam pembelaannya Datuk Rajpal Singh, membincangkan kelegaan beliau selepas 124 hari sukar semasa kontroversi guaman stokin Allah."
+    "description": "Artikel akhbar Tamil memaparkan pengasas KK Mart Datuk Seri Chai Kee Kan dan peguam pembelaannya Dato' Rajpal Singh, membincangkan kelegaan beliau selepas 124 hari sukar semasa kontroversi guaman stokin Allah."
   },
   {
     "file": "kk-mart-founder-acquittal-statement-tamil-press-2024.JPG",
@@ -393,43 +393,43 @@ export const CLIPPINGS_MS = [
     "file": "kosmo-fake-lawyer-scam-alert-michael-chong-shafee-rajpal-singh-2025.JPG",
     "sort": "2025-12-15",
     "dateLabel": "15 Disember 2025",
-    "description": "Laporan Kosmo bertarikh 15 Disember 2025 memberi amaran tentang sindiket menyamar sebagai peguam untuk menipu mangsa penipuan, memaparkan Datuk Seri Michael Chong, Tan Sri Muhammad Shafee Abdullah, dan peguam Datuk Rajpal Singh."
+    "description": "Laporan Kosmo bertarikh 15 Disember 2025 memberi amaran tentang sindiket menyamar sebagai peguam untuk menipu mangsa penipuan, memaparkan Datuk Seri Michael Chong, Tan Sri Muhammad Shafee Abdullah, dan peguam Dato' Rajpal Singh."
   },
   {
     "file": "8tv-news-fake-lawyer-scam-alert-michael-chong-rajpal-singh-2025.JPG",
     "sort": "2025-12-15",
     "dateLabel": "15 Disember 2025",
-    "description": "Laporan 8TV News bertarikh 15 Disember 2025 memaparkan Datuk Seri Michael Chong dan peguam Datuk Rajpal Singh memberi amaran kepada orang awam tentang peguam palsu yang menjanjikan pemulangan wang kepada mangsa penipuan."
+    "description": "Laporan 8TV News bertarikh 15 Disember 2025 memaparkan Datuk Seri Michael Chong dan peguam Dato' Rajpal Singh memberi amaran kepada orang awam tentang peguam palsu yang menjanjikan pemulangan wang kepada mangsa penipuan."
   },
   {
     "file": "berita-harian-fake-law-firm-scam-alert-michael-chong-shafee-rajpal-singh-2025.JPG",
     "sort": "2025-12-15",
     "dateLabel": "15 Disember 2025",
-    "description": "Laporan Berita Harian bertarikh 15 Disember 2025 memperincikan bagaimana penipu menyamar sebagai firma guaman untuk mengeksploitasi mangsa penipuan, memaparkan Datuk Seri Michael Chong dan peguam termasuk Tan Sri Muhammad Shafee Abdullah dan Datuk Rajpal Singh."
+    "description": "Laporan Berita Harian bertarikh 15 Disember 2025 memperincikan bagaimana penipu menyamar sebagai firma guaman untuk mengeksploitasi mangsa penipuan, memaparkan Datuk Seri Michael Chong dan peguam termasuk Tan Sri Muhammad Shafee Abdullah dan Dato' Rajpal Singh."
   },
   {
     "file": "berita-harian-law-firm-scam-alert-michael-chong-rajpal-singh-2025.JPG",
     "sort": "2025-12-16",
     "dateLabel": "16 Disember 2025",
-    "description": "Laporan Berita Harian bertarikh 16 Disember 2025 memaparkan Datuk Seri Michael Chong dan peguam termasuk Datuk Rajpal Singh dan Tan Sri Muhammad Shafee Abdullah, memberi amaran tentang penipuan dalam talian menyamar sebagai firma guaman."
+    "description": "Laporan Berita Harian bertarikh 16 Disember 2025 memaparkan Datuk Seri Michael Chong dan peguam termasuk Dato' Rajpal Singh dan Tan Sri Muhammad Shafee Abdullah, memberi amaran tentang penipuan dalam talian menyamar sebagai firma guaman."
   },
   {
     "file": "new-straits-times-legal-scam-alert-michael-chong-shafee-rajpal-singh-2025.JPG",
     "sort": "2025-12-16",
     "dateLabel": "16 Disember 2025",
-    "description": "Laporan New Straits Times bertarikh 16 Disember 2025 memperincikan bagaimana penipu mengeksploitasi mangsa dengan menyamar sebagai firma guaman, memaparkan Datuk Seri Michael Chong, Tan Sri Muhammad Shafee Abdullah, dan peguam Datuk Rajpal Singh."
+    "description": "Laporan New Straits Times bertarikh 16 Disember 2025 memperincikan bagaimana penipu mengeksploitasi mangsa dengan menyamar sebagai firma guaman, memaparkan Datuk Seri Michael Chong, Tan Sri Muhammad Shafee Abdullah, dan peguam Dato' Rajpal Singh."
   },
   {
     "file": "the-star-fake-law-firm-scam-alert-2025-michael-chong-shafee-rajpal-singh.JPG",
     "sort": "2025-12-17",
     "dateLabel": "17 Disember 2025",
-    "description": "Laporan akhbar The Star bertarikh 17 Disember 2025 memperincikan bagaimana firma guaman palsu mengeksploitasi mangsa penipuan, memaparkan pandangan Datuk Seri Michael Chong, Tan Sri Muhammad Shafee Abdullah, dan peguam Datuk Rajpal Singh."
+    "description": "Laporan akhbar The Star bertarikh 17 Disember 2025 memperincikan bagaimana firma guaman palsu mengeksploitasi mangsa penipuan, memaparkan pandangan Datuk Seri Michael Chong, Tan Sri Muhammad Shafee Abdullah, dan peguam Dato' Rajpal Singh."
   },
   {
     "file": "mothership-fake-law-firm-scam-alert-2025-michael-chong-shafee-rajpal-singh.JPG",
     "sort": "2025-12-17",
     "dateLabel": "17 Disember 2025",
-    "description": "Laporan Mothership bertarikh 17 Disember 2025 memperincikan bagaimana mangsa penipuan di Malaysia dieksploitasi buat kali kedua oleh firma guaman palsu, memaparkan pandangan Datuk Seri Michael Chong, Tan Sri Muhammad Shafee Abdullah, dan peguam Datuk Rajpal Singh."
+    "description": "Laporan Mothership bertarikh 17 Disember 2025 memperincikan bagaimana mangsa penipuan di Malaysia dieksploitasi buat kali kedua oleh firma guaman palsu, memaparkan pandangan Datuk Seri Michael Chong, Tan Sri Muhammad Shafee Abdullah, dan peguam Dato' Rajpal Singh."
   },
   {
     "file": "rajpal-singh-ka-ramu-shah-alam-high-court-murder-case.png",
@@ -453,7 +453,7 @@ export const CLIPPINGS_MS = [
     "file": "paul-yong-rape-trial-court-testimony-analysis-rajpal-singh.JPG",
     "sort": "2020-06-01",
     "dateLabel": "Perbicaraan Paul Yong",
-    "description": "Laporan akhbar memperincikan keterangan mahkamah dalam perbicaraan rogol bekas ahli dewan Tronoh Paul Yong, memaparkan soal balas oleh peguam pembelaan Datuk Rajpal Singh mengenai bukti forensik."
+    "description": "Laporan akhbar memperincikan keterangan mahkamah dalam perbicaraan rogol bekas ahli dewan Tronoh Paul Yong, memaparkan soal balas oleh peguam pembelaan Dato' Rajpal Singh mengenai bukti forensik."
   }
 ];
 

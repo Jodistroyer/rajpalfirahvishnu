@@ -76,7 +76,7 @@ function parseClippings(src) {
       dateLabel: get('dateLabel'),
       imageSource: 'firm-archive-scan',
       rightsHolder: publisher || 'Respective newspaper publisher',
-      use: 'Reference archive of press coverage featuring Datuk Rajpal Singh',
+      use: 'Reference archive of press coverage featuring Dato\' Rajpal Singh',
       added: '2026-06-23',
     });
   }

@@ -57,7 +57,7 @@ function translatePressExcerpt(s) {
     .replace(/criminal lawyer /gi, 'peguam jenayah ')
     .replace(/in Malaysia\.?$/i, 'di Malaysia.')
     .replace(/in Malaysia,/gi, 'di Malaysia,')
-    .replace(/Datuk Rajpal Singh/g, 'Datuk Rajpal Singh')
+    .replace(/Dato\' Rajpal Singh/g, 'Dato\' Rajpal Singh')
     .replace(/naming criminal lawyer /gi, 'menyebut peguam jenayah ')
     .replace(/referencing counsel /gi, 'merujuk peguam ')
     .replace(/Legal commentary by /gi, 'Ulasan guaman oleh ')
@@ -117,8 +117,8 @@ function translatePressTitle(s) {
       'Gambaran pemain utama dalam pertempuran guaman KK Mart')
     .replace(/^Justice will prevail for KK Mart$/i,
       'Keadilan akan berpihak kepada KK Mart')
-    .replace(/^Vasakhi message — Datuk Rajpal Singh, Gurdwara Sahib$/i,
-      'Mesej Vasakhi — Datuk Rajpal Singh, Gurdwara Sahib')
+    .replace(/^Vasakhi message — Dato\' Rajpal Singh, Gurdwara Sahib$/i,
+      'Mesej Vasakhi — Dato\' Rajpal Singh, Gurdwara Sahib')
     .replace(/^At the High Court Criminal Division, Kuala Lumpur$/i,
       'Di Bahagian Jenayah Mahkamah Tinggi, Kuala Lumpur')
     .replace(/^'Now a life is lost': victim's uncle on missing CCTV at student housing$/i,
@@ -215,7 +215,7 @@ function translateClippingDesc(s) {
     .replace(/represented by defence counsel /gi, 'diwakili oleh peguam pembelaan ')
     .replace(/defended by Rajpal Singh/gi, 'dipertahankan oleh Rajpal Singh')
     .replace(/defended by lawyer /gi, 'dipertahankan oleh peguam ')
-    .replace(/defended by Datuk Rajpal Singh/gi, 'dipertahankan oleh Datuk Rajpal Singh')
+    .replace(/defended by Dato\' Rajpal Singh/gi, 'dipertahankan oleh Dato\' Rajpal Singh')
     .replace(/defense lawyer /gi, 'peguam pembelaan ')
     .replace(/defence lawyer /gi, 'peguam pembelaan ')
     .replace(/defense counsel /gi, 'peguam pembelaan ')
@@ -477,7 +477,7 @@ const msMediaHtml = replaceBetweenMarkers(
   readFileSync(msMediaPath, 'utf8'),
   '<!-- press-noscript:start -->',
   '<!-- press-noscript:end -->',
-  buildPressNoscript(PRESS_ITEMS_MS, 'Arkib liputan media — Datuk Rajpal Singh, peguam jenayah Malaysia'),
+  buildPressNoscript(PRESS_ITEMS_MS, 'Arkib liputan media — Dato\' Rajpal Singh, peguam jenayah Malaysia'),
 );
 writeFileSync(msMediaPath, msMediaHtml);
 
@@ -485,15 +485,15 @@ const msIndexPath = join(root, 'ms', 'index.html');
 let msIndexHtml = readFileSync(msIndexPath, 'utf8');
 if (!msIndexHtml.includes('<!-- press-noscript:start -->')) {
   msIndexHtml = msIndexHtml.replace(
-    '<meta itemprop="description" content="Liputan akhbar dan siaran memaparkan peguam pembelaan jenayah Datuk Rajpal Singh di Kuala Lumpur dan Selangor, Malaysia.">',
-    '<meta itemprop="description" content="Liputan akhbar dan siaran memaparkan peguam pembelaan jenayah Datuk Rajpal Singh di Kuala Lumpur dan Selangor, Malaysia.">\n          <!-- press-noscript:start --><!-- press-noscript:end -->',
+    '<meta itemprop="description" content="Liputan akhbar dan siaran memaparkan peguam pembelaan jenayah Dato\' Rajpal Singh di Kuala Lumpur dan Selangor, Malaysia.">',
+    '<meta itemprop="description" content="Liputan akhbar dan siaran memaparkan peguam pembelaan jenayah Dato\' Rajpal Singh di Kuala Lumpur dan Selangor, Malaysia.">\n          <!-- press-noscript:start --><!-- press-noscript:end -->',
   );
 }
 msIndexHtml = replaceBetweenMarkers(
   msIndexHtml,
   '<!-- press-noscript:start -->',
   '<!-- press-noscript:end -->',
-  buildPressNoscript(featuredPress, 'Liputan media terpilih — Datuk Rajpal Singh, peguam jenayah Malaysia'),
+  buildPressNoscript(featuredPress, 'Liputan media terpilih — Dato\' Rajpal Singh, peguam jenayah Malaysia'),
 );
 writeFileSync(msIndexPath, msIndexHtml);
 

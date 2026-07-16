@@ -42,7 +42,7 @@ export const PRESS_IMAGE_RIGHTS = [
   },
   {
     "id": "malaysia-gazette-harmoni-2025",
-    "title": "Hidup harmoni, perpaduan penting — Datuk Rajpal Singh",
+    "title": "Hidup harmoni, perpaduan penting — Dato' Rajpal Singh",
     "publisher": "Malaysia Gazette",
     "sourceUrl": "https://malaysiagazette.com/2025/04/12/hidup-harmoni-perpaduan-penting-rajpal/",
     "imageAsset": "assets/media/press/malaysia-gazette-harmoni-2025.jpg",
@@ -316,17 +316,6 @@ export const PRESS_IMAGE_RIGHTS = [
     "added": "2026-06-23"
   },
   {
-    "id": "nst-mukhtiar-2022",
-    "title": "Capt Mukhtiar, 90, and still battling",
-    "publisher": "New Straits Times",
-    "sourceUrl": "https://www.nst.com.my/news/nation/2022/06/805147/capt-mukhtiar-90-and-still-battling",
-    "imageAsset": "assets/media/press/nst-mukhtiar-2022.jpg",
-    "imageSource": "publisher-og-preview",
-    "rightsHolder": "New Straits Times",
-    "use": "Press index thumbnail; link-out to original source",
-    "added": "2026-06-23"
-  },
-  {
     "id": "keehuachee-philanthropist-2020",
     "title": "Malaysia\\",
     "publisher": "Kee Huat Chee",
@@ -339,7 +328,7 @@ export const PRESS_IMAGE_RIGHTS = [
   },
   {
     "id": "facebook-vasakhi",
-    "title": "Vasakhi message — Datuk Rajpal Singh, Gurdwara Sahib",
+    "title": "Vasakhi message — Dato' Rajpal Singh, Gurdwara Sahib",
     "publisher": "Facebook",
     "sourceUrl": "https://www.facebook.com/100076608946392/videos/on-this-joyous-occasion-of-vasakhi-dato-rajpal-singh-president-of-gurdwara-sahib/1334592824466502/",
     "imageAsset": "assets/media/press/facebook-vasakhi.jpg",
@@ -372,7 +361,7 @@ export const PRESS_IMAGE_RIGHTS = [
   },
   {
     "id": "tiktok-hmetromy",
-    "title": "Court coverage — Datuk Rajpal Singh",
+    "title": "Court coverage — Dato' Rajpal Singh",
     "publisher": "TikTok",
     "sourceUrl": "https://www.tiktok.com/@hmetromy/video/7520509764229532944",
     "imageAsset": "assets/media/press/tiktok-hmetromy.jpg",
@@ -405,7 +394,7 @@ export const PRESS_IMAGE_RIGHTS = [
   },
   {
     "id": "youtube-KbWK4lspxo4",
-    "title": "Legal commentary — Datuk Rajpal Singh",
+    "title": "Legal commentary — Dato' Rajpal Singh",
     "publisher": "YouTube",
     "sourceUrl": "https://youtu.be/KbWK4lspxo4",
     "imageAsset": "https://img.youtube.com/vi/KbWK4lspxo4/hqdefault.jpg",
@@ -416,7 +405,7 @@ export const PRESS_IMAGE_RIGHTS = [
   },
   {
     "id": "youtube-rajpal-bhTq-L5jtf8",
-    "title": "Datuk Rajpal Singh — media appearance",
+    "title": "Dato' Rajpal Singh — media appearance",
     "publisher": "YouTube",
     "sourceUrl": "https://www.youtube.com/watch?v=bhTq-L5jtf8",
     "imageAsset": "https://img.youtube.com/vi/bhTq-L5jtf8/hqdefault.jpg",
@@ -450,7 +439,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "2004",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Malay Mail",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -461,7 +450,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "25 February 2004",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "New Straits Times",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -472,7 +461,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "25 February 2004",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Respective newspaper publisher",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -483,7 +472,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "30 November 2007",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Sinar Harian",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -494,7 +483,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "1 September 2007",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "New Straits Times",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -505,7 +494,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "2007",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "The Star",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -516,7 +505,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "5 December 2007",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "The Star",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -527,7 +516,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "5 December 2007",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Malay Mail",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -538,7 +527,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "2008",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Respective newspaper publisher",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -549,7 +538,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "c. 2008",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Respective newspaper publisher",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -560,7 +549,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "2009",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Respective newspaper publisher",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -571,7 +560,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "24 July 2009",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "The Star",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -582,7 +571,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "11 August 2009",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Sin Chew Daily",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -593,7 +582,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "11 August 2009",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Nanyang Siang Pau",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -604,7 +593,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "11 August 2009",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Respective newspaper publisher",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -615,7 +604,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "August 2009",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Respective newspaper publisher",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -626,7 +615,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "2009",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Respective newspaper publisher",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -637,7 +626,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "6 December 2009",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Respective newspaper publisher",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -648,7 +637,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "6 December 2009",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Respective newspaper publisher",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -659,7 +648,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "July 2010",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "New Straits Times",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -670,7 +659,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "July 2010",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Respective newspaper publisher",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -681,7 +670,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "10 November 2010",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Sinar Harian",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -692,7 +681,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "2011",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Kosmo",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -703,7 +692,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "27 May 2011",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "New Straits Times",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -714,7 +703,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "September 2012",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "New Straits Times",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -725,7 +714,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "2015",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Respective newspaper publisher",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -736,7 +725,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "2016",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Respective newspaper publisher",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -747,7 +736,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "2016",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Respective newspaper publisher",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -758,7 +747,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "2016",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Kosmo",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -769,7 +758,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "2016",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Respective newspaper publisher",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -780,7 +769,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "20 January 2016",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "The Star",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -791,7 +780,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "20 January 2016",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "The Star",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -802,7 +791,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "8 September 2018",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Respective newspaper publisher",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -813,7 +802,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "8 September 2018",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "China Press",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -824,7 +813,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "8 September 2018",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "New Straits Times",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -835,7 +824,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "8 September 2018",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "The Star",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -846,7 +835,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "15 August 2018",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Respective newspaper publisher",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -857,7 +846,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "2018",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Harian Metro",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -868,7 +857,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "September 2018",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Respective newspaper publisher",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -879,7 +868,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "2018",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Respective newspaper publisher",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -890,7 +879,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "November 2018",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Respective newspaper publisher",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -901,7 +890,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "10 May 2019",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "China Press",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -912,7 +901,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "11 May 2019",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "The Star",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -923,7 +912,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "May 2019",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Respective newspaper publisher",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -934,7 +923,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "November 2019",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Respective newspaper publisher",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -945,7 +934,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "12 September 2019",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Respective newspaper publisher",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -956,7 +945,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "September 2019",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Respective newspaper publisher",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -967,7 +956,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "2019",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Respective newspaper publisher",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -978,7 +967,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "16 July 2020",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Respective newspaper publisher",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -989,7 +978,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "2020",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Respective newspaper publisher",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -1000,7 +989,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "2021",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "The Star",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -1011,7 +1000,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "7 December 2021",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Malay Mail",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -1022,7 +1011,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "8 December 2021",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "The Star",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -1033,7 +1022,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "7 July 2022",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Kosmo",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -1044,7 +1033,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "27 March 2024",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "China Press",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -1055,7 +1044,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "27 March 2024",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "The Star",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -1066,7 +1055,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "27 March 2024",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "The Star",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -1077,7 +1066,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "16 July 2024",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Sin Chew Daily",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -1088,7 +1077,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "16 July 2024",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "China Press",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -1099,7 +1088,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "16 July 2024",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "New Straits Times",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -1110,7 +1099,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "July 2024",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Respective newspaper publisher",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -1121,7 +1110,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "July 2024",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "China Press",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -1132,7 +1121,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "July 2024",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Respective newspaper publisher",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -1143,7 +1132,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "July 2024",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Respective newspaper publisher",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -1154,7 +1143,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "15 December 2025",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Kosmo",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -1165,7 +1154,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "15 December 2025",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Respective newspaper publisher",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -1176,7 +1165,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "15 December 2025",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Berita Harian",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -1187,7 +1176,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "16 December 2025",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Berita Harian",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -1198,7 +1187,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "16 December 2025",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "New Straits Times",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -1209,7 +1198,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "17 December 2025",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "The Star",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -1220,7 +1209,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "17 December 2025",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Respective newspaper publisher",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -1231,7 +1220,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "Archive",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Respective newspaper publisher",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -1242,7 +1231,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "Archive",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Harian Metro",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -1253,7 +1242,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "Archive",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Respective newspaper publisher",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   },
   {
@@ -1264,7 +1253,7 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "dateLabel": "Paul Yong trial",
     "imageSource": "firm-archive-scan",
     "rightsHolder": "Respective newspaper publisher",
-    "use": "Reference archive of press coverage featuring Datuk Rajpal Singh",
+    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
     "added": "2026-06-23"
   }
 ];

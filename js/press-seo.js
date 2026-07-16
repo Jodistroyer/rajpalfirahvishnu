@@ -9,7 +9,7 @@ import { absoluteUrl, getSiteOrigin, isMsSubpage, pressPageUrl } from './site-co
 /** @typedef {import('./press-data.js').PressItem} PressItem */
 
 const FIRM_NAME = 'Rajpal, Firah & Vishnu';
-const LAWYER_NAME = 'Datuk Rajpal Singh';
+const LAWYER_NAME = 'Dato\' Rajpal Singh';
 
 const SEO_KEYWORDS_EN = [
   'criminal lawyer Malaysia',
@@ -148,11 +148,11 @@ export function buildPressJsonLd(items) {
     '@type': 'CollectionPage',
     '@id': `${pageUrl}#press-collection`,
     name: ms
-      ? 'Dalam Media — Datuk Rajpal Singh, Peguam Jenayah Malaysia'
-      : 'In the Press — Datuk Rajpal Singh, Criminal Lawyer Malaysia',
+      ? 'Dalam Media — Dato\' Rajpal Singh, Peguam Jenayah Malaysia'
+      : 'In the Press — Dato\' Rajpal Singh, Criminal Lawyer Malaysia',
     description: ms
-      ? 'Liputan media, siaran, dan dalam talian memaparkan Datuk Rajpal Singh, peguam pembelaan jenayah terkemuka di Kuala Lumpur dan Selangor, Malaysia.'
-      : 'Press, broadcast, and online coverage featuring Datuk Rajpal Singh, a leading criminal defence lawyer in Kuala Lumpur and Selangor, Malaysia.',
+      ? 'Liputan media, siaran, dan dalam talian memaparkan Dato\' Rajpal Singh, peguam pembelaan jenayah terkemuka di Kuala Lumpur dan Selangor, Malaysia.'
+      : 'Press, broadcast, and online coverage featuring Dato\' Rajpal Singh, a leading criminal defence lawyer in Kuala Lumpur and Selangor, Malaysia.',
     url: pageUrl,
     inLanguage: isMsSubpage() ? 'ms-MY' : 'en-MY',
     isPartOf: {
