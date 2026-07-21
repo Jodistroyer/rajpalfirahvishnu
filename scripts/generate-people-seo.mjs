@@ -7,9 +7,13 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { PRESS_ITEMS } from '../js/press-data.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, '..');
+
+/** @type {Record<string, import('../js/press-data.js').PressItem>} */
+const pressById = Object.fromEntries(PRESS_ITEMS.map((item) => [item.id, item]));
 
 /** @type {{ siteOrigin: string, firm: { name: string, email: string }, offices: Record<string, object>, people: object[] }} */
 const data = JSON.parse(fs.readFileSync(path.join(root, 'data/people.json'), 'utf8'));
@@ -203,6 +207,28 @@ function buildAvatar(person, assetPrefix) {
             </div>`;
 }
 
+/**
+ * @param {{ slug: string, pressCoverage?: (string | { id: string, label?: string })[] }} person
+ * @returns {{ url: string, label?: string }[]}
+ */
+function resolvePressCoverage(person) {
+  if (!person.pressCoverage?.length) return [];
+
+  return person.pressCoverage.flatMap((entry) => {
+    const id = typeof entry === 'string' ? entry : entry.id;
+    const item = pressById[id];
+    if (!item) {
+      console.warn(`Unknown press id "${id}" for ${person.slug}`);
+      return [];
+    }
+    if (item.counsel && item.counsel !== person.slug) {
+      console.warn(`Press id "${id}" counsel is ${item.counsel}, expected ${person.slug}`);
+    }
+    const label = typeof entry === 'object' && entry.label ? entry.label : undefined;
+    return [{ url: item.url, label }];
+  });
+}
+
 function buildFaqLink(person, lang, assetPrefix) {
   if (!person.faq) return '';
   const href = `${assetPrefix}faq/${person.faq}/`;
@@ -344,6 +370,16 @@ function buildLlmsTxt() {
     );
     if (person.faq) {
       lines.push(`- FAQ: ${siteOrigin}/faq/${person.faq}/`);
+    }
+    const press = resolvePressCoverage(person);
+    if (press.length) {
+      lines.push('- Press coverage (Media Room):');
+      for (const item of press) {
+        lines.push(item.label ? `  - ${item.url} — ${item.label}` : `  - ${item.url}`);
+      }
+    }
+    if (person.pressThumbnail) {
+      lines.push(`- Press thumbnail: ${siteOrigin}/${person.pressThumbnail}`);
     }
   }
 

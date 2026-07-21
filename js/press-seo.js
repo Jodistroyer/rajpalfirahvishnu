@@ -67,6 +67,20 @@ function getCounselMeta(item) {
   return COUNSEL[item.counsel || 'rajpal-singh'];
 }
 
+/** @param {import('./press-data.js').PressItem} item */
+export function getPressItemCounsel(item) {
+  return item.counsel || 'rajpal-singh';
+}
+
+/** @returns {{ id: string, label: string }[]} */
+export function getPressCounselFilters() {
+  const ms = isMsSubpage();
+  return [
+    { id: 'all', label: ms ? 'Semua peguam' : 'All lawyers' },
+    ...Object.entries(COUNSEL).map(([id, meta]) => ({ id, label: meta.name })),
+  ];
+}
+
 function seoKeywords() {
   return isMsSubpage() ? SEO_KEYWORDS_MS : SEO_KEYWORDS_EN;
 }

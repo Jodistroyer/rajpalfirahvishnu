@@ -41,7 +41,7 @@ Replace [yourdomain] in data/people.json and re-run: node scripts/generate-peopl
 ### Dato' Rajpal Singh A/L Mukhtiar Singh
 - English: https://[yourdomain]/people/rajpal-singh/
 - Bahasa Malaysia: https://[yourdomain]/ms/people/rajpal-singh/
-- Role: Partner / Rakan Kongsi Kanan
+- Role: Senior Partner / Rakan Kongsi Kanan
 - Practice: Criminal Litigation
 - Experience: 30+ years (criminal litigation)
 - Called to the Bar: 1993
@@ -52,7 +52,7 @@ Replace [yourdomain] in data/people.json and re-run: node scripts/generate-peopl
 ### Vishnu Kumar A/L S. Athi Kumar
 - English: https://[yourdomain]/people/vishnu-kumar/
 - Bahasa Malaysia: https://[yourdomain]/ms/people/vishnu-kumar/
-- Role: Partner / Rakan Kongsi
+- Role: Senior Partner / Rakan Kongsi Kanan
 - Practice: Civil Litigation
 - Experience: 29+ years (civil litigation)
 - Called to the Bar: 1997

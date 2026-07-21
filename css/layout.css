@@ -251,8 +251,15 @@
   margin-bottom: clamp(2rem, 4vw, 3rem);
 }
 
-.press-filter-nav {
+.press-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
   margin-bottom: 1.25rem;
+}
+
+.press-filter-nav {
+  margin-bottom: 0;
 }
 
 .press-grid__empty {

@@ -1,10 +1,10 @@
 /**
- * press.js — Dynamic "In the Press" grid with category filtering.
+ * press.js — Dynamic "In the Press" grid with counsel and category filtering.
  */
 
 import { getPressItems, getPressCategories } from './media-locale.js';
 import { observeLazyCards } from './lazymedia.js';
-import { getPressSeoMeta } from './press-seo.js';
+import { getPressCounselFilters, getPressItemCounsel, getPressSeoMeta } from './press-seo.js';
 import { siteAssetUrl, isMsSubpage } from './site-config.js';
 
 /** @typedef {import('./press-data.js').PressItem} PressItem */
@@ -27,6 +27,15 @@ function escHtml(str) {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;');
+}
+
+/** @returns {string} */
+function readInitialCounsel() {
+  const param = new URLSearchParams(window.location.search).get('counsel');
+  if (param && getPressCounselFilters().some((c) => c.id === param)) {
+    return param;
+  }
+  return 'all';
 }
 
 function resolveThumb(item) {
@@ -117,29 +126,51 @@ function renderPressCard(item, index) {
 }
 
 /**
- * @param {string} activeCategory
- * @param {boolean} showFilters
+ * @param {{ id: string, label: string }[]} options
+ * @param {string} activeId
+ * @param {string} dataAttr
+ * @param {string} ariaLabel
  */
-function renderCategoryNav(activeCategory, showFilters) {
-  if (!showFilters) return '';
-
-  const items = getPressCategories().map(cat => {
-    const isActive = cat.id === activeCategory;
+function renderFilterNav(options, activeId, dataAttr, ariaLabel) {
+  const items = options.map(opt => {
+    const isActive = opt.id === activeId;
     return `
       <li class="clippings-years-nav__item" role="none">
         <button type="button"
                 class="clippings-years-nav__btn${isActive ? ' is-active' : ''}"
-                data-press-category="${escHtml(cat.id)}"
+                ${dataAttr}="${escHtml(opt.id)}"
                 aria-current="${isActive ? 'true' : 'false'}">
-          ${escHtml(cat.label)}
+          ${escHtml(opt.label)}
         </button>
       </li>`;
   }).join('');
 
   return `
-    <nav class="clippings-years-nav press-filter-nav" aria-label="Filter press coverage by topic">
+    <nav class="clippings-years-nav press-filter-nav" aria-label="${escHtml(ariaLabel)}">
       <ul class="clippings-years-nav__list" role="list">${items}</ul>
     </nav>`;
+}
+
+/**
+ * @param {string} activeCounsel
+ * @param {string} activeCategory
+ * @param {boolean} showFilters
+ */
+function renderFilterNavs(activeCounsel, activeCategory, showFilters) {
+  if (!showFilters) return '';
+
+  const counselLabel = isMsSubpage()
+    ? 'Tapis liputan media mengikut peguam'
+    : 'Filter press coverage by lawyer';
+  const topicLabel = isMsSubpage()
+    ? 'Tapis liputan media mengikut topik'
+    : 'Filter press coverage by topic';
+
+  return `
+    <div class="press-filters">
+      ${renderFilterNav(getPressCounselFilters(), activeCounsel, 'data-press-counsel', counselLabel)}
+      ${renderFilterNav(getPressCategories(), activeCategory, 'data-press-category', topicLabel)}
+    </div>`;
 }
 
 /**
@@ -167,6 +198,7 @@ export function initPress(container) {
   }
 
   const sorted = [...getPressItems()].sort((a, b) => b.sort.localeCompare(a.sort));
+  let activeCounsel = readInitialCounsel();
   let activeCategory = 'all';
   let visibleCount = getBatchSize();
 
@@ -181,6 +213,9 @@ export function initPress(container) {
     let items = sorted;
     if (mode === 'preview') {
       items = sorted.filter(i => i.featured);
+    }
+    if (activeCounsel !== 'all') {
+      items = items.filter(i => getPressItemCounsel(i) === activeCounsel);
     }
     if (activeCategory === 'video-social') {
       items = items.filter(i => i.type === 'video' || i.type === 'social');
@@ -212,10 +247,10 @@ export function initPress(container) {
     const visible = filtered.slice(0, visibleCount);
     const cards = visible.length
       ? visible.map((item, i) => renderPressCard(item, i)).join('')
-      : `<p class="press-grid__empty">${isMsSubpage() ? 'Tiada liputan media dalam kategori ini lagi.' : 'No press coverage in this category yet.'}</p>`;
+      : `<p class="press-grid__empty">${isMsSubpage() ? 'Tiada liputan media yang sepadan dengan penapis ini.' : 'No press coverage matches these filters.'}</p>`;
 
     inner.innerHTML = `
-      ${renderCategoryNav(activeCategory, showFilters)}
+      ${renderFilterNavs(activeCounsel, activeCategory, showFilters)}
       <div class="media-room__grid press-grid__cards" role="list">${cards}</div>
       ${renderShowMore(filtered.length)}`;
 
@@ -228,9 +263,18 @@ export function initPress(container) {
   container.addEventListener('click', e => {
     if (!(e.target instanceof Element)) return;
 
-    const btn = e.target.closest('[data-press-category]');
-    if (btn instanceof HTMLButtonElement) {
-      const cat = btn.dataset.pressCategory;
+    const counselBtn = e.target.closest('[data-press-counsel]');
+    if (counselBtn instanceof HTMLButtonElement) {
+      const counsel = counselBtn.dataset.pressCounsel;
+      if (!counsel || counsel === activeCounsel) return;
+      activeCounsel = counsel;
+      requestAnimationFrame(() => render({ resetCount: true }));
+      return;
+    }
+
+    const categoryBtn = e.target.closest('[data-press-category]');
+    if (categoryBtn instanceof HTMLButtonElement) {
+      const cat = categoryBtn.dataset.pressCategory;
       if (!cat || cat === activeCategory) return;
       activeCategory = cat;
       requestAnimationFrame(() => render({ resetCount: true }));

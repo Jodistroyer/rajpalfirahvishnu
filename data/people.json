@@ -107,7 +107,14 @@
         { "@type": "CollegeOrUniversity", "name": "University College London, University of London" },
         { "@type": "Organization", "name": "Middle Temple" }
       ],
-      "sameAs": ["https://www.malaysianbar.org.my/"]
+      "sameAs": ["https://www.malaysianbar.org.my/"],
+      "pressCoverage": [
+        { "id": "edge-sultanah-defamation-leave-2024", "label": "Sarawak Report defamation suit (Federal Court)" },
+        { "id": "dailyexpress-sultanah-defamation-2024" },
+        { "id": "edge-sultanah-defamation-appeal-2023", "label": "Court of Appeal hearing" },
+        { "id": "nst-election-manifesto-2022" }
+      ],
+      "pressThumbnail": "assets/media/press/clare-rewcastle-brown-and-sultanah-nur-zahirah.jpg"
     },
     {
       "slug": "siti-anis",
@@ -148,7 +155,15 @@
         { "@type": "CollegeOrUniversity", "name": "Universiti Malaya" },
         { "@type": "CollegeOrUniversity", "name": "Universiti Teknologi MARA" }
       ],
-      "sameAs": ["https://www.malaysianbar.org.my/"]
+      "sameAs": ["https://www.malaysianbar.org.my/"],
+      "pressCoverage": [
+        "malaymail-jonathan-wong-cheating-2024",
+        "bernama-jonathan-wong-cheating-2024",
+        "facebook-fmt-jonathan-wong-2024",
+        "astro-minyak-masak-2023",
+        "hmetro-grab-murder-death-2023",
+        "hmetro-rewcastle-terengganu-2023"
+      ]
     },
     {
       "slug": "tiew-poh-nee",
