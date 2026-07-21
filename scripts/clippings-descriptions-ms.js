@@ -152,9 +152,6 @@ export const CLIPPINGS_MS_DESCRIPTIONS = {
   'paul-yong-rape-trial-date-setting-rajpal-singh-2020.JPG':
     'Laporan berita bertarikh 16 Julai 2020 memaparkan peguam pembelaan Dato\' Rajpal Singh berbicara kepada media di luar Mahkamah Sesyen Ipoh mengenai tarikh perbicaraan ditetapkan untuk bekas ahli dewan undangan Perak Paul Yong.',
 
-  'paul-yong-rape-trial-transfer-appeal-rajpal-singh-2020.JPG':
-    'Laporan akhbar Cina memperincikan keputusan Mahkamah Rayuan menolak permohonan bekas ahli dewan undangan Perak Paul Yong Choo Kiong dan peguam pembelaannya Dato\' Rajpal Singh untuk memindahkan perbicaraan rogol ke Mahkamah Tinggi.',
-
   'nicky-gang-14-men-dnaa-shah-alam-2021-rajpal-singh.JPG':
     'Keratan akhbar The Star melaporkan 14 individu dikaitkan dengan Geng Nicky Liow diberikan pelepasan tanpa bersalah pada 2021, dipertahankan oleh peguam Dato\' Rajpal Singh.',
 

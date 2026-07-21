@@ -303,12 +303,6 @@ export const CLIPPINGS = [
     description: 'News report dated July 16, 2020, featuring defense lawyer Dato\' Rajpal Singh speaking to the media outside the Ipoh Sessions Court regarding the trial dates set for former Perak assemblyman Paul Yong.',
   },
   {
-    file: 'paul-yong-rape-trial-transfer-appeal-rajpal-singh-2020.JPG',
-    sort: '2020-01-01',
-    dateLabel: '2020',
-    description: 'Chinese newspaper report detailing the Court of Appeal\'s decision to dismiss the application by former Perak assemblyman Paul Yong Choo Kiong and his defense lawyer Dato\' Rajpal Singh to transfer his rape trial to the High Court.',
-  },
-  {
     file: 'nicky-gang-14-men-dnaa-shah-alam-2021-rajpal-singh.JPG',
     sort: '2021-01-01',
     dateLabel: '2021',

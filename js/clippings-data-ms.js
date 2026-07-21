@@ -300,12 +300,6 @@ export const CLIPPINGS_MS = [
     "description": "Laporan berita bertarikh 16 Julai 2020 memaparkan peguam pembelaan Dato' Rajpal Singh berbicara kepada media di luar Mahkamah Sesyen Ipoh mengenai tarikh perbicaraan ditetapkan untuk bekas ahli dewan undangan Perak Paul Yong."
   },
   {
-    "file": "paul-yong-rape-trial-transfer-appeal-rajpal-singh-2020.JPG",
-    "sort": "2020-01-01",
-    "dateLabel": "2020",
-    "description": "Laporan akhbar Cina memperincikan keputusan Mahkamah Rayuan menolak permohonan bekas ahli dewan undangan Perak Paul Yong Choo Kiong dan peguam pembelaannya Dato' Rajpal Singh untuk memindahkan perbicaraan rogol ke Mahkamah Tinggi."
-  },
-  {
     "file": "nicky-gang-14-men-dnaa-shah-alam-2021-rajpal-singh.JPG",
     "sort": "2021-01-01",
     "dateLabel": "2021",

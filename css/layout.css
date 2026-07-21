@@ -421,6 +421,7 @@
   letter-spacing: 0.04em;
   color: var(--color-accent);
   line-height: 1.15;
+  white-space: nowrap;
   pointer-events: none;
 }
 

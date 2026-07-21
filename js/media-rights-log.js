@@ -1081,17 +1081,6 @@ export const CLIPPINGS_IMAGE_RIGHTS = [
     "added": "2026-06-23"
   },
   {
-    "id": "paul-yong-rape-trial-transfer-appeal-rajpal-singh-2020",
-    "file": "paul-yong-rape-trial-transfer-appeal-rajpal-singh-2020.JPG",
-    "imageAsset": "assets/media/newspaper-clippings/paul-yong-rape-trial-transfer-appeal-rajpal-singh-2020.JPG",
-    "publisher": "Respective newspaper publisher",
-    "dateLabel": "2020",
-    "imageSource": "firm-archive-scan",
-    "rightsHolder": "Respective newspaper publisher",
-    "use": "Reference archive of press coverage featuring Dato' Rajpal Singh",
-    "added": "2026-06-23"
-  },
-  {
     "id": "nicky-gang-14-men-dnaa-shah-alam-2021-rajpal-singh",
     "file": "nicky-gang-14-men-dnaa-shah-alam-2021-rajpal-singh.JPG",
     "imageAsset": "assets/media/newspaper-clippings/nicky-gang-14-men-dnaa-shah-alam-2021-rajpal-singh.JPG",

@@ -445,12 +445,28 @@ function initMosaicGallery(container, CLIPPINGS, opts) {
 
   function syncYearRail() {
     const mosaicTop = mosaic.getBoundingClientRect().top + window.scrollY;
+    const MIN_LABEL_GAP = 8;
+
+    /** @type {{ mark: HTMLElement, naturalTop: number }[]} */
+    const entries = [];
+
     yearMarks.forEach((mark, year) => {
       const firstCard = collage.querySelector(`[data-year-start="${CSS.escape(year)}"]`);
       if (!(firstCard instanceof HTMLElement)) return;
-      const top = firstCard.getBoundingClientRect().top + window.scrollY - mosaicTop;
-      mark.style.top = `${Math.max(0, top)}px`;
+      const naturalTop = firstCard.getBoundingClientRect().top + window.scrollY - mosaicTop;
+      entries.push({ mark, naturalTop: Math.max(0, naturalTop) });
     });
+
+    entries.sort((a, b) => a.naturalTop - b.naturalTop);
+
+    let prevBottom = -MIN_LABEL_GAP;
+    for (const { mark, naturalTop } of entries) {
+      const height = mark.offsetHeight || 18;
+      const top = Math.max(naturalTop, prevBottom + MIN_LABEL_GAP);
+      mark.style.top = `${top}px`;
+      prevBottom = top + height;
+    }
+
     yearRail.style.minHeight = `${collage.offsetHeight}px`;
   }
 
