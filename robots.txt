@@ -13,3 +13,4 @@ Sitemap: https://[yourdomain]/sitemap-images.xml
 
 # Machine-readable lawyer index for AI assistants
 # https://[yourdomain]/llms.txt
+# https://[yourdomain]/ms/llms.txt

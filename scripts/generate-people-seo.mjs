@@ -24,37 +24,72 @@ const practiceFaqs = [
   {
     slug: 'criminal-law',
     title: 'Criminal law',
+    titleMs: 'Undang-undang jenayah',
     lead: 'Rajpal Singh',
     topics:
       'arrest, police investigation, remand, bail, Criminal Procedure Code, Penal Code, court process, appeals, drug offences, fraud, white-collar crime, SOSMA',
+    topicsMs:
+      'tangkap, siasatan polis, reman, jamin, Kanun Tatacara Jenayah, Kanun Keseksaan, proses mahkamah, rayuan, kes dadah, penipuan, jenayah kolar putih, SOSMA',
   },
   {
     slug: 'civil-litigation',
     title: 'Civil litigation',
+    titleMs: 'Litigasi sivil',
     lead: 'Vishnu Kumar',
     topics:
       'contract disputes, debt recovery, writ of summons, limitation periods, Magistrates Court, Sessions Court, High Court, appeals, shareholder disputes, injunctions, summary judgment',
+    topicsMs:
+      'pertikaian kontrak, tuntutan hutang, writ saman, tempoh had, Mahkamah Majistret, Mahkamah Sesyen, Mahkamah Tinggi, rayuan, pertikaian pemegang saham, injunksi, penghakiman ringkas',
   },
   {
     slug: 'property-conveyancing',
     title: 'Property & conveyancing',
+    titleMs: 'Harta tanah & konveyans',
     lead: null,
     topics:
       'buying property Malaysia, stamp duty, LHDN, sale and purchase agreement, title transfer, National Land Code, land search, caveat, strata title, foreign buyers, conveyancing fees',
+    topicsMs:
+      'membeli hartanah Malaysia, duti setem, LHDN, perjanjian jual beli, pemindahan hakmilik, Kanun Tanah Negara, carian tanah, caveat, hakmilik strata, pembeli asing, yuran konveyans',
   },
   {
     slug: 'probate-estate',
     title: 'Probate & estate administration',
+    titleMs: 'Probet & pentadbiran harta pusaka',
     lead: null,
     topics:
       'wills, grant of probate, letters of administration, intestacy, Distribution Act 1958, Wills Act 1959, estate distribution, inheritance, High Court probate',
+    topicsMs:
+      'wasiat, surat kuasa probet, surat kuasa pentadbiran, kematian tanpa wasiat, Akta Pengagihan 1958, Akta Wasiat 1959, pengagihan harta pusaka, warisan, probet Mahkamah Tinggi',
   },
   {
     slug: 'corporate-commercial',
     title: 'Corporate & commercial',
+    titleMs: 'Korporat & komersial',
     lead: null,
     topics:
       'company incorporation SSM, MyCoID, shareholders agreement, Companies Act 2016, director duties, due diligence, M&A, commercial contracts, NDA, SME compliance',
+    topicsMs:
+      'penubuhan syarikat SSM, MyCoID, perjanjian pemegang saham, Akta Syarikat 2016, kewajipan pengarah, due diligence, M&A, kontrak komersial, NDA, pematuhan PKS',
+  },
+  {
+    slug: 'family-law',
+    title: 'Family law',
+    titleMs: 'Undang-undang keluarga',
+    lead: null,
+    topics:
+      'divorce Malaysia, joint petition, child custody, maintenance, nafkah, Domestic Violence Act 1994, Law Reform (Marriage and Divorce) Act 1976, Syariah court, harta sepencarian',
+    topicsMs:
+      'perceraian Malaysia, petisyen bersama, penjagaan anak, nafkah, Akta Keganasan Rumah Tangga 1994, Akta Pemansuhan Undang-Undang (Perkahwinan dan Perceraian) 1976, mahkamah Syariah, harta sepencarian',
+  },
+  {
+    slug: 'bankruptcy-law',
+    title: 'Bankruptcy law',
+    titleMs: 'Undang-undang kebankrapan',
+    lead: null,
+    topics:
+      'Insolvency Act 1967, bankruptcy notice, bankruptcy order, RM100000 threshold, debtor petition, AKPK, DGI MdI, discharge three years, social guarantor section 5(2), EPF protection, travel permission',
+    topicsMs:
+      'Akta Insolvensi 1967, notis kebankrapan, perintah kebankrapan, ambang RM100000, petisyen penghutang, AKPK, KPI MdI, pelepasan tiga tahun, penjamin sosial seksyen 5(2), perlindungan KWSP, kebenaran melancong',
   },
 ];
 
@@ -77,6 +112,12 @@ function profileUrl(slug, lang) {
   return lang === 'ms'
     ? `${siteOrigin}/ms/people/${slug}/`
     : `${siteOrigin}/people/${slug}/`;
+}
+
+function faqUrl(slug, lang) {
+  return lang === 'ms'
+    ? `${siteOrigin}/ms/faq/${slug}/`
+    : `${siteOrigin}/faq/${slug}/`;
 }
 
 function assetLinks(assetPrefix) {
@@ -403,38 +444,59 @@ function patchProfileHtml(relPath, person, lang) {
   console.log(`Patched ${relPath}`);
 }
 
-function buildLlmsTxt() {
-  const lines = [
-    '# Rajpal, Firah & Vishnu | Lawyer Profiles & Practice FAQs',
-    `# ${firm.name}`,
-    `# Contact: ${firm.email}`,
-    '',
-    '## About this file',
-    'Machine-readable index of advocate profiles and practice-area FAQs for search engines and AI assistants.',
-    'Replace [yourdomain] in data/people.json and re-run: node scripts/generate-people-seo.mjs',
-    '',
-    '## Firm',
-    `- Name: ${firm.name}`,
-    `- Website: ${siteOrigin}/`,
-    `- Email: ${firm.email}`,
-    `- Offices: Petaling Jaya and Batu Caves, Selangor, Malaysia`,
-    '',
-    '## Practice area FAQs',
-  ];
+function buildLlmsTxt(lang = 'en') {
+  const isMs = lang === 'ms';
+  const lines = isMs
+    ? [
+        '# Rajpal, Firah & Vishnu | Profil Peguam & Soalan Lazim Bidang Guaman',
+        `# ${firm.name}`,
+        `# Hubungi: ${firm.email}`,
+        '',
+        '## Perihal fail ini',
+        'Indeks mesin-baca profil peguam dan soalan lazim bidang guaman untuk enjin carian dan pembantu AI.',
+        'Gantikan [yourdomain] dalam data/people.json dan jalankan semula: node scripts/generate-people-seo.mjs',
+        `- English: ${siteOrigin}/llms.txt`,
+        '',
+        '## Firma',
+        `- Nama: ${firm.name}`,
+        `- Laman web: ${siteOrigin}/ms/`,
+        `- E-mel: ${firm.email}`,
+        `- Pejabat: Petaling Jaya dan Batu Caves, Selangor, Malaysia`,
+        '',
+        '## Soalan lazim bidang guaman',
+      ]
+    : [
+        '# Rajpal, Firah & Vishnu | Lawyer Profiles & Practice FAQs',
+        `# ${firm.name}`,
+        `# Contact: ${firm.email}`,
+        '',
+        '## About this file',
+        'Machine-readable index of advocate profiles and practice-area FAQs for search engines and AI assistants.',
+        'Replace [yourdomain] in data/people.json and re-run: node scripts/generate-people-seo.mjs',
+        `- Bahasa Malaysia: ${siteOrigin}/ms/llms.txt`,
+        '',
+        '## Firm',
+        `- Name: ${firm.name}`,
+        `- Website: ${siteOrigin}/`,
+        `- Email: ${firm.email}`,
+        `- Offices: Petaling Jaya and Batu Caves, Selangor, Malaysia`,
+        '',
+        '## Practice area FAQs',
+      ];
 
   for (const faq of practiceFaqs) {
     lines.push(
       '',
-      `### ${faq.title}`,
-      `- URL: ${siteOrigin}/faq/${faq.slug}/`,
-      `- Topics: ${faq.topics}`,
+      `### ${isMs ? faq.titleMs : faq.title}`,
+      `- URL: ${faqUrl(faq.slug, lang)}`,
+      `- Topics: ${isMs ? faq.topicsMs : faq.topics}`,
     );
     if (faq.lead) {
-      lines.push(`- Led by: ${faq.lead}`);
+      lines.push(isMs ? `- Diketuai oleh: ${faq.lead}` : `- Led by: ${faq.lead}`);
     }
   }
 
-  lines.push('', '## Lawyers');
+  lines.push('', isMs ? '## Peguam' : '## Lawyers');
 
   for (const person of people) {
     lines.push(
@@ -442,19 +504,27 @@ function buildLlmsTxt() {
       `### ${person.name.full}`,
       `- English: ${profileUrl(person.slug, 'en')}`,
       `- Bahasa Malaysia: ${profileUrl(person.slug, 'ms')}`,
-      `- Role: ${person.jobTitle.en} / ${person.jobTitle.ms}`,
-      `- Practice: ${person.practice.en}`,
-      `- Experience: ${person.experienceYears} years (${person.experienceArea.en})`,
-      `- Called to the Bar: ${person.barYear}`,
+      isMs
+        ? `- Peranan: ${person.jobTitle.ms}`
+        : `- Role: ${person.jobTitle.en} / ${person.jobTitle.ms}`,
+      isMs
+        ? `- Bidang guaman: ${person.practice.ms}`
+        : `- Practice: ${person.practice.en}`,
+      isMs
+        ? `- Pengalaman: ${person.experienceYears} tahun (${person.experienceArea.ms})`
+        : `- Experience: ${person.experienceYears} years (${person.experienceArea.en})`,
+      isMs
+        ? `- Dipanggil ke Bar: ${person.barYear}`
+        : `- Called to the Bar: ${person.barYear}`,
       `- Email: ${person.email}`,
       `- Photo: ${siteOrigin}/${person.photo}`,
     );
     if (person.faq) {
-      lines.push(`- FAQ: ${siteOrigin}/faq/${person.faq}/`);
+      lines.push(`- FAQ: ${faqUrl(person.faq, lang)}`);
     }
     const press = resolvePressCoverage(person);
     if (press.length) {
-      lines.push('- Press coverage (Media Room):');
+      lines.push(isMs ? '- Liputan media (Bilik Media):' : '- Press coverage (Media Room):');
       for (const item of press) {
         lines.push(item.label ? `  - ${item.url} — ${item.label}` : `  - ${item.url}`);
       }
@@ -466,17 +536,29 @@ function buildLlmsTxt() {
 
   lines.push(
     '',
-    '## Related resources',
-    ...practiceFaqs.map(
-      (faq) => `- ${faq.title} FAQ: ${siteOrigin}/faq/${faq.slug}/`,
+    isMs ? '## Sumber berkaitan' : '## Related resources',
+    ...practiceFaqs.map((faq) =>
+      isMs
+        ? `- Soalan lazim ${faq.titleMs}: ${faqUrl(faq.slug, 'ms')}`
+        : `- ${faq.title} FAQ: ${siteOrigin}/faq/${faq.slug}/`,
     ),
-    `- Media room: ${siteOrigin}/media/`,
-    `- Homepage: ${siteOrigin}/`,
+    isMs
+      ? `- Bilik media: ${siteOrigin}/ms/media/`
+      : `- Media room: ${siteOrigin}/media/`,
+    isMs
+      ? `- Laman utama: ${siteOrigin}/ms/`
+      : `- Homepage: ${siteOrigin}/`,
     '',
   );
 
-  fs.writeFileSync(path.join(root, 'llms.txt'), lines.join('\n'));
-  console.log('Wrote llms.txt');
+  const outPath = isMs ? path.join(root, 'ms', 'llms.txt') : path.join(root, 'llms.txt');
+  fs.writeFileSync(outPath, lines.join('\n'));
+  console.log(`Wrote ${isMs ? 'ms/llms.txt' : 'llms.txt'}`);
+}
+
+function buildAllLlmsTxt() {
+  buildLlmsTxt('en');
+  buildLlmsTxt('ms');
 }
 
 const llmsOnly = process.argv.includes('--llms-only');
@@ -488,5 +570,5 @@ if (!llmsOnly) {
   }
 }
 
-buildLlmsTxt();
-console.log(llmsOnly ? 'Wrote llms.txt only.' : 'Done. Add headshot JPGs under assets/people/ (see assets/people/README.txt).');
+buildAllLlmsTxt();
+console.log(llmsOnly ? 'Wrote llms.txt and ms/llms.txt.' : 'Done. Add headshot JPGs under assets/people/ (see assets/people/README.txt).');

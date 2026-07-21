@@ -5,6 +5,7 @@
 ## About this file
 Machine-readable index of advocate profiles and practice-area FAQs for search engines and AI assistants.
 Replace [yourdomain] in data/people.json and re-run: node scripts/generate-people-seo.mjs
+- Bahasa Malaysia: https://[yourdomain]/ms/llms.txt
 
 ## Firm
 - Name: Rajpal, Firah & Vishnu
@@ -35,6 +36,14 @@ Replace [yourdomain] in data/people.json and re-run: node scripts/generate-peopl
 ### Corporate & commercial
 - URL: https://[yourdomain]/faq/corporate-commercial/
 - Topics: company incorporation SSM, MyCoID, shareholders agreement, Companies Act 2016, director duties, due diligence, M&A, commercial contracts, NDA, SME compliance
+
+### Family law
+- URL: https://[yourdomain]/faq/family-law/
+- Topics: divorce Malaysia, joint petition, child custody, maintenance, nafkah, Domestic Violence Act 1994, Law Reform (Marriage and Divorce) Act 1976, Syariah court, harta sepencarian
+
+### Bankruptcy law
+- URL: https://[yourdomain]/faq/bankruptcy-law/
+- Topics: Insolvency Act 1967, bankruptcy notice, bankruptcy order, RM100000 threshold, debtor petition, AKPK, DGI MdI, discharge three years, social guarantor section 5(2), EPF protection, travel permission
 
 ## Lawyers
 
@@ -112,5 +121,7 @@ Replace [yourdomain] in data/people.json and re-run: node scripts/generate-peopl
 - Property & conveyancing FAQ: https://[yourdomain]/faq/property-conveyancing/
 - Probate & estate administration FAQ: https://[yourdomain]/faq/probate-estate/
 - Corporate & commercial FAQ: https://[yourdomain]/faq/corporate-commercial/
+- Family law FAQ: https://[yourdomain]/faq/family-law/
+- Bankruptcy law FAQ: https://[yourdomain]/faq/bankruptcy-law/
 - Media room: https://[yourdomain]/media/
 - Homepage: https://[yourdomain]/

@@ -1,0 +1,127 @@
+# Rajpal, Firah & Vishnu | Profil Peguam & Soalan Lazim Bidang Guaman
+# Rajpal, Firah & Vishnu
+# Hubungi: rajpal.associates@gmail.com
+
+## Perihal fail ini
+Indeks mesin-baca profil peguam dan soalan lazim bidang guaman untuk enjin carian dan pembantu AI.
+Gantikan [yourdomain] dalam data/people.json dan jalankan semula: node scripts/generate-people-seo.mjs
+- English: https://[yourdomain]/llms.txt
+
+## Firma
+- Nama: Rajpal, Firah & Vishnu
+- Laman web: https://[yourdomain]/ms/
+- E-mel: rajpal.associates@gmail.com
+- Pejabat: Petaling Jaya dan Batu Caves, Selangor, Malaysia
+
+## Soalan lazim bidang guaman
+
+### Undang-undang jenayah
+- URL: https://[yourdomain]/ms/faq/criminal-law/
+- Topics: tangkap, siasatan polis, reman, jamin, Kanun Tatacara Jenayah, Kanun Keseksaan, proses mahkamah, rayuan, kes dadah, penipuan, jenayah kolar putih, SOSMA
+- Diketuai oleh: Rajpal Singh
+
+### Litigasi sivil
+- URL: https://[yourdomain]/ms/faq/civil-litigation/
+- Topics: pertikaian kontrak, tuntutan hutang, writ saman, tempoh had, Mahkamah Majistret, Mahkamah Sesyen, Mahkamah Tinggi, rayuan, pertikaian pemegang saham, injunksi, penghakiman ringkas
+- Diketuai oleh: Vishnu Kumar
+
+### Harta tanah & konveyans
+- URL: https://[yourdomain]/ms/faq/property-conveyancing/
+- Topics: membeli hartanah Malaysia, duti setem, LHDN, perjanjian jual beli, pemindahan hakmilik, Kanun Tanah Negara, carian tanah, caveat, hakmilik strata, pembeli asing, yuran konveyans
+
+### Probet & pentadbiran harta pusaka
+- URL: https://[yourdomain]/ms/faq/probate-estate/
+- Topics: wasiat, surat kuasa probet, surat kuasa pentadbiran, kematian tanpa wasiat, Akta Pengagihan 1958, Akta Wasiat 1959, pengagihan harta pusaka, warisan, probet Mahkamah Tinggi
+
+### Korporat & komersial
+- URL: https://[yourdomain]/ms/faq/corporate-commercial/
+- Topics: penubuhan syarikat SSM, MyCoID, perjanjian pemegang saham, Akta Syarikat 2016, kewajipan pengarah, due diligence, M&A, kontrak komersial, NDA, pematuhan PKS
+
+### Undang-undang keluarga
+- URL: https://[yourdomain]/ms/faq/family-law/
+- Topics: perceraian Malaysia, petisyen bersama, penjagaan anak, nafkah, Akta Keganasan Rumah Tangga 1994, Akta Pemansuhan Undang-Undang (Perkahwinan dan Perceraian) 1976, mahkamah Syariah, harta sepencarian
+
+### Undang-undang kebankrapan
+- URL: https://[yourdomain]/ms/faq/bankruptcy-law/
+- Topics: Akta Insolvensi 1967, notis kebankrapan, perintah kebankrapan, ambang RM100000, petisyen penghutang, AKPK, KPI MdI, pelepasan tiga tahun, penjamin sosial seksyen 5(2), perlindungan KWSP, kebenaran melancong
+
+## Peguam
+
+### Dato' Rajpal Singh A/L Mukhtiar Singh
+- English: https://[yourdomain]/people/rajpal-singh/
+- Bahasa Malaysia: https://[yourdomain]/ms/people/rajpal-singh/
+- Peranan: Rakan Kongsi Kanan
+- Bidang guaman: Litigasi Jenayah
+- Pengalaman: 30+ tahun (litigasi jenayah)
+- Dipanggil ke Bar: 1993
+- Email: rajpal.associates@gmail.com
+- Photo: https://[yourdomain]/assets/people/rajpal-singh.jpg
+- FAQ: https://[yourdomain]/ms/faq/criminal-law/
+
+### Vishnu Kumar A/L S. Athi Kumar
+- English: https://[yourdomain]/people/vishnu-kumar/
+- Bahasa Malaysia: https://[yourdomain]/ms/people/vishnu-kumar/
+- Peranan: Rakan Kongsi Kanan
+- Bidang guaman: Litigasi Sivil
+- Pengalaman: 29+ tahun (litigasi sivil)
+- Dipanggil ke Bar: 1997
+- Email: avishnukumar@yahoo.com
+- Photo: https://[yourdomain]/assets/people/vishnu-kumar.jpg
+- FAQ: https://[yourdomain]/ms/faq/civil-litigation/
+- Liputan media (Bilik Media):
+  - https://theedgemalaysia.com/node/726155 — Sarawak Report defamation suit (Federal Court)
+  - https://www.dailyexpress.com.my/news/241653/apex-court-affirms-rewcastle-brown-two-others-defamed-sultanah/
+  - https://theedgemalaysia.com/node/683569 — Court of Appeal hearing
+  - https://www.nst.com.my/opinion/columnists/2022/11/847350/polls-will-only-have-value-if-election-manifesto-legally-binding
+- Press thumbnail: https://[yourdomain]/assets/media/press/clare-rewcastle-brown-and-sultanah-nur-zahirah.jpg
+
+### Siti Anis Binti Che Ab Wahab
+- English: https://[yourdomain]/people/siti-anis/
+- Bahasa Malaysia: https://[yourdomain]/ms/people/siti-anis/
+- Peranan: Peguam Kesat
+- Bidang guaman: Undang-Undang Jenayah · Kemalangan · Syariah
+- Pengalaman: 10+ tahun (litigasi jenayah)
+- Dipanggil ke Bar: 2016
+- Email: rajpal.associates@gmail.com
+- Photo: https://[yourdomain]/assets/people/siti-anis.png
+- FAQ: https://[yourdomain]/ms/faq/criminal-law/
+- Liputan media (Bilik Media):
+  - https://www.malaymail.com/news/malaysia/2024/01/04/consultant-charged-with-cheating-man-of-rm33m-in-kl/110631
+  - https://bernama.com/bm/news.php?id=2259453
+  - https://www.freemalaysiatoday.com/category/bahasa/tempatan/2024/01/22/ahli-perniagaan-mengaku-tak-salah-pecah-amanah-rm4-3-juta
+  - https://www.astroawani.com/berita-malaysia/pemilik-pasar-raya-mini-didakwa-simpan-250kg-minyak-masak-121807
+  - https://www.hmetro.com.my/utama/2023/07/992766/bunuh-pemandu-grab-dua-warga-asing-dihukum-gantung
+  - https://www.hmetro.com.my/mutakhir/2023/06/979881/bicara-kes-saman-clare-rewcastle-brown-kekal-di-mahkamah-kuala-terengganu
+
+### Tiew Poh Nee
+- English: https://[yourdomain]/people/tiew-poh-nee/
+- Bahasa Malaysia: https://[yourdomain]/ms/people/tiew-poh-nee/
+- Peranan: Peguam Kesat
+- Bidang guaman: Undang-Undang Jenayah · Jenayah Komersial
+- Pengalaman: 10+ tahun (litigasi jenayah)
+- Dipanggil ke Bar: 2016
+- Email: rajpal.associates@gmail.com
+- Photo: https://[yourdomain]/assets/people/tiew-poh-nee.png
+- FAQ: https://[yourdomain]/ms/faq/criminal-law/
+
+### Mariappan a/l Manikam
+- English: https://[yourdomain]/people/mariappan-manikam/
+- Bahasa Malaysia: https://[yourdomain]/ms/people/mariappan-manikam/
+- Peranan: Peguam Kesat
+- Bidang guaman: Pembelaan Jenayah · Kesalahan Dadah
+- Pengalaman: 13 tahun (litigasi jenayah)
+- Dipanggil ke Bar: 2013
+- Email: rajpal.associates@gmail.com
+- Photo: https://[yourdomain]/assets/people/mariappan-manikam.jpg
+- FAQ: https://[yourdomain]/ms/faq/criminal-law/
+
+## Sumber berkaitan
+- Soalan lazim Undang-undang jenayah: https://[yourdomain]/ms/faq/criminal-law/
+- Soalan lazim Litigasi sivil: https://[yourdomain]/ms/faq/civil-litigation/
+- Soalan lazim Harta tanah & konveyans: https://[yourdomain]/ms/faq/property-conveyancing/
+- Soalan lazim Probet & pentadbiran harta pusaka: https://[yourdomain]/ms/faq/probate-estate/
+- Soalan lazim Korporat & komersial: https://[yourdomain]/ms/faq/corporate-commercial/
+- Soalan lazim Undang-undang keluarga: https://[yourdomain]/ms/faq/family-law/
+- Soalan lazim Undang-undang kebankrapan: https://[yourdomain]/ms/faq/bankruptcy-law/
+- Bilik media: https://[yourdomain]/ms/media/
+- Laman utama: https://[yourdomain]/ms/
