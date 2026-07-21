@@ -9,6 +9,7 @@ import { absoluteUrl, getSiteOrigin, isMsSubpage, pressPageUrl } from './site-co
 /** @typedef {import('./press-data.js').PressItem} PressItem */
 
 const FIRM_NAME = 'Rajpal, Firah & Vishnu';
+const LAWYER_NAME = 'Dato\' Rajpal Singh';
 
 /** @type {Record<string, { name: string, jobTitleEn: string, jobTitleMs: string, keywordsEn: string, keywordsMs: string }>} */
 const COUNSEL = {

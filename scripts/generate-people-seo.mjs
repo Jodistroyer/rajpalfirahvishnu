@@ -8,6 +8,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { PRESS_ITEMS } from '../js/press-data.js';
+import { CLIPPINGS } from '../js/clippings-data.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, '..');
@@ -536,15 +537,44 @@ function buildLlmsTxt(lang = 'en') {
 
   lines.push(
     '',
+    isMs ? '## Bilik Media' : '## Media Room',
+    isMs
+      ? `- URL: ${siteOrigin}/ms/media/`
+      : `- URL: ${siteOrigin}/media/`,
+    isMs
+      ? `- Bahasa alternatif: ${siteOrigin}/media/`
+      : `- Bahasa Malaysia: ${siteOrigin}/ms/media/`,
+    isMs
+      ? `- Topik: liputan media, keratan akhbar, undang-undang jenayah, perbicaraan bunuh, kes dadah, KK Mart, Hindraf, siasatan Teoh Beng Hock, Paul Yong, Nicky Liow`
+      : `- Topics: press coverage, newspaper clippings, criminal law, murder trials, drug cases, KK Mart, Hindraf, Teoh Beng Hock inquest, Paul Yong, Nicky Liow`,
+    isMs
+      ? `- Arkib Dalam Media: ${PRESS_ITEMS.length} item`
+      : `- In the Press archive: ${PRESS_ITEMS.length} items`,
+    isMs
+      ? `- Perpustakaan keratan akhbar: ${CLIPPINGS.length} imej arkib memaparkan Dato' Rajpal Singh`
+      : `- Newspaper clippings library: ${CLIPPINGS.length} archived images featuring Dato' Rajpal Singh`,
+    isMs ? '- Keratan akhbar (arkib penuh):' : '- Newspaper clippings (full archive):',
+  );
+
+  const sortedClippings = [...CLIPPINGS].sort((a, b) => b.sort.localeCompare(a.sort));
+  for (const c of sortedClippings) {
+    lines.push(`  - ${siteOrigin}/assets/media/newspaper-clippings/${c.file} — ${c.description}`);
+  }
+
+  lines.push(isMs ? '- Liputan media (arkib penuh):' : '- In the Press (full archive):');
+  const sortedPress = [...PRESS_ITEMS].sort((a, b) => b.sort.localeCompare(a.sort));
+  for (const item of sortedPress) {
+    lines.push(`  - ${item.url} — ${item.title} (${item.publisher}, ${item.sort.slice(0, 10)})`);
+  }
+
+  lines.push(
+    '',
     isMs ? '## Sumber berkaitan' : '## Related resources',
     ...practiceFaqs.map((faq) =>
       isMs
         ? `- Soalan lazim ${faq.titleMs}: ${faqUrl(faq.slug, 'ms')}`
         : `- ${faq.title} FAQ: ${siteOrigin}/faq/${faq.slug}/`,
     ),
-    isMs
-      ? `- Bilik media: ${siteOrigin}/ms/media/`
-      : `- Media room: ${siteOrigin}/media/`,
     isMs
       ? `- Laman utama: ${siteOrigin}/ms/`
       : `- Homepage: ${siteOrigin}/`,
