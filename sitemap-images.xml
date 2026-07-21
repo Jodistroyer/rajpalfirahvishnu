@@ -652,6 +652,14 @@
   <url>
     <loc>https://[yourdomain]/media/#press</loc>
     <image:image>
+      <image:loc>https://[yourdomain]/assets/media/press/facebook-fmt-jonathan-wong-2024.jpg</image:loc>
+      <image:title>Businessman pleads not guilty to RM4.3m criminal breach of trust — Dato' Rajpal Singh, criminal lawyer Malaysia</image:title>
+      <image:caption>Free Malaysia Today reports Johnathan Wong Futt Po pleaded not guilty to criminal breach of trust involving RM4.3 million; counsel Siti Anis Che Ab Wahab represented the accused at the Kuala Lumpur Sessions Court.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://[yourdomain]/media/#press</loc>
+    <image:image>
       <image:loc>https://[yourdomain]/assets/media/press/astro-minyak-masak-2023.jpg</image:loc>
       <image:title>Mini mart owner charged with storing 250kg of subsidised cooking oil — Dato' Rajpal Singh, criminal lawyer Malaysia</image:title>
       <image:caption>Malaysian criminal lawyer press coverage: Astro Awani reports a Batu Caves mini mart charge; Siti Anis Che Ab Wahab applied for reduced bail for the accused.</image:caption>

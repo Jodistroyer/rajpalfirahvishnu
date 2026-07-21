@@ -98,11 +98,11 @@ export const PRESS_IMAGE_RIGHTS = [
   {
     "id": "facebook-fmt-jonathan-wong-2024",
     "title": "Businessman pleads not guilty to RM4.3m criminal breach of trust",
-    "publisher": "Free Malaysia Today (Facebook)",
-    "sourceUrl": "https://www.facebook.com/share/197HPodYDY/?mibextid=wwXIfr",
-    "imageAsset": "assets/media/press/fallback-facebook.svg",
-    "imageSource": "firm-created-fallback",
-    "rightsHolder": "Rajpal, Firah & Vishnu",
+    "publisher": "Free Malaysia Today",
+    "sourceUrl": "https://www.freemalaysiatoday.com/category/bahasa/tempatan/2024/01/22/ahli-perniagaan-mengaku-tak-salah-pecah-amanah-rm4-3-juta",
+    "imageAsset": "assets/media/press/facebook-fmt-jonathan-wong-2024.jpg",
+    "imageSource": "publisher-og-preview",
+    "rightsHolder": "Free Malaysia Today",
     "use": "Press index thumbnail; link-out to original source",
     "added": "2026-06-23"
   },

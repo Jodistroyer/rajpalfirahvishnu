@@ -1225,6 +1225,46 @@ a.attorney-card {
   margin-top: 0.125rem;
 }
 
+.profile-press__list {
+  list-style: none;
+  margin: 0 0 1.25rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.profile-press__link {
+  display: inline-block;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-ink-900);
+  line-height: 1.45;
+  text-decoration: none;
+  transition: color var(--transition-ui);
+}
+
+.profile-press__link:hover {
+  color: var(--color-accent-dark, var(--color-accent));
+}
+
+.profile-press__meta {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.8125rem;
+  color: var(--color-ink-300);
+}
+
+.profile-press__footer {
+  margin: 0;
+}
+
+.media-card--highlight {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+  border-radius: var(--radius-md, 0.5rem);
+}
+
 .profile-main {
   min-width: 0;
 }

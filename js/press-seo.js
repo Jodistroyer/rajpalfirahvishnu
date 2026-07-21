@@ -74,11 +74,7 @@ export function getPressItemCounsel(item) {
 
 /** @returns {{ id: string, label: string }[]} */
 export function getPressCounselFilters() {
-  const ms = isMsSubpage();
-  return [
-    { id: 'all', label: ms ? 'Semua peguam' : 'All lawyers' },
-    ...Object.entries(COUNSEL).map(([id, meta]) => ({ id, label: meta.name })),
-  ];
+  return Object.entries(COUNSEL).map(([id, meta]) => ({ id, label: meta.name }));
 }
 
 function seoKeywords() {

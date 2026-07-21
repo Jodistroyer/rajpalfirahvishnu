@@ -251,15 +251,18 @@
   margin-bottom: clamp(2rem, 4vw, 3rem);
 }
 
-.press-filters {
-  display: flex;
-  flex-direction: column;
-  gap: 0.625rem;
+.press-filter-nav {
   margin-bottom: 1.25rem;
 }
 
-.press-filter-nav {
-  margin-bottom: 0;
+.clippings-years-nav__divider {
+  flex-shrink: 0;
+  align-self: center;
+  width: 1px;
+  height: 1.25rem;
+  margin: 0 0.125rem;
+  background: rgba(255, 255, 255, 0.18);
+  list-style: none;
 }
 
 .press-grid__empty {

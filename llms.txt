@@ -79,7 +79,7 @@ Replace [yourdomain] in data/people.json and re-run: node scripts/generate-peopl
 - Press coverage (Media Room):
   - https://www.malaymail.com/news/malaysia/2024/01/04/consultant-charged-with-cheating-man-of-rm33m-in-kl/110631
   - https://bernama.com/bm/news.php?id=2259453
-  - https://www.facebook.com/share/197HPodYDY/?mibextid=wwXIfr
+  - https://www.freemalaysiatoday.com/category/bahasa/tempatan/2024/01/22/ahli-perniagaan-mengaku-tak-salah-pecah-amanah-rm4-3-juta
   - https://www.astroawani.com/berita-malaysia/pemilik-pasar-raya-mini-didakwa-simpan-250kg-minyak-masak-121807
   - https://www.hmetro.com.my/utama/2023/07/992766/bunuh-pemandu-grab-dua-warga-asing-dihukum-gantung
   - https://www.hmetro.com.my/mutakhir/2023/06/979881/bicara-kes-saman-clare-rewcastle-brown-kekal-di-mahkamah-kuala-terengganu

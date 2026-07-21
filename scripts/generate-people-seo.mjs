@@ -242,6 +242,81 @@ function buildFaqLink(person, lang, assetPrefix) {
   return `\n            <a href="${href}" class="profile-sidebar__resource">${label} <span aria-hidden="true">→</span></a>`;
 }
 
+const PROFILE_PRESS_LIMIT = 6;
+
+/** @param {string} slug */
+function getPressItemsForPerson(slug) {
+  return PRESS_ITEMS.filter((item) => (item.counsel || 'rajpal-singh') === slug).sort((a, b) => {
+    if (Boolean(a.featured) !== Boolean(b.featured)) return a.featured ? -1 : 1;
+    return b.sort.localeCompare(a.sort);
+  });
+}
+
+function mediaPath(assetPrefix, lang) {
+  return lang === 'ms' ? `${assetPrefix}ms/media/` : `${assetPrefix}media/`;
+}
+
+function buildPressSidebarLink(person, lang, assetPrefix) {
+  if (!getPressItemsForPerson(person.slug).length) return '';
+  const href = `${mediaPath(assetPrefix, lang)}?counsel=${person.slug}#press`;
+  const label = lang === 'ms' ? 'Dalam Media' : 'In the Press';
+  return `\n            <a href="${href}" class="profile-sidebar__resource">${label} <span aria-hidden="true">→</span></a>`;
+}
+
+function buildProfilePressBlock(person, lang, assetPrefix) {
+  const items = getPressItemsForPerson(person.slug);
+  if (!items.length) return '';
+
+  const visible = items.slice(0, PROFILE_PRESS_LIMIT);
+  const title = lang === 'ms' ? 'Dalam Media' : 'In the Press';
+  const intro = lang === 'ms'
+    ? `Liputan media terpilih yang memaparkan ${person.name.short}.`
+    : `Selected press coverage featuring ${person.name.short}.`;
+  const viewAll = lang === 'ms'
+    ? `Lihat semua dalam Bilik Media (${items.length})`
+    : `View all in Media Room (${items.length})`;
+  const mediaBase = `${mediaPath(assetPrefix, lang)}?counsel=${person.slug}`;
+
+  const listItems = visible.map((item) => `              <li class="profile-press__item">
+                <a href="${escHtml(`${mediaBase}#press-${item.id}`)}" class="profile-press__link">${escHtml(item.title)}</a>
+                <span class="profile-press__meta">${escHtml(item.publisher)} · ${escHtml(item.dateLabel)}</span>
+              </li>`).join('\n');
+
+  return `            <!-- profile-press:start -->
+            <section class="profile-section profile-press" data-profile-press aria-labelledby="profile-press">
+              <h2 class="profile-section__title" id="profile-press">${title}</h2>
+              <p class="profile-section__text">${intro}</p>
+              <ul class="profile-press__list">
+${listItems}
+              </ul>
+              <p class="profile-press__footer">
+                <a href="${escHtml(`${mediaBase}#press`)}" class="profile-sidebar__resource">${viewAll} <span aria-hidden="true">→</span></a>
+              </p>
+            </section>
+            <!-- profile-press:end -->`;
+}
+
+function findProfileMainClose(html) {
+  for (const sep of ['\r\n', '\n']) {
+    const pattern = `          </div>${sep}        </div>`;
+    const idx = html.lastIndexOf(pattern);
+    if (idx !== -1) return idx;
+  }
+  return -1;
+}
+
+function patchProfilePress(html, person, lang, assetPrefix) {
+  const block = buildProfilePressBlock(person, lang, assetPrefix);
+  const markerRe = /            <!-- profile-press:start -->[\s\S]*?            <!-- profile-press:end -->/;
+  if (markerRe.test(html)) {
+    return block ? html.replace(markerRe, block) : html.replace(markerRe, '');
+  }
+  if (!block) return html;
+  const mainClose = findProfileMainClose(html);
+  if (mainClose === -1) return html;
+  return `${html.slice(0, mainClose)}${block}\r\n${html.slice(mainClose)}`;
+}
+
 function patchProfileHtml(relPath, person, lang) {
   const filePath = path.join(root, relPath);
   let html = fs.readFileSync(filePath, 'utf8');
@@ -303,6 +378,12 @@ function patchProfileHtml(relPath, person, lang) {
   if (person.faq && !html.includes(`faq/${person.faq}/`)) {
     html = html.replace(contactBtnRe, `$1${buildFaqLink(person, lang, assetPrefix)}`);
   }
+
+  if (getPressItemsForPerson(person.slug).length && !html.includes(`counsel=${person.slug}#press`)) {
+    html = html.replace(contactBtnRe, `$1${buildPressSidebarLink(person, lang, assetPrefix)}`);
+  }
+
+  html = patchProfilePress(html, person, lang, assetPrefix);
 
   // Summary experience phrases
   const summaryPatches = [

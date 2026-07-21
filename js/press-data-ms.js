@@ -118,16 +118,16 @@ export const PRESS_ITEMS_MS = [
   },
   {
     "id": "facebook-fmt-jonathan-wong-2024",
-    "url": "https://www.facebook.com/share/197HPodYDY/?mibextid=wwXIfr",
+    "url": "https://www.freemalaysiatoday.com/category/bahasa/tempatan/2024/01/22/ahli-perniagaan-mengaku-tak-salah-pecah-amanah-rm4-3-juta",
     "title": "Ahli perniagaan mengaku tak salah pecah amanah RM4.3 juta",
-    "excerpt": "Catatan media sosial Free Malaysia Today tentang Johnathan Wong Futt Po; peguam Siti Anis Che Ab Wahab hadir di Mahkamah Sesyen.",
-    "publisher": "Free Malaysia Today (Facebook)",
+    "excerpt": "FMT melaporkan Johnathan Wong Futt Po mengaku tidak bersalah atas pertuduhan pecah amanah RM4.3 juta; peguam Siti Anis Che Ab Wahab mewakili tertuduh di Mahkamah Sesyen Kuala Lumpur.",
+    "publisher": "Free Malaysia Today",
     "sort": "2024-01-22",
     "dateLabel": "22 Januari 2024",
     "category": "criminal-trials",
-    "type": "social",
+    "type": "article",
     "counsel": "siti-anis",
-    "thumb": "assets/media/press/fallback-facebook.svg"
+    "thumb": "assets/media/press/facebook-fmt-jonathan-wong-2024.jpg"
   },
   {
     "id": "astro-minyak-masak-2023",

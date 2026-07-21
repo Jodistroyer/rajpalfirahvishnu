@@ -15,7 +15,7 @@ export const PRESS_MS_CONTENT = {
   },
   'facebook-fmt-jonathan-wong-2024': {
     title: 'Ahli perniagaan mengaku tak salah pecah amanah RM4.3 juta',
-    excerpt: 'Catatan media sosial Free Malaysia Today tentang Johnathan Wong Futt Po; peguam Siti Anis Che Ab Wahab hadir di Mahkamah Sesyen.',
+    excerpt: 'FMT melaporkan Johnathan Wong Futt Po mengaku tidak bersalah atas pertuduhan pecah amanah RM4.3 juta; peguam Siti Anis Che Ab Wahab mewakili tertuduh di Mahkamah Sesyen Kuala Lumpur.',
   },
   'astro-minyak-masak-2023': {
     title: 'Pemilik pasar raya mini didakwa simpan 250kg minyak masak',

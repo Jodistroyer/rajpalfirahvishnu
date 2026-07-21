@@ -15,6 +15,7 @@ import { initCopy } from './copy.js';
 import { initPress } from './press.js';
 import { initProfilePhotos } from './profile-photo.js';
 import { initProfilePeopleNav } from './profile-people-nav.js';
+import { initProfilePress } from './profile-press.js';
 import { CONSULTATION_FORM_URL } from './site-config.js';
 
 (function bootstrap() {
@@ -36,6 +37,7 @@ import { CONSULTATION_FORM_URL } from './site-config.js';
   initCopy();
   initProfilePhotos();
   initProfilePeopleNav();
+  initProfilePress();
 
   initLazyMedia();
   initPress(document.getElementById('press-grid'));
