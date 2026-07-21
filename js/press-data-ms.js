@@ -13,6 +13,10 @@ export const PRESS_CATEGORIES_MS = [
     "label": "Perbicaraan jenayah"
   },
   {
+    "id": "civil-litigation",
+    "label": "Litigasi sivil"
+  },
+  {
     "id": "kk-mart",
     "label": "KK Mart"
   },
@@ -32,6 +36,138 @@ export const PRESS_CATEGORIES_MS = [
 
 /** @type {import('./press-data.js').PressItem[]} */
 export const PRESS_ITEMS_MS = [
+  {
+    "id": "edge-sultanah-defamation-leave-2024",
+    "url": "https://theedgemalaysia.com/node/726155",
+    "title": "Editor Sarawak Report dinafikan kebenaran merayu sabitan fitnah",
+    "excerpt": "Mahkamah Persekutuan menolak permohonan kebenaran merayu Clare Rewcastle-Brown dalam saman fitnah Sultanah Nur Zahirah; Vishnu Kumar mewakili Sultanah.",
+    "publisher": "The Edge Malaysia",
+    "sort": "2024-09-10",
+    "dateLabel": "10 September 2024",
+    "category": "civil-litigation",
+    "type": "article",
+    "featured": true,
+    "counsel": "vishnu-kumar",
+    "thumb": "assets/media/press/edge-sultanah-defamation-leave-2024.jpg"
+  },
+  {
+    "id": "dailyexpress-sultanah-defamation-2024",
+    "url": "https://www.dailyexpress.com.my/news/241653/apex-court-affirms-rewcastle-brown-two-others-defamed-sultanah/",
+    "title": "Mahkamah Persekutuan sahkan Rewcastle Brown dan dua lagi memfitnah Sultanah",
+    "excerpt": "Daily Express melaporkan Mahkamah Persekutuan mengekalkan liabiliti fitnah terhadap Clare Rewcastle-Brown; peguam Vishnu Kumar bagi Sultanah Nur Zahirah.",
+    "publisher": "Daily Express",
+    "sort": "2024-09-10",
+    "dateLabel": "10 September 2024",
+    "category": "civil-litigation",
+    "type": "article",
+    "counsel": "vishnu-kumar",
+    "thumb": "assets/media/press/clare-rewcastle-brown-and-sultanah-nur-zahirah.jpg"
+  },
+  {
+    "id": "edge-sultanah-defamation-appeal-2023",
+    "url": "https://theedgemalaysia.com/node/683569",
+    "title": "Perkataan dalam pernyataan dicadang ditafsir secara kasual, hujah peguam Sultanah",
+    "excerpt": "Pendengaran Mahkamah Rayuan saman fitnah Clare Rewcastle-Brown oleh Sultanah Nur Zahirah; Vishnu Kumar berhujah Hakim Mahkamah Tinggi terlalu rumit mentafsir pernyataan dikatakan fitnah.",
+    "publisher": "The Edge Malaysia",
+    "sort": "2023-09-22",
+    "dateLabel": "22 September 2023",
+    "category": "civil-litigation",
+    "type": "article",
+    "counsel": "vishnu-kumar",
+    "thumb": "assets/media/press/edge-sultanah-defamation-appeal-2023.jpg"
+  },
+  {
+    "id": "nst-election-manifesto-2022",
+    "url": "https://www.nst.com.my/opinion/columnists/2022/11/847350/polls-will-only-have-value-if-election-manifesto-legally-binding",
+    "title": "Undi hanya bermakna jika manifesto pilihan raya mengikat undang-undang",
+    "excerpt": "Ruangan pendapat merujuk hujahan Vishnu Kumar di Mahkamah Rayuan bahawa manifesto pilihan raya tidak boleh dikuatkuasakan secara guaman di Malaysia.",
+    "publisher": "New Straits Times",
+    "sort": "2022-11-05",
+    "dateLabel": "5 November 2022",
+    "category": "bar-profession",
+    "type": "article",
+    "counsel": "vishnu-kumar",
+    "thumb": "assets/media/press/nst-election-manifesto-2022.jpg"
+  },
+  {
+    "id": "malaymail-jonathan-wong-cheating-2024",
+    "url": "https://www.malaymail.com/news/malaysia/2024/01/04/consultant-charged-with-cheating-man-of-rm33m-in-kl/110631",
+    "title": "Perunding didakwa tipu lelaki RM3.3 juta di KL",
+    "excerpt": "Pertuduhan Mahkamah Sesyen ke atas lesen pelaburan kripto; peguam Siti Anis Che Ab Wahab mewakili tertuduh berkaitan jamin.",
+    "publisher": "Malay Mail",
+    "sort": "2024-01-04",
+    "dateLabel": "4 Januari 2024",
+    "category": "criminal-trials",
+    "type": "article",
+    "featured": true,
+    "counsel": "siti-anis",
+    "thumb": "assets/media/press/malaymail-jonathan-wong-cheating-2024.jpg"
+  },
+  {
+    "id": "bernama-jonathan-wong-cheating-2024",
+    "url": "https://bernama.com/bm/news.php?id=2259453",
+    "title": "Perunding syarikat didakwa tipu urusan lesen pelaburan RM3.3 juta",
+    "excerpt": "Bernama melaporkan pertuduhan penipuan di Mahkamah Sesyen Kuala Lumpur; peguam Siti Anis Che Ab Wahab memohon jamin RM50,000.",
+    "publisher": "Bernama",
+    "sort": "2024-01-04",
+    "dateLabel": "4 Januari 2024",
+    "category": "criminal-trials",
+    "type": "article",
+    "counsel": "siti-anis",
+    "thumb": "assets/media/press/bernama-jonathan-wong-cheating-2024.jpg"
+  },
+  {
+    "id": "facebook-fmt-jonathan-wong-2024",
+    "url": "https://www.facebook.com/share/197HPodYDY/?mibextid=wwXIfr",
+    "title": "Ahli perniagaan mengaku tak salah pecah amanah RM4.3 juta",
+    "excerpt": "Catatan media sosial Free Malaysia Today tentang Johnathan Wong Futt Po; peguam Siti Anis Che Ab Wahab hadir di Mahkamah Sesyen.",
+    "publisher": "Free Malaysia Today (Facebook)",
+    "sort": "2024-01-22",
+    "dateLabel": "22 Januari 2024",
+    "category": "criminal-trials",
+    "type": "social",
+    "counsel": "siti-anis",
+    "thumb": "assets/media/press/fallback-facebook.svg"
+  },
+  {
+    "id": "astro-minyak-masak-2023",
+    "url": "https://www.astroawani.com/berita-malaysia/pemilik-pasar-raya-mini-didakwa-simpan-250kg-minyak-masak-121807",
+    "title": "Pemilik pasar raya mini didakwa simpan 250kg minyak masak",
+    "excerpt": "Astro Awani melaporkan pertuduhan pasar mini Batu Caves; Siti Anis Che Ab Wahab memohon pengurangan jamin tertuduh.",
+    "publisher": "Astro Awani",
+    "sort": "2023-12-15",
+    "dateLabel": "15 Disember 2023",
+    "category": "criminal-trials",
+    "type": "article",
+    "counsel": "siti-anis",
+    "thumb": "assets/media/press/astro-minyak-masak-2023.jpg"
+  },
+  {
+    "id": "hmetro-grab-murder-death-2023",
+    "url": "https://www.hmetro.com.my/utama/2023/07/992766/bunuh-pemandu-grab-dua-warga-asing-dihukum-gantung",
+    "title": "Bunuh pemandu Grab, dua warga asing dihukum gantung",
+    "excerpt": "Sabitan bunuh di Mahkamah Tinggi Shah Alam ke atas pemandu e-hailing Aiman Nosri; peguam pembelaan Siti Anis Che Ab Wahab mohon penjara dan sebat.",
+    "publisher": "Harian Metro",
+    "sort": "2023-07-28",
+    "dateLabel": "28 Julai 2023",
+    "category": "criminal-trials",
+    "type": "article",
+    "counsel": "siti-anis",
+    "thumb": "assets/media/press/hmetro-grab-murder-death-2023.jpg"
+  },
+  {
+    "id": "hmetro-rewcastle-terengganu-2023",
+    "url": "https://www.hmetro.com.my/mutakhir/2023/06/979881/bicara-kes-saman-clare-rewcastle-brown-kekal-di-mahkamah-kuala-terengganu",
+    "title": "Bicara kes saman Clare Rewcastle-Brown kekal di Mahkamah Kuala Terengganu",
+    "excerpt": "Harian Metro melaporkan permohonan pindah ditolak; Siti Anis Che Ab Wahab memegang watching brief bagi Sultanah Nur Zahirah.",
+    "publisher": "Harian Metro",
+    "sort": "2023-06-21",
+    "dateLabel": "21 Jun 2023",
+    "category": "criminal-trials",
+    "type": "article",
+    "counsel": "siti-anis",
+    "thumb": "assets/media/press/hmetro-rewcastle-terengganu-2023.jpg"
+  },
   {
     "id": "star-organised-crime-2026",
     "url": "https://www.thestar.com.my/news/nation/2026/05/25/11-men-charged-with-being-members-of-organised-crime-group",

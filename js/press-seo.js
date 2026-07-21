@@ -9,28 +9,63 @@ import { absoluteUrl, getSiteOrigin, isMsSubpage, pressPageUrl } from './site-co
 /** @typedef {import('./press-data.js').PressItem} PressItem */
 
 const FIRM_NAME = 'Rajpal, Firah & Vishnu';
-const LAWYER_NAME = 'Dato\' Rajpal Singh';
+
+/** @type {Record<string, { name: string, jobTitleEn: string, jobTitleMs: string, keywordsEn: string, keywordsMs: string }>} */
+const COUNSEL = {
+  'rajpal-singh': {
+    name: 'Dato\' Rajpal Singh',
+    jobTitleEn: 'Criminal Lawyer',
+    jobTitleMs: 'Peguam Jenayah',
+    keywordsEn: 'criminal lawyer Malaysia, criminal defence lawyer Kuala Lumpur, Rajpal Singh lawyer',
+    keywordsMs: 'peguam jenayah Malaysia, peguam pembelaan jenayah Kuala Lumpur, Rajpal Singh peguam',
+  },
+  'vishnu-kumar': {
+    name: 'Vishnu Kumar',
+    jobTitleEn: 'Civil Litigation Lawyer',
+    jobTitleMs: 'Peguam Litigasi Sivil',
+    keywordsEn: 'civil litigation lawyer Malaysia, civil lawyer Kuala Lumpur, Vishnu Kumar lawyer',
+    keywordsMs: 'peguam litigasi sivil Malaysia, peguam sivil Kuala Lumpur, Vishnu Kumar peguam',
+  },
+  'siti-anis': {
+    name: 'Siti Anis Che Ab Wahab',
+    jobTitleEn: 'Criminal Lawyer',
+    jobTitleMs: 'Peguam Jenayah',
+    keywordsEn: 'criminal lawyer Malaysia, criminal defence lawyer Kuala Lumpur, Siti Anis lawyer',
+    keywordsMs: 'peguam jenayah Malaysia, peguam pembelaan jenayah Kuala Lumpur, Siti Anis peguam',
+  },
+};
 
 const SEO_KEYWORDS_EN = [
   'criminal lawyer Malaysia',
+  'civil litigation lawyer Malaysia',
   'criminal defence lawyer Kuala Lumpur',
   'criminal defense lawyer Malaysia',
   'Malaysia criminal lawyer',
   'Rajpal Singh lawyer',
+  'Vishnu Kumar lawyer',
+  'Siti Anis lawyer',
   'criminal lawyer Selangor',
-  'press coverage criminal lawyer Malaysia',
+  'press coverage lawyer Malaysia',
   'KK Mart lawyer Malaysia',
 ].join(', ');
 
 const SEO_KEYWORDS_MS = [
   'peguam jenayah Malaysia',
+  'peguam litigasi sivil Malaysia',
   'peguam pembelaan jenayah Kuala Lumpur',
   'peguam jenayah Malaysia',
   'Rajpal Singh peguam',
+  'Vishnu Kumar peguam',
+  'Siti Anis peguam',
   'peguam jenayah Selangor',
-  'liputan media peguam jenayah Malaysia',
+  'liputan media peguam Malaysia',
   'peguam KK Mart Malaysia',
 ].join(', ');
+
+/** @param {import('./press-data.js').PressItem} item */
+function getCounselMeta(item) {
+  return COUNSEL[item.counsel || 'rajpal-singh'];
+}
 
 function seoKeywords() {
   return isMsSubpage() ? SEO_KEYWORDS_MS : SEO_KEYWORDS_EN;
@@ -41,18 +76,35 @@ function seoKeywords() {
  */
 function buildSeoMeta(item) {
   const ms = isMsSubpage();
+  const counsel = getCounselMeta(item);
   const alt = ms
-    ? `${item.title} — ${LAWYER_NAME}, peguam jenayah Malaysia (${item.publisher})`
-    : `${item.title} — ${LAWYER_NAME}, criminal lawyer Malaysia (${item.publisher})`;
+    ? `${item.title} — ${counsel.name}, ${counsel.jobTitleMs.toLowerCase()} (${item.publisher})`
+    : `${item.title} — ${counsel.name}, ${counsel.jobTitleEn.toLowerCase()} (${item.publisher})`;
   const title = ms
-    ? `${item.title} | ${LAWYER_NAME} — Peguam Jenayah Malaysia`
-    : `${item.title} | ${LAWYER_NAME} — Criminal Lawyer Malaysia`;
+    ? `${item.title} | ${counsel.name} — ${counsel.jobTitleMs}`
+    : `${item.title} | ${counsel.name} — ${counsel.jobTitleEn}`;
   let description = item.excerpt;
 
-  if (!ms && !/\b(criminal lawyer|criminal defence|criminal defense|Malaysia|Kuala Lumpur|Selangor)\b/i.test(description)) {
+  if (!ms && item.counsel === 'vishnu-kumar') {
+    if (!/\b(civil litigation|lawyer|Malaysia|Kuala Lumpur|Selangor)\b/i.test(description)) {
+      description = `Malaysian civil litigation press coverage: ${description}`;
+    }
+  } else if (!ms && item.counsel === 'siti-anis') {
+    if (!/\b(criminal lawyer|criminal defence|criminal defense|Malaysia|Kuala Lumpur|Selangor)\b/i.test(description)) {
+      description = `Malaysian criminal lawyer press coverage: ${description}`;
+    }
+  } else if (!ms && !/\b(criminal lawyer|criminal defence|criminal defense|Malaysia|Kuala Lumpur|Selangor)\b/i.test(description)) {
     description = `Malaysian criminal lawyer press coverage: ${description}`;
   }
-  if (ms && !/\b(peguam|jenayah|Malaysia|Kuala Lumpur|Selangor)\b/i.test(description)) {
+  if (ms && item.counsel === 'vishnu-kumar') {
+    if (!/\b(peguam|litigasi|sivil|Malaysia|Kuala Lumpur|Selangor)\b/i.test(description)) {
+      description = `Liputan media peguam litigasi sivil Malaysia: ${description}`;
+    }
+  } else if (ms && item.counsel === 'siti-anis') {
+    if (!/\b(peguam|jenayah|Malaysia|Kuala Lumpur|Selangor)\b/i.test(description)) {
+      description = `Liputan media peguam jenayah Malaysia: ${description}`;
+    }
+  } else if (ms && !/\b(peguam|jenayah|Malaysia|Kuala Lumpur|Selangor)\b/i.test(description)) {
     description = `Liputan media peguam jenayah Malaysia: ${description}`;
   }
 
@@ -98,6 +150,7 @@ function pressImageUrl(item) {
 function pressSchemaPart(item) {
   const ms = isMsSubpage();
   const meta = getPressSeoMeta(item);
+  const counsel = getCounselMeta(item);
   const image = pressImageUrl(item);
 
   /** @type {Record<string, unknown>} */
@@ -115,8 +168,8 @@ function pressSchemaPart(item) {
     },
     mentions: {
       '@type': 'Person',
-      name: LAWYER_NAME,
-      jobTitle: ms ? 'Peguam Jenayah' : 'Criminal Lawyer',
+      name: counsel.name,
+      jobTitle: ms ? counsel.jobTitleMs : counsel.jobTitleEn,
       worksFor: {
         '@type': 'LegalService',
         name: FIRM_NAME,

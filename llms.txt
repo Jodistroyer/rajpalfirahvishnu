@@ -59,6 +59,12 @@ Replace [yourdomain] in data/people.json and re-run: node scripts/generate-peopl
 - Email: avishnukumar@yahoo.com
 - Photo: https://[yourdomain]/assets/people/vishnu-kumar.jpg
 - FAQ: https://[yourdomain]/faq/civil-litigation/
+- Press coverage (Media Room):
+  - https://theedgemalaysia.com/node/726155 — Sarawak Report defamation suit (Federal Court)
+  - https://www.dailyexpress.com.my/news/241653/apex-court-affirms-rewcastle-brown-two-others-defamed-sultanah/
+  - https://theedgemalaysia.com/node/683569 — Court of Appeal hearing
+  - https://www.nst.com.my/opinion/columnists/2022/11/847350/polls-will-only-have-value-if-election-manifesto-legally-binding
+- Press thumbnail: https://[yourdomain]/assets/media/press/clare-rewcastle-brown-and-sultanah-nur-zahirah.jpg
 
 ### Siti Anis Binti Che Ab Wahab
 - English: https://[yourdomain]/people/siti-anis/
@@ -70,6 +76,13 @@ Replace [yourdomain] in data/people.json and re-run: node scripts/generate-peopl
 - Email: rajpal.associates@gmail.com
 - Photo: https://[yourdomain]/assets/people/siti-anis.png
 - FAQ: https://[yourdomain]/faq/criminal-law/
+- Press coverage (Media Room):
+  - https://www.malaymail.com/news/malaysia/2024/01/04/consultant-charged-with-cheating-man-of-rm33m-in-kl/110631
+  - https://bernama.com/bm/news.php?id=2259453
+  - https://www.facebook.com/share/197HPodYDY/?mibextid=wwXIfr
+  - https://www.astroawani.com/berita-malaysia/pemilik-pasar-raya-mini-didakwa-simpan-250kg-minyak-masak-121807
+  - https://www.hmetro.com.my/utama/2023/07/992766/bunuh-pemandu-grab-dua-warga-asing-dihukum-gantung
+  - https://www.hmetro.com.my/mutakhir/2023/06/979881/bicara-kes-saman-clare-rewcastle-brown-kekal-di-mahkamah-kuala-terengganu
 
 ### Tiew Poh Nee
 - English: https://[yourdomain]/people/tiew-poh-nee/

@@ -10,6 +10,15 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, '..');
 
+/** @type {Record<string, { imageSource: string, rightsHolder: string, use: string }>} */
+const SHARED_PRESS_IMAGE_META = {
+  'clare-rewcastle-brown-and-sultanah-nur-zahirah.jpg': {
+    imageSource: 'firm-selected-editorial',
+    rightsHolder: 'Respective news publishers (editorial collage)',
+    use: 'Press index thumbnail; clare-rewcastle-brown-and-sultanah-nur-zahirah.jpg (Clare Rewcastle-Brown and Sultanah Nur Zahirah); link-out to original source',
+  },
+};
+
 function parsePressItems(src) {
   const block = src.match(/export const PRESS_ITEMS = \[([\s\S]*?)\];/)?.[1];
   if (!block) throw new Error('PRESS_ITEMS not found');
@@ -41,6 +50,12 @@ function parsePressItems(src) {
       rightsHolder = 'Facebook / original uploader';
     }
 
+    const sharedMeta = SHARED_PRESS_IMAGE_META[thumb.split('/').pop() || ''];
+    if (sharedMeta) {
+      imageSource = sharedMeta.imageSource;
+      rightsHolder = sharedMeta.rightsHolder;
+    }
+
     items.push({
       id: m[1],
       title: get('title'),
@@ -49,7 +64,7 @@ function parsePressItems(src) {
       imageAsset,
       imageSource,
       rightsHolder,
-      use: 'Press index thumbnail; link-out to original source',
+      use: sharedMeta?.use || 'Press index thumbnail; link-out to original source',
       added: '2026-06-23',
     });
   }
@@ -125,7 +140,7 @@ export const MEDIA_RIGHTS_META = {
     'Newspaper clippings are archived scans shown for reference only. Layout, photographs, and text remain the property of the respective publishers. Captions identify the source publication and date where known.',
 };
 
-/** @typedef {'publisher-og-preview' | 'youtube-thumbnail' | 'tiktok-oembed-preview' | 'firm-created-fallback' | 'firm-archive-scan'} ImageSource */
+/** @typedef {'publisher-og-preview' | 'youtube-thumbnail' | 'tiktok-oembed-preview' | 'firm-created-fallback' | 'firm-selected-editorial' | 'firm-archive-scan'} ImageSource */
 
 /**
  * @typedef {Object} PressRightsEntry

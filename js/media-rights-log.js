@@ -12,7 +12,7 @@ export const MEDIA_RIGHTS_META = {
     'Newspaper clippings are archived scans shown for reference only. Layout, photographs, and text remain the property of the respective publishers. Captions identify the source publication and date where known.',
 };
 
-/** @typedef {'publisher-og-preview' | 'youtube-thumbnail' | 'tiktok-oembed-preview' | 'firm-created-fallback' | 'firm-archive-scan'} ImageSource */
+/** @typedef {'publisher-og-preview' | 'youtube-thumbnail' | 'tiktok-oembed-preview' | 'firm-created-fallback' | 'firm-selected-editorial' | 'firm-archive-scan'} ImageSource */
 
 /**
  * @typedef {Object} PressRightsEntry
@@ -30,6 +30,116 @@ export const MEDIA_RIGHTS_META = {
 /** @type {PressRightsEntry[]} */
 export const PRESS_IMAGE_RIGHTS = [
   {
+    "id": "edge-sultanah-defamation-leave-2024",
+    "title": "Sarawak Report editor denied leave to appeal defamation ruling",
+    "publisher": "The Edge Malaysia",
+    "sourceUrl": "https://theedgemalaysia.com/node/726155",
+    "imageAsset": "assets/media/press/edge-sultanah-defamation-leave-2024.jpg",
+    "imageSource": "publisher-og-preview",
+    "rightsHolder": "The Edge Malaysia",
+    "use": "Press index thumbnail; link-out to original source",
+    "added": "2026-06-23"
+  },
+  {
+    "id": "dailyexpress-sultanah-defamation-2024",
+    "title": "Apex court affirms Rewcastle Brown, two others defamed Sultanah",
+    "publisher": "Daily Express",
+    "sourceUrl": "https://www.dailyexpress.com.my/news/241653/apex-court-affirms-rewcastle-brown-two-others-defamed-sultanah/",
+    "imageAsset": "assets/media/press/clare-rewcastle-brown-and-sultanah-nur-zahirah.jpg",
+    "imageSource": "firm-selected-editorial",
+    "rightsHolder": "Respective news publishers (editorial collage)",
+    "use": "Press index thumbnail; clare-rewcastle-brown-and-sultanah-nur-zahirah.jpg (Clare Rewcastle-Brown and Sultanah Nur Zahirah); link-out to original source",
+    "added": "2026-06-23"
+  },
+  {
+    "id": "edge-sultanah-defamation-appeal-2023",
+    "title": "Words in impugned statement should have been interpreted casually, submits Sultanah\\",
+    "publisher": "The Edge Malaysia",
+    "sourceUrl": "https://theedgemalaysia.com/node/683569",
+    "imageAsset": "assets/media/press/edge-sultanah-defamation-appeal-2023.jpg",
+    "imageSource": "publisher-og-preview",
+    "rightsHolder": "The Edge Malaysia",
+    "use": "Press index thumbnail; link-out to original source",
+    "added": "2026-06-23"
+  },
+  {
+    "id": "nst-election-manifesto-2022",
+    "title": "Polls will only have value if an election manifesto is legally binding",
+    "publisher": "New Straits Times",
+    "sourceUrl": "https://www.nst.com.my/opinion/columnists/2022/11/847350/polls-will-only-have-value-if-election-manifesto-legally-binding",
+    "imageAsset": "assets/media/press/nst-election-manifesto-2022.jpg",
+    "imageSource": "publisher-og-preview",
+    "rightsHolder": "New Straits Times",
+    "use": "Press index thumbnail; link-out to original source",
+    "added": "2026-06-23"
+  },
+  {
+    "id": "malaymail-jonathan-wong-cheating-2024",
+    "title": "Consultant charged with cheating man of RM3.3m in KL",
+    "publisher": "Malay Mail",
+    "sourceUrl": "https://www.malaymail.com/news/malaysia/2024/01/04/consultant-charged-with-cheating-man-of-rm33m-in-kl/110631",
+    "imageAsset": "assets/media/press/malaymail-jonathan-wong-cheating-2024.jpg",
+    "imageSource": "publisher-og-preview",
+    "rightsHolder": "Malay Mail",
+    "use": "Press index thumbnail; link-out to original source",
+    "added": "2026-06-23"
+  },
+  {
+    "id": "bernama-jonathan-wong-cheating-2024",
+    "title": "Perunding syarikat didakwa tipu urusan lesen pelaburan RM3.3 juta",
+    "publisher": "Bernama",
+    "sourceUrl": "https://bernama.com/bm/news.php?id=2259453",
+    "imageAsset": "assets/media/press/bernama-jonathan-wong-cheating-2024.jpg",
+    "imageSource": "publisher-og-preview",
+    "rightsHolder": "Bernama",
+    "use": "Press index thumbnail; link-out to original source",
+    "added": "2026-06-23"
+  },
+  {
+    "id": "facebook-fmt-jonathan-wong-2024",
+    "title": "Businessman pleads not guilty to RM4.3m criminal breach of trust",
+    "publisher": "Free Malaysia Today (Facebook)",
+    "sourceUrl": "https://www.facebook.com/share/197HPodYDY/?mibextid=wwXIfr",
+    "imageAsset": "assets/media/press/fallback-facebook.svg",
+    "imageSource": "firm-created-fallback",
+    "rightsHolder": "Rajpal, Firah & Vishnu",
+    "use": "Press index thumbnail; link-out to original source",
+    "added": "2026-06-23"
+  },
+  {
+    "id": "astro-minyak-masak-2023",
+    "title": "Mini mart owner charged with storing 250kg of subsidised cooking oil",
+    "publisher": "Astro Awani",
+    "sourceUrl": "https://www.astroawani.com/berita-malaysia/pemilik-pasar-raya-mini-didakwa-simpan-250kg-minyak-masak-121807",
+    "imageAsset": "assets/media/press/astro-minyak-masak-2023.jpg",
+    "imageSource": "publisher-og-preview",
+    "rightsHolder": "Astro Awani",
+    "use": "Press index thumbnail; link-out to original source",
+    "added": "2026-06-23"
+  },
+  {
+    "id": "hmetro-grab-murder-death-2023",
+    "title": "Grab driver murder: two foreigners sentenced to death",
+    "publisher": "Harian Metro",
+    "sourceUrl": "https://www.hmetro.com.my/utama/2023/07/992766/bunuh-pemandu-grab-dua-warga-asing-dihukum-gantung",
+    "imageAsset": "assets/media/press/hmetro-grab-murder-death-2023.jpg",
+    "imageSource": "publisher-og-preview",
+    "rightsHolder": "Harian Metro",
+    "use": "Press index thumbnail; link-out to original source",
+    "added": "2026-06-23"
+  },
+  {
+    "id": "hmetro-rewcastle-terengganu-2023",
+    "title": "Clare Rewcastle-Brown defamation case to remain in Kuala Terengganu",
+    "publisher": "Harian Metro",
+    "sourceUrl": "https://www.hmetro.com.my/mutakhir/2023/06/979881/bicara-kes-saman-clare-rewcastle-brown-kekal-di-mahkamah-kuala-terengganu",
+    "imageAsset": "assets/media/press/hmetro-rewcastle-terengganu-2023.jpg",
+    "imageSource": "publisher-og-preview",
+    "rightsHolder": "Harian Metro",
+    "use": "Press index thumbnail; link-out to original source",
+    "added": "2026-06-23"
+  },
+  {
     "id": "star-organised-crime-2026",
     "title": "11 men charged with being members of organised crime group",
     "publisher": "The Star",
@@ -42,7 +152,7 @@ export const PRESS_IMAGE_RIGHTS = [
   },
   {
     "id": "malaysia-gazette-harmoni-2025",
-    "title": "Hidup harmoni, perpaduan penting — Dato' Rajpal Singh",
+    "title": "Hidup harmoni, perpaduan penting — Dato\\",
     "publisher": "Malaysia Gazette",
     "sourceUrl": "https://malaysiagazette.com/2025/04/12/hidup-harmoni-perpaduan-penting-rajpal/",
     "imageAsset": "assets/media/press/malaysia-gazette-harmoni-2025.jpg",
@@ -163,8 +273,8 @@ export const PRESS_IMAGE_RIGHTS = [
   },
   {
     "id": "youtube-kk-mart-0VKhcAhZzIs",
-    "title": "KK Mart legal coverage (video)",
-    "publisher": "YouTube",
+    "title": "Maniishapriet\\",
+    "publisher": "The Brand Room",
     "sourceUrl": "https://www.youtube.com/watch?v=0VKhcAhZzIs",
     "imageAsset": "https://img.youtube.com/vi/0VKhcAhZzIs/hqdefault.jpg",
     "imageSource": "youtube-thumbnail",
@@ -328,7 +438,7 @@ export const PRESS_IMAGE_RIGHTS = [
   },
   {
     "id": "facebook-vasakhi",
-    "title": "Vasakhi message — Dato' Rajpal Singh, Gurdwara Sahib",
+    "title": "Vasakhi message — Dato\\",
     "publisher": "Facebook",
     "sourceUrl": "https://www.facebook.com/100076608946392/videos/on-this-joyous-occasion-of-vasakhi-dato-rajpal-singh-president-of-gurdwara-sahib/1334592824466502/",
     "imageAsset": "assets/media/press/facebook-vasakhi.jpg",
@@ -350,8 +460,8 @@ export const PRESS_IMAGE_RIGHTS = [
   },
   {
     "id": "tiktok-utusan-kk",
-    "title": "Utusan Malaysia — KK Mart coverage",
-    "publisher": "TikTok (Utusan Malaysia)",
+    "title": "Allah socks issue: Press conference by lawyers for Datuk Seri Dr KK Chai",
+    "publisher": "Utusan Malaysia (TikTok)",
     "sourceUrl": "https://www.tiktok.com/@utusanonline/video/7350574657910721800",
     "imageAsset": "assets/media/press/tiktok-utusan-kk.jpg",
     "imageSource": "tiktok-oembed-preview",
@@ -361,8 +471,8 @@ export const PRESS_IMAGE_RIGHTS = [
   },
   {
     "id": "tiktok-hmetromy",
-    "title": "Court coverage — Dato' Rajpal Singh",
-    "publisher": "TikTok",
+    "title": "Rajpal Singh on suspects held in niece\\",
+    "publisher": "Harian Metro (TikTok)",
     "sourceUrl": "https://www.tiktok.com/@hmetromy/video/7520509764229532944",
     "imageAsset": "assets/media/press/tiktok-hmetromy.jpg",
     "imageSource": "tiktok-oembed-preview",
@@ -372,8 +482,8 @@ export const PRESS_IMAGE_RIGHTS = [
   },
   {
     "id": "instagram-reel",
-    "title": "Instagram reel — legal coverage",
-    "publisher": "Instagram",
+    "title": "\\",
+    "publisher": "Scoop (Instagram)",
     "sourceUrl": "https://www.instagram.com/reels/DLW1lq5pSmq/",
     "imageAsset": "assets/media/press/fallback-instagram.svg",
     "imageSource": "firm-created-fallback",
@@ -383,8 +493,8 @@ export const PRESS_IMAGE_RIGHTS = [
   },
   {
     "id": "youtube-XzaT9wGXDmc",
-    "title": "Court proceedings coverage",
-    "publisher": "YouTube",
+    "title": "Separate attorney general, public prosecutor positions",
+    "publisher": "KiniTV",
     "sourceUrl": "https://www.youtube.com/watch?v=XzaT9wGXDmc",
     "imageAsset": "https://img.youtube.com/vi/XzaT9wGXDmc/hqdefault.jpg",
     "imageSource": "youtube-thumbnail",
@@ -394,8 +504,8 @@ export const PRESS_IMAGE_RIGHTS = [
   },
   {
     "id": "youtube-KbWK4lspxo4",
-    "title": "Legal commentary — Dato' Rajpal Singh",
-    "publisher": "YouTube",
+    "title": "Datuk Seri in Rela assault case acquitted",
+    "publisher": "The Star (YouTube)",
     "sourceUrl": "https://youtu.be/KbWK4lspxo4",
     "imageAsset": "https://img.youtube.com/vi/KbWK4lspxo4/hqdefault.jpg",
     "imageSource": "youtube-thumbnail",
@@ -405,8 +515,8 @@ export const PRESS_IMAGE_RIGHTS = [
   },
   {
     "id": "youtube-rajpal-bhTq-L5jtf8",
-    "title": "Dato' Rajpal Singh — media appearance",
-    "publisher": "YouTube",
+    "title": "KK Mart lawyers: Let justice take its course",
+    "publisher": "NST Online (YouTube)",
     "sourceUrl": "https://www.youtube.com/watch?v=bhTq-L5jtf8",
     "imageAsset": "https://img.youtube.com/vi/bhTq-L5jtf8/hqdefault.jpg",
     "imageSource": "youtube-thumbnail",

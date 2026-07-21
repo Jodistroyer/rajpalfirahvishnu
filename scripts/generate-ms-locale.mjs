@@ -395,6 +395,7 @@ const PRESS_CATEGORIES_MS = PRESS_CATEGORIES.map(c => ({
   label: {
     all: 'Semua',
     'criminal-trials': 'Perbicaraan jenayah',
+    'civil-litigation': 'Litigasi sivil',
     'kk-mart': 'KK Mart',
     'bar-profession': 'Majlis peguam & profesion',
     'video-social': 'Video & media sosial',

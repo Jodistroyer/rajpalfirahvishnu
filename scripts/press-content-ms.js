@@ -5,6 +5,46 @@
 
 /** @type {Record<string, { title: string, excerpt: string }>} */
 export const PRESS_MS_CONTENT = {
+  'malaymail-jonathan-wong-cheating-2024': {
+    title: 'Perunding didakwa tipu lelaki RM3.3 juta di KL',
+    excerpt: 'Pertuduhan Mahkamah Sesyen ke atas lesen pelaburan kripto; peguam Siti Anis Che Ab Wahab mewakili tertuduh berkaitan jamin.',
+  },
+  'bernama-jonathan-wong-cheating-2024': {
+    title: 'Perunding syarikat didakwa tipu urusan lesen pelaburan RM3.3 juta',
+    excerpt: 'Bernama melaporkan pertuduhan penipuan di Mahkamah Sesyen Kuala Lumpur; peguam Siti Anis Che Ab Wahab memohon jamin RM50,000.',
+  },
+  'facebook-fmt-jonathan-wong-2024': {
+    title: 'Ahli perniagaan mengaku tak salah pecah amanah RM4.3 juta',
+    excerpt: 'Catatan media sosial Free Malaysia Today tentang Johnathan Wong Futt Po; peguam Siti Anis Che Ab Wahab hadir di Mahkamah Sesyen.',
+  },
+  'astro-minyak-masak-2023': {
+    title: 'Pemilik pasar raya mini didakwa simpan 250kg minyak masak',
+    excerpt: 'Astro Awani melaporkan pertuduhan pasar mini Batu Caves; Siti Anis Che Ab Wahab memohon pengurangan jamin tertuduh.',
+  },
+  'hmetro-grab-murder-death-2023': {
+    title: 'Bunuh pemandu Grab, dua warga asing dihukum gantung',
+    excerpt: 'Sabitan bunuh di Mahkamah Tinggi Shah Alam ke atas pemandu e-hailing Aiman Nosri; peguam pembelaan Siti Anis Che Ab Wahab mohon penjara dan sebat.',
+  },
+  'hmetro-rewcastle-terengganu-2023': {
+    title: 'Bicara kes saman Clare Rewcastle-Brown kekal di Mahkamah Kuala Terengganu',
+    excerpt: 'Harian Metro melaporkan permohonan pindah ditolak; Siti Anis Che Ab Wahab memegang watching brief bagi Sultanah Nur Zahirah.',
+  },
+  'edge-sultanah-defamation-leave-2024': {
+    title: 'Editor Sarawak Report dinafikan kebenaran merayu sabitan fitnah',
+    excerpt: 'Mahkamah Persekutuan menolak permohonan kebenaran merayu Clare Rewcastle-Brown dalam saman fitnah Sultanah Nur Zahirah; Vishnu Kumar mewakili Sultanah.',
+  },
+  'dailyexpress-sultanah-defamation-2024': {
+    title: 'Mahkamah Persekutuan sahkan Rewcastle Brown dan dua lagi memfitnah Sultanah',
+    excerpt: 'Daily Express melaporkan Mahkamah Persekutuan mengekalkan liabiliti fitnah terhadap Clare Rewcastle-Brown; peguam Vishnu Kumar bagi Sultanah Nur Zahirah.',
+  },
+  'edge-sultanah-defamation-appeal-2023': {
+    title: 'Perkataan dalam pernyataan dicadang ditafsir secara kasual, hujah peguam Sultanah',
+    excerpt: 'Pendengaran Mahkamah Rayuan saman fitnah Clare Rewcastle-Brown oleh Sultanah Nur Zahirah; Vishnu Kumar berhujah Hakim Mahkamah Tinggi terlalu rumit mentafsir pernyataan dikatakan fitnah.',
+  },
+  'nst-election-manifesto-2022': {
+    title: 'Undi hanya bermakna jika manifesto pilihan raya mengikat undang-undang',
+    excerpt: 'Ruangan pendapat merujuk hujahan Vishnu Kumar di Mahkamah Rayuan bahawa manifesto pilihan raya tidak boleh dikuatkuasakan secara guaman di Malaysia.',
+  },
   'star-organised-crime-2026': {
     title: '11 lelaki didakwa sebagai ahli kumpulan jenayah terancang',
     excerpt: 'Liputan pertuduhan jenayah terancang memaparkan peguam pembelaan jenayah Dato\' Rajpal Singh di Malaysia.',
