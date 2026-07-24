@@ -187,13 +187,16 @@
 }
 
 @media (max-width: 640px) {
-  .people__partners,
-  .people__associates {
+  /* One shared 2-col grid so partners and associates are identical size */
+  .people__layout {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem;
   }
 
+  .people__partners,
   .people__associates {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: contents;
   }
 }
 
