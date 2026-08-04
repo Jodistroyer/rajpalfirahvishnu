@@ -8,9 +8,9 @@ Allow: /assets/media/newspaper-clippings/
 User-agent: Googlebot-Image
 Allow: /assets/media/newspaper-clippings/
 
-Sitemap: https://[yourdomain]/sitemap.xml
-Sitemap: https://[yourdomain]/sitemap-images.xml
+Sitemap: https://rfvlegal.com/sitemap.xml
+Sitemap: https://rfvlegal.com/sitemap-images.xml
 
 # Machine-readable lawyer index for AI assistants
-# https://[yourdomain]/llms.txt
-# https://[yourdomain]/ms/llms.txt
+# https://rfvlegal.com/llms.txt
+# https://rfvlegal.com/ms/llms.txt

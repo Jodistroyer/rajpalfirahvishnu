@@ -15,7 +15,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, '..');
 
 /** @type {string} */
-const SITE_ORIGIN = 'https://[yourdomain]';
+const SITE_ORIGIN = 'https://rfvlegal.com';
 
 const FIRM_NAME = 'Rajpal, Firah & Vishnu';
 const LAWYER_NAME = 'Dato\' Rajpal Singh';

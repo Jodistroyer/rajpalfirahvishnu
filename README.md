@@ -2,7 +2,7 @@
 
 Static website for **Rajpal, Firah & Vishnu**, a Malaysian law firm based in **Petaling Jaya** and **Batu Caves, Selangor**. The site covers criminal law, civil litigation, property, probate, corporate, family, and bankruptcy practice areas, with lawyer profiles and a Media Room archive of press coverage and newspaper clippings.
 
-**Live site (replace before deploy):** `https://[yourdomain]/`  
+**Live site:** `https://rfvlegal.com/`  
 **Contact:** rajpal.associates@gmail.com
 
 ---
@@ -87,7 +87,7 @@ Requires **Node.js 18+** (ES modules). No `npm install` needed.
 ### Before every deploy
 
 1. Set your real domain in **two places**:
-   - [`data/people.json`](data/people.json) → `"siteOrigin": "https://yourdomain.com"`
+   - [`data/people.json`](data/people.json) → `"siteOrigin": "https://rfvlegal.com"`
    - [`scripts/generate-sitemaps.mjs`](scripts/generate-sitemaps.mjs) → `SITE_ORIGIN`
 
 2. Regenerate all SEO outputs:
@@ -123,12 +123,12 @@ node scripts/generate-people-seo.mjs --llms-only
 
 After going live with the real domain:
 
-- [ ] Replace `[yourdomain]` everywhere and re-run both generate scripts
-- [ ] Submit `https://yourdomain/sitemap.xml` in Google Search Console
-- [ ] Submit `https://yourdomain/sitemap-images.xml` in Google Search Console
+- [x] Replace `[yourdomain]` everywhere and re-run both generate scripts (done — `rfvlegal.com`)
+- [ ] Submit `https://rfvlegal.com/sitemap.xml` in Google Search Console
+- [ ] Submit `https://rfvlegal.com/sitemap-images.xml` in Google Search Console
 - [ ] Request indexing for `/media/` and `/media/#clippings`
-- [ ] Verify `https://yourdomain/llms.txt` is publicly accessible
-- [ ] Verify `https://yourdomain/robots.txt` lists both sitemaps
+- [ ] Verify `https://rfvlegal.com/llms.txt` is publicly accessible
+- [ ] Verify `https://rfvlegal.com/robots.txt` lists both sitemaps
 - [ ] Test a clipping URL directly in the browser (full PNG/JPG should load)
 
 ### Google Images expectations
