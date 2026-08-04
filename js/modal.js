@@ -11,7 +11,13 @@
  */
 
 import { enhanceCopyable } from './copy.js';
-import { CONSULTATION_FORM_URL, isMsSubpage } from './site-config.js';
+import { CONSULTATION_FORM_URL, isMsSubpage, siteAssetUrl } from './site-config.js';
+
+/** @type {Record<string, string>} author display name → people profile path from site root (EN) */
+const AUTHOR_PROFILE_PATHS = {
+  'Vishnu Kumar': 'people/vishnu-kumar/',
+  "Dato' Rajpal Singh": 'people/rajpal-singh/',
+};
 
 const overlay    = /** @type {HTMLElement|null} */ (document.getElementById('modal-overlay'));
 const dialog     = /** @type {HTMLElement|null} */ (document.getElementById('modal-dialog'));
@@ -28,12 +34,46 @@ export function initModals() {
     card.addEventListener('click', () => openAttorneyModal(/** @type {HTMLElement} */ (card)));
   });
 
-  // Media article CTA button clicks
-  document.querySelectorAll('.media-card__cta').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const article = /** @type {HTMLElement|null} */ (btn.closest('.media-card'));
-      if (article) openArticleModal(article);
+  // Firm Insights: whole card is clickable (not press/external cards)
+  document.querySelectorAll('.media-card[data-content]').forEach(card => {
+    if (card.classList.contains('media-card--external')) return;
+    const el = /** @type {HTMLElement} */ (card);
+    el.classList.add('media-card--insight');
+    el.setAttribute('role', 'button');
+    el.setAttribute('tabindex', '0');
+    const label = el.dataset.title
+      ? (isMsSubpage() ? `Baca artikel penuh: ${el.dataset.title}` : `Read full article: ${el.dataset.title}`)
+      : (isMsSubpage() ? 'Baca artikel penuh' : 'Read full article');
+    el.setAttribute('aria-label', label);
+
+    // Keep "Read More" visual but remove nested button focus trap
+    el.querySelectorAll('.media-card__cta').forEach(cta => {
+      cta.setAttribute('tabindex', '-1');
+      cta.setAttribute('aria-hidden', 'true');
     });
+
+    const open = () => openArticleModal(el);
+    el.addEventListener('click', open);
+    el.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        open();
+      }
+    });
+
+    // Author name on the card → profile (stop card click from also firing)
+    const authorEl = el.querySelector('.media-card__author');
+    const authorName = el.dataset.author || '';
+    const profileHref = profileUrlForAuthor(authorName);
+    if (authorEl && profileHref && !authorEl.querySelector('a')) {
+      const linked = document.createElement('a');
+      linked.href = profileHref;
+      linked.className = 'media-card__author-link';
+      linked.textContent = authorEl.textContent?.trim() || authorName;
+      linked.addEventListener('click', e => e.stopPropagation());
+      authorEl.textContent = '';
+      authorEl.appendChild(linked);
+    }
   });
 
   // Backdrop click
@@ -156,13 +196,24 @@ function openAttorneyModal(card) {
 // ── Article / media modal ─────────────────────────────────────────────────
 
 function openArticleModal(card) {
-  const category = card.dataset.category || '';
-  const date     = card.dataset.date     || '';
-  const title    = card.dataset.title    || '';
-  const author   = card.dataset.author   || '';
-  const content  = card.dataset.content  || '';
+  const category    = card.dataset.category    || '';
+  const date        = card.dataset.date        || '';
+  const title       = card.dataset.title       || '';
+  const author      = card.dataset.author      || '';
+  const authorTitle = card.dataset.authorTitle || '';
+  const content     = card.dataset.content     || '';
 
   const ms = isMsSubpage();
+  const profileHref = profileUrlForAuthor(author);
+  const authorNameHtml = profileHref
+    ? `<a class="article-modal__author-link" href="${escHtml(profileHref)}">${escHtml(author)}</a>`
+    : escHtml(author);
+
+  const authorBlock = authorTitle
+    ? `<p class="article-modal__author">${ms ? 'Oleh' : 'By'} ${authorNameHtml}</p>
+      <p class="article-modal__author-title">${escHtml(authorTitle)}</p>`
+    : `<p class="article-modal__author">${ms ? 'Oleh' : 'By'} ${authorNameHtml}</p>`;
+
   const html = `
     <div class="modal__body">
       <button class="modal__close" aria-label="${ms ? 'Tutup tetingkap' : 'Close modal'}">&times;</button>
@@ -171,8 +222,8 @@ function openArticleModal(card) {
         <time class="media-card__date">${escHtml(date)}</time>
       </div>
       <h2 class="article-modal__title" id="modal-title">${escHtml(title)}</h2>
-      <p class="article-modal__author">${ms ? 'Oleh' : 'By'} ${escHtml(author)}</p>
-      <div class="article-modal__content">${escHtml(content)}</div>
+      ${authorBlock}
+      <div class="article-modal__content">${formatArticleContent(content, profileHref)}</div>
       <div class="article-modal__cta-row">
         <a href="${CONSULTATION_FORM_URL}" class="btn btn--primary" target="_blank" rel="noopener noreferrer">
           ${ms ? 'Tempah Perundingan' : 'Book a Consultation'}
@@ -181,6 +232,198 @@ function openArticleModal(card) {
     </div>`;
 
   openModal(html);
+}
+
+/** @param {string} author */
+function profileUrlForAuthor(author) {
+  const path = AUTHOR_PROFILE_PATHS[author];
+  if (!path) return '';
+  return siteAssetUrl(isMsSubpage() ? `ms/${path}` : path);
+}
+
+/**
+ * Render Firm Insights body text as structured HTML.
+ * Supports # / ## / ### headings, - lists, > quotes, and **bold**.
+ * Also auto-detects ALL-CAPS / lettered / known section lines as headings
+ * when markdown markers are not present.
+ */
+function formatArticleContent(raw, authorProfileHref = '') {
+  const text = String(raw || '').replace(/\r\n/g, '\n').trim();
+  if (!text) return '';
+
+  const lines = text.split('\n');
+  /** @type {string[]} */
+  const out = [];
+  /** @type {string[]} */
+  let para = [];
+  /** @type {string[]} */
+  let list = [];
+  /** @type {string[]} */
+  let quote = [];
+
+  const flushPara = () => {
+    if (!para.length) return;
+    out.push(`<p>${inlineFormat(para.join(' '))}</p>`);
+    para = [];
+  };
+  const flushList = () => {
+    if (!list.length) return;
+    out.push(`<ul>${list.map(i => `<li>${inlineFormat(i)}</li>`).join('')}</ul>`);
+    list = [];
+  };
+  const flushQuote = () => {
+    if (!quote.length) return;
+    out.push(`<blockquote><p>${inlineFormat(quote.join(' '))}</p></blockquote>`);
+    quote = [];
+  };
+  const flushAll = () => {
+    flushList();
+    flushQuote();
+    flushPara();
+  };
+
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (!trimmed) {
+      flushAll();
+      continue;
+    }
+
+    const mdH = trimmed.match(/^(#{1,3})\s+(.+)$/);
+    if (mdH) {
+      flushAll();
+      const level = mdH[1].length + 2; // # → h3, ## → h4, ### → h5
+      out.push(`<h${level}>${inlineFormat(mdH[2])}</h${level}>`);
+      continue;
+    }
+
+    if (trimmed.startsWith('> ')) {
+      flushList();
+      flushPara();
+      quote.push(trimmed.slice(2));
+      continue;
+    }
+    if (quote.length) flushQuote();
+
+    if (/^[-•]\s+/.test(trimmed)) {
+      flushPara();
+      list.push(trimmed.replace(/^[-•]\s+/, ''));
+      continue;
+    }
+    if (list.length) flushList();
+
+    const heading = detectHeading(trimmed);
+    if (heading) {
+      flushAll();
+      out.push(`<h${heading.level}>${inlineFormat(heading.text)}</h${heading.level}>`);
+      continue;
+    }
+
+    if (isSignatureLine(trimmed)) {
+      flushAll();
+      if (authorProfileHref && isAuthorNameLine(trimmed)) {
+        out.push(
+          `<p class="article-modal__sign"><a class="article-modal__author-link" href="${escHtml(authorProfileHref)}">${inlineFormat(trimmed)}</a></p>`
+        );
+      } else {
+        out.push(`<p class="article-modal__sign">${inlineFormat(trimmed)}</p>`);
+      }
+      continue;
+    }
+
+    // Opening single-quote dialogue / long quote as its own block
+    if (
+      (trimmed.startsWith("'") || trimmed.startsWith('"') || trimmed.startsWith('\u2018') || trimmed.startsWith('\u201C')) &&
+      trimmed.length > 40
+    ) {
+      flushAll();
+      const q = trimmed.replace(/^['"\u2018\u201C]/, '').replace(/['"\u2019\u201D]\.?$/, '');
+      out.push(`<blockquote><p>${inlineFormat(q)}</p></blockquote>`);
+      continue;
+    }
+
+    para.push(trimmed);
+  }
+
+  flushAll();
+  return out.join('');
+}
+
+/** Signature name lines that should link to a people profile. */
+function isAuthorNameLine(line) {
+  return /^(?:[A-Z]\.\s+)?Vishnu\s+Kumar\b/i.test(line)
+    || /^Dato'\s+Rajpal\s+Singh\b/i.test(line);
+}
+
+/** Signature / byline lines — muted body style, not headings. */
+function isSignatureLine(line) {
+  if (/^(Advocate\s*&\s*Solicitor|Peguambela\s*&\s*Peguamcara)\b/i.test(line)) return true;
+  if (/^(Civil Law Subcommittee|Pengerusi Subjawatankuasa|Certified Mediator|Pengantara Bertauliah)\b/i.test(line)) return true;
+  // Short personal name: "A. Vishnu Kumar" / "Vishnu Kumar"
+  if (/^(?:[A-Z]\.\s+)?[A-ZÀ-Ý][a-zà-ÿ]+(?:\s+[A-ZÀ-Ý][a-zà-ÿ'.-]+){0,3}$/.test(line) && line.length < 40) {
+    return true;
+  }
+  return false;
+}
+
+/** @param {string} line */
+function detectHeading(line) {
+  // Skip obvious body sentences
+  if (line.length > 140) return null;
+  if (/[.?!]$/.test(line) && !/^[A-G]\./.test(line) && line.length > 60) return null;
+
+  // Personal names are signatures, not section headings
+  if (isSignatureLine(line)) return null;
+
+  const letters = line.replace(/[^A-Za-zÀ-ÿ]/g, '');
+  if (letters.length >= 8) {
+    const upper = (letters.match(/[A-ZÀ-Ý]/g) || []).length;
+    if (upper / letters.length >= 0.88) {
+      return { level: 3, text: titleCaseAllCaps(line) };
+    }
+  }
+
+  if (/^[A-G]\.\s+\S/.test(line)) return { level: 3, text: line };
+  // Numbered section titles only - not enumerated body points ending in ; / and / or
+  if (
+    /^\d+\.\s+[A-ZÀ-Ý]/.test(line) &&
+    line.length < 110 &&
+    !/[.;,]$/.test(line) &&
+    !/\b(and|or|dan)\s*$/i.test(line)
+  ) {
+    return { level: 4, text: line };
+  }
+
+  const sub = /^(Law\s*&\s*Drafting|Approach(\s+To)?\b|Undang-undang\b|Pendekatan\b|FUNDAMENTAL RULE|NOTE\b|Nota\b|PENGENALAN|KESIMPULAN|INTRODUCTION|CONCLUSION)\b/i;
+  if (sub.test(line) && line.length < 100) return { level: 4, text: line };
+
+  return null;
+}
+
+/** @param {string} s */
+function titleCaseAllCaps(s) {
+  // Keep short ALL-CAPS tokens (CJA, SCR, EGM) but title-case long words
+  return s.replace(/[A-ZÀ-Ý]{2,}(?:'[A-ZÀ-Ý]+)?/g, (word) => {
+    if (word.length <= 4) return word; // CJA, SCR, AGM, EGM, ROC, RFC…
+    return word.charAt(0) + word.slice(1).toLowerCase();
+  });
+}
+
+/** Escape then apply **bold** and light auto-emphasis for citations / sections. */
+function inlineFormat(str) {
+  let s = escHtml(str);
+  s = s.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  // Case citations: Name v. Name [year]
+  s = s.replace(
+    /\b([A-ZÀ-Ý][\w'&.]*(?:\s+(?:v\.|v|bin|binti|&amp;|and|&)\s+[A-ZÀ-Ý][\w'&.]*)+(?:\s+[A-ZÀ-Ý][\w'&.]*)*\s*\[[^\]]+\])/g,
+    '<strong>$1</strong>'
+  );
+  // Section / Order / Rule / Practice Direction refs at start of a clause
+  s = s.replace(
+    /\b(Section|Seksyen|Order|Perintah|Rule|Kaedah|Practice Direction|Arahan Amalan)\s+(\d+[A-Za-z]?(?:\s*\([a-z0-9]+\))?(?:\s*r\.?\s*\d+[A-Za-z]?)?)/gi,
+    '<strong>$1 $2</strong>'
+  );
+  return s;
 }
 
 // ── Focus trap helpers ────────────────────────────────────────────────────
