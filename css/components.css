@@ -1539,6 +1539,16 @@ a.attorney-card {
   line-height: 1.75;
 }
 
+.faq-item__answer a {
+  color: var(--color-accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.faq-item__answer a:hover {
+  color: var(--color-accent-hover);
+}
+
 .faq-item__answer p + p {
   margin-top: 0.75rem;
 }
