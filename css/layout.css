@@ -115,12 +115,21 @@
 }
 
 .services__grid--secondary {
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.services__grid--secondary > .service-card {
+  flex: 0 1 calc((100% - 3rem) / 3);
+  max-width: calc((100% - 3rem) / 3);
 }
 
 @media (max-width: 960px) {
-  .services__grid--secondary {
-    grid-template-columns: 1fr;
+  .services__grid--secondary > .service-card {
+    flex: 1 1 100%;
+    max-width: 100%;
   }
 }
 

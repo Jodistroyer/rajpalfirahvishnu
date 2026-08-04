@@ -124,8 +124,8 @@ node scripts/generate-people-seo.mjs --llms-only
 After going live with the real domain:
 
 - [x] Replace `[yourdomain]` everywhere and re-run both generate scripts (done — `rfvlegal.com`)
-- [ ] Submit `https://rfvlegal.com/sitemap.xml` in Google Search Console
-- [ ] Submit `https://rfvlegal.com/sitemap-images.xml` in Google Search Console
+- [x] Submit `https://rfvlegal.com/sitemap.xml` in Google Search Console
+- [x] Submit `https://rfvlegal.com/sitemap-images.xml` in Google Search Console
 - [ ] Request indexing for `/media/` and `/media/#clippings`
 - [ ] Verify `https://rfvlegal.com/llms.txt` is publicly accessible
 - [ ] Verify `https://rfvlegal.com/robots.txt` lists both sitemaps
