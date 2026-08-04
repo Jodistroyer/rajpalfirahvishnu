@@ -37,6 +37,90 @@ export const PRESS_CATEGORIES_MS = [
 /** @type {import('./press-data.js').PressItem[]} */
 export const PRESS_ITEMS_MS = [
   {
+    "id": "fmt-nicky-liow-amla-dropped-2026",
+    "url": "https://www.freemalaysiatoday.com/category/nation/2026/07/29/nicky-liow-s-money-laundering-case-dropped-says-lawyer",
+    "title": "Kes pengubahan wang haram Nicky Liow digugurkan, kata peguam",
+    "excerpt": "Free Malaysia Today melaporkan sidang media Datuk Rajpal Singh yang menjelaskan 26 pertuduhan pengubahan wang haram berjumlah RM36 juta terhadap Nicky Liow digugurkan selepas AGC menerima representasi pembelaan, berikutan penyelesaian tunggakan cukai RM400,000 dengan LHDN.",
+    "publisher": "Free Malaysia Today",
+    "sort": "2026-07-29",
+    "dateLabel": "29 Julai 2026",
+    "category": "criminal-trials",
+    "type": "article",
+    "featured": true,
+    "thumb": "assets/media/press/fmt-nicky-liow-amla-dropped-2026.webp"
+  },
+  {
+    "id": "says-nicky-liow-dnaa-timeline-2026",
+    "url": "https://says.com/my/news/beating-rela-officers-dnaa-26-money-laundering-charges-who-is-nicky-liow",
+    "title": "Dari pukul anggota RELA hingga DNAA 26 pertuduhan pengubahan wang haram, siapa Nicky Liow?",
+    "excerpt": "Garis masa SAYS mengenai prosedur guaman melibatkan Nicky Liow, termasuk pertuduhan terdahulu, penyerahan diri 2022, kemas kini kes cukai dan guaman berkaitan, serta kenyataan Datuk Rajpal Singh agar Liow dibenarkan hidup sebagai rakyat biasa.",
+    "publisher": "SAYS",
+    "sort": "2026-07-29",
+    "dateLabel": "29 Julai 2026",
+    "category": "criminal-trials",
+    "type": "article",
+    "thumb": "assets/media/press/says-nicky-liow-dnaa-timeline-2026.jpg"
+  },
+  {
+    "id": "focus-nicky-liow-agc-dropped-2026",
+    "url": "https://focusmalaysia.my/public-amazed-with-agc-quietly-dropping-money-laundering-charges-against-nicky-liow/",
+    "title": "Orang ramai kagum AGC senyap menggugurkan pertuduhan pengubahan wang haram terhadap Nicky Liow",
+    "excerpt": "Focus Malaysia meneliti reaksi awam dan politik selepas Datuk Rajpal Singh mengesahkan AGC memutuskan tidak meneruskan pendakwaan selepas menerima representasi pembelaan.",
+    "publisher": "Focus Malaysia",
+    "sort": "2026-07-29",
+    "dateLabel": "29 Julai 2026",
+    "category": "criminal-trials",
+    "type": "article",
+    "thumb": "assets/media/press/focus-nicky-liow-agc-dropped-2026.webp"
+  },
+  {
+    "id": "mkini-nicky-liow-agc-dnaa-2026",
+    "url": "https://www.malaysiakini.com/news/780992",
+    "title": "Bekas pemimpin PKR tuntut AGC jelaskan DNAA kes Nicky Liow",
+    "excerpt": "Malaysiakini melaporkan desakan tokoh politik agar AGC merinci alasan penarikan balik pertuduhan berikutan kenyataan Datuk Rajpal Singh dan pasukan pembelaan.",
+    "publisher": "Malaysiakini",
+    "sort": "2026-07-30",
+    "dateLabel": "30 Julai 2026",
+    "category": "criminal-trials",
+    "type": "article",
+    "thumb": "assets/media/press/mkini-nicky-liow-agc-dnaa-2026.png"
+  },
+  {
+    "id": "youtube-IV_W5UoqjpY",
+    "url": "https://www.youtube.com/watch?v=IV_W5UoqjpY",
+    "title": "Nicky Liow kata jumpa PM di majlis kutipan dana, 'diberi' baju AMK selepas menderma",
+    "excerpt": "Rakaman KiniTV sidang media di mana Nicky Liow membaca kenyataan dalam bahasa Mandarin manakala Datuk Rajpal Singh menjawab wartawan dalam bahasa Melayu dan Inggeris mengenai majlis kutipan dana dan status undang-undang Liow.",
+    "publisher": "KiniTV (YouTube)",
+    "sort": "2026-07-29",
+    "dateLabel": "29 Julai 2026",
+    "category": "criminal-trials",
+    "type": "video",
+    "youtubeId": "IV_W5UoqjpY"
+  },
+  {
+    "id": "vibes-nicky-gang-acquittal-2022",
+    "url": "https://www.thevibes.com/articles/news/65284/court-acquits-14-individuals-linked-to-nicky-gang",
+    "title": "Mahkamah bebaskan 14 individu berkaitan Geng Nicky",
+    "excerpt": "Arkib The Vibes mengenai keputusan Mahkamah Rayuan di mana Datuk Rajpal Singh mewakili 13 individu berkaitan dakwaan jenayah terancang, berakhir dengan pembebasan penuh selepas AGC menerima surat representasi.",
+    "publisher": "The Vibes",
+    "sort": "2022-07-07",
+    "dateLabel": "7 Julai 2022",
+    "category": "criminal-trials",
+    "type": "article",
+    "thumb": "assets/media/press/vibes-nicky-gang-acquittal-2022.jpg"
+  },
+  {
+    "id": "star-nicky-liow-plea-2022",
+    "url": "https://www.thestar.com.my/news/nation/2022/04/12/nicky-liow-claims-trial-to-26-charges-totaling-rm36mil",
+    "title": "Nicky Liow mengaku tidak bersalah atas 26 pertuduhan pengubahan wang haram",
+    "excerpt": "Laporan The Star mengenai kehadiran Liow di Mahkamah Sesyen Shah Alam 2022 selepas menyerah diri, termasuk hujahan jamin Datuk Rajpal Singh.",
+    "publisher": "The Star",
+    "sort": "2022-04-12",
+    "dateLabel": "12 April 2022",
+    "category": "criminal-trials",
+    "type": "article"
+  },
+  {
     "id": "edge-sultanah-defamation-leave-2024",
     "url": "https://theedgemalaysia.com/node/726155",
     "title": "Editor Sarawak Report dinafikan kebenaran merayu sabitan fitnah",
@@ -289,7 +373,6 @@ export const PRESS_ITEMS_MS = [
     "dateLabel": "26 Mac 2024",
     "category": "kk-mart",
     "type": "article",
-    "featured": true,
     "thumb": "assets/media/press/edge-kk-mart.jpg"
   },
   {

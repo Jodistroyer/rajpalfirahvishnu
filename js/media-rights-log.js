@@ -30,6 +30,83 @@ export const MEDIA_RIGHTS_META = {
 /** @type {PressRightsEntry[]} */
 export const PRESS_IMAGE_RIGHTS = [
   {
+    "id": "fmt-nicky-liow-amla-dropped-2026",
+    "title": "Nicky Liow\\",
+    "publisher": "Free Malaysia Today",
+    "sourceUrl": "https://www.freemalaysiatoday.com/category/nation/2026/07/29/nicky-liow-s-money-laundering-case-dropped-says-lawyer",
+    "imageAsset": "assets/media/press/fmt-nicky-liow-amla-dropped-2026.webp",
+    "imageSource": "publisher-og-preview",
+    "rightsHolder": "Free Malaysia Today",
+    "use": "Press index thumbnail; link-out to original source",
+    "added": "2026-06-23"
+  },
+  {
+    "id": "says-nicky-liow-dnaa-timeline-2026",
+    "title": "From Beating RELA Officers To DNAA Over 26 Money Laundering Charges, Who Is Nicky Liow?",
+    "publisher": "SAYS",
+    "sourceUrl": "https://says.com/my/news/beating-rela-officers-dnaa-26-money-laundering-charges-who-is-nicky-liow",
+    "imageAsset": "assets/media/press/says-nicky-liow-dnaa-timeline-2026.jpg",
+    "imageSource": "publisher-og-preview",
+    "rightsHolder": "SAYS",
+    "use": "Press index thumbnail; link-out to original source",
+    "added": "2026-06-23"
+  },
+  {
+    "id": "focus-nicky-liow-agc-dropped-2026",
+    "title": "Public amazed with AGC quietly dropping money-laundering charges against Nicky Liow",
+    "publisher": "Focus Malaysia",
+    "sourceUrl": "https://focusmalaysia.my/public-amazed-with-agc-quietly-dropping-money-laundering-charges-against-nicky-liow/",
+    "imageAsset": "assets/media/press/focus-nicky-liow-agc-dropped-2026.webp",
+    "imageSource": "publisher-og-preview",
+    "rightsHolder": "Focus Malaysia",
+    "use": "Press index thumbnail; link-out to original source",
+    "added": "2026-06-23"
+  },
+  {
+    "id": "mkini-nicky-liow-agc-dnaa-2026",
+    "title": "Bekas pemimpin PKR tuntut AGC jelaskan DNAA kes Nicky Liow",
+    "publisher": "Malaysiakini",
+    "sourceUrl": "https://www.malaysiakini.com/news/780992",
+    "imageAsset": "assets/media/press/mkini-nicky-liow-agc-dnaa-2026.png",
+    "imageSource": "publisher-og-preview",
+    "rightsHolder": "Malaysiakini",
+    "use": "Press index thumbnail; link-out to original source",
+    "added": "2026-06-23"
+  },
+  {
+    "id": "youtube-IV_W5UoqjpY",
+    "title": "Nicky Liow says met PM at fundraiser, \\",
+    "publisher": "KiniTV (YouTube)",
+    "sourceUrl": "https://www.youtube.com/watch?v=IV_W5UoqjpY",
+    "imageAsset": "https://img.youtube.com/vi/IV_W5UoqjpY/hqdefault.jpg",
+    "imageSource": "youtube-thumbnail",
+    "rightsHolder": "YouTube / original uploader",
+    "use": "Press index thumbnail; link-out to original source",
+    "added": "2026-06-23"
+  },
+  {
+    "id": "vibes-nicky-gang-acquittal-2022",
+    "title": "Court acquits 14 individuals linked to Nicky Gang",
+    "publisher": "The Vibes",
+    "sourceUrl": "https://www.thevibes.com/articles/news/65284/court-acquits-14-individuals-linked-to-nicky-gang",
+    "imageAsset": "assets/media/press/vibes-nicky-gang-acquittal-2022.jpg",
+    "imageSource": "publisher-og-preview",
+    "rightsHolder": "The Vibes",
+    "use": "Press index thumbnail; link-out to original source",
+    "added": "2026-06-23"
+  },
+  {
+    "id": "star-nicky-liow-plea-2022",
+    "title": "Nicky Liow pleads not guilty to 26 money-laundering charges",
+    "publisher": "The Star",
+    "sourceUrl": "https://www.thestar.com.my/news/nation/2022/04/12/nicky-liow-claims-trial-to-26-charges-totaling-rm36mil",
+    "imageAsset": "",
+    "imageSource": "publisher-og-preview",
+    "rightsHolder": "The Star",
+    "use": "Press index thumbnail; link-out to original source",
+    "added": "2026-06-23"
+  },
+  {
     "id": "edge-sultanah-defamation-leave-2024",
     "title": "Sarawak Report editor denied leave to appeal defamation ruling",
     "publisher": "The Edge Malaysia",

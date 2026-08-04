@@ -5,6 +5,34 @@
 
 /** @type {Record<string, { title: string, excerpt: string }>} */
 export const PRESS_MS_CONTENT = {
+  'fmt-nicky-liow-amla-dropped-2026': {
+    title: 'Kes pengubahan wang haram Nicky Liow digugurkan, kata peguam',
+    excerpt: 'Free Malaysia Today melaporkan sidang media Datuk Rajpal Singh yang menjelaskan 26 pertuduhan pengubahan wang haram berjumlah RM36 juta terhadap Nicky Liow digugurkan selepas AGC menerima representasi pembelaan, berikutan penyelesaian tunggakan cukai RM400,000 dengan LHDN.',
+  },
+  'says-nicky-liow-dnaa-timeline-2026': {
+    title: 'Dari pukul anggota RELA hingga DNAA 26 pertuduhan pengubahan wang haram, siapa Nicky Liow?',
+    excerpt: 'Garis masa SAYS mengenai prosedur guaman melibatkan Nicky Liow, termasuk pertuduhan terdahulu, penyerahan diri 2022, kemas kini kes cukai dan guaman berkaitan, serta kenyataan Datuk Rajpal Singh agar Liow dibenarkan hidup sebagai rakyat biasa.',
+  },
+  'focus-nicky-liow-agc-dropped-2026': {
+    title: 'Orang ramai kagum AGC senyap menggugurkan pertuduhan pengubahan wang haram terhadap Nicky Liow',
+    excerpt: 'Focus Malaysia meneliti reaksi awam dan politik selepas Datuk Rajpal Singh mengesahkan AGC memutuskan tidak meneruskan pendakwaan selepas menerima representasi pembelaan.',
+  },
+  'mkini-nicky-liow-agc-dnaa-2026': {
+    title: 'Bekas pemimpin PKR tuntut AGC jelaskan DNAA kes Nicky Liow',
+    excerpt: 'Malaysiakini melaporkan desakan tokoh politik agar AGC merinci alasan penarikan balik pertuduhan berikutan kenyataan Datuk Rajpal Singh dan pasukan pembelaan.',
+  },
+  'youtube-IV_W5UoqjpY': {
+    title: 'Nicky Liow kata jumpa PM di majlis kutipan dana, \'diberi\' baju AMK selepas menderma',
+    excerpt: 'Rakaman KiniTV sidang media di mana Nicky Liow membaca kenyataan dalam bahasa Mandarin manakala Datuk Rajpal Singh menjawab wartawan dalam bahasa Melayu dan Inggeris mengenai majlis kutipan dana dan status undang-undang Liow.',
+  },
+  'vibes-nicky-gang-acquittal-2022': {
+    title: 'Mahkamah bebaskan 14 individu berkaitan Geng Nicky',
+    excerpt: 'Arkib The Vibes mengenai keputusan Mahkamah Rayuan di mana Datuk Rajpal Singh mewakili 13 individu berkaitan dakwaan jenayah terancang, berakhir dengan pembebasan penuh selepas AGC menerima surat representasi.',
+  },
+  'star-nicky-liow-plea-2022': {
+    title: 'Nicky Liow mengaku tidak bersalah atas 26 pertuduhan pengubahan wang haram',
+    excerpt: 'Laporan The Star mengenai kehadiran Liow di Mahkamah Sesyen Shah Alam 2022 selepas menyerah diri, termasuk hujahan jamin Datuk Rajpal Singh.',
+  },
   'malaymail-jonathan-wong-cheating-2024': {
     title: 'Perunding didakwa tipu lelaki RM3.3 juta di KL',
     excerpt: 'Pertuduhan Mahkamah Sesyen ke atas lesen pelaburan kripto; peguam Siti Anis Che Ab Wahab mewakili tertuduh berkaitan jamin.',
