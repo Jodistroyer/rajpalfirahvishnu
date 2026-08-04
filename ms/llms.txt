@@ -78,7 +78,7 @@ Dijana oleh: node scripts/generate-people-seo.mjs
 ### Siti Anis Binti Che Ab Wahab
 - English: https://rfvlegal.com/people/siti-anis/
 - Bahasa Malaysia: https://rfvlegal.com/ms/people/siti-anis/
-- Peranan: Peguam Kesat
+- Peranan: Peguambela
 - Bidang guaman: Undang-Undang Jenayah · Kemalangan · Syariah
 - Pengalaman: 10+ tahun (litigasi jenayah)
 - Dipanggil ke Bar: 2016
@@ -96,7 +96,7 @@ Dijana oleh: node scripts/generate-people-seo.mjs
 ### Tiew Poh Nee
 - English: https://rfvlegal.com/people/tiew-poh-nee/
 - Bahasa Malaysia: https://rfvlegal.com/ms/people/tiew-poh-nee/
-- Peranan: Peguam Kesat
+- Peranan: Peguambela
 - Bidang guaman: Undang-Undang Jenayah · Jenayah Komersial
 - Pengalaman: 10+ tahun (litigasi jenayah)
 - Dipanggil ke Bar: 2016
@@ -107,7 +107,7 @@ Dijana oleh: node scripts/generate-people-seo.mjs
 ### Mariappan a/l Manikam
 - English: https://rfvlegal.com/people/mariappan-manikam/
 - Bahasa Malaysia: https://rfvlegal.com/ms/people/mariappan-manikam/
-- Peranan: Peguam Kesat
+- Peranan: Peguambela
 - Bidang guaman: Pembelaan Jenayah · Kesalahan Dadah
 - Pengalaman: 13 tahun (litigasi jenayah)
 - Dipanggil ke Bar: 2013

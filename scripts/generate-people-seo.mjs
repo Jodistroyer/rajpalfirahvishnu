@@ -78,7 +78,7 @@ const practiceFaqs = [
     titleMs: 'Undang-undang keluarga',
     lead: null,
     topics:
-      'divorce Malaysia, joint petition, child custody, maintenance, nafkah, Domestic Violence Act 1994, Law Reform (Marriage and Divorce) Act 1976, Syariah court, harta sepencarian',
+      'divorce Malaysia, joint petition, child custody, maintenance, nafkah, Domestic Violence Act 1994, Law Reform (Marriage and Divorce) Act 1976, Syariah court, matrimonial assets',
     topicsMs:
       'perceraian Malaysia, petisyen bersama, penjagaan anak, nafkah, Akta Keganasan Rumah Tangga 1994, Akta Pemansuhan Undang-Undang (Perkahwinan dan Perceraian) 1976, mahkamah Syariah, harta sepencarian',
   },
