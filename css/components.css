@@ -2636,7 +2636,8 @@ a.attorney-card {
 }
 
 .article-modal__author-link {
-  color: inherit;
+  color: var(--color-accent);
+  font-weight: 600;
   text-decoration: underline;
   text-decoration-color: transparent;
   text-underline-offset: 0.15em;
@@ -2645,12 +2646,13 @@ a.attorney-card {
 
 .article-modal__author-link:hover,
 .article-modal__author-link:focus-visible {
-  color: var(--color-accent);
-  text-decoration-color: var(--color-accent);
+  color: var(--color-accent-hover);
+  text-decoration-color: var(--color-accent-hover);
 }
 
 .media-card__author-link {
-  color: inherit;
+  color: var(--color-accent);
+  font-weight: 600;
   font-style: inherit;
   text-decoration: underline;
   text-decoration-color: transparent;
@@ -2660,8 +2662,8 @@ a.attorney-card {
 
 .media-card__author-link:hover,
 .media-card__author-link:focus-visible {
-  color: var(--color-accent);
-  text-decoration-color: var(--color-accent);
+  color: var(--color-accent-hover);
+  text-decoration-color: var(--color-accent-hover);
 }
 
 .article-modal__content {

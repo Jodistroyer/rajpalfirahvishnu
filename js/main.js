@@ -152,6 +152,14 @@ function initProfileBack(params) {
       href: isMs ? '../../../ms/faq/civil-litigation/' : '../../faq/civil-litigation/',
       label: isMs ? '← Kembali ke Soalan Lazim Litigasi Sivil' : '← Back to Civil Litigation FAQ',
     },
+    insights: {
+      href: isMs ? '../../../ms/#firm-insights' : '../../#firm-insights',
+      label: isMs ? '← Kembali ke Wawasan Firma' : '← Back to Firm Insights',
+    },
+    'insights-media': {
+      href: isMs ? '../../../ms/media/#firm-insights' : '../../media/#firm-insights',
+      label: isMs ? '← Kembali ke Wawasan Firma' : '← Back to Firm Insights',
+    },
   };
 
   const dest = destinations[from];

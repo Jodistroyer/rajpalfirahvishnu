@@ -238,7 +238,11 @@ function openArticleModal(card) {
 function profileUrlForAuthor(author) {
   const path = AUTHOR_PROFILE_PATHS[author];
   if (!path) return '';
-  return siteAssetUrl(isMsSubpage() ? `ms/${path}` : path);
+  const base = siteAssetUrl(isMsSubpage() ? `ms/${path}` : path);
+  const onMediaPage = /\/media(?:\/|$)/.test(window.location.pathname);
+  const from = onMediaPage ? 'insights-media' : 'insights';
+  const sep = base.includes('?') ? '&' : '?';
+  return `${base}${sep}from=${from}`;
 }
 
 /**
