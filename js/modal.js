@@ -162,19 +162,20 @@ function openArticleModal(card) {
   const author   = card.dataset.author   || '';
   const content  = card.dataset.content  || '';
 
+  const ms = isMsSubpage();
   const html = `
     <div class="modal__body">
-      <button class="modal__close" aria-label="${isMsSubpage() ? 'Tutup tetingkap' : 'Close modal'}">&times;</button>
+      <button class="modal__close" aria-label="${ms ? 'Tutup tetingkap' : 'Close modal'}">&times;</button>
       <div class="article-modal__meta">
         <span class="media-card__category">${escHtml(category)}</span>
         <time class="media-card__date">${escHtml(date)}</time>
       </div>
       <h2 class="article-modal__title" id="modal-title">${escHtml(title)}</h2>
-      <p class="article-modal__author">By ${escHtml(author)}</p>
+      <p class="article-modal__author">${ms ? 'Oleh' : 'By'} ${escHtml(author)}</p>
       <div class="article-modal__content">${escHtml(content)}</div>
       <div class="article-modal__cta-row">
         <a href="${CONSULTATION_FORM_URL}" class="btn btn--primary" target="_blank" rel="noopener noreferrer">
-          Book a Consultation
+          ${ms ? 'Tempah Perundingan' : 'Book a Consultation'}
         </a>
       </div>
     </div>`;
