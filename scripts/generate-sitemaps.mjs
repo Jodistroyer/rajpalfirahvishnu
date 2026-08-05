@@ -10,6 +10,7 @@ import { fileURLToPath } from 'url';
 import { CLIPPINGS } from '../js/clippings-data.js';
 import { CLIPPINGS_MS } from '../js/clippings-data-ms.js';
 import { PRESS_ITEMS } from '../js/press-data.js';
+import { INSIGHTS } from '../js/insights-data.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, '..');
@@ -271,10 +272,16 @@ const pages = [
   { loc: `${SITE_ORIGIN}/media/`, priority: '0.9', changefreq: 'weekly' },
   { loc: `${SITE_ORIGIN}/media/#press`, priority: '0.9', changefreq: 'weekly' },
   { loc: `${SITE_ORIGIN}/media/#clippings`, priority: '0.9', changefreq: 'monthly' },
+  { loc: `${SITE_ORIGIN}/media/#firm-insights`, priority: '0.85', changefreq: 'weekly' },
+  ...INSIGHTS.flatMap(item => [
+    { loc: `${SITE_ORIGIN}/insights/${item.id}/`, priority: '0.8', changefreq: 'monthly' },
+    { loc: `${SITE_ORIGIN}/ms/insights/${item.id}/`, priority: '0.8', changefreq: 'monthly' },
+  ]),
   { loc: `${SITE_ORIGIN}/ms/`, priority: '0.9', changefreq: 'weekly' },
   { loc: `${SITE_ORIGIN}/ms/media/`, priority: '0.9', changefreq: 'weekly' },
   { loc: `${SITE_ORIGIN}/ms/media/#press`, priority: '0.9', changefreq: 'weekly' },
   { loc: `${SITE_ORIGIN}/ms/media/#clippings`, priority: '0.9', changefreq: 'monthly' },
+  { loc: `${SITE_ORIGIN}/ms/media/#firm-insights`, priority: '0.85', changefreq: 'weekly' },
   { loc: `${SITE_ORIGIN}/legal/privacy-policy/`, priority: '0.5', changefreq: 'yearly' },
   { loc: `${SITE_ORIGIN}/legal/terms-of-use/`, priority: '0.5', changefreq: 'yearly' },
   { loc: `${SITE_ORIGIN}/ms/legal/dasar-privasi/`, priority: '0.5', changefreq: 'yearly' },

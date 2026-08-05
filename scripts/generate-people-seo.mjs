@@ -9,6 +9,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { PRESS_ITEMS } from '../js/press-data.js';
 import { CLIPPINGS } from '../js/clippings-data.js';
+import { INSIGHTS } from '../js/insights-data.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, '..');
@@ -119,6 +120,12 @@ function faqUrl(slug, lang) {
   return lang === 'ms'
     ? `${siteOrigin}/ms/faq/${slug}/`
     : `${siteOrigin}/faq/${slug}/`;
+}
+
+function insightUrl(id, lang) {
+  return lang === 'ms'
+    ? `${siteOrigin}/ms/insights/${id}/`
+    : `${siteOrigin}/insights/${id}/`;
 }
 
 function assetLinks(assetPrefix) {
@@ -568,6 +575,22 @@ function buildLlmsTxt(lang = 'en') {
   const sortedPress = [...PRESS_ITEMS].sort((a, b) => b.sort.localeCompare(a.sort));
   for (const item of sortedPress) {
     lines.push(`  - ${item.url} — ${item.title} (${item.publisher}, ${item.sort.slice(0, 10)})`);
+  }
+
+  lines.push(
+    '',
+    isMs ? '## Wawasan Firma (artikel)' : '## Firm Insights (articles)',
+    isMs
+      ? `- Indeks: ${siteOrigin}/ms/media/#firm-insights`
+      : `- Index: ${siteOrigin}/media/#firm-insights`,
+    isMs
+      ? `- Topik: pengantaraan, litigasi sivil, undang-undang syarikat, kewajipan pengarah, rayuan sivil, kontrak`
+      : `- Topics: mediation, civil litigation, company law, director duties, civil appeals, contracts`,
+  );
+  const sortedInsights = [...INSIGHTS].sort((a, b) => b.en.sort.localeCompare(a.en.sort));
+  for (const item of sortedInsights) {
+    const locale = isMs ? item.ms : item.en;
+    lines.push(`  - ${insightUrl(item.id, lang)} — ${locale.title} (${locale.category}, ${locale.sort.slice(0, 10)}) — ${locale.author}`);
   }
 
   lines.push(

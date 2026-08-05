@@ -568,7 +568,15 @@ function initMosaicGallery(container, CLIPPINGS, opts) {
     if (!autoScrollLoad || !('IntersectionObserver' in window)) return;
 
     sentinelObserver = new IntersectionObserver(entries => {
-      if (entries.some(e => e.isIntersecting)) appendBatch();
+      if (!entries.some(e => e.isIntersecting)) return;
+
+      // Ignore when the sentinel sits in the upper viewport — typical after a
+      // hash jump to #firm-insights (below this gallery). Auto-load should only
+      // run while the user is scrolling down through the collage.
+      const top = sentinel.getBoundingClientRect().top;
+      if (top < window.innerHeight * 0.4) return;
+
+      appendBatch();
     }, { rootMargin: SENTINEL_ROOT_MARGIN, threshold: 0 });
 
     sentinelObserver.observe(sentinel);
