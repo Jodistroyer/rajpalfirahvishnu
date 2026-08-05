@@ -156,6 +156,17 @@ function pressImageUrl(item) {
 }
 
 /**
+ * Convert a date-only string like "2026-07-29" into an ISO 8601 datetime
+ * with timezone so Google accepts it as a valid schema.org dateTime.
+ */
+function schemaUploadDate(datePublished) {
+  if (!datePublished) return undefined;
+  if (datePublished.includes('T')) return datePublished; // already datetime
+  // Site pages use en-MY/ms-MY; "T00:00:00+08:00" keeps an explicit timezone.
+  return `${datePublished}T00:00:00+08:00`;
+}
+
+/**
  * @param {PressItem} item
  */
 function pressSchemaPart(item) {
@@ -169,6 +180,8 @@ function pressSchemaPart(item) {
     '@type': item.type === 'video' ? 'VideoObject' : 'NewsArticle',
     '@id': `${item.url}#press-ref`,
     headline: item.title,
+    // Search Console requires "name" for VideoObject.
+    name: item.type === 'video' ? item.title : undefined,
     description: meta.description,
     url: item.url,
     datePublished: meta.datePublished,
@@ -188,12 +201,14 @@ function pressSchemaPart(item) {
       },
     },
     keywords: seoKeywords(),
+    // Search Console requires "thumbnailUrl" for VideoObject.
+    thumbnailUrl: item.type === 'video' ? image : undefined,
   };
 
   if (image) part.image = image;
   if (item.type === 'video' && item.youtubeId) {
     part.embedUrl = item.url;
-    part.uploadDate = meta.datePublished;
+    part.uploadDate = schemaUploadDate(meta.datePublished);
   }
 
   return part;
