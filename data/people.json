@@ -11,7 +11,7 @@
       "addressRegion": "Selangor",
       "postalCode": "68100",
       "addressCountry": "MY",
-      "telephone": "+60-3-61868653",
+      "telephone": ["+60-3-6186-8652", "+60-12-261-5635"],
       "email": "rajpal.associates@gmail.com"
     },
     "petaling-jaya": {
@@ -55,7 +55,7 @@
         "ms": "Rakan Kongsi Kanan pakar litigasi jenayah dengan 30+ tahun pengalaman perbicaraan dan rayuan."
       },
       "email": "rajpal.associates@gmail.com",
-      "telephone": ["+60-3-61868653"],
+      "telephone": ["+60-3-6186-8652", "+60-12-261-5635"],
       "office": "batu-caves",
       "faq": "criminal-law",
       "knowsAbout": ["Criminal Law", "Criminal Litigation", "Criminal Defence", "AMLA", "White-Collar Crime", "Corporate Criminal Advisory", "Securities and Money Markets", "Corruption", "Fraud", "MACC Matters", "Drug Offences", "Murder", "SOSMA", "POTA", "Preventive Detention", "Environmental Offences", "Immigration Offences", "Penal Code Offences"],
@@ -146,7 +146,7 @@
         "ms": "Peguambela dengan 10+ tahun pengalaman litigasi jenayah dalam Kanun Keseksaan, SOSMA, ATIPSOM, kemalangan, dan Syariah."
       },
       "email": "rajpal.associates@gmail.com",
-      "telephone": ["+60-3-61868653"],
+      "telephone": ["+60-3-6186-8652", "+60-12-261-5635"],
       "office": "batu-caves",
       "faq": "criminal-law",
       "knowsAbout": ["Criminal Law", "SOSMA", "ATIPSOM", "Syariah Law"],
@@ -195,7 +195,7 @@
         "ms": "Peguambela dengan 10+ tahun pengalaman litigasi jenayah dalam Kanun Keseksaan, SOSMA, ATIPSOM, AMLA, dan jenayah komersial."
       },
       "email": "rajpal.associates@gmail.com",
-      "telephone": ["+60-3-61868653"],
+      "telephone": ["+60-3-6186-8652", "+60-12-261-5635"],
       "office": "batu-caves",
       "faq": "criminal-law",
       "knowsAbout": ["Criminal Law", "SOSMA", "ATIPSOM", "AMLA", "Commercial Crime"],
@@ -235,7 +235,7 @@
         "ms": "Peguambela dengan 13 tahun pengalaman litigasi jenayah dalam pembelaan jenayah dan kesalahan dadah. Peguam YBGK dan bekas pegawai Polis Diraja Malaysia."
       },
       "email": "rajpal.associates@gmail.com",
-      "telephone": ["+60-3-61868653"],
+      "telephone": ["+60-3-6186-8652", "+60-12-261-5635"],
       "office": "batu-caves",
       "faq": "criminal-law",
       "knowsAbout": ["Criminal Law", "Criminal Defence", "Drug Offences", "Penal Code Offences"],
