@@ -21,32 +21,7 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://rfvlegal.com/ms/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://rfvlegal.com/ms/media/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://rfvlegal.com/ms/media/#press</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://rfvlegal.com/ms/media/#clippings</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://rfvlegal.com/media/#firm-insights</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://rfvlegal.com/ms/media/#firm-insights</loc>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -99,6 +74,31 @@
     <loc>https://rfvlegal.com/ms/insights/the-correct-practical-approach-to-civil-appeals/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rfvlegal.com/ms/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://rfvlegal.com/ms/media/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://rfvlegal.com/ms/media/#press</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://rfvlegal.com/ms/media/#clippings</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://rfvlegal.com/ms/media/#firm-insights</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://rfvlegal.com/legal/privacy-policy/</loc>
