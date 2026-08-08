@@ -268,10 +268,13 @@ export function buildPressJsonLd(items) {
 
 /**
  * Inject structured data during idle time (non-blocking).
+ * Homepage previews skip this — VideoObject/NewsArticle JSON-LD belongs on /media/
+ * only (static #press-jsonld). Injecting it on / made Search Console flag 7 invalid videos.
  */
 export function initPressSeo() {
   const grid = document.getElementById('press-grid');
   if (!grid || document.getElementById('press-jsonld')) return;
+  if (grid.dataset.pressMode === 'preview') return;
 
   const inject = () => {
     const script = document.createElement('script');

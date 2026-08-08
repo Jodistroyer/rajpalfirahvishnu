@@ -138,10 +138,12 @@ export function buildClippingsJsonLd(clippings) {
 
 /**
  * Inject structured data during idle time (non-blocking).
+ * Homepage previews skip this — full CollectionPage JSON-LD belongs on /media/ only.
  */
 export function initClippingsSeo() {
   const gallery = document.getElementById('clippings-gallery') || document.getElementById('clippings');
   if (!gallery || document.getElementById('clippings-jsonld')) return;
+  if (gallery.dataset.clippingsMode === 'preview') return;
 
   const inject = async () => {
     const { loadClippingsData } = await import('./clippings-data-loader.js');
