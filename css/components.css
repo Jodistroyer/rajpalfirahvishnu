@@ -2480,7 +2480,7 @@ a.media-card {
   margin-top: 2.5rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
 @media (min-width: 768px) {
@@ -2488,13 +2488,49 @@ a.media-card {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    gap: 1.5rem;
   }
+}
+
+/* Malaysian Bar Council link (Ruling 17.05) */
+.footer__bar-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+  color: rgba(255, 255, 255, 0.55);
+  transition: color var(--transition-ui), opacity var(--transition-ui);
+}
+
+.footer__bar-link:hover {
+  color: var(--color-accent);
+  opacity: 1;
+}
+
+.footer__bar-logo {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  border-radius: var(--radius-xs);
+  background-color: #000;
+}
+
+.footer__bar-text {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
 }
 
 .footer__legal {
   font-size: 0.8125rem;
   color: rgba(255, 255, 255, 0.28);
   line-height: 1.55;
+}
+
+.footer__bottom > .footer__legal:not(.footer__legal--links) {
+  flex: 1;
+  min-width: 0;
 }
 
 .footer__legal-link {
