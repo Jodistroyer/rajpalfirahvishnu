@@ -93,17 +93,6 @@ function pressImageLoc(item) {
   return null;
 }
 
-/**
- * Convert a date-only string like "2026-07-29" into an ISO 8601 datetime
- * with timezone so Google accepts it as a valid schema.org dateTime.
- * @param {string|undefined|null} datePublished
- */
-function schemaUploadDate(datePublished) {
-  if (!datePublished) return undefined;
-  if (datePublished.includes('T')) return datePublished;
-  return `${datePublished}T00:00:00+08:00`;
-}
-
 function buildPressNoscript(items, heading) {
   const sorted = [...items].sort((a, b) => b.sort.localeCompare(a.sort));
   const links = sorted.map(item => `
@@ -228,12 +217,13 @@ function buildPressJsonLd(items, ms) {
       { '@type': 'LegalService', name: FIRM_NAME },
     ],
     numberOfItems: sorted.length,
+    // Always NewsArticle — never VideoObject. /media/ is a press archive, not a
+    // Google video watch page; VideoObject kept causing Search Console noise.
     hasPart: sorted.map(item => {
       /** @type {Record<string, unknown>} */
       const part = {
-        '@type': item.type === 'video' ? 'VideoObject' : 'NewsArticle',
+        '@type': 'NewsArticle',
         headline: item.title,
-        name: item.type === 'video' ? item.title : undefined,
         description: pressSeoCaption(item, ms),
         url: item.url,
         datePublished: item.sort.slice(0, 10),
@@ -247,14 +237,6 @@ function buildPressJsonLd(items, ms) {
       };
       const image = pressImageLoc(item);
       if (image) part.image = image;
-      if (item.type === 'video' && image) {
-        // Search Console requires "thumbnailUrl" for VideoObject.
-        part.thumbnailUrl = image;
-      }
-      if (item.type === 'video' && item.youtubeId) {
-        part.embedUrl = item.url;
-        part.uploadDate = schemaUploadDate(item.sort.slice(0, 10));
-      }
       return part;
     }),
   };

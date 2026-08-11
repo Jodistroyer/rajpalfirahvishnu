@@ -63,12 +63,31 @@ import { CONSULTATION_FORM_URL } from './site-config.js';
   // ── Make whole service cards clickable to their FAQ ──
   initServiceCardLinks();
 
-  // ── Handle ?from= query param on profile pages ──
-  const params = new URLSearchParams(window.location.search);
-  initProfileBack(params);
+  // ── Profile back-link context (sessionStorage / legacy ?from=) ──
+  initFromLinkCapture();
+  initProfileBack();
   initMediaPageBack();
 
 })();
+
+/**
+ * Capture data-from on internal links into sessionStorage so profile/insight
+ * pages can show a contextual back link without polluting crawlable URLs
+ * with ?from= query params (Search Console flagged those as HTTPS issues).
+ */
+function initFromLinkCapture() {
+  document.addEventListener('click', (event) => {
+    const link = event.target.closest('a[data-from]');
+    if (!link) return;
+    const from = link.getAttribute('data-from');
+    if (!from) return;
+    try {
+      sessionStorage.setItem('rfv-from', from);
+    } catch {
+      /* private mode / blocked storage */
+    }
+  });
+}
 
 /**
  * Make each service card clickable to its FAQ page.
@@ -133,8 +152,17 @@ function initConsultationLinks() {
 }
 
 /** Profile pages opened from How We Can Help or FAQ → back link returns to the referring section. */
-function initProfileBack(params) {
-  const from = params.get('from');
+function initProfileBack() {
+  const params = new URLSearchParams(window.location.search);
+  let from = params.get('from');
+  if (!from) {
+    try {
+      from = sessionStorage.getItem('rfv-from');
+      if (from) sessionStorage.removeItem('rfv-from');
+    } catch {
+      from = null;
+    }
+  }
   if (!from) return;
 
   const isMs = /\/ms\//.test(window.location.pathname);
