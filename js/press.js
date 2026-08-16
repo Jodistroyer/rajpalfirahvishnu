@@ -5,7 +5,7 @@
 import { getPressItems, getPressCategories } from './media-locale.js';
 import { observeLazyCards } from './lazymedia.js';
 import { getPressCounselFilters, getPressItemCounsel, getPressSeoMeta } from './press-seo.js';
-import { siteAssetUrl, isMsSubpage } from './site-config.js';
+import { siteAssetUrl, isMsSubpage, stripSearchParams } from './site-config.js';
 
 /** @typedef {import('./press-data.js').PressItem} PressItem */
 
@@ -32,10 +32,21 @@ function escHtml(str) {
 /** @returns {string} */
 function readInitialCounsel() {
   const param = new URLSearchParams(window.location.search).get('counsel');
-  if (param && getPressCounselFilters().some((c) => c.id === param)) {
-    return param;
+  let stored = null;
+  try {
+    stored = sessionStorage.getItem('rfv-counsel');
+    if (stored) sessionStorage.removeItem('rfv-counsel');
+  } catch {
+    stored = null;
   }
-  return 'all';
+
+  const valid = (value) => getPressCounselFilters().some((c) => c.id === value);
+  const counsel = (param && valid(param) && param)
+    || (stored && valid(stored) && stored)
+    || 'all';
+
+  stripSearchParams(['counsel']);
+  return counsel;
 }
 
 function resolveThumb(item) {

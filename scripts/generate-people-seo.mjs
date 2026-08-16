@@ -307,9 +307,9 @@ function mediaPath(assetPrefix, lang) {
 
 function buildPressSidebarLink(person, lang, assetPrefix) {
   if (!getPressItemsForPerson(person.slug).length) return '';
-  const href = `${mediaPath(assetPrefix, lang)}?counsel=${person.slug}#press`;
+  const href = `${mediaPath(assetPrefix, lang)}#press`;
   const label = lang === 'ms' ? 'Dalam Media' : 'In the Press';
-  return `\n            <a href="${href}" class="profile-sidebar__resource">${label} <span aria-hidden="true">→</span></a>`;
+  return `\n            <a href="${href}" data-counsel="${person.slug}" class="profile-sidebar__resource">${label} <span aria-hidden="true">→</span></a>`;
 }
 
 function buildProfilePressBlock(person, lang, assetPrefix) {
@@ -324,10 +324,10 @@ function buildProfilePressBlock(person, lang, assetPrefix) {
   const viewAll = lang === 'ms'
     ? `Lihat semua dalam Bilik Media (${items.length})`
     : `View all in Media Room (${items.length})`;
-  const mediaBase = `${mediaPath(assetPrefix, lang)}?counsel=${person.slug}`;
+  const mediaBase = mediaPath(assetPrefix, lang);
 
   const listItems = visible.map((item) => `              <li class="profile-press__item">
-                <a href="${escHtml(`${mediaBase}#press-${item.id}`)}" class="profile-press__link">${escHtml(item.title)}</a>
+                <a href="${escHtml(`${mediaBase}#press-${item.id}`)}" data-counsel="${escHtml(person.slug)}" class="profile-press__link">${escHtml(item.title)}</a>
                 <span class="profile-press__meta">${escHtml(item.publisher)} · ${escHtml(item.dateLabel)}</span>
               </li>`).join('\n');
 
@@ -339,7 +339,7 @@ function buildProfilePressBlock(person, lang, assetPrefix) {
 ${listItems}
               </ul>
               <p class="profile-press__footer">
-                <a href="${escHtml(`${mediaBase}#press`)}" class="profile-sidebar__resource">${viewAll} <span aria-hidden="true">→</span></a>
+                <a href="${escHtml(`${mediaBase}#press`)}" data-counsel="${escHtml(person.slug)}" class="profile-sidebar__resource">${viewAll} <span aria-hidden="true">→</span></a>
               </p>
             </section>
             <!-- profile-press:end -->`;
@@ -431,7 +431,7 @@ function patchProfileHtml(relPath, person, lang) {
     html = html.replace(contactBtnRe, `$1${buildFaqLink(person, lang, assetPrefix)}`);
   }
 
-  if (getPressItemsForPerson(person.slug).length && !html.includes(`counsel=${person.slug}#press`)) {
+  if (getPressItemsForPerson(person.slug).length && !html.includes(`data-counsel="${person.slug}"`)) {
     html = html.replace(contactBtnRe, `$1${buildPressSidebarLink(person, lang, assetPrefix)}`);
   }
 

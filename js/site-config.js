@@ -151,3 +151,23 @@ export function pressPageUrl() {
 export function clippingsAssetBase() {
   return siteAssetUrl('assets/media/newspaper-clippings/');
 }
+
+/**
+ * Drop tracking/filter query params from the address bar without reloading.
+ * Canonical URLs never include these; leaving them visible created duplicate
+ * crawl URLs in Search Console ("Alternative page with proper canonical").
+ * @param {string[]} keys
+ */
+export function stripSearchParams(keys) {
+  const url = new URL(window.location.href);
+  let changed = false;
+  for (const key of keys) {
+    if (url.searchParams.has(key)) {
+      url.searchParams.delete(key);
+      changed = true;
+    }
+  }
+  if (!changed) return;
+  const search = url.searchParams.toString();
+  history.replaceState(null, '', `${url.pathname}${search ? `?${search}` : ''}${url.hash}`);
+}

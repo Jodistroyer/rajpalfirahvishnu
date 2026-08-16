@@ -15,6 +15,16 @@ import { INSIGHTS } from '../js/insights-data.js';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, '..');
 
+const FAQ_TOPICS = [
+  'criminal-law',
+  'civil-litigation',
+  'property-conveyancing',
+  'probate-estate',
+  'corporate-commercial',
+  'family-law',
+  'bankruptcy-law',
+];
+
 /** @type {string} */
 const SITE_ORIGIN = 'https://rfvlegal.com';
 
@@ -24,6 +34,8 @@ const LAWYER_NAME = 'Dato\' Rajpal Singh';
 function readFile(rel) {
   return fs.readFileSync(path.join(root, rel), 'utf8');
 }
+
+const PEOPLE_SLUGS = JSON.parse(readFile('data/people.json')).people.map((p) => p.slug);
 
 function escXml(s) {
   return s
@@ -267,19 +279,21 @@ const featuredPress = PRESS_ITEMS.filter(item => item.featured);
 
 const pages = [
   { loc: `${SITE_ORIGIN}/`, priority: '1.0', changefreq: 'weekly' },
+  { loc: `${SITE_ORIGIN}/ms/`, priority: '0.9', changefreq: 'weekly' },
   { loc: `${SITE_ORIGIN}/media/`, priority: '0.9', changefreq: 'weekly' },
-  { loc: `${SITE_ORIGIN}/media/#press`, priority: '0.9', changefreq: 'weekly' },
-  { loc: `${SITE_ORIGIN}/media/#clippings`, priority: '0.9', changefreq: 'monthly' },
-  { loc: `${SITE_ORIGIN}/media/#firm-insights`, priority: '0.85', changefreq: 'weekly' },
+  { loc: `${SITE_ORIGIN}/ms/media/`, priority: '0.9', changefreq: 'weekly' },
+  ...PEOPLE_SLUGS.flatMap(slug => [
+    { loc: `${SITE_ORIGIN}/people/${slug}/`, priority: '0.85', changefreq: 'monthly' },
+    { loc: `${SITE_ORIGIN}/ms/people/${slug}/`, priority: '0.85', changefreq: 'monthly' },
+  ]),
+  ...FAQ_TOPICS.flatMap(topic => [
+    { loc: `${SITE_ORIGIN}/faq/${topic}/`, priority: '0.8', changefreq: 'monthly' },
+    { loc: `${SITE_ORIGIN}/ms/faq/${topic}/`, priority: '0.8', changefreq: 'monthly' },
+  ]),
   ...INSIGHTS.flatMap(item => [
     { loc: `${SITE_ORIGIN}/insights/${item.id}/`, priority: '0.8', changefreq: 'monthly' },
     { loc: `${SITE_ORIGIN}/ms/insights/${item.id}/`, priority: '0.8', changefreq: 'monthly' },
   ]),
-  { loc: `${SITE_ORIGIN}/ms/`, priority: '0.9', changefreq: 'weekly' },
-  { loc: `${SITE_ORIGIN}/ms/media/`, priority: '0.9', changefreq: 'weekly' },
-  { loc: `${SITE_ORIGIN}/ms/media/#press`, priority: '0.9', changefreq: 'weekly' },
-  { loc: `${SITE_ORIGIN}/ms/media/#clippings`, priority: '0.9', changefreq: 'monthly' },
-  { loc: `${SITE_ORIGIN}/ms/media/#firm-insights`, priority: '0.85', changefreq: 'weekly' },
   { loc: `${SITE_ORIGIN}/legal/privacy-policy/`, priority: '0.5', changefreq: 'yearly' },
   { loc: `${SITE_ORIGIN}/legal/terms-of-use/`, priority: '0.5', changefreq: 'yearly' },
   { loc: `${SITE_ORIGIN}/ms/legal/dasar-privasi/`, priority: '0.5', changefreq: 'yearly' },
@@ -309,8 +323,8 @@ function clippingImageEntry(c, pageLoc) {
 }
 
 const clippingImageEntries = CLIPPINGS.flatMap(c => [
-  clippingImageEntry(c, `${SITE_ORIGIN}/media/#clippings`),
-  clippingImageEntry(c, `${SITE_ORIGIN}/ms/media/#clippings`),
+  clippingImageEntry(c, `${SITE_ORIGIN}/media/`),
+  clippingImageEntry(c, `${SITE_ORIGIN}/ms/media/`),
 ]);
 
 const pressImageEntries = PRESS_ITEMS.flatMap(item => {
@@ -324,7 +338,7 @@ const pressImageEntries = PRESS_ITEMS.flatMap(item => {
       <image:caption>${escXml(pressSeoCaption(item))}</image:caption>
     </image:image>
   </url>`;
-  return [entry(`${SITE_ORIGIN}/media/#press`), entry(`${SITE_ORIGIN}/ms/media/#press`)];
+  return [entry(`${SITE_ORIGIN}/media/`), entry(`${SITE_ORIGIN}/ms/media/`)];
 });
 
 const imageSitemap = `<?xml version="1.0" encoding="UTF-8"?>

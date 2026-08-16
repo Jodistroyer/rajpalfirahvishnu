@@ -31,11 +31,11 @@ function getProfileSlug() {
  * @param {string} counselSlug
  * @param {string} [itemId]
  */
-function mediaPressUrl(counselSlug, itemId) {
+function mediaPressUrl(itemId) {
   const ms = isMsSubpage();
   const prefix = ms ? '../../../ms/media/' : '../../media/';
   const hash = itemId ? `#press-${itemId}` : '#press';
-  return `${prefix}?counsel=${counselSlug}${hash}`;
+  return `${prefix}${hash}`;
 }
 
 /** @param {PressItem[]} items */
@@ -79,7 +79,7 @@ export function initProfilePress() {
 
   const itemsHtml = visible.map((item) => `
       <li class="profile-press__item">
-        <a href="${escHtml(mediaPressUrl(slug, item.id))}" class="profile-press__link">${escHtml(item.title)}</a>
+        <a href="${escHtml(mediaPressUrl(item.id))}" data-counsel="${escHtml(slug)}" class="profile-press__link">${escHtml(item.title)}</a>
         <span class="profile-press__meta">${escHtml(item.publisher)} · ${escHtml(item.dateLabel)}</span>
       </li>`).join('');
 
@@ -92,7 +92,7 @@ export function initProfilePress() {
     <p class="profile-section__text">${intro}</p>
     <ul class="profile-press__list">${itemsHtml}</ul>
     <p class="profile-press__footer">
-      <a href="${escHtml(mediaPressUrl(slug))}" class="profile-sidebar__resource">${viewAllLabel} <span aria-hidden="true">→</span></a>
+      <a href="${escHtml(mediaPressUrl())}" data-counsel="${escHtml(slug)}" class="profile-sidebar__resource">${viewAllLabel} <span aria-hidden="true">→</span></a>
     </p>`;
 
   main.appendChild(section);

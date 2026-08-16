@@ -16,9 +16,14 @@ import { initPress } from './press.js';
 import { initProfilePhotos } from './profile-photo.js';
 import { initProfilePeopleNav } from './profile-people-nav.js';
 import { initProfilePress } from './profile-press.js';
-import { CONSULTATION_FORM_URL } from './site-config.js';
+import { CONSULTATION_FORM_URL, stripSearchParams } from './site-config.js';
 
 (function bootstrap() {
+
+  if (window.location.protocol === 'http:' && window.location.hostname === 'rfvlegal.com') {
+    window.location.replace(`https://rfvlegal.com${window.location.pathname}${window.location.search}${window.location.hash}`);
+    return;
+  }
 
   // Mark JavaScript as available for CSS progressive enhancement
   document.documentElement.classList.remove('no-js');
@@ -77,12 +82,13 @@ import { CONSULTATION_FORM_URL } from './site-config.js';
  */
 function initFromLinkCapture() {
   document.addEventListener('click', (event) => {
-    const link = event.target.closest('a[data-from]');
+    const link = event.target.closest('a[data-from], a[data-counsel]');
     if (!link) return;
-    const from = link.getAttribute('data-from');
-    if (!from) return;
     try {
-      sessionStorage.setItem('rfv-from', from);
+      const from = link.getAttribute('data-from');
+      if (from) sessionStorage.setItem('rfv-from', from);
+      const counsel = link.getAttribute('data-counsel');
+      if (counsel) sessionStorage.setItem('rfv-counsel', counsel);
     } catch {
       /* private mode / blocked storage */
     }
@@ -163,6 +169,7 @@ function initProfileBack() {
       from = null;
     }
   }
+  stripSearchParams(['from']);
   if (!from) return;
 
   const isMs = /\/ms\//.test(window.location.pathname);

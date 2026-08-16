@@ -386,13 +386,13 @@ function buildInsightCard(item, lang, hrefPrefix, listing = 'home') {
   const readMore = lang === 'ms' ? 'Baca Lagi' : 'Read More';
   const byLabel = lang === 'ms' ? 'Oleh' : 'By';
   const from = listing === 'media' ? 'insights-media' : 'insights';
-  const href = `${hrefPrefix}insights/${item.id}/?from=${from}`;
+  const href = `${hrefPrefix}insights/${item.id}/`;
   const aria = lang === 'ms'
     ? `Baca artikel penuh: ${locale.title}`
     : `Read full article: ${locale.title}`;
 
   return `
-          <a href="${escHtml(href)}" class="media-card lazy media-card--insight" aria-label="${escHtml(aria)}">
+          <a href="${escHtml(href)}" data-from="${from}" class="media-card lazy media-card--insight" aria-label="${escHtml(aria)}">
             <div class="media-card__meta">
               <span class="media-card__category">${escHtml(locale.category)}</span>
               <time class="media-card__date" datetime="${escHtml(locale.sort)}">${escHtml(locale.dateLabel)}</time>
