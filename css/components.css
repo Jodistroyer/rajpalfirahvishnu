@@ -431,6 +431,10 @@
 }
 
 /* Background image */
+.hero__media {
+  display: contents;
+}
+
 .hero__fallback {
   position: absolute;
   inset: 0;
@@ -473,6 +477,10 @@
   letter-spacing: -0.015em;
   color: #fff;
   margin-bottom: 1.5rem;
+}
+
+.hero__headline-inline {
+  display: none;
 }
 
 .hero__subheadline {
@@ -523,6 +531,161 @@
   @keyframes scroll-pulse {
     0%, 100% { opacity: 0.2; transform: scaleY(0.4); transform-origin: top; }
     50%       { opacity: 1;   transform: scaleY(1);   transform-origin: top; }
+  }
+}
+
+/* Mobile / portrait: the group photo is landscape, so a full-viewport
+   cover crop shows only the centre face. Show the team at near-native
+   aspect ratio and place the copy below. Desktop layout is unchanged. */
+@media (max-width: 767px), (max-aspect-ratio: 4 / 5) {
+  .hero {
+    min-height: 100svh;
+    min-height: 100dvh;
+    padding-top: var(--nav-height);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    justify-content: flex-start;
+    background-color: var(--color-dark);
+  }
+
+  /* Equal spacers keep the photo + copy centered when there is room,
+     and collapse on short phones so the scroll cue cannot cover the CTAs. */
+  .hero::before,
+  .hero::after {
+    content: "";
+    flex: 1 1 0;
+    min-height: 0;
+    pointer-events: none;
+  }
+
+  .hero::before { order: 1; }
+  .hero__media { order: 2; }
+  .hero__content { order: 3; }
+  .hero::after { order: 4; }
+
+  .hero__media {
+    display: block;
+    position: relative;
+    flex-shrink: 0;
+    width: 100%;
+    isolation: isolate;
+  }
+
+  .hero__media::before {
+    content: "";
+    position: absolute;
+    inset: -22% -8%;
+    background: url("../assets/fallback.jpg") center 18% / cover no-repeat;
+    filter: blur(28px) brightness(0.22);
+    opacity: 0.95;
+    z-index: 0;
+    pointer-events: none;
+    transform: translateZ(0);
+  }
+
+  .hero__fallback {
+    position: relative;
+    inset: auto;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: center 18%;
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      #000 16%,
+      #000 84%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      #000 16%,
+      #000 84%,
+      transparent 100%
+    );
+  }
+
+  .hero__overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(17, 17, 17, 0.12) 0%,
+      rgba(17, 17, 17, 0.12) 48%,
+      rgba(17, 17, 17, 0.72) 78%,
+      var(--color-dark) 100%
+    );
+  }
+
+  .hero__content {
+    flex: 0 0 auto;
+    min-height: 0;
+    padding-top: 1.25rem;
+    padding-bottom: 0;
+    justify-content: flex-start;
+    container-type: inline-size;
+  }
+
+  .hero__headline,
+  .hero__subheadline {
+    text-align: center;
+  }
+
+  .hero__headline-stack {
+    display: none;
+  }
+
+  .hero__headline-inline {
+    display: block;
+  }
+
+  .hero__headline {
+    font-size: clamp(1.15rem, calc(100cqw / 12.3), 2.45rem);
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    white-space: nowrap;
+  }
+
+  .hero__subheadline {
+    margin-inline: auto;
+  }
+
+  .hero__cta-group {
+    justify-content: center;
+    width: 100%;
+    gap: 0.75rem 1rem;
+    margin-bottom: 0;
+  }
+
+  .hero__cta-group .btn {
+    flex: 1 1 12rem;
+    max-width: 100%;
+    justify-content: center;
+    text-align: center;
+    white-space: normal;
+    padding-inline: clamp(0.875rem, 3.5vw, 2.25rem);
+    font-size: clamp(0.875rem, 2.6vw, 1rem);
+  }
+
+  .hero__scroll-cue {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    order: 5;
+    flex-shrink: 0;
+    align-self: center;
+    z-index: 2;
+    margin-top: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero__scroll-line {
+    height: 36px;
+  }
+
+  .services.section-pad {
+    padding-block-start: 1.75rem;
   }
 }
 
