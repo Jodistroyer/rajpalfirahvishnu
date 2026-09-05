@@ -8,13 +8,19 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { INSIGHTS } from '../js/insights-data.js';
 import { formatArticleContent, escHtml } from '../js/insights-format.js';
+import { getWhatsAppUrl, whatsappCtaAriaLabel, whatsappCtaInnerHtml } from '../js/site-config.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, '..');
 
 const SITE_ORIGIN = 'https://rfvlegal.com';
 const FIRM_NAME = 'Rajpal, Firah & Vishnu';
-const CONSULTATION_URL = 'https://forms.gle/AmrRiv3vucivaYid7';
+
+/** @param {string} lang */
+function whatsappCtaAnchor(lang, className) {
+  const ms = lang === 'ms';
+  return `<a href="${getWhatsAppUrl(ms)}" class="${className}" target="_blank" rel="noopener noreferrer" aria-label="${whatsappCtaAriaLabel(ms)}">${whatsappCtaInnerHtml({ ms })}</a>`;
+}
 
 function readFile(rel) {
   return fs.readFileSync(path.join(root, rel), 'utf8');
@@ -251,7 +257,9 @@ function buildArticlePage(item, lang) {
   const ogLocale = lang === 'ms' ? 'ms_MY' : 'en_MY';
   const backLabel = lang === 'ms' ? '← Kembali ke Wawasan Firma' : '← Back to Firm Insights';
   const byLabel = lang === 'ms' ? 'Oleh' : 'By';
-  const ctaLabel = lang === 'ms' ? 'Tempah Perundingan' : 'Book a Consultation';
+  const navCta = whatsappCtaAnchor(lang, 'btn btn--primary btn--whatsapp navbar__cta');
+  const articleCta = whatsappCtaAnchor(lang, 'btn btn--primary btn--whatsapp');
+  const footerCta = whatsappCtaAnchor(lang, 'btn btn--primary btn--large btn--whatsapp');
   const navPeople = lang === 'ms' ? 'Pasukan Kami' : 'Our People';
   const navMedia = lang === 'ms' ? 'Bilik Media' : 'Media Room';
   const navContact = lang === 'ms' ? 'Hubungi Kami' : 'Contact Us';
@@ -314,7 +322,7 @@ ${JSON.stringify(buildArticleJsonLd(item, lang), null, 2)}
             <li><a href="${paths.contactHash}" class="navbar__link">${navContact}</a></li>
           </ul>
         </nav>
-        <a href="${paths.contactHash}" class="btn btn--primary navbar__cta">${ctaLabel}</a>
+        ${navCta}
         <button class="hamburger" id="hamburger-btn" aria-label="${hamburgerAria}" aria-expanded="false" aria-controls="nav-links">
           <span class="hamburger__line" style="background:var(--color-ink-900)"></span>
           <span class="hamburger__line" style="background:var(--color-ink-900)"></span>
@@ -346,7 +354,7 @@ ${body}
         </div>
 
         <footer class="insight-article__footer">
-          <a href="${CONSULTATION_URL}" class="btn btn--primary" target="_blank" rel="noopener noreferrer">${ctaLabel}</a>
+          ${articleCta}
         </footer>
       </div>
     </article>
@@ -357,9 +365,9 @@ ${body}
       <div class="footer__cta-band" style="padding-top: 2.5rem;">
         <div>
           <p class="footer__cta-headline">${lang === 'ms' ? 'Perlukan Bantuan Guaman?' : 'Need Legal Assistance?'}</p>
-          <p class="footer__cta-sub">${lang === 'ms' ? 'Tempah perundingan · Tiada obligasi' : 'Book a consultation · No obligation'}</p>
+          <p class="footer__cta-sub">${lang === 'ms' ? 'WhatsApp kami · Tiada obligasi' : 'WhatsApp us · No obligation'}</p>
         </div>
-        <a href="${paths.contactHash}" class="btn btn--primary btn--large">${ctaLabel}</a>
+        ${footerCta}
       </div>
       <div class="footer__divider"></div>
       <div class="footer__bottom">

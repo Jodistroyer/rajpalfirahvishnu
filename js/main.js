@@ -16,7 +16,13 @@ import { initPress } from './press.js';
 import { initProfilePhotos } from './profile-photo.js';
 import { initProfilePeopleNav } from './profile-people-nav.js';
 import { initProfilePress } from './profile-press.js';
-import { CONSULTATION_FORM_URL, stripSearchParams } from './site-config.js';
+import {
+  getWhatsAppUrl,
+  isMsSubpage,
+  stripSearchParams,
+  whatsappCtaAriaLabel,
+  whatsappCtaInnerHtml,
+} from './site-config.js';
 
 (function bootstrap() {
 
@@ -132,28 +138,45 @@ function initServiceCardLinks() {
   });
 }
 
-/** Wire consultation form links from site-config (single place to update the Google Form URL). */
+/** Wire consultation CTAs to WhatsApp (single place to update the number). */
 function initConsultationLinks() {
+  const ms = isMsSubpage();
+  const url = getWhatsAppUrl(ms);
+  const aria = whatsappCtaAriaLabel(ms);
+  const inner = whatsappCtaInnerHtml({ ms });
+
+  const isConsultationCta = (link) => {
+    if (link.hasAttribute('data-consultation-form')) return true;
+    if (link.classList.contains('navbar__link')) return false;
+    if (link.classList.contains('footer__nav-link')) return false;
+
+    const href = link.getAttribute('href') || '';
+    if (/#(?:contact|hubungi)$/.test(href.split('?')[0])) return true;
+    if (href.includes('forms.gle') || href.includes('docs.google.com/forms')) return true;
+    return href.includes('wa.me/60122615635') && link.classList.contains('btn');
+  };
+
   const wire = (link) => {
-    link.setAttribute('href', CONSULTATION_FORM_URL);
+    link.setAttribute('href', url);
     link.setAttribute('target', '_blank');
     link.setAttribute('rel', 'noopener noreferrer');
+
+    if (!link.classList.contains('btn') && !link.hasAttribute('data-consultation-form')) return;
+
+    link.classList.add('btn--whatsapp');
+    link.setAttribute('aria-label', aria);
+    link.innerHTML = inner;
   };
 
   document.querySelectorAll('a[href]').forEach(link => {
-    if (link.hasAttribute('data-consultation-form')) {
-      wire(link);
-      return;
+    if (isConsultationCta(link)) wire(link);
+  });
+
+  const subCopy = ms ? 'WhatsApp kami · Tiada obligasi' : 'WhatsApp us · No obligation';
+  document.querySelectorAll('.faq-page__cta-sub, .footer__cta-sub').forEach(el => {
+    if (/book a consultation|tempah perundingan|tempah konsultasi/i.test(el.textContent || '')) {
+      el.textContent = subCopy;
     }
-
-    const href = link.getAttribute('href') || '';
-    if (!/#(?:contact|hubungi)$/.test(href.split('?')[0])) return;
-
-    // Keep nav/footer text links scrolling to the contact section on the homepage.
-    if (link.classList.contains('navbar__link')) return;
-    if (link.classList.contains('footer__nav-link')) return;
-
-    wire(link);
   });
 }
 

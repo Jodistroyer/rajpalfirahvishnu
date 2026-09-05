@@ -12,7 +12,7 @@
 
 import { enhanceCopyable } from './copy.js';
 import { formatArticleContent } from './insights-format.js';
-import { CONSULTATION_FORM_URL, isMsSubpage, siteAssetUrl } from './site-config.js';
+import { getWhatsAppUrl, isMsSubpage, siteAssetUrl, whatsappCtaAriaLabel, whatsappCtaInnerHtml } from './site-config.js';
 
 /** @type {Record<string, string>} author display name → people profile path from site root (EN) */
 const AUTHOR_PROFILE_PATHS = {
@@ -181,8 +181,8 @@ function openAttorneyModal(card) {
       </div>
       <p class="attorney-modal__bio">${escHtml(bio)}</p>
       <div class="attorney-modal__cta-row">
-        <a href="${CONSULTATION_FORM_URL}" class="btn btn--primary" target="_blank" rel="noopener noreferrer">
-          Contact ${escHtml(firstName)}
+        <a href="${getWhatsAppUrl(isMsSubpage())}" class="btn btn--primary btn--whatsapp" target="_blank" rel="noopener noreferrer" aria-label="${whatsappCtaAriaLabel(isMsSubpage())}">
+          ${whatsappCtaInnerHtml({ ms: isMsSubpage(), label: isMsSubpage() ? `Hubungi ${escHtml(firstName)}` : `Contact ${escHtml(firstName)}` })}
         </a>
         <div class="attorney-modal__contact-links">
           ${emailLink}
@@ -226,8 +226,8 @@ function openArticleModal(card) {
       ${authorBlock}
       <div class="article-modal__content">${formatArticleContent(content, profileHref)}</div>
       <div class="article-modal__cta-row">
-        <a href="${CONSULTATION_FORM_URL}" class="btn btn--primary" target="_blank" rel="noopener noreferrer">
-          ${ms ? 'Tempah Perundingan' : 'Book a Consultation'}
+        <a href="${getWhatsAppUrl(ms)}" class="btn btn--primary btn--whatsapp" target="_blank" rel="noopener noreferrer" aria-label="${whatsappCtaAriaLabel(ms)}">
+          ${whatsappCtaInnerHtml({ ms })}
         </a>
       </div>
     </div>`;
