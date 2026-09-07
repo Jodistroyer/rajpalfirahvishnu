@@ -238,6 +238,7 @@ function buildHead(person, lang) {
   <meta property="og:description" content="${escHtml(person.ogDescription[lang])}">
   <meta property="og:url" content="${escHtml(url)}">
   <meta property="og:image" content="${escHtml(photoUrl)}">
+  <meta property="og:image:alt" content="${escHtml(person.ogTitle[lang])}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escHtml(twitterTitle)}">
   <meta name="twitter:description" content="${escHtml(twitterDesc)}">

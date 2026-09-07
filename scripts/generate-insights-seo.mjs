@@ -290,6 +290,10 @@ function buildArticlePage(item, lang) {
   <meta property="og:description" content="${escHtml(metaDescription)}">
   <meta property="og:url" content="${url}">
   <meta property="og:image" content="${SITE_ORIGIN}/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:alt" content="${escHtml(FIRM_NAME)}">
   <meta property="article:published_time" content="${locale.sort}">
   <meta property="article:modified_time" content="${locale.sort}">
   <meta property="article:author" content="${escHtml(locale.author)}">
